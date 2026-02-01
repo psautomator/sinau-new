@@ -1,0 +1,60 @@
+{
+  "id": "quiz-m8-l5-integratie",
+  "title": "Module 8 Eindquiz: Sport en Spel",
+  "description": "Test je kennis van sport en spel uit Module 8.",
+  "questions": [
+    {
+      "id": "q1-m8-l5-mcq-vocab",
+      "order": 1,
+      "questionText": "Wat is het tegenovergestelde van `menang` (winnen)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m8-l5-opt1", "text": "Kalah", "isCorrect": true, "wordId": "kalah" },
+        { "id": "q1-m8-l5-opt2", "text": "Dolanan", "isCorrect": false, "wordId": "dolanan" },
+        { "id": "q1-m8-l5-opt3", "text": "Tim", "isCorrect": false, "wordId": "tim" },
+        { "id": "q1-m8-l5-opt4", "text": "Skor", "isCorrect": false, "wordId": "skor" }
+      ],
+      "explanation": "'Kalah' is het Javaanse woord voor 'verliezen'."
+    },
+    {
+      "id": "q2-m8-l5-reorder",
+      "order": 2,
+      "questionText": "Zet de woorden in de juiste volgorde om de zin 'Ons team is sterker dan hun team' te vormen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [
+        {"value": "Tim kita"},
+        {"value": "luwih kuwat"},
+        {"value": "tinimbang"},
+        {"value": "timé dhèwèké."}
+      ],
+      "explanation": "De vergrotende trap wordt gevormd met 'luwih ... tinimbang ...'."
+    },
+    {
+      "id": "q3-m8-l5-mcq-culture",
+      "order": 3,
+      "questionText": "Het culturele concept `kompak` in een team benadrukt vooral...",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m8-l5-opt1", "text": "Individuele kracht", "isCorrect": false },
+        { "id": "q3-m8-l5-opt2", "text": "Samenwerking en eenheid", "isCorrect": true, "wordId": "kompak" },
+        { "id": "q3-m8-l5-opt3", "text": "De beste speler hebben", "isCorrect": false },
+        { "id": "q3-m8-l5-opt4", "text": "Alleen de overwinning", "isCorrect": false }
+      ],
+      "explanation": "`Kompak` zijn betekent dat de groep als eenheid functioneert, wat vaak als belangrijker wordt gezien dan individuele prestaties."
+    },
+    {
+      "id": "q4-m8-l5-audio",
+      "order": 4,
+      "questionText": "Luister naar de audio. Wat hoor je?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/tim_kita_menang.mp3",
+      "options": [
+        { "id": "q4-m8-l5-opt1", "text": "Ons team heeft gewonnen", "isCorrect": true },
+        { "id": "q4-m8-l5-opt2", "text": "Ons team heeft verloren", "isCorrect": false },
+        { "id": "q4-m8-l5-opt3", "text": "Ons team speelt nu", "isCorrect": false },
+        { "id": "q4-m8-l5-opt4", "text": "Ons team is sterk", "isCorrect": false }
+      ],
+      "explanation": "De zin 'Tim kita menang' betekent 'Ons team heeft gewonnen'."
+    }
+  ]
+}

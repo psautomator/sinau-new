@@ -1,0 +1,44 @@
+
+{
+  "id": "quiz-m15-l3",
+  "title": "Module 15: Les 3 Quiz - De Moraal en de Wijsheid",
+  "description": "Test je kennis van de Javaanse spreekwoorden.",
+  "questions": [
+    {
+      "id": "q1-m15-l3-mcq",
+      "order": 1,
+      "questionText": "Welk spreekwoord betekent 'tevreden zijn met je deel' en vormt de kernles van de fabel?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m15-l3-opt1", "text": "Alon-alon waton kelakon", "isCorrect": false, "wordId": "alon-alon waton kelakon" },
+        { "id": "q1-m15-l3-opt2", "text": "Becik ketitik, ala ketara", "isCorrect": false, "wordId": "becik ketitik, ala ketara" },
+        { "id": "q1-m15-l3-opt3", "text": "Nrima ing pandum", "isCorrect": true, "wordId": "nrima ing pandum" },
+        { "id": "q1-m15-l3-opt4", "text": "Gotong royong", "isCorrect": false }
+      ],
+      "explanation": "'Nrima ing pandum' is de filosofie van tevredenheid en dankbaarheid, precies het tegenovergestelde van de hebzucht van de hond."
+    },
+    {
+      "id": "q2-m15-l3-match",
+      "order": 2,
+      "questionText": "Combineer het spreekwoord met de juiste betekenis.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Alon-alon waton kelakon"},
+        {"value": "Becik ketitik, ala ketara"}
+      ],
+      "matchItemsRight": [
+        {"value": "Haastige spoed is zelden goed"},
+        {"value": "Het goede en kwade komt altijd uit"}
+      ],
+      "explanation": "Dit zijn de correcte betekenissen voor deze belangrijke Javaanse gezegdes."
+    },
+    {
+      "id": "q3-m15-l3-fib",
+      "order": 3,
+      "questionText": "Vul het ontbrekende woord uit de fabel in: 'Aku iki mau pantyèn ___, mulané aku saiki ora nduwé apa-apa.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["murka"],
+      "explanation": "Het woord 'murka' betekent hebzuchtig of toornig, en de hond beseft dat dit de reden is voor zijn verlies."
+    }
+  ]
+}

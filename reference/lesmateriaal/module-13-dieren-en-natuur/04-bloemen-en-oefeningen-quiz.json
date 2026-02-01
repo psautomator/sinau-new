@@ -1,0 +1,40 @@
+
+{
+  "id": "quiz-m13-l4",
+  "title": "Module 13: Les 4 Quiz - Bloemen en Oefeningen",
+  "description": "Test je kennis van Javaanse bloemennamen.",
+  "questions": [
+    {
+      "id": "q1-m13-l4-match",
+      "order": 1,
+      "questionText": "Combineer de bloem met de juiste Javaanse naam.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Roos"},
+        {"value": "Zonnebloem"},
+        {"value": "Orchidee"},
+        {"value": "Jasmijn"}
+      ],
+      "matchItemsRight": [
+        {"value": "kembang mawar"},
+        {"value": "kembang srengéngé"},
+        {"value": "kembang angkrèk"},
+        {"value": "kembang melathi"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor deze bloemen."
+    },
+    {
+      "id": "q2-m13-l4-mcq",
+      "order": 2,
+      "questionText": "Wat is het formele (Krama) woord voor 'bloem'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m13-l4-opt1", "text": "Kembang", "isCorrect": false, "wordId": "kembang" },
+        { "id": "q2-m13-l4-opt2", "text": "Wit", "isCorrect": false, "wordId": "wit" },
+        { "id": "q2-m13-l4-opt3", "text": "Sekar", "isCorrect": true },
+        { "id": "q2-m13-l4-opt4", "text": "Werna", "isCorrect": false }
+      ],
+      "explanation": "De beleefde (Krama) vorm voor 'kembang' (bloem) is 'sekar'."
+    }
+  ]
+}

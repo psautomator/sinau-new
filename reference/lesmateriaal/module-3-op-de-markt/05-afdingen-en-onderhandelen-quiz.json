@@ -1,0 +1,43 @@
+
+{
+  "id": "quiz-m3-l5",
+  "title": "Module 3: Les 5 Quiz - Afdingen en Onderhandelen",
+  "description": "Test je kennis over het onderhandelen op de markt.",
+  "questions": [
+    {
+      "id": "q1-m3-l5-mcq",
+      "order": 1,
+      "questionText": "Wat betekent het werkwoord 'nganyang'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m3-l5-opt1", "text": "Kopen", "isCorrect": false },
+        { "id": "q1-m3-l5-opt2", "text": "Verkopen", "isCorrect": false },
+        { "id": "q1-m3-l5-opt3", "text": "Betalen", "isCorrect": false },
+        { "id": "q1-m3-l5-opt4", "text": "Afdingen", "isCorrect": true, "wordId": "nganyang" }
+      ],
+      "explanation": "'Nganyang' is het Javaanse woord voor afdingen of onderhandelen over de prijs, een gebruikelijke praktijk op de markt."
+    },
+    {
+      "id": "q2-m3-l5-mcq-context",
+      "order": 2,
+      "questionText": "In de dialoog vraagt Siti's moeder: 'Mboten saged kirang?'. Welk beleefd woord gebruikt ze om 'minder' te zeggen?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m3-l5-opt1", "text": "Awis", "isCorrect": false, "wordId": "awis" },
+        { "id": "q2-m3-l5-opt2", "text": "Larang", "isCorrect": false, "wordId": "larang" },
+        { "id": "q2-m3-l5-opt3", "text": "Kurang", "isCorrect": false },
+        { "id": "q2-m3-l5-opt4", "text": "Kirang", "isCorrect": true, "wordId": "kirang" }
+      ],
+      "explanation": "'Kirang' is de beleefde (Krama) vorm van 'kurang' (minder) en wordt gebruikt om respectvol om een lagere prijs te vragen."
+    },
+    {
+      "id": "q3-m3-l5-typeheard",
+      "order": 3,
+      "questionText": "Luister naar de audio. Welk beleefd (Krama) woord hoor je voor 'duur'?",
+      "questionType": "TYPE_HEARD_AUDIO",
+      "audioPromptUrl": "/audio/uploads/awis.mp3",
+      "fillInAnswers": ["awis"],
+      "explanation": "Je hoorde 'awis', de beleefde vorm van 'larang' (duur)."
+    }
+  ]
+}

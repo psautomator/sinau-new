@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "nesu",
+    "dutch": "boos",
+    "aiHint": "angry face",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aja nesu, mengko cepet tuwa.",
+    "exampleSentenceDutch": "Wees niet boos, dan word je snel oud.",
+    "notes": "Informele term voor boosheid.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "emotie", "boos"]
+  },
+  {
+    "javanese": "kuciwa",
+    "dutch": "teleurgesteld",
+    "aiHint": "disappointed face",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku kuciwa amarga kowe ora teka.",
+    "exampleSentenceDutch": "Ik ben teleurgesteld omdat je niet kwam.",
+    "notes": "Een veelvoorkomend gevoel bij misverstanden.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "emotie", "teleurstelling"]
+  },
+  {
+    "javanese": "salah paham",
+    "dutch": "misverstand",
+    "aiHint": "misunderstanding confusion",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Iki mung salah paham, ora perlu nesu.",
+    "exampleSentenceDutch": "Dit is slechts een misverstand, je hoeft niet boos te zijn.",
+    "notes": "Letterlijk 'verkeerd begrijpen'.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["concept", "communicatie", "conflict"]
+  },
+  {
+    "javanese": "padu",
+    "dutch": "ruzie maken",
+    "aiHint": "people arguing",
+    "audioJavanese": null,
+    "category": "Conflict",
+    "exampleSentenceJavanese": "Aja padha padu, dirembug wae.",
+    "exampleSentenceDutch": "Maak geen ruzie, laten we het gewoon bespreken.",
+    "notes": "Verwijst naar een verbale, vaak verhitte, ruzie.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["conflict", "ruzie", "werkwoord"]
+  }
+]

@@ -1,0 +1,40 @@
+
+{
+  "id": "quiz-m4-l4",
+  "title": "Module 4: Les 4 Quiz - Familie Aanspreekvormen",
+  "description": "Test je kennis van de respectvolle aanspreektitels.",
+  "questions": [
+    {
+      "id": "q1-m4-l4-match",
+      "order": 1,
+      "questionText": "Combineer de aanspreektitel met de juiste omschrijving.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Pakdhe"},
+        {"value": "Budhe"},
+        {"value": "Paklik"},
+        {"value": "Bulik"}
+      ],
+      "matchItemsRight": [
+        {"value": "Oudere broer van je vader of moeder"},
+        {"value": "Oudere zus van je vader of moeder"},
+        {"value": "Jongere broer van je vader of moeder"},
+        {"value": "Jongere zus van je vader of moeder"}
+      ],
+      "explanation": "Deze titels reflecteren de hiërarchie gebaseerd op leeftijd binnen de Javaanse familie."
+    },
+    {
+      "id": "q2-m4-l4-mcq",
+      "order": 2,
+      "questionText": "Je moeder heeft een oudere zus. Hoe noem je haar respectvol?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m4-l4-opt1", "text": "Bulik", "isCorrect": false, "wordId": "bulik" },
+        { "id": "q2-m4-l4-opt2", "text": "Pakdhe", "isCorrect": false, "wordId": "pakdhe" },
+        { "id": "q2-m4-l4-opt3", "text": "Budhe", "isCorrect": true, "wordId": "budhe" },
+        { "id": "q2-m4-l4-opt4", "text": "Mbah", "isCorrect": false, "wordId": "simbah" }
+      ],
+      "explanation": "De oudere zus van je ouder noem je 'Budhe' (van 'Ibu Gedhe' - grote moeder)."
+    }
+  ]
+}

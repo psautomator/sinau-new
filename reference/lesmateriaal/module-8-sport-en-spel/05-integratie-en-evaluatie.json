@@ -1,0 +1,81 @@
+
+[
+    {
+        "javanese": "olahraga",
+        "dutch": "sport",
+        "aiHint": "person exercising",
+        "audioJavanese": null,
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Olahraga iku penting kanggo kasarasan.",
+        "exampleSentenceDutch": "Sporten is belangrijk voor de gezondheid.",
+        "notes": "Algemeen woord voor sport.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["sport", "gezondheid", "activiteit"]
+    },
+    {
+        "javanese": "tim",
+        "dutch": "team",
+        "aiHint": "sports team huddle",
+        "audioJavanese": null,
+        "category": "Sport",
+        "exampleSentenceJavanese": "Tim kita kudu kompak.",
+        "exampleSentenceDutch": "Ons team moet een eenheid vormen.",
+        "notes": "Leenwoord uit het Engels/Nederlands.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["sport", "groep", "samenwerking"]
+    },
+    {
+        "javanese": "menang",
+        "dutch": "winnen",
+        "aiHint": "winner trophy",
+        "audioJavanese": null,
+        "category": "Sport",
+        "exampleSentenceJavanese": "Sapa sing menang?",
+        "exampleSentenceDutch": "Wie heeft er gewonnen?",
+        "notes": null,
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["competitie", "winst", "resultaat"]
+    },
+    {
+        "javanese": "kalah",
+        "dutch": "verliezen",
+        "aiHint": "losing game",
+        "audioJavanese": "/audio/uploads/kalah.mp3",
+        "category": "Staat",
+        "exampleSentenceJavanese": "Tim kita ora oleh kalah.",
+        "exampleSentenceDutch": "Ons team mag niet verliezen.",
+        "notes": null,
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": [ "competitie", "verlies" ]
+      },
+      {
+        "javanese": "kompak",
+        "dutch": "compact / als eenheid",
+        "aiHint": "team working together",
+        "audioJavanese": null,
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Tim kita kudu kompak.",
+        "exampleSentenceDutch": "Ons team moet als eenheid werken.",
+        "notes": "Leenwoord, belangrijk concept in teamverband.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["teamwerk", "samenwerking", "eigenschap"]
+      },
+      {
+        "javanese": "semangat",
+        "dutch": "enthousiasme / spirit",
+        "aiHint": "enthusiasm cheering",
+        "audioJavanese": null,
+        "category": "Gevoel",
+        "exampleSentenceJavanese": "Ayo, semangat!",
+        "exampleSentenceDutch": "Kom op, zet 'm op!",
+        "notes": "Wordt vaak als aanmoediging gebruikt.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["gevoel", "aanmoediging", "motivatie"]
+      }
+]

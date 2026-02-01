@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "kula",
+    "dutch": "ik (beleefd)",
+    "aiHint": "person bowing respectfully",
+    "audioJavanese": "/audio/uploads/kula.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Kula badhe tumbas buku.",
+    "exampleSentenceDutch": "Ik wil graag een boek kopen.",
+    "notes": "De standaard beleefde vorm voor 'ik', gebruikt bij het spreken tegen ouderen of onbekenden.",
+    "level": "A2",
+    "formality": "KramaMadya",
+    "tags": ["pronomen", "krama", "persoonlijk", "formeel"]
+  },
+  {
+    "javanese": "panjenengan",
+    "dutch": "u (zeer beleefd)",
+    "aiHint": "respectful greeting",
+    "audioJavanese": "/audio/uploads/panjenengan.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Kadospundi kabaripun panjenengan?",
+    "exampleSentenceDutch": "Hoe gaat het met u?",
+    "notes": "De meest formele en respectvolle manier om 'u' te zeggen. Gebruikt tegen ouderen, leiders, of in zeer formele settings.",
+    "level": "B1",
+    "formality": "KramaInggil",
+    "tags": ["pronomen", "krama inggil", "persoonlijk", "tweede persoon", "zeer formeel"]
+  },
+  {
+    "javanese": "rawuh",
+    "dutch": "komen / aanwezig zijn",
+    "aiHint": "guest arriving formal",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Bapak Presiden badhe rawuh.",
+    "exampleSentenceDutch": "De heer President zal aanwezig zijn.",
+    "notes": "Een zeer beleefd ('Krama Inggil') woord voor komen, gebruikt voor gerespecteerde personen.",
+    "level": "B2",
+    "formality": "KramaInggil",
+    "tags": ["werkwoord", "aankomst", "formeel", "krama"]
+  },
+  {
+    "javanese": "pinarak",
+    "dutch": "zitten (zeer beleefd)",
+    "aiHint": "person sitting respectfully",
+    "audioJavanese": "/audio/uploads/pinarak.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Mangga, pinarak ing ngriku.",
+    "exampleSentenceDutch": "Alstublieft, gaat u daar zitten.",
+    "notes": null,
+    "level": "B2",
+    "formality": "KramaInggil",
+    "tags": ["actie", "formeel", "zitten"]
+  },
+  {
+    "javanese": "panuwun",
+    "dutch": "dank / verzoek",
+    "aiHint": "formal thank you note",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Kula ngaturaken panuwun.",
+    "exampleSentenceDutch": "Ik breng mijn dank over.",
+    "notes": "Een formele manier om dankbaarheid of een verzoek uit te drukken. 'Matur nuwun' is de meest gebruikte uitdrukking.",
+    "level": "C1",
+    "formality": "KramaMadya",
+    "tags": ["concept", "dankbaarheid", "formeel", "krama"]
+  }
+]

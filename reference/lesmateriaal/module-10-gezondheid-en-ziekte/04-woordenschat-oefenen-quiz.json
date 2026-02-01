@@ -1,0 +1,39 @@
+
+{
+  "id": "quiz-m10-l4",
+  "title": "Les 4 Quiz: Woordenschat Oefenen",
+  "description": "Test je kennis van Javaanse woorden voor lichaamsdelen.",
+  "questions": [
+    {
+      "id": "q1-m10-l4-match",
+      "order": 1,
+      "questionText": "Combineer het lichaamsdeel met het juiste Javaanse woord.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [{"value": "Oog"}, {"value": "Neus"}, {"value": "Hand"}, {"value": "Voet"}],
+      "matchItemsRight": [{"value": "Mata"}, {"value": "Irung"}, {"value": "Tangan"}, {"value": "Sikil"}],
+      "explanation": "Dit zijn de correcte Ngoko-termen voor deze lichaamsdelen."
+    },
+    {
+      "id": "q2-m10-l4-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: '___ kula lara.' (Ik heb keelpijn.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["Tenggorokan"],
+      "explanation": "'Tenggorokan' is het Javaanse woord voor keel."
+    },
+    {
+      "id": "q3-m10-l4-mcq",
+      "order": 3,
+      "questionText": "Hoe zeg je 'kiespijn' in het Javaans?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m10-l4-opt1", "text": "Sirah lara", "isCorrect": false },
+        { "id": "q3-m10-l4-opt2", "text": "Weteng lara", "isCorrect": false },
+        { "id": "q3-m10-l4-opt3", "text": "Sikil lara", "isCorrect": false },
+        { "id": "q3-m10-l4-opt4", "text": "Untu lara", "isCorrect": true, "wordId": "untu" }
+      ],
+      "explanation": "'Untu' betekent tand/kies en 'lara' betekent pijn, dus 'untu lara' is kiespijn."
+    }
+  ]
+}
+

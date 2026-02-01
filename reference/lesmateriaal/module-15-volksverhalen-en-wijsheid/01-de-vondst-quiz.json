@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m15-l1",
+  "title": "Module 15: Les 1 Quiz - De Vondst",
+  "description": "Test je kennis over de start van de fabel.",
+  "questions": [
+    {
+      "id": "q1-m15-l1-mcq-vocab",
+      "order": 1,
+      "questionText": "Wat betekent het woord `rejeki` in de context van het verhaal?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m15-l1-opt1", "text": "Een lekker stuk vis", "isCorrect": false },
+        { "id": "q1-m15-l1-opt2", "text": "Een onverwachte zegen of geluk", "isCorrect": true, "wordId": "rejeki" },
+        { "id": "q1-m15-l1-opt3", "text": "Een feestmaal", "isCorrect": false },
+        { "id": "q1-m15-l1-opt4", "text": "Een waarschuwing", "isCorrect": false }
+      ],
+      "explanation": "`Rejeki` is een breed concept van voorspoed of een onverwachte zegen, wat de hond voelt bij het vinden van de vis."
+    },
+    {
+      "id": "q2-m15-l1-mcq-culture",
+      "order": 2,
+      "questionText": "Wat is een `slametan`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m15-l1-opt1", "text": "Een verjaardagsfeest", "isCorrect": false },
+        { "id": "q2-m15-l1-opt2", "text": "Een rituele maaltijd om dankbaarheid te tonen", "isCorrect": true, "wordId": "slametan" },
+        { "id": "q2-m15-l1-opt3", "text": "Een sportwedstrijd", "isCorrect": false },
+        { "id": "q2-m15-l1-opt4", "text": "Een schooluitje", "isCorrect": false }
+      ],
+      "explanation": "Een `slametan` is een belangrijk gemeenschapsritueel waarbij men samenkomt voor een maaltijd om dankbaarheid te tonen of om veiligheid te vragen."
+    }
+  ]
+}

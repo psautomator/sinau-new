@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "salah",
+    "dutch": "fout / verkeerd",
+    "aiHint": "wrong cross mark",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Jawabanmu salah.",
+    "exampleSentenceDutch": "Jouw antwoord is fout.",
+    "notes": "Algemeen woord voor een fout of vergissing.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["eigenschap", "negatief", "fout"]
+  },
+  {
+    "javanese": "rukun",
+    "dutch": "harmonie, in vrede leven",
+    "aiHint": "harmony peace symbol",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Urip rukun karo tangga iku penting.",
+    "exampleSentenceDutch": "In harmonie leven met de buren is belangrijk.",
+    "notes": "Een zeer belangrijke culturele waarde in de Javaanse samenleving.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "harmonie", "vrede", "cultuur"]
+  },
+  {
+    "javanese": "sepakat",
+    "dutch": "akkoord / het eens zijn",
+    "aiHint": "agreement handshake",
+    "audioJavanese": null,
+    "category": "Staat",
+    "exampleSentenceJavanese": "Akhire kita sepakat.",
+    "exampleSentenceDutch": "Uiteindelijk zijn we het eens geworden.",
+    "notes": "Leenwoord, maar veel gebruikt.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["staat", "akkoord", "overeenkomst"]
+  },
+  {
+    "javanese": "lega",
+    "dutch": "opgelucht",
+    "aiHint": "relief sigh",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku lega masalahé wis rampung.",
+    "exampleSentenceDutch": "Ik ben opgelucht dat het probleem voorbij is.",
+    "notes": "Het gevoel van verlichting na spanning of zorg.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["gevoel", "emotie", "opluchting"]
+  }
+]

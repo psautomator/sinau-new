@@ -1,0 +1,48 @@
+
+{
+  "id": "quiz-m17-l5-integratie",
+  "title": "Module 17 Eindquiz: Formeel Taalgebruik",
+  "description": "Test je kennis van het formele Krama-taalgebruik uit Module 17.",
+  "questions": [
+    {
+      "id": "q1-m17-l5-mcq-pronoun",
+      "order": 1,
+      "questionText": "Je spreekt met de directeur van een school. Welk voornaamwoord gebruik je om naar hem te verwijzen als 'u'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m17-l5-opt1", "text": "Kowé", "isCorrect": false },
+        { "id": "q1-m17-l5-opt2", "text": "Sampeyan", "isCorrect": false },
+        { "id": "q1-m17-l5-opt3", "text": "Panjenengan", "isCorrect": true, "wordId": "panjenengan" },
+        { "id": "q1-m17-l5-opt4", "text": "Aku", "isCorrect": false }
+      ],
+      "explanation": "'Panjenengan' is de meest respectvolle (Krama Inggil) vorm en is gepast voor een persoon met een hoge status zoals een directeur."
+    },
+    {
+      "id": "q2-m17-l5-mcq-verb",
+      "order": 2,
+      "questionText": "Wat is de formele (Krama) manier om te zeggen 'Ik heb...'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m17-l5-opt1", "text": "Aku duwé...", "isCorrect": false },
+        { "id": "q2-m17-l5-opt2", "text": "Kula gadhah...", "isCorrect": true },
+        { "id": "q2-m17-l5-opt3", "text": "Panjenengan gadhah...", "isCorrect": false },
+        { "id": "q2-m17-l5-opt4", "text": "Kula duwé...", "isCorrect": false }
+      ],
+      "explanation": "De correcte formele combinatie is 'Kula' (ik) en 'gadhah' (hebben)."
+    },
+    {
+      "id": "q3-m17-l5-audio",
+      "order": 3,
+      "questionText": "Luister naar de audio. Welke formele uitdrukking hoor je?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/matur_nuwun_kagem_saranipun.mp3",
+      "options": [
+        { "id": "q3-m17-l5-opt1", "text": "Dank u wel voor het komen.", "isCorrect": false },
+        { "id": "q3-m17-l5-opt2", "text": "Dank u wel voor de suggestie.", "isCorrect": true },
+        { "id": "q3-m17-l5-opt3", "text": "Dank u wel voor het eten.", "isCorrect": false },
+        { "id": "q3-m17-l5-opt4", "text": "Dank u wel voor uw tijd.", "isCorrect": false }
+      ],
+      "explanation": "De zin 'Matur nuwun kagem saranipun' betekent 'Dank u wel voor de suggestie/feedback', een respectvolle manier om te reageren."
+    }
+  ]
+}

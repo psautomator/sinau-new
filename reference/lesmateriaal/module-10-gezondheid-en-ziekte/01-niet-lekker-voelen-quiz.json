@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m10-l1",
+  "title": "Module 10: Les 1 Quiz - Niet Lekker Voelen",
+  "description": "Test je kennis over het beschrijven van basisklachten.",
+  "questions": [
+    {
+      "id": "q1-m10-l1-mcq",
+      "order": 1,
+      "questionText": "Wat zijn de twee belangrijkste klachten van Siti in de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m10-l1-opt1", "text": "Keelpijn en koorts", "isCorrect": false },
+        { "id": "q1-m10-l1-opt2", "text": "Hoofdpijn en buikpijn", "isCorrect": true },
+        { "id": "q1-m10-l1-opt3", "text": "Rugpijn en duizeligheid", "isCorrect": false },
+        { "id": "q1-m10-l1-opt4", "text": "Kiespijn en misselijkheid", "isCorrect": false }
+      ],
+      "explanation": "Siti klaagt over 'sirahku lara' (hoofdpijn) en 'wetengku ora kepénak' (buikpijn/onprettig gevoel in de buik)."
+    },
+    {
+      "id": "q2-m10-l1-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Awakmu rada ___.' (Je lichaam is een beetje warm / Je hebt een beetje koorts.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["panas"],
+      "explanation": "Het woord 'panas' betekent heet/warm, maar wordt in deze context gebruikt om koorts aan te duiden."
+    }
+  ]
+}

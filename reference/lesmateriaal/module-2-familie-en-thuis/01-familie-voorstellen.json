@@ -1,0 +1,134 @@
+
+[
+  {
+    "javanese": "bapak",
+    "dutch": "vader",
+    "aiHint": "father parent",
+    "audioJavanese": "/audio/uploads/bapak.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Iki bapakku.",
+    "exampleSentenceDutch": "Dit is mijn vader.",
+    "notes": "De 'a' voor de eind 'k' blijft onveranderd, maar het woord wordt abrupt gestopt.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["familie", "ouders", "respect"]
+  },
+  {
+    "javanese": "ibu",
+    "dutch": "Moeder",
+    "aiHint": "moeder familielid",
+    "audioJavanese": "/audio/uploads/ibu.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Iki ibuku.",
+    "exampleSentenceDutch": "Dit is mijn moeder.",
+    "notes": "Kan ook als algemene aanspreekvorm voor een oudere vrouw worden gebruikt.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["familie", "ouders", "respect"]
+  },
+  {
+    "javanese": "adhik",
+    "dutch": "jongere broer/zus",
+    "aiHint": "jongere broer/zus",
+    "audioJavanese": "/audio/uploads/adhik.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Iki adhikku.",
+    "exampleSentenceDutch": "Dit is mijn jongere broer/zus.",
+    "notes": "Genderneutraal woord voor jongere sibling.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": [
+      "familie",
+      "sibling",
+      "relaties"
+    ]
+  },
+  {
+    "javanese": "kakang",
+    "dutch": "oudere broer",
+    "aiHint": "older brother",
+    "audioJavanese": "/audio/uploads/kakang.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Kakangku jenengé Budi.",
+    "exampleSentenceDutch": "Mijn oudere broer heet Budi.",
+    "notes": "Vaak aangesproken als 'Mas'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": [
+      "familie",
+      "broer"
+    ]
+  },
+  {
+    "javanese": "kulawarga",
+    "dutch": "familie / gezin",
+    "aiHint": "family portrait",
+    "audioJavanese": "/audio/uploads/kulawarga.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Kulawargaku manggon ing Paramaribo.",
+    "exampleSentenceDutch": "Mijn familie woont in Paramaribo.",
+    "notes": "Algemeen woord voor familie/gezin.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": [ "familie", "relaties", "gezin" ]
+  },
+  {
+    "javanese": "sowan",
+    "dutch": "op bezoek gaan (bij ouderen/hogergeplaatsten)",
+    "aiHint": "respectful visit bowing",
+    "audioJavanese": "/audio/uploads/sowan.mp3",
+    "category": "Cultuur",
+    "exampleSentenceJavanese": "Kula badhe sowan dhateng dalemipun simbah.",
+    "exampleSentenceDutch": "Ik ga op bezoek bij oma.",
+    "notes": "Een zeer respectvolle term voor een bezoek, toont eerbied.",
+    "level": "B1",
+    "formality": "KramaInggil",
+    "tags": ["cultuur", "bezoek", "respect", "krama"]
+  },
+  {
+    "javanese": "sedulur",
+    "dutch": "broer/zus (algemeen)",
+    "aiHint": "siblings together",
+    "audioJavanese": "/audio/uploads/sedulur.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Aku duwe sedulur telu.",
+    "exampleSentenceDutch": "Ik heb drie broers/zussen.",
+    "notes": "Algemene term voor siblings.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": [
+      "familie",
+      "relaties"
+    ]
+  },
+  {
+    "javanese": "simbah",
+    "dutch": "grootouder (oma/opa)",
+    "aiHint": "oma opa",
+    "audioJavanese": "/audio/uploads/simbah.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Iki simbahku saka desa.",
+    "exampleSentenceDutch": "Dit is mijn oma/opa uit het dorp.",
+    "notes": "Algemeen en respectvol woord voor grootouders.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": [
+      "familie",
+      "aanspreekvorm",
+      "respect"
+    ]
+  },
+  {
+    "javanese": "hormat",
+    "dutch": "respect",
+    "aiHint": "person bowing",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Kita kudu hormat marang wong tuwa.",
+    "exampleSentenceDutch": "We moeten respect hebben voor ouderen.",
+    "notes": "Een kernwaarde in de Javaanse cultuur.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["cultuur", "respect", "concept"]
+  }
+]

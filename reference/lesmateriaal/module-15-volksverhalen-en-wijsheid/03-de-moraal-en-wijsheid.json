@@ -1,0 +1,81 @@
+
+[
+  {
+    "javanese": "nrima ing pandum",
+    "dutch": "tevreden zijn met je deel",
+    "aiHint": "grateful hands",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Wong Jawa iku kudu nrima ing pandum.",
+    "exampleSentenceDutch": "Een Javaan moet tevreden zijn met zijn deel.",
+    "notes": "Een kernfilosofie in de Javaanse cultuur over tevredenheid en acceptatie.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "tevredenheid", "cultuur"]
+  },
+  {
+    "javanese": "alon-alon waton kelakon",
+    "dutch": "haastige spoed is zelden goed",
+    "aiHint": "slow turtle winning",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Ora usah kesusu, alon-alon waton kelakon.",
+    "exampleSentenceDutch": "Je hoeft je niet te haasten, rustig aan dan komt het goed.",
+    "notes": "Een filosofie die geduld en bedachtzaamheid benadrukt.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "geduld"]
+  },
+  {
+    "javanese": "becik ketitik, ala ketara",
+    "dutch": "het goede en kwade komt altijd uit",
+    "aiHint": "truth revealed light",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Aja goroh, amarga becik ketitik, ala ketara.",
+    "exampleSentenceDutch": "Lieg niet, want de waarheid komt altijd aan het licht.",
+    "notes": "Een gezegde over de onvermijdelijkheid van de waarheid.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "waarheid", "karma"]
+  },
+  {
+    "javanese": "getun",
+    "dutch": "spijt hebben",
+    "aiHint": "person feeling regret",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku getun banget amarga wis serakah.",
+    "exampleSentenceDutch": "Ik heb erge spijt omdat ik hebzuchtig was.",
+    "notes": "Een gevoel van berouw na een foute beslissing.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "emotie", "spijt"]
+  },
+  {
+    "javanese": "murka",
+    "dutch": "hebzuchtig, toornig",
+    "aiHint": "greedy dragon",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Raja sing murka bakal ditinggal rakyaté.",
+    "exampleSentenceDutch": "Een hebzuchtige koning zal door zijn volk worden verlaten.",
+    "notes": "Een sterk woord, vaak gebruikt in klassieke verhalen. Sterker dan 'serakah'.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["negatief", "eigenschap", "klassiek"]
+  },
+  {
+    "javanese": "dunung",
+    "dutch": "begrijpen, realiseren",
+    "aiHint": "idea lightbulb",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Asu saiki dunung nèk iku ayang-ayangané.",
+    "exampleSentenceDutch": "De hond realiseert zich nu dat het zijn spiegelbeeld was.",
+    "notes": "Verwijst naar een dieper begrip of besef.",
+    "level": "C1",
+    "formality": "Ngoko",
+    "tags": ["begrijpen", "realiseren", "inzicht"]
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "id": "quiz-m9-l6-integratie",
+  "title": "Module 9 Eindquiz: Feest & Traditie",
+  "description": "Test je kennis over Javaanse feesten en culturele waarden.",
+  "questions": [
+    {
+      "id": "q1-m9-l6-mcq-vocab",
+      "order": 1,
+      "questionText": "Wat betekent `rejeki`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m9-l6-opt1", "text": "Hebzucht", "isCorrect": false, "wordId": "serakah" },
+        { "id": "q1-m9-l6-opt2", "text": "Voorspoed / zegen", "isCorrect": true, "wordId": "rejeki" },
+        { "id": "q1-m9-l6-opt3", "text": "Verdriet", "isCorrect": false },
+        { "id": "q1-m9-l6-opt4", "text": "Feest", "isCorrect": false, "wordId": "pesta" }
+      ],
+      "explanation": "`Rejeki` is een breed concept dat zowel materiële als immateriële voorspoed, geluk en zegeningen omvat."
+    },
+    {
+      "id": "q2-m9-l6-mcq-fable",
+      "order": 2,
+      "questionText": "Welke fabel wordt vaak verteld als les tegen hebzucht?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m9-l6-opt1", "text": "Wedus Mbregudul", "isCorrect": false },
+        { "id": "q2-m9-l6-opt2", "text": "Kancil lan Baya", "isCorrect": false },
+        { "id": "q2-m9-l6-opt3", "text": "Asu Goblok", "isCorrect": true, "wordId": "asu" },
+        { "id": "q2-m9-l6-opt4", "text": "Timun Mas", "isCorrect": false }
+      ],
+      "explanation": "Het verhaal van `Asu Goblok` (de domme hond) is een klassieke fabel die waarschuwt voor de gevolgen van `serakah` (hebzucht)."
+    },
+    {
+      "id": "q3-m9-l6-mcq-vocab2",
+      "order": 3,
+      "questionText": "Het woord `nyumbang` betekent...",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m9-l6-opt1", "text": "Een feest organiseren", "isCorrect": false },
+        { "id": "q3-m9-l6-opt2", "text": "Een bijdrage leveren", "isCorrect": true, "wordId": "nyumbang" },
+        { "id": "q3-m9-l6-opt3", "text": "Een verhaal vertellen", "isCorrect": false },
+        { "id": "q3-m9-l6-opt4", "text": "Verjaardag vieren", "isCorrect": false }
+      ],
+      "explanation": "`Nyumbang` is het concept van een bijdrage leveren aan een gemeenschappelijk evenement, zoals een feest of een bouwproject."
+    },
+    {
+      "id": "q4-m9-l6-audio-choice",
+      "order": 4,
+      "questionText": "Luister naar het fragment. Wat wordt er gevierd?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/sugeng_tanggap_warsa.mp3",
+      "options": [
+        { "id": "q4-m9-l6-opt1", "text": "Een huwelijk", "isCorrect": false },
+        { "id": "q4-m9-l6-opt2", "text": "Een geboorte", "isCorrect": false },
+        { "id": "q4-m9-l6-opt3", "text": "Een verjaardag", "isCorrect": true, "wordId": "sugeng tanggap warsa" },
+        { "id": "q4-m9-l6-opt4", "text": "Een religieus feest", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'Sugeng tanggap warsa!', de formele wens voor een verjaardag."
+    }
+  ]
+}

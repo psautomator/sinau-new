@@ -1,0 +1,81 @@
+
+[
+    {
+        "javanese": "rejeki",
+        "dutch": "voorspoed, zegen, geluk",
+        "aiHint": "lucky charm",
+        "audioJavanese": null,
+        "category": "Concept",
+        "exampleSentenceJavanese": "Muga-muga diparingi rejeki lancar.",
+        "exampleSentenceDutch": "Hopelijk wordt je een vlotte voorspoed gegeven.",
+        "notes": "Kan materieel (geld, oogst) en immaterieel (geluk, gezondheid) zijn.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["concept", "geluk", "voorspoed"]
+    },
+    {
+        "javanese": "slametan",
+        "dutch": "rituele feestmaaltijd",
+        "aiHint": "javanese ritual meal",
+        "audioJavanese": null,
+        "category": "Cultuur",
+        "exampleSentenceJavanese": "Slametan dianakake kanggo tolak bala.",
+        "exampleSentenceDutch": "Een slametan wordt gehouden om onheil af te weren.",
+        "notes": "Een zeer belangrijk gemeenschapsritueel.",
+        "level": "B2",
+        "formality": "Neutral",
+        "tags": ["cultuur", "ritueel", "feest", "gemeenschap"]
+    },
+    {
+        "javanese": "asu",
+        "dutch": "hond",
+        "aiHint": "dog",
+        "audioJavanese": "/audio/uploads/asu.mp3",
+        "category": "Dieren",
+        "exampleSentenceJavanese": "Asu iku kancané manungsa.",
+        "exampleSentenceDutch": "De hond is de vriend van de mens.",
+        "notes": "Basiswoord voor hond.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["dier", "huisdier"]
+      },
+      {
+        "javanese": "iwak",
+        "dutch": "vis / bijgerecht",
+        "aiHint": "fresh fish",
+        "audioJavanese": "/audio/uploads/iwak.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Aku arep nggoreng iwak.",
+        "exampleSentenceDutch": "Ik ga vis bakken.",
+        "notes": "Kan algemeen 'bijgerecht' betekenen, maar meestal vis.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["eten", "dier", "vis"]
+      },
+      {
+        "javanese": "saktyuwil",
+        "dutch": "een stukje",
+        "aiHint": "small piece",
+        "audioJavanese": null,
+        "category": "Hoeveelheid",
+        "exampleSentenceJavanese": "Asu éntuk iwak saktyuwil.",
+        "exampleSentenceDutch": "De hond kreeg een stukje vis.",
+        "notes": "Wordt gebruikt voor een klein deel of fragment van iets.",
+        "level": "B2",
+        "formality": "Ngoko",
+        "tags": ["hoeveelheid", "portie", "klein"]
+      },
+      {
+        "javanese": "mulih",
+        "dutch": "naar huis gaan",
+        "aiHint": "person returning home",
+        "audioJavanese": "/audio/uploads/mulih.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Jam lima aku kudu mulih.",
+        "exampleSentenceDutch": "Om vijf uur moet ik naar huis gaan.",
+        "notes": "De beleefde (Krama) vorm is 'wangsul'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["beweging", "thuis", "actie"]
+      }
+]

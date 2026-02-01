@@ -1,0 +1,66 @@
+
+{
+  "id": "quiz-m14-l5-integratie",
+  "title": "Module 14 Eindquiz: Discussie en Debat",
+  "description": "Test je kennis over de hele module Discussie en Debat.",
+  "questions": [
+    {
+      "id": "q1-m14-l5-mcq-vocab",
+      "order": 1,
+      "questionText": "Wat is het Javaanse woord voor 'overleg' dat gericht is op consensus?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m14-l5-opt1", "text": "Debat", "isCorrect": false, "wordId": "debat" },
+        { "id": "q1-m14-l5-opt2", "text": "Rembugan", "isCorrect": true, "wordId": "rembugan" },
+        { "id": "q1-m14-l5-opt3", "text": "Alasan", "isCorrect": false, "wordId": "alasan" },
+        { "id": "q1-m14-l5-opt4", "text": "Sanggah", "isCorrect": false, "wordId": "sanggah" }
+      ],
+      "explanation": "'Rembugan' is een overleg gericht op het vinden van een gezamenlijke oplossing, in tegenstelling tot een `debat`."
+    },
+    {
+      "id": "q2-m14-l5-mcq-vocab2",
+      "order": 2,
+      "questionText": "Als je het met iemand eens bent, zeg je...",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m14-l5-opt1", "text": "Ora setuju", "isCorrect": false, "wordId": "ora setuju" },
+        { "id": "q2-m14-l5-opt2", "text": "Setuju", "isCorrect": true, "wordId": "setuju" },
+        { "id": "q2-m14-l5-opt3", "text": "Pendapat", "isCorrect": false, "wordId": "pendapat" },
+        { "id": "q2-m14-l5-opt4", "text": "Rembugan", "isCorrect": false, "wordId": "rembugan" }
+      ],
+      "explanation": "'Setuju' betekent 'eens zijn met'."
+    },
+    {
+      "id": "q3-m14-l5-match",
+      "order": 3,
+      "questionText": "Combineer de term met de juiste betekenis.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Pendapat"}, 
+        {"value": "Alasan"}, 
+        {"value": "Sanggah"}
+      ],
+      "matchItemsRight": [
+        {"value": "Mening / Opinie"}, 
+        {"value": "Reden / Argument"}, 
+        {"value": "Weerlegging / Tegenargument"}
+      ],
+      "explanation": "Dit zijn de kernbegrippen voor het voeren van een discussie of debat."
+    },
+    {
+      "id": "q4-m14-l5-audio",
+      "order": 4,
+      "questionText": "Luister en kies de juiste zin voor 'Ik ben het oneens'.",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/aku_ora_setuju.mp3",
+      "options": [
+        { "id": "q4-m14-l5-opt1", "text": "Aku setuju.", "isCorrect": false },
+        { "id": "q4-m14-l5-opt2", "text": "Aku ora setuju.", "isCorrect": true },
+        { "id": "q4-m14-l5-opt3", "text": "Aku ora ngerti.", "isCorrect": false },
+        { "id": "q4-m14-l5-opt4", "text": "Aku duwe pendapat.", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'Aku ora setuju', wat de directe manier is om aan te geven dat je het ergens niet mee eens bent."
+    }
+  ]
+}
+

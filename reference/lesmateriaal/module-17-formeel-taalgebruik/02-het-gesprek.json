@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "rawuh",
+    "dutch": "komen / aanwezig zijn",
+    "aiHint": "guest arriving formal",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Bapak Presiden badhe rawuh.",
+    "exampleSentenceDutch": "De heer President zal aanwezig zijn.",
+    "notes": "Een zeer beleefd ('Krama Inggil') woord voor komen, gebruikt voor gerespecteerde personen.",
+    "level": "B2",
+    "formality": "KramaInggil",
+    "tags": ["werkwoord", "aankomst", "formeel", "krama"]
+  },
+  {
+    "javanese": "pinarak",
+    "dutch": "zitten (zeer beleefd)",
+    "aiHint": "person sitting respectfully",
+    "audioJavanese": "/audio/uploads/pinarak.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Mangga, pinarak ing ngriku.",
+    "exampleSentenceDutch": "Alstublieft, gaat u daar zitten.",
+    "notes": null,
+    "level": "B2",
+    "formality": "KramaInggil",
+    "tags": ["actie", "formeel", "zitten"]
+  },
+  {
+    "javanese": "cariyosaken",
+    "dutch": "vertellen (beleefd)",
+    "aiHint": "formal storytelling",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Saged panjenengan cariyosaken?",
+    "exampleSentenceDutch": "Kunt u het vertellen?",
+    "notes": "De bevelsvorm van 'cariyos' (verhaal), vaak gebruikt als een beleefd verzoek.",
+    "level": "B2",
+    "formality": "KramaMadya",
+    "tags": ["werkwoord", "communicatie", "krama"]
+  },
+  {
+    "javanese": "remen",
+    "dutch": "leuk vinden (beleefd)",
+    "aiHint": "formal appreciation",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Kula remen sanget.",
+    "exampleSentenceDutch": "Ik vind het erg leuk.",
+    "notes": "De Krama-vorm van 'seneng'.",
+    "level": "B1",
+    "formality": "KramaMadya",
+    "tags": ["gevoel", "voorkeur", "krama"]
+  },
+  {
+    "javanese": "gadhah",
+    "dutch": "hebben (beleefd)",
+    "aiHint": "formal possession",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Kula gadhah pitakenan.",
+    "exampleSentenceDutch": "Ik heb een vraag.",
+    "notes": "De Krama-vorm van 'duwe'.",
+    "level": "A2",
+    "formality": "KramaMadya",
+    "tags": ["werkwoord", "bezit", "krama"]
+  }
+]

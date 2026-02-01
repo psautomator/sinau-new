@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "matur nuwun",
+    "dutch": "dank u wel",
+    "aiHint": "formal thanks",
+    "audioJavanese": "/audio/uploads/matur_nuwun.mp3",
+    "category": "Uitdrukking",
+    "exampleSentenceJavanese": "Matur nuwun kagem pitulunganipun.",
+    "exampleSentenceDutch": "Dank u wel voor uw hulp.",
+    "notes": "Een beleefde manier om 'dankjewel' te zeggen. 'Kesuwun' is een informelere variant.",
+    "level": "A1",
+    "formality": "KramaMadya",
+    "tags": ["bedanken", "beleefdheid", "krama"]
+  },
+  {
+    "javanese": "saka",
+    "dutch": "van / uit",
+    "aiHint": "origin point",
+    "audioJavanese": "/audio/uploads/saka.mp3",
+    "category": "Voorzetsel",
+    "exampleSentenceJavanese": "Aku saka Paramaribo.",
+    "exampleSentenceDutch": "Ik kom uit Paramaribo.",
+    "notes": "Wordt gebruikt om de oorsprong aan te duiden.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["grammatica", "oorsprong", "voorzetsel"]
+  },
+  {
+    "javanese": "ngendi",
+    "dutch": "waar",
+    "aiHint": "location question mark",
+    "audioJavanese": null,
+    "category": "Vraagwoord",
+    "exampleSentenceJavanese": "Saka ngendi kowé?",
+    "exampleSentenceDutch": "Waar kom je vandaan?",
+    "notes": "Informeel vraagwoord (Ngoko) om naar een locatie te vragen.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["vraag", "locatie"]
+  }
+]

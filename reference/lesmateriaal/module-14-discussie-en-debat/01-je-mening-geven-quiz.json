@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m14-l1",
+  "title": "Module 14: Les 1 Quiz - Je Mening Geven",
+  "description": "Test je kennis over het geven van een mening.",
+  "questions": [
+    {
+      "id": "q1-m14-l1-mcq",
+      "order": 1,
+      "questionText": "Hoe zeg je 'ik ben het ermee eens' in het Javaans?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m14-l1-opt1", "text": "Ora setuju", "isCorrect": false, "wordId": "ora setuju" },
+        { "id": "q1-m14-l1-opt2", "text": "Setuju", "isCorrect": true, "wordId": "setuju" },
+        { "id": "q1-m14-l1-opt3", "text": "Pendapat", "isCorrect": false, "wordId": "pendapat" },
+        { "id": "q1-m14-l1-opt4", "text": "Alasan", "isCorrect": false, "wordId": "alasan" }
+      ],
+      "explanation": "'Setuju' is het woord om aan te geven dat je het ergens mee eens bent."
+    },
+    {
+      "id": "q2-m14-l1-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Apa ___ -mu ora setuju?' (Wat is je reden om het niet eens te zijn?)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["alasan"],
+      "explanation": "'Alasan' betekent reden of argument. Mbak Intan vraagt naar Budi's reden."
+    }
+  ]
+}

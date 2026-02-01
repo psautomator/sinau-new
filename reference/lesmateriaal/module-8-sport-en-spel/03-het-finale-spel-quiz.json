@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m8-l3",
+  "title": "Module 8: Les 3 Quiz - De Finale",
+  "description": "Test je kennis over sportiviteit.",
+  "questions": [
+    {
+      "id": "q1-m8-l3-mcq",
+      "order": 1,
+      "questionText": "Wat is het Javaanse woord voor 'winnen'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m8-l3-opt1", "text": "Menang", "isCorrect": true, "wordId": "menang" },
+        { "id": "q1-m8-l3-opt2", "text": "Kalah", "isCorrect": false, "wordId": "kalah" },
+        { "id": "q1-m8-l3-opt3", "text": "Kompak", "isCorrect": false, "wordId": "kompak" },
+        { "id": "q1-m8-l3-opt4", "text": "Semangat", "isCorrect": false, "wordId": "semangat" }
+      ],
+      "explanation": "'Menang' betekent winnen, terwijl 'kalah' verliezen betekent."
+    },
+    {
+      "id": "q2-m8-l3-mcq-culture",
+      "order": 2,
+      "questionText": "Wat is een teken van goede sportiviteit na een wedstrijd, volgens de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m8-l3-opt1", "text": "De winnaar feliciteren en een compliment geven.", "isCorrect": true },
+        { "id": "q2-m8-l3-opt2", "text": "Boos weglopen als je verliest.", "isCorrect": false },
+        { "id": "q2-m8-l3-opt3", "text": "Alleen je eigen team feliciteren.", "isCorrect": false },
+        { "id": "q2-m8-l3-opt4", "text": "De scheidsrechter de schuld geven.", "isCorrect": false }
+      ],
+      "explanation": "Budi, de verliezer, feliciteert Siti's team ('Selamat'), en Siti geeft een compliment terug. Dit toont wederzijds respect."
+    }
+  ]
+}

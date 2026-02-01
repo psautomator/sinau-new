@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "deg-degan",
+    "dutch": "nerveus, hartkloppingen",
+    "aiHint": "anxious person",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku deg-degan sadurunge ujian.",
+    "exampleSentenceDutch": "Ik ben nerveus voor het examen.",
+    "notes": "Een onomatopee die het geluid van een kloppend hart nabootst.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "spanning", "emotie"]
+  },
+  {
+    "javanese": "guru",
+    "dutch": "leraar",
+    "aiHint": "teacher classroom",
+    "audioJavanese": "/audio/uploads/guru.mp3",
+    "category": "Beroep",
+    "exampleSentenceJavanese": "Guru Basa Jawa iku sabar.",
+    "exampleSentenceDutch": "De leraar Javaans is geduldig.",
+    "notes": "Een zeer gerespecteerd beroep.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["beroep", "educatie", "school"]
+  },
+  {
+    "javanese": "sekolah",
+    "dutch": "school",
+    "aiHint": "school building",
+    "audioJavanese": null,
+    "category": "Plaatsen",
+    "exampleSentenceJavanese": "Aku lunga menyang sekolah.",
+    "exampleSentenceDutch": "Ik ga naar school.",
+    "notes": "",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["school", "gebouw"]
+  },
+   {
+    "javanese": "murid",
+    "dutch": "leerling",
+    "aiHint": "student classroom",
+    "audioJavanese": null,
+    "category": "Personen",
+    "exampleSentenceJavanese": "Aku murid anyar.",
+    "exampleSentenceDutch": "Ik ben een nieuwe leerling.",
+    "notes": "",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["school", "persoon"]
+  },
+  {
+    "javanese": "hormat",
+    "dutch": "respect",
+    "aiHint": "person bowing",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Kita kudu hormat marang guru.",
+    "exampleSentenceDutch": "We moeten respect hebben voor de leraar.",
+    "notes": "Een kernwaarde in de Javaanse cultuur.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["cultuur", "respect", "concept"]
+  }
+]

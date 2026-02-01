@@ -1,0 +1,54 @@
+[
+  {
+    "javanese": "larang",
+    "dutch": "duur",
+    "aiHint": "expensive price tag",
+    "audioJavanese": "/audio/uploads/larang.mp3",
+    "category": "Economie",
+    "exampleSentenceJavanese": "Rega klambi iki larang banget.",
+    "exampleSentenceDutch": "De prijs van dit hemd is erg duur.",
+    "notes": "De beleefde (Krama) vorm is 'awis'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["prijs", "kosten"]
+  },
+  {
+    "javanese": "nganyang",
+    "dutch": "afdingen",
+    "aiHint": "bargaining market",
+    "audioJavanese": "/audio/uploads/anyang.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Ibu pinter nganyang ing pasar.",
+    "exampleSentenceDutch": "Moeder is goed in afdingen op de markt.",
+    "notes": "Een veelvoorkomende en geaccepteerde praktijk op traditionele markten.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["handel", "actie", "cultuur"]
+  },
+  {
+    "javanese": "awis",
+    "dutch": "duur (beleefd)",
+    "aiHint": "expensive jewelry",
+    "audioJavanese": "/audio/uploads/awis.mp3",
+    "category": "Economie",
+    "exampleSentenceJavanese": "Reganipun awis sanget.",
+    "exampleSentenceDutch": "De prijs is erg duur.",
+    "notes": "Krama-vorm van 'larang'. Gebruikt in beleefde onderhandelingen.",
+    "level": "A2",
+    "formality": "KramaMadya",
+    "tags": ["prijs", "kosten", "krama"]
+  },
+  {
+    "javanese": "kirang",
+    "dutch": "minder (beleefd)",
+    "aiHint": "less items",
+    "audioJavanese": "/audio/uploads/kirang.mp3",
+    "category": "Hoeveelheid",
+    "exampleSentenceJavanese": "Saged kirang sekedhik?",
+    "exampleSentenceDutch": "Kan het een beetje minder?",
+    "notes": "Krama-vorm van 'kurang'. Essentieel woord bij het afdingen.",
+    "level": "A1",
+    "formality": "KramaMadya",
+    "tags": ["hoeveelheid", "negatief", "krama", "onderhandelen"]
+  }
+]

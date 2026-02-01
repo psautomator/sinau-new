@@ -1,0 +1,51 @@
+
+{
+  "id": "quiz-m1-l3",
+  "title": "Module 1: Les 3 Quiz - Een Compliment Geven",
+  "description": "Test je kennis van de derde les.",
+  "questions": [
+    {
+      "id": "q1-m1-l3-mcq",
+      "order": 1,
+      "questionText": "Wat is de culturele betekenis van de uitdrukking 'wani nyoba'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m1-l3-opt1", "text": "Dat je altijd moet winnen.", "isCorrect": false },
+        { "id": "q1-m1-l3-opt2", "text": "Dat de inspanning om iets te proberen belangrijker is dan het resultaat.", "isCorrect": true, "wordId": "wani nyoba" },
+        { "id": "q1-m1-l3-opt3", "text": "Dat je geen fouten mag maken.", "isCorrect": false },
+        { "id": "q1-m1-l3-opt4", "text": "Dat alleen slimme ('pinter') mensen het mogen proberen.", "isCorrect": false }
+      ],
+      "explanation": "'Wani nyoba' betekent 'durven proberen' en benadrukt dat de inzet en moed om iets nieuws te leren worden gewaardeerd, zelfs als je fouten maakt."
+    },
+    {
+      "id": "q2-m1-l3-match",
+      "order": 2,
+      "questionText": "Combineer het Javaanse compliment met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Apik tenan"}, 
+        {"value": "Bener"}, 
+        {"value": "Pinter"}
+      ],
+      "matchItemsRight": [
+        {"value": "Echt goed"}, 
+        {"value": "Juist, correct"}, 
+        {"value": "Slim"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor deze complimenten uit de les."
+    },
+    {
+        "id": "q3-m1-l3-context",
+        "order": 3,
+        "questionText": "In de dialoog zegt de lerares: 'Pengucapanmu wis bener.' Wat betekent 'bener' hier?",
+        "questionType": "MULTIPLE_CHOICE",
+        "options": [
+          { "id": "q3-m1-l3-opt1", "text": "snel", "isCorrect": false },
+          { "id": "q3-m1-l3-opt2", "text": "fout", "isCorrect": false },
+          { "id": "q3-m1-l3-opt3", "text": "luid", "isCorrect": false },
+          { "id": "q3-m1-l3-opt4", "text": "correct/juist", "isCorrect": true, "wordId": "bener"}
+        ],
+        "explanation": "De lerares complimenteert Siti dat haar uitspraak ('pengucapanmu') al juist ('bener') is."
+    }
+  ]
+}

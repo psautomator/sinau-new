@@ -1,0 +1,107 @@
+
+[
+    {
+        "javanese": "sekolah",
+        "dutch": "school",
+        "aiHint": "school building",
+        "audioJavanese": null,
+        "category": "Plaatsen",
+        "exampleSentenceJavanese": "Anak-anak padha menyang sekolah.",
+        "exampleSentenceDutch": "De kinderen gaan naar school.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["school", "gebouw", "educatie"]
+    },
+    {
+        "javanese": "kelas",
+        "dutch": "klas",
+        "aiHint": "classroom students",
+        "audioJavanese": null,
+        "category": "School",
+        "exampleSentenceJavanese": "Kelas iki resik lan padhang.",
+        "exampleSentenceDutch": "Deze klas is schoon en licht.",
+        "notes": "Leenwoord uit het Nederlands.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["school", "locatie"]
+    },
+    {
+        "javanese": "guru",
+        "dutch": "leraar",
+        "aiHint": "teacher classroom",
+        "audioJavanese": "/audio/uploads/guru.mp3",
+        "category": "Beroep",
+        "exampleSentenceJavanese": "Guruku sabar banget.",
+        "exampleSentenceDutch": "Mijn leraar is erg geduldig.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["school", "beroep"]
+    },
+    {
+        "javanese": "murid",
+        "dutch": "leerling",
+        "aiHint": "student classroom",
+        "audioJavanese": null,
+        "category": "Personen",
+        "exampleSentenceJavanese": "Aku murid ing kelas enem.",
+        "exampleSentenceDutch": "Ik ben een leerling in de zesde klas.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["school", "persoon"]
+    },
+    {
+        "javanese": "buku",
+        "dutch": "boek",
+        "aiHint": "book reading",
+        "audioJavanese": "/audio/uploads/buku.mp3",
+        "category": "School",
+        "exampleSentenceJavanese": "Iki bukuku sing anyar.",
+        "exampleSentenceDutch": "Dit is mijn nieuwe boek.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["school", "object", "materiaal"]
+    },
+    {
+        "javanese": "potlot",
+        "dutch": "potlood",
+        "aiHint": "pencil drawing",
+        "audioJavanese": "/audio/uploads/potlot.mp3",
+        "category": "School",
+        "exampleSentenceJavanese": "Aku njaluk potlotmu.",
+        "exampleSentenceDutch": "Ik leen jouw potlood.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["school", "object", "materiaal"]
+    },
+    {
+        "javanese": "papan tulis",
+        "dutch": "schoolbord",
+        "aiHint": "chalkboard classroom",
+        "audioJavanese": null,
+        "category": "School",
+        "exampleSentenceJavanese": "Guru nulis ing papan tulis.",
+        "exampleSentenceDutch": "De leraar schrijft op het schoolbord.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["school", "object", "materiaal"]
+    },
+    {
+        "javanese": "deg-degan",
+        "dutch": "nerveus",
+        "aiHint": "anxious person",
+        "audioJavanese": null,
+        "category": "Gevoel",
+        "exampleSentenceJavanese": "Atiku deg-degan arep ujian.",
+        "exampleSentenceDutch": "Mijn hart klopt snel voor het examen.",
+        "notes": null,
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["gevoel", "emotie"]
+    }
+]

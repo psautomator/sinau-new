@@ -1,0 +1,42 @@
+
+{
+  "id": "quiz-m13-l5",
+  "title": "Les 5 Quiz: Woordenschat Oefenen",
+  "description": "Test je kennis van dieren en planten.",
+  "questions": [
+    {
+      "id": "q1-m13-l5-match",
+      "order": 1,
+      "questionText": "Combineer het dier met de juiste Javaanse naam.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Hond"},
+        {"value": "Waterbuffel"},
+        {"value": "Kat"},
+        {"value": "Paard"}
+      ],
+      "matchItemsRight": [
+        {"value": "Asu"},
+        {"value": "Kebo"},
+        {"value": "Kucing"},
+        {"value": "Jaran"}
+      ],
+      "explanation": "Dit zijn de correcte namen voor deze dieren."
+    },
+    {
+      "id": "q2-m13-l5-mcq",
+      "order": 2,
+      "questionText": "Wat is het Javaanse woord voor 'bloem'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m13-l5-opt1", "text": "Suket", "isCorrect": false, "wordId": "suket" },
+        { "id": "q2-m13-l5-opt2", "text": "Wit", "isCorrect": false, "wordId": "wit" },
+        { "id": "q2-m13-l5-opt3", "text": "Kembang", "isCorrect": true, "wordId": "kembang" },
+        { "id": "q2-m13-l5-opt4", "text": "Alas", "isCorrect": false, "wordId": "alas" }
+      ],
+      "explanation": "Het algemene woord voor 'bloem' is 'kembang'."
+    }
+  ]
+}
+
+

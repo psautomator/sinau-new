@@ -1,0 +1,41 @@
+
+{
+  "id": "quiz-m2-l4",
+  "title": "Module 2: Les 4 Quiz - Woorden en Zinnen Oefenen",
+  "description": "Test je kennis van de vocabulaire over familie en huis.",
+  "questions": [
+    {
+      "id": "q1-m2-l4-match",
+      "order": 1,
+      "questionText": "Combineer het familielid met de juiste Javaanse term.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Vader"}, 
+        {"value": "Moeder"}, 
+        {"value": "Kind"},
+        {"value": "Jongere broer/zus"}
+      ],
+      "matchItemsRight": [
+        {"value": "Bapak"}, 
+        {"value": "Ibu"}, 
+        {"value": "Anak"},
+        {"value": "Adhik"}
+      ],
+      "explanation": "Dit zijn de correcte termen voor deze directe familieleden."
+    },
+    {
+      "id": "q2-m2-l4-audio",
+      "order": 2,
+      "questionText": "Luister naar het woord en kies de juiste vertaling.",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/pawon.mp3",
+      "options": [
+        { "id": "q2-m2-l4-opt1", "text": "Huis", "isCorrect": false },
+        { "id": "q2-m2-l4-opt2", "text": "Kamer", "isCorrect": false },
+        { "id": "q2-m2-l4-opt3", "text": "Keuken", "isCorrect": true, "wordId": "pawon" },
+        { "id": "q2-m2-l4-opt4", "text": "Tafel", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'pawon', wat 'keuken' betekent."
+    }
+  ]
+}

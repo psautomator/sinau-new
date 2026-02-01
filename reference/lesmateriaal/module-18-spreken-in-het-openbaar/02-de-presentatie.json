@@ -1,0 +1,29 @@
+
+[
+  {
+    "javanese": "persuasif",
+    "dutch": "overtuigend",
+    "aiHint": "convincing speech",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Pidatonipun persuasif sanget.",
+    "exampleSentenceDutch": "Zijn/haar toespraak is erg overtuigend.",
+    "notes": "Leenwoord, beschrijft de kwaliteit van het overtuigen.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["eigenschap", "communicatie", "retoriek"]
+  },
+  {
+    "javanese": "jiwa",
+    "dutch": "ziel / geest",
+    "aiHint": "soul spirit",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Musik iku bisa ngademké jiwa.",
+    "exampleSentenceDutch": "Muziek kan de ziel kalmeren.",
+    "notes": "Verwijst naar de innerlijke essentie of geest van een persoon of cultuur.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "spiritualiteit", "filosofie"]
+  }
+]

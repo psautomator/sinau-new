@@ -1,0 +1,46 @@
+
+{
+  "id": "quiz-m12-l2",
+  "title": "Module 12: Les 2 Quiz - Collega's en Taken",
+  "description": "Test je kennis over beroepen en werkwoorden.",
+  "questions": [
+    {
+      "id": "q1-m12-l2-mcq",
+      "order": 1,
+      "questionText": "Wie is de `tukang` in het verhaal en wat doet hij?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m12-l2-opt1", "text": "Een leraar die op bezoek komt.", "isCorrect": false },
+        { "id": "q1-m12-l2-opt2", "text": "Een vakman die de airco repareert.", "isCorrect": true, "wordId": "tukang" },
+        { "id": "q1-m12-l2-opt3", "text": "Siti's collega die koffie maakt.", "isCorrect": false },
+        { "id": "q1-m12-l2-opt4", "text": "Pak Budi, de begeleider.", "isCorrect": false }
+      ],
+      "explanation": "Een 'tukang' is een vakman. In de dialoog komt hij de kapotte airco repareren ('ndandosi')."
+    },
+    {
+      "id": "q2-m12-l2-match",
+      "order": 2,
+      "questionText": "Combineer het werkwoord met de juiste omschrijving.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "ndandani"},
+        {"value": "damel"},
+        {"value": "ngresiki"}
+      ],
+      "matchItemsRight": [
+        {"value": "Repareren"},
+        {"value": "Maken (beleefd)"},
+        {"value": "Schoonmaken"}
+      ],
+      "explanation": "Dit zijn correcte vertalingen voor de werk-gerelateerde werkwoorden uit de les."
+    },
+    {
+      "id": "q3-m12-l2-fib",
+      "order": 3,
+      "questionText": "Het achtervoegsel `-i` wordt vaak gebruikt om een herhaling van een actie aan te duiden, of om aan te geven dat een actie op een ___ wordt uitgevoerd.",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["plaats", "locatie"],
+      "explanation": "Volgens de grammaticatip heeft het achtervoegsel `-i` vaak betrekking op de plaats van de handeling, zoals in 'nanduri sawah' (een sawah beplanten)."
+    }
+  ]
+}

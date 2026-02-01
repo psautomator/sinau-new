@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m15-l2",
+  "title": "Module 15: Les 2 Quiz - De Hebzucht",
+  "description": "Test je kennis over het conflict in de fabel.",
+  "questions": [
+    {
+      "id": "q1-m15-l2-mcq",
+      "order": 1,
+      "questionText": "Welke negatieve eigenschap neemt de overhand bij de hond?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m15-l2-opt1", "text": "Domheid (goblok)", "isCorrect": false },
+        { "id": "q1-m15-l2-opt2", "text": "Angst (wedi)", "isCorrect": false },
+        { "id": "q1-m15-l2-opt3", "text": "Hebzucht (serakah)", "isCorrect": true, "wordId": "serakah" },
+        { "id": "q1-m15-l2-opt4", "text": "Luiheid (kesed)", "isCorrect": false }
+      ],
+      "explanation": "Het verhaal illustreert hoe de hond `serakah` (hebzuchtig) wordt als hij denkt dat hij meer kan krijgen."
+    },
+    {
+      "id": "q2-m15-l2-fib",
+      "order": 2,
+      "questionText": "De hond zag zijn eigen ___ in het water, maar dacht dat het een andere hond was.",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["spiegelbeeld", "ayang-ayangané"],
+      "explanation": "De hond zag zijn eigen spiegelbeeld ('ayang-ayangané') en werd daardoor hebzuchtig."
+    }
+  ]
+}

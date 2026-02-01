@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "pakdhe",
+    "dutch": "Oom (oudere broer van ouder)",
+    "aiHint": "oom familielid",
+    "audioJavanese": "/audio/uploads/pak_dhe.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Kula badhe sowan dhateng Pakdhe.",
+    "exampleSentenceDutch": "Ik ga op bezoek bij oom.",
+    "notes": "Samentrekking van 'Bapak Gedhe' (grote vader). Respectvolle term.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": [ "familie", "aanspreekvorm", "relaties" ]
+  },
+  {
+    "javanese": "budhe",
+    "dutch": "Tante (oudere zus van ouder)",
+    "aiHint": "aunt family",
+    "audioJavanese": "/audio/uploads/bude.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Budheku pinter masak.",
+    "exampleSentenceDutch": "Mijn tante is goed in koken.",
+    "notes": "Samentrekking van 'Ibu Gedhe' (grote moeder). Respectvolle term.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": [ "familie", "aanspreekvorm", "relaties" ]
+  },
+  {
+    "javanese": "paklik",
+    "dutch": "Oom (jongere broer van ouder)",
+    "aiHint": "uncle family member",
+    "audioJavanese": null,
+    "category": "Familie",
+    "exampleSentenceJavanese": "Paklikku kerja ing kantor pos.",
+    "exampleSentenceDutch": "Mijn oom werkt op het postkantoor.",
+    "notes": "Samentrekking van 'Bapak Cilik' (kleine vader).",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["familie", "aanspreekvorm", "relaties"]
+  },
+  {
+    "javanese": "bulik",
+    "dutch": "Tante (jongere zus van ouder)",
+    "aiHint": "aunt family",
+    "audioJavanese": null,
+    "category": "Familie",
+    "exampleSentenceJavanese": "Aku arep dolan menyang omahé Bulik.",
+    "exampleSentenceDutch": "Ik ga op bezoek bij mijn tante.",
+    "notes": "Samentrekking van 'Ibu Cilik' (kleine moeder).",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["familie", "aanspreekvorm", "relaties"]
+  }
+]

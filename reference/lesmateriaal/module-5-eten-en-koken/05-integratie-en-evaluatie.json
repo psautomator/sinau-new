@@ -1,0 +1,97 @@
+
+[
+    {
+        "javanese": "pawon",
+        "dutch": "keuken",
+        "aiHint": "kitchen interior",
+        "audioJavanese": "/audio/uploads/pawon.mp3",
+        "category": "Locaties",
+        "exampleSentenceJavanese": "Ibu lagi masak ing pawon.",
+        "exampleSentenceDutch": "Moeder is aan het koken in de keuken.",
+        "notes": "Het hart van het Javaanse huis.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["huis", "koken", "locatie"]
+    },
+    {
+        "javanese": "bumbu",
+        "dutch": "kruiden / specerijen",
+        "aiHint": "spices herbs",
+        "audioJavanese": "/audio/uploads/bumbu.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Bumbu iki nggawe masakan luwih enak.",
+        "exampleSentenceDutch": "Deze kruiden maken het gerecht lekkerder.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["eten", "ingrediënt", "smaak"]
+    },
+    {
+        "javanese": "masak",
+        "dutch": "koken",
+        "aiHint": "person cooking",
+        "audioJavanese": "/audio/uploads/masak.mp3",
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Sapa sing arep masak dina iki?",
+        "exampleSentenceDutch": "Wie gaat er vandaag koken?",
+        "notes": "Algemeen werkwoord voor koken.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["koken", "eten", "activiteit"]
+    },
+    {
+        "javanese": "ngiris",
+        "dutch": "snijden",
+        "aiHint": "cutting vegetables",
+        "audioJavanese": "/audio/uploads/ngiris.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku lagi ngiris bawang.",
+        "exampleSentenceDutch": "Ik ben ui aan het snijden.",
+        "notes": "Actieve vorm van 'iris'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["koken", "actie"]
+    },
+    {
+        "javanese": "nggoreng",
+        "dutch": "bakken / frituren",
+        "aiHint": "frying pan",
+        "audioJavanese": "/audio/uploads/nggoreng.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku arep nggoreng iwak.",
+        "exampleSentenceDutch": "Ik ga vis bakken.",
+        "notes": "Actieve vorm van 'goreng'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["koken", "actie"]
+    },
+    {
+        "javanese": "enak",
+        "dutch": "lekker (eten)",
+        "aiHint": "delicious food",
+        "audioJavanese": "/audio/uploads/enak.mp3",
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Masakan iki énak tenan.",
+        "exampleSentenceDutch": "Dit gerecht is echt lekker.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [
+            "smaak",
+            "eten"
+        ]
+    },
+    {
+        "javanese": "monggo",
+        "dutch": "alstublieft / ga uw gang",
+        "aiHint": "inviting gesture",
+        "audioJavanese": "/audio/uploads/mangga.mp3",
+        "category": "Uitdrukking",
+        "exampleSentenceJavanese": "Monggo, dipun dhahar.",
+        "exampleSentenceDutch": "Alstublieft, eet u maar.",
+        "notes": "Een zeer veelgebruikt en beleefd woord om iets aan te bieden of iemand uit te nodigen.",
+        "level": "A1",
+        "formality": "KramaMadya",
+        "tags": ["beleefdheid", "uitnodiging", "krama"]
+    }
+]

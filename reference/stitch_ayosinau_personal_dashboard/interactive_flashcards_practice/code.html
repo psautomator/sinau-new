@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSinau - Flashcards Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bee79",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    boxShadow: {
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+                        'float': '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-panel {
+            background: rgba(26, 44, 34, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-[#0d1b13] dark:text-gray-100 overflow-x-hidden selection:bg-primary selection:text-[#0d1b13]">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-[#e7f3ec] dark:border-[#1f3b2d] bg-white/80 dark:bg-[#102217]/80 backdrop-blur-md">
+<div class="px-4 md:px-10 py-3 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight">AyoSinau</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Decks</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dictionary</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Community</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex gap-2">
+<button class="group flex items-center justify-center rounded-xl h-10 bg-[#e7f3ec] dark:bg-[#1f3b2d] hover:bg-primary/20 transition-colors px-3 gap-2">
+<span class="material-symbols-outlined text-[#0d1b13] dark:text-primary text-[20px] group-hover:scale-110 transition-transform">local_fire_department</span>
+<span class="text-sm font-bold text-[#0d1b13] dark:text-white">12</span>
+</button>
+<button class="group flex items-center justify-center rounded-xl h-10 bg-[#e7f3ec] dark:bg-[#1f3b2d] hover:bg-primary/20 transition-colors w-10">
+<span class="material-symbols-outlined text-[#0d1b13] dark:text-primary text-[20px] group-hover:rotate-12 transition-transform">notifications</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-[#1f3b2d] shadow-sm" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTZnwed105NCD8p0l21cGwQ3CC6xF8ZwE64SXgpAwmEEVONjYsB-24PC7-AVeV2C5YuoyfxMMDLZOzkONoay-c5HDc4Sq1J5dEEicc0x17Z-z5zjwHuspFgLIZLZp4k-12Pt8dOu4am1zIQttDCOGOAs2fcPTbD_A_EDf3Dp0aJcUtsiiY6ZjSlgMM95vjnm9VPLkAybr9wOoEZUnaeyBWz-CD2BbQ69ush5wqjpL5ZomcG9nT4kEn6z8zuk-BPYfksFp2GpP6izw");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-start py-8 px-4 sm:px-6">
+<div class="w-full max-w-[800px] flex flex-col gap-6">
+<!-- Progress Section -->
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<h1 class="text-xl font-bold">Daily Mix: Javanese Greetings</h1>
+<span class="text-sm font-medium text-[#4c9a6b] dark:text-[#6cc58e]">5 of 20 cards</span>
+</div>
+<div class="h-3 w-full bg-[#cfe7d9] dark:bg-[#1f3b2d] rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<!-- Flashcard Area -->
+<div class="perspective-1000 w-full mt-4">
+<div class="relative w-full bg-white dark:bg-[#1a2c22] rounded-3xl shadow-float overflow-hidden border border-[#e7f3ec] dark:border-[#1f3b2d]">
+<!-- Card Content -->
+<div class="flex flex-col">
+<!-- Front / Top Section (Question) -->
+<div class="p-8 sm:p-10 flex flex-col items-center justify-center gap-6 border-b border-dashed border-[#e7f3ec] dark:border-[#2d4a3b]">
+<div class="flex items-center gap-4">
+<h2 class="text-4xl sm:text-5xl font-extrabold text-center tracking-tight text-[#0d1b13] dark:text-white">
+                                    Matur Nuwun
+                                </h2>
+<button class="rounded-full size-12 bg-[#e7f3ec] dark:bg-[#2d4a3b] hover:bg-primary hover:text-[#0d1b13] text-[#0d1b13] dark:text-primary transition-all flex items-center justify-center group shadow-sm">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">volume_up</span>
+</button>
+</div>
+<span class="px-3 py-1 rounded-full bg-[#f0f7f4] dark:bg-[#1f3b2d] text-xs font-semibold text-[#4c9a6b] dark:text-[#6cc58e] tracking-wide uppercase">
+                                Javanese • Ngoko Alus
+                            </span>
+</div>
+<!-- Back / Bottom Section (Answer) -->
+<div class="p-6 sm:p-8 bg-[#fbfdfc] dark:bg-[#15261d]/50 flex flex-col md:flex-row gap-6 items-center md:items-start animate-fade-in">
+<!-- Context Image -->
+<div class="w-full md:w-1/3 aspect-[4/3] rounded-2xl bg-gray-100 dark:bg-gray-800 overflow-hidden shadow-inner flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center transition-transform hover:scale-105 duration-700" data-alt="Illustration of a young person bowing politely to an elder with hands clasped together" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB07VWzV2QOjTC9e-eyO5MQvj70fMJ72BASAPrsJb21SnBbwxXbZfV0GVc6YT_IJXI588WPo882CDp7aUDrStRSCs6X80tnOV9Fv2W3nTk4CpG4zoz41K2W9S7S3HCrl3crrYeHgA2uEE5AW4c0xpJDFmLZ_E1Du7UQ1DVQBCh-KwBZJVk9FSad2dhVN4gCGdZnuRgB5RfBVIRL8Gnqtl_DCLLofha4UXffrc_mZ3S7TfjQ9v_uzagjKOBw1xEAhHWaUL6nunkumLE");'>
+</div>
+</div>
+<!-- Text Content -->
+<div class="flex flex-col gap-4 flex-grow text-center md:text-left w-full">
+<div>
+<p class="text-sm font-medium text-gray-400 uppercase tracking-wider mb-1">Dutch Translation</p>
+<p class="text-3xl font-bold text-[#0d1b13] dark:text-white">Bedankt</p>
+</div>
+<div class="bg-[#eefcf4] dark:bg-[#1f3b2d] p-4 rounded-xl border-l-4 border-primary">
+<div class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-primary text-sm mt-1">lightbulb</span>
+<div class="flex flex-col gap-1">
+<p class="text-xs font-bold text-primary uppercase">Cultural Note</p>
+<p class="text-sm text-[#0d1b13] dark:text-gray-200 leading-relaxed">
+                                                This phrase is used to express gratitude, especially to elders or in formal settings. It is accompanied by a slight bow of the head.
+                                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interaction Controls -->
+<div class="flex flex-col items-center gap-6 mt-2">
+<!-- Rating Buttons -->
+<div class="flex flex-wrap justify-center gap-3 w-full">
+<button class="flex-1 min-w-[120px] h-14 rounded-xl border-2 border-transparent bg-[#ffecec] dark:bg-[#3d1818] text-[#d32f2f] dark:text-[#ff8a80] hover:border-[#d32f2f] hover:scale-[1.02] active:scale-95 transition-all font-bold text-base flex flex-col items-center justify-center leading-none gap-1">
+<span>Hard</span>
+<span class="text-[10px] opacity-60 font-normal">1</span>
+</button>
+<button class="flex-1 min-w-[120px] h-14 rounded-xl border-2 border-transparent bg-[#eef6ff] dark:bg-[#102a45] text-[#1976d2] dark:text-[#64b5f6] hover:border-[#1976d2] hover:scale-[1.02] active:scale-95 transition-all font-bold text-base flex flex-col items-center justify-center leading-none gap-1">
+<span>Good</span>
+<span class="text-[10px] opacity-60 font-normal">2</span>
+</button>
+<button class="flex-1 min-w-[120px] h-14 rounded-xl border-2 border-transparent bg-[#e7fbf0] dark:bg-[#163825] text-[#00a84e] dark:text-primary hover:border-primary hover:scale-[1.02] active:scale-95 transition-all font-bold text-base flex flex-col items-center justify-center leading-none gap-1 shadow-[0_4px_0_0_#21c662] dark:shadow-[0_4px_0_0_#1a9c4c] translate-y-[-4px] hover:translate-y-[-6px] active:translate-y-[0px] active:shadow-none">
+<span>Easy</span>
+<span class="text-[10px] opacity-60 font-normal">3</span>
+</button>
+</div>
+<!-- Secondary Actions / Helper Text -->
+<div class="flex items-center gap-6 text-sm text-gray-400 dark:text-gray-500">
+<button class="flex items-center gap-2 hover:text-[#0d1b13] dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[18px]">undo</span>
+                        Undo
+                    </button>
+<div class="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></div>
+<div class="flex items-center gap-2">
+<span class="border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5 text-xs font-mono">Space</span>
+<span>to flip</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

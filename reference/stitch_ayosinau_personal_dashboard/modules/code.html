@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSinau - Modules Overview</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#34D399", // Emerald-400 from screenshot
+              "primary-hover": "#10B981", // Emerald-500
+              "primary-content": "#064E3B", // Emerald-900 for text on primary
+              "background-light": "#F3F4F6", // Gray-100
+              "background-dark": "#111827", // Gray-900
+              "surface-light": "#FFFFFF",
+              "surface-dark": "#1F2937", // Gray-800
+            },
+            fontFamily: {
+              display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem", // 12px
+            },
+          },
+        },
+      };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D1D5DB; 
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #374151; 
+        }.batik-pattern {
+            background-color: transparent;
+            background-image: radial-gradient(#34D399 0.5px, transparent 0.5px), radial-gradient(#34D399 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 font-display transition-colors duration-200 antialiased h-screen flex overflow-hidden">
+<aside class="w-64 bg-surface-light dark:bg-surface-dark border-r border-gray-200 dark:border-gray-700 flex flex-col h-full flex-shrink-0 transition-colors duration-200 hidden lg:flex">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-green-600 flex items-center justify-center text-white shadow-lg shadow-green-500/20">
+<span class="material-icons-round text-2xl">school</span>
+</div>
+<div>
+<h1 class="font-bold text-xl text-gray-900 dark:text-white leading-tight">AyoSinau</h1>
+<p class="text-xs text-primary font-medium">Javanese Learning</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 py-4 overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-DEFAULT transition-colors group" href="#">
+<span class="material-icons-round text-xl group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-primary/10 text-primary dark:text-primary rounded-DEFAULT transition-colors shadow-sm ring-1 ring-primary/20" href="#">
+<span class="material-icons-round text-xl">menu_book</span>
+<span class="font-medium">Modules</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-DEFAULT transition-colors group" href="#">
+<span class="material-icons-round text-xl group-hover:text-primary transition-colors">style</span>
+<span class="font-medium">Flashcards</span>
+</a>
+<a class="flex items-center justify-between px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-DEFAULT transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons-round text-xl group-hover:text-primary transition-colors">smart_toy</span>
+<span class="font-medium">AI Tutor</span>
+</div>
+<span class="text-[10px] font-bold bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300 px-2 py-0.5 rounded-full">BETA</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-DEFAULT transition-colors group" href="#">
+<span class="material-icons-round text-xl group-hover:text-primary transition-colors">emoji_events</span>
+<span class="font-medium">Achievements</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-DEFAULT transition-colors group" href="#">
+<span class="material-icons-round text-xl group-hover:text-primary transition-colors">leaderboard</span>
+<span class="font-medium">Leaderboard</span>
+</a>
+<div class="pt-4 mt-4 border-t border-gray-100 dark:border-gray-700">
+<a class="flex items-center gap-3 px-4 py-3 text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 rounded-DEFAULT transition-colors group" href="#">
+<span class="material-icons-round text-xl group-hover:text-primary transition-colors">admin_panel_settings</span>
+<span class="font-medium">Admin Panel</span>
+</a>
+</div>
+</nav>
+<div class="p-4 border-t border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-3 p-3 rounded-DEFAULT hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors cursor-pointer">
+<div class="w-10 h-10 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm">
+                    N
+                </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-gray-900 dark:text-white truncate">Budi Santoso</p>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">Free Account</p>
+</div>
+<button class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+<span class="material-icons-round text-xl">settings</span>
+</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto relative">
+<div class="absolute inset-0 batik-pattern pointer-events-none z-0"></div>
+<div class="relative z-10 p-6 lg:p-10 max-w-7xl mx-auto">
+<div class="lg:hidden flex justify-between items-center mb-6">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-icons-round text-lg">school</span>
+</div>
+<h1 class="font-bold text-lg text-gray-900 dark:text-white">AyoSinau</h1>
+</div>
+<button class="p-2 text-gray-600 dark:text-gray-300">
+<span class="material-icons-round">menu</span>
+</button>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+<div>
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Ontdek de Modules</h2>
+<p class="text-gray-500 dark:text-gray-400">Select a course to continue learning Javanese.</p>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-2 bg-white dark:bg-surface-dark border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 px-4 py-2.5 rounded-DEFAULT shadow-sm hover:border-primary dark:hover:border-primary transition-colors">
+<span class="material-icons-round text-gray-400 text-xl">filter_list</span>
+<span class="font-medium text-sm">All Levels</span>
+<span class="material-icons-round text-gray-400 text-xl">expand_more</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 flex items-center justify-center">
+<span class="material-icons-round text-2xl">handshake</span>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold rounded-full uppercase tracking-wider">Start</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-snug">Module 1: Kennismaking &amp; Begroeting</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
+                        Aan het einde van deze module kun je: - Jezelf voorstellen in het Surinaams-Javaans. - Essentiële begroetingen gebruiken zoals 'sugeng rawuh' (welkom).
+                    </p>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">signal_cellular_alt</span>
+<span>Level A1</span>
+</div>
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">library_books</span>
+<span>7 Lessons</span>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400">
+<span>Progress</span>
+<span>0%</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary-hover text-primary-content font-bold rounded-DEFAULT shadow-md shadow-green-500/20 transition-colors flex items-center justify-center gap-2">
+                        Start Learning
+                        <span class="material-icons-round text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+<span class="material-icons-round text-2xl">family_restroom</span>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold rounded-full uppercase tracking-wider">Start</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-snug">Module 2: Familie &amp; Thuis</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
+                        Je directe familieleden correct benoemen. Bezittelijke voornaamwoorden gebruiken met achtervoegsels ('-ku', '-mu', '-é'). De basis van Javaanse omgangsvormen.
+                    </p>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">signal_cellular_alt</span>
+<span>Level A1</span>
+</div>
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">library_books</span>
+<span>5 Lessons</span>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400">
+<span>Progress</span>
+<span>0%</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary-hover text-primary-content font-bold rounded-DEFAULT shadow-md shadow-green-500/20 transition-colors flex items-center justify-center gap-2">
+                        Start Learning
+                        <span class="material-icons-round text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 flex items-center justify-center">
+<span class="material-icons-round text-2xl">storefront</span>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold rounded-full uppercase tracking-wider">Start</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-snug">Module 3: Op de Markt</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
+                        Basiswoorden voor etenswaren, kleuren en eigenschappen herkennen en gebruiken. Tellen van 1 tot 10 en de dagen van de week benoemen.
+                    </p>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">signal_cellular_alt</span>
+<span>Level A1</span>
+</div>
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">library_books</span>
+<span>6 Lessons</span>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400">
+<span>Progress</span>
+<span>0%</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary-hover text-primary-content font-bold rounded-DEFAULT shadow-md shadow-green-500/20 transition-colors flex items-center justify-center gap-2">
+                        Start Learning
+                        <span class="material-icons-round text-lg">arrow_forward</span>
+</button>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border border-gray-100 dark:border-gray-700 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-primary transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+<span class="material-icons-round text-2xl">restaurant_menu</span>
+</div>
+<span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 text-xs font-bold rounded-full uppercase tracking-wider">Start</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-snug">Module 5: Eten &amp; Koken</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
+                        Basis-ingrediënten en kookwerkwoorden benoemen, de culturele waarde van samen koken en gastvrijheid ('suguh') begrijpen.
+                    </p>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">signal_cellular_alt</span>
+<span>Level A1</span>
+</div>
+<div class="flex items-center gap-1.5 text-gray-600 dark:text-gray-400 text-sm font-medium">
+<span class="material-icons-round text-lg text-gray-400">library_books</span>
+<span>3 Lessons</span>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs font-semibold text-gray-500 dark:text-gray-400">
+<span>Progress</span>
+<span>0%</span>
+</div>
+<div class="h-2 w-full bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0 rounded-full"></div>
+</div>
+</div>
+<button class="w-full py-3 bg-primary hover:bg-primary-hover text-primary-content font-bold rounded-DEFAULT shadow-md shadow-green-500/20 transition-colors flex items-center justify-center gap-2">
+                        Start Learning
+                        <span class="material-icons-round text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="h-10"></div>
+</div>
+</main>
+<script>
+        // Check for saved theme preference or use system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+<button class="fixed bottom-6 right-6 w-12 h-12 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full shadow-lg flex items-center justify-center z-50 hover:scale-110 transition-transform" onclick="toggleTheme()">
+<span class="material-icons-round">brightness_4</span>
+</button>
+
+</body></html>

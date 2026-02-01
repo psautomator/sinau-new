@@ -1,0 +1,40 @@
+
+{
+  "id": "quiz-m18-l4",
+  "title": "Les 4 Quiz: Woordenschat Oefenen",
+  "description": "Test je kennis van de vocabulaire voor presenteren en debatteren.",
+  "questions": [
+    {
+      "id": "q1-m18-l4-match",
+      "order": 1,
+      "questionText": "Combineer de Javaanse term met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Pidato"},
+        {"value": "Pendapat"},
+        {"value": "Sanggah"},
+        {"value": "Persuasif"}
+      ],
+      "matchItemsRight": [
+        {"value": "Redevoering"},
+        {"value": "Mening"},
+        {"value": "Weerlegging"},
+        {"value": "Overtuigend"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor de kernwoorden van deze module."
+    },
+    {
+      "id": "q2-m18-l4-mcq",
+      "order": 2,
+      "questionText": "Welk woord beschrijft de innerlijke essentie of 'ziel' van een cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m18-l4-opt1", "text": "Rasa", "isCorrect": false, "wordId": "rasa" },
+        { "id": "q2-m18-l4-opt2", "text": "Argumentasi", "isCorrect": false, "wordId": "argumentasi" },
+        { "id": "q2-m18-l4-opt3", "text": "Jiwa", "isCorrect": true, "wordId": "jiwa" },
+        { "id": "q2-m18-l4-opt4", "text": "Identitas", "isCorrect": false, "wordId": "identitas" }
+      ],
+      "explanation": "'Jiwa' is het woord voor de ziel of de diepste geest van iets of iemand."
+    }
+  ]
+}

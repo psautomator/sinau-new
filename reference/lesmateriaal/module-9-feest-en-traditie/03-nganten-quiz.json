@@ -1,0 +1,42 @@
+
+{
+  "id": "quiz-m9-l3",
+  "title": "Module 9: Les 3 Quiz - Ngantèn (De Bruiloft)",
+  "description": "Test je begrip van het verhaal over de bruiloft.",
+  "questions": [
+    {
+      "id": "q1-m9-l3-mcq",
+      "order": 1,
+      "questionText": "Wat is het Javaanse woord voor 'bruidspaar'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m9-l3-opt1", "text": "Kawin", "isCorrect": false, "wordId": "kawin" },
+        { "id": "q1-m9-l3-opt2", "text": "Pesta", "isCorrect": false },
+        { "id": "q1-m9-l3-opt3", "text": "Ngantèn", "isCorrect": true, "wordId": "ngantèn" },
+        { "id": "q1-m9-l3-opt4", "text": "Tontonan", "isCorrect": false, "wordId": "tontonan" }
+      ],
+      "explanation": "'Ngantèn' is het specifieke woord voor het bruidspaar."
+    },
+    {
+      "id": "q2-m9-l3-mcq-context",
+      "order": 2,
+      "questionText": "Wat deden de vrouwen ('sing wédok-wédok') tijdens de réwangan volgens de eerste tekst?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m9-l3-opt1", "text": "Ze hielpen met zware taken.", "isCorrect": false },
+        { "id": "q2-m9-l3-opt2", "text": "Ze kookten lekker eten en deden de afwas.", "isCorrect": true },
+        { "id": "q2-m9-l3-opt3", "text": "Ze nodigden de gasten uit.", "isCorrect": false },
+        { "id": "q2-m9-l3-opt4", "text": "Ze keken naar de voorstelling.", "isCorrect": false }
+      ],
+      "explanation": "De tekst zegt: '...sing wédok-wédok pada masak énak-énakan lan saloké isah-isah', wat betekent dat de vrouwen kookten en de afwas deden."
+    },
+    {
+      "id": "q3-m9-l3-fib",
+      "order": 3,
+      "questionText": "Vul het ontbrekende woord in: 'Tontonané sampèk tekan ___, mulané ngantèné ora bisa turu.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["ésuk"],
+      "explanation": "Het entertainment ('tontonan') duurde tot de ochtend ('ésuk'), waardoor het bruidspaar niet kon slapen."
+    }
+  ]
+}

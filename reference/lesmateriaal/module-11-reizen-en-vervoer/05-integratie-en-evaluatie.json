@@ -1,0 +1,81 @@
+
+[
+  {
+    "javanese": "bis",
+    "dutch": "bus",
+    "aiHint": "city bus",
+    "audioJavanese": "/audio/uploads/bis.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Tim kita numpak bis.",
+    "exampleSentenceDutch": "Ons team neemt de bus.",
+    "notes": "Leenwoord uit het Nederlands.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["vervoer", "openbaar", "reizen"]
+  },
+  {
+    "javanese": "sepur",
+    "dutch": "trein",
+    "aiHint": "train on tracks",
+    "audioJavanese": "/audio/uploads/sepur.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Sepur iku luwih cepet tinimbang bis.",
+    "exampleSentenceDutch": "De trein is sneller dan de bus.",
+    "notes": "Leenwoord uit het Nederlands ('spoor').",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["vervoer", "spoorwegen", "reizen"]
+  },
+  {
+    "javanese": "kapal",
+    "dutch": "schip",
+    "aiHint": "large ship",
+    "audioJavanese": "/audio/uploads/kapal.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Kapal iku arep menyang Walanda.",
+    "exampleSentenceDutch": "Dat schip gaat naar Nederland.",
+    "notes": "Gebruikt voor grote boten of schepen.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["vervoer", "water", "zee"]
+  },
+  {
+    "javanese": "taksi",
+    "dutch": "taxi",
+    "aiHint": "yellow taxi",
+    "audioJavanese": "/audio/uploads/taksi.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Aku pesen taksi online.",
+    "exampleSentenceDutch": "Ik bestel een taxi online.",
+    "notes": "Leenwoord.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["vervoer", "stad", "taxi"]
+  },
+    {
+    "javanese": "dalan",
+    "dutch": "weg",
+    "aiHint": "asphalt road",
+    "audioJavanese": "/audio/uploads/dalan.mp3",
+    "category": "Infrastructuur",
+    "exampleSentenceJavanese": "Dalan iki alus.",
+    "exampleSentenceDutch": "Deze weg is glad/goed.",
+    "notes": "Algemeen woord voor weg of straat.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["verkeer", "infrastructuur", "route"]
+  },
+  {
+    "javanese": "mlaku",
+    "dutch": "lopen",
+    "aiHint": "person walking",
+    "audioJavanese": "/audio/uploads/mlaku.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku seneng mlaku-mlaku ing wayah sore.",
+    "exampleSentenceDutch": "Ik wandel graag in de namiddag.",
+    "notes": "De verdubbeling `mlaku-mlaku` betekent wandelen.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["beweging", "activiteit", "wandelen"]
+  }
+]

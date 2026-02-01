@@ -1,0 +1,43 @@
+
+{
+  "id": "quiz-m2-l1",
+  "title": "Module 2: Les 1 Quiz - Familie Voorstellen",
+  "description": "Test je kennis over familieleden en de culturele context.",
+  "questions": [
+    {
+      "id": "q1-m2-l1-mcq",
+      "order": 1,
+      "questionText": "Wat betekent het woord `sowan` in de Javaanse cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m2-l1-opt1", "text": "Een snel bezoek brengen", "isCorrect": false },
+        { "id": "q1-m2-l1-opt2", "text": "Een respectvol bezoek aan een ouder of hogergeplaatst persoon", "isCorrect": true, "wordId": "sowan" },
+        { "id": "q1-m2-l1-opt3", "text": "Samen eten", "isCorrect": false },
+        { "id": "q1-m2-l1-opt4", "text": "Een familieruzie", "isCorrect": false }
+      ],
+      "explanation": "'Sowan' is een specifieke term die respect en eerbied toont bij een bezoek aan ouderen of belangrijke personen."
+    },
+    {
+      "id": "q2-m2-l1-fib",
+      "order": 2,
+      "questionText": "Vul het Javaanse woord voor 'familie' of 'gezin' in: 'Aku arep crita babagan ___.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["kulawarga"],
+      "explanation": "'Kulawarga' is het algemene woord voor familie of gezin."
+    },
+    {
+      "id": "q3-m2-l1-audio",
+      "order": 3,
+      "questionText": "Luister naar het audiofragment. Welk familielid wordt genoemd?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/simbah.mp3",
+      "options": [
+        { "id": "q3-m2-l1-opt1", "text": "Vader (bapak)", "isCorrect": false },
+        { "id": "q3-m2-l1-opt2", "text": "Moeder (ibu)", "isCorrect": false },
+        { "id": "q3-m2-l1-opt3", "text": "Grootouder (simbah)", "isCorrect": true, "wordId": "simbah" },
+        { "id": "q3-m2-l1-opt4", "text": "Oudere broer (kakang)", "isCorrect": false }
+      ],
+      "explanation": "Het woord 'simbah' wordt gebruikt voor zowel oma als opa."
+    }
+  ]
+}

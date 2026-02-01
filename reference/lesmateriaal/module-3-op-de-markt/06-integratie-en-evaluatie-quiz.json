@@ -1,0 +1,74 @@
+
+{
+  "id": "quiz-m3-l6-integratie",
+  "title": "Module 3 Eindquiz: Op de Markt",
+  "description": "Test je volledige kennis over boodschappen doen op de markt.",
+  "questions": [
+    {
+      "id": "q1-m3-l6-mcq-vocab",
+      "order": 1,
+      "questionText": "Wat betekent `nganyang`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m3-l6-opt1", "text": "Kopen", "isCorrect": false, "wordId": "tuku" },
+        { "id": "q1-m3-l6-opt2", "text": "Verkopen", "isCorrect": false },
+        { "id": "q1-m3-l6-opt3", "text": "Afdingen", "isCorrect": true, "wordId": "nganyang" },
+        { "id": "q1-m3-l6-opt4", "text": "Tellen", "isCorrect": false }
+      ],
+      "explanation": "'Nganyang' is het Javaanse woord voor afdingen, een belangrijke vaardigheid op de markt."
+    },
+    {
+      "id": "q2-m3-l6-mcq-vocab2",
+      "order": 2,
+      "questionText": "Welk woord gebruik je om te vragen naar de 'prijs'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m3-l6-opt1", "text": "Rega", "isCorrect": true, "wordId": "rega" },
+        { "id": "q2-m3-l6-opt2", "text": "Tuku", "isCorrect": false, "wordId": "tuku" },
+        { "id": "q2-m3-l6-opt3", "text": "Pasar", "isCorrect": false, "wordId": "pasar" },
+        { "id": "q2-m3-l6-opt4", "text": "Larang", "isCorrect": false, "wordId": "larang" }
+      ],
+      "explanation": "'Rega' is het Javaanse woord voor 'prijs'."
+    },
+    {
+      "id": "q3-m3-l6-reorder",
+      "order": 3,
+      "questionText": "Zet de woorden in de juiste volgorde om de zin 'Hoeveel kost deze peper?' te vormen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [
+        {"value": "Pinten"},
+        {"value": "regané"},
+        {"value": "lombok"},
+        {"value": "niki?"}
+      ],
+      "explanation": "De correcte vraagvolgorde is 'Pinten regané lombok niki?'."
+    },
+    {
+      "id": "q4-m3-l6-audio",
+      "order": 4,
+      "questionText": "Luister naar het fragment. Wat wil de spreker kopen?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/kula_badhe_tumbas_iwak.mp3",
+      "options": [
+        { "id": "q4-m3-l6-opt1", "text": "Groente", "isCorrect": false },
+        { "id": "q4-m3-l6-opt2", "text": "Vis", "isCorrect": true, "wordId": "iwak" },
+        { "id": "q4-m3-l6-opt3", "text": "Pepers", "isCorrect": false, "wordId": "lombok" },
+        { "id": "q4-m3-l6-opt4", "text": "Fruit", "isCorrect": false }
+      ],
+      "explanation": "De spreker zegt 'Kula badhé tumbas iwak', wat 'Ik wil graag vis kopen' betekent."
+    },
+    {
+      "id": "q5-m3-l6-mcq-culture",
+      "order": 5,
+      "questionText": "Is afdingen op een Javaanse markt onbeleefd?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q5-m3-l6-opt1", "text": "Ja, het wordt als zeer onbeleefd beschouwd.", "isCorrect": false },
+        { "id": "q5-m3-l6-opt2", "text": "Nee, het is een geaccepteerd en respectvol onderdeel van de marktcultuur.", "isCorrect": true },
+        { "id": "q5-m3-l6-opt3", "text": "Alleen als je te veel afdingt.", "isCorrect": false },
+        { "id": "q5-m3-l6-opt4", "text": "Alleen voor toeristen, niet voor de lokale bevolking.", "isCorrect": false }
+      ],
+      "explanation": "Afdingen ('nganyang') is een vast onderdeel van de marktcultuur en wordt, mits beleefd gedaan, juist gezien als een teken dat je de waarde van geld en goederen kent."
+    }
+  ]
+}

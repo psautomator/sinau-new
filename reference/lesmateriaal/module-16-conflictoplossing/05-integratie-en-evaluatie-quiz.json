@@ -1,0 +1,56 @@
+
+{
+  "id": "quiz-m16-l5-integratie",
+  "title": "Module 16 Eindquiz: Conflictoplossing",
+  "description": "Test je kennis over de hele module Conflictoplossing.",
+  "questions": [
+    {
+      "id": "q1-m16-l5-mcq-concept",
+      "order": 1,
+      "questionText": "Wat is de betekenis van het culturele concept `rukun`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m16-l5-opt1", "text": "Ruzie maken", "isCorrect": false },
+        { "id": "q1-m16-l5-opt2", "text": "Harmonie en vreedzaam samenleven", "isCorrect": true, "wordId": "rukun" },
+        { "id": "q1-m16-l5-opt3", "text": "Een misverstand hebben", "isCorrect": false },
+        { "id": "q1-m16-l5-opt4", "text": "Akkoord gaan", "isCorrect": false }
+      ],
+      "explanation": "`Rukun` is een kernwaarde die draait om het bewaren van vrede en harmonie binnen een gemeenschap of relatie."
+    },
+    {
+      "id": "q2-m16-l5-mcq-vocab",
+      "order": 2,
+      "questionText": "Als je teleurgesteld bent in iemand, welk woord gebruik je dan?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m16-l5-opt1", "text": "Nesu", "isCorrect": false, "wordId": "nesu" },
+        { "id": "q2-m16-l5-opt2", "text": "Lega", "isCorrect": false, "wordId": "lega" },
+        { "id": "q2-m16-l5-opt3", "text": "Kuciwa", "isCorrect": true, "wordId": "kuciwa" },
+        { "id": "q2-m16-l5-opt4", "text": "Salah", "isCorrect": false, "wordId": "salah" }
+      ],
+      "explanation": "'Kuciwa' is het specifieke woord voor het gevoel van teleurstelling."
+    },
+    {
+      "id": "q3-m16-l5-reorder",
+      "order": 3,
+      "questionText": "Zet de woorden in de juiste volgorde om 'Laten we het goed overleggen' te zeggen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [{"value": "Ayo"}, {"value": "dirembug"}, {"value": "apik-apik."}],
+      "explanation": "Dit is de zin die Siti gebruikt om haar vrienden aan te moedigen het conflict op te lossen door te praten."
+    },
+    {
+      "id": "q4-m16-l5-audio-choice",
+      "order": 4,
+      "questionText": "Luister naar de audio. Wat wordt er gezegd?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/aku_lega_saiki.mp3",
+      "options": [
+        { "id": "q4-m16-l5-opt1", "text": "Ik ben boos nu.", "isCorrect": false },
+        { "id": "q4-m16-l5-opt2", "text": "Ik ben nu opgelucht.", "isCorrect": true },
+        { "id": "q4-m16-l5-opt3", "text": "Ik ben nu teleurgesteld.", "isCorrect": false },
+        { "id": "q4-m16-l5-opt4", "text": "Ik ben nu akkoord.", "isCorrect": false }
+      ],
+      "explanation": "De zin 'Aku lega saiki' drukt het gevoel van opluchting uit nadat een probleem is opgelost."
+    }
+  ]
+}

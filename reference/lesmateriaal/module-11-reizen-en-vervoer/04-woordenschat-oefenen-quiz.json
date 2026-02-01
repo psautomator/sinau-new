@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m11-l4",
+  "title": "Les 4 Quiz: Woordenschat Oefenen",
+  "description": "Test je kennis van de vocabulaire over reizen.",
+  "questions": [
+    {
+      "id": "q1-m11-l4-match",
+      "order": 1,
+      "questionText": "Combineer het vervoermiddel met de juiste Javaanse term.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Trein"},
+        {"value": "Bus"},
+        {"value": "Boot"}
+      ],
+      "matchItemsRight": [
+        {"value": "Sepur"},
+        {"value": "Bis"},
+        {"value": "Kapal"}
+      ],
+      "explanation": "Dit zijn de correcte termen voor deze vervoermiddelen."
+    },
+    {
+      "id": "q2-m11-l4-fib",
+      "order": 2,
+      "questionText": "Als je wilt wandelen, zeg je: 'Aku arep ___ - ___.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["mlaku"],
+      "explanation": "Het werkwoord voor lopen is 'mlaku'. De verdubbeling 'mlaku-mlaku' betekent wandelen."
+    }
+  ]
+}
+

@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m18-l3",
+  "title": "Module 18: Les 3 Quiz - Het Debat",
+  "description": "Test je kennis van een respectvol debat.",
+  "questions": [
+    {
+      "id": "q1-m18-l3-mcq",
+      "order": 1,
+      "questionText": "Hoe reageert Siti op het tegenargument (`sanggah`) van Budi?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m18-l3-opt1", "text": "Ze wordt boos en zegt dat hij ongelijk heeft.", "isCorrect": false },
+        { "id": "q1-m18-l3-opt2", "text": "Ze negeert zijn vraag en gaat verder met haar presentatie.", "isCorrect": false },
+        { "id": "q1-m18-l3-opt3", "text": "Ze erkent zijn argument en biedt een harmonieus alternatief perspectief.", "isCorrect": true },
+        { "id": "q1-m18-l3-opt4", "text": "Ze zegt dat zijn argument niet belangrijk is.", "isCorrect": false }
+      ],
+      "explanation": "Siti reageert respectvol door te zeggen 'Sanggahan panjenengan leres' (Uw tegenargument klopt), en biedt vervolgens een ander perspectief over identiteit."
+    },
+    {
+      "id": "q2-m18-l3-mcq-concept",
+      "order": 2,
+      "questionText": "Wat is het belangrijkste doel van een respectvol debat in de Javaanse cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m18-l3-opt1", "text": "De ander verslaan met betere argumenten.", "isCorrect": false },
+        { "id": "q2-m18-l3-opt2", "text": "Samen tot een dieper inzicht te komen.", "isCorrect": true },
+        { "id": "q2-m18-l3-opt3", "text": "De discussie zo snel mogelijk beëindigen.", "isCorrect": false },
+        { "id": "q2-m18-l3-opt4", "text": "Het publiek vermaken.", "isCorrect": false }
+      ],
+      "explanation": "Het doel is niet om te winnen, maar om samen tot een dieper begrip of consensus te komen, wat de essentie is van `musyawarah`."
+    }
+  ]
+}

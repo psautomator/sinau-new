@@ -1,0 +1,44 @@
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.0.208.76:3000
+- Environments: .env
+
+Ô£ô Starting...
+Ô£ô Ready in 1004ms
+
+-----
+FATAL: An unexpected Turbopack error occurred. A panic log has been written to C:\Users\URRELM~2\AppData\Local\Temp\next-panic-e355272aa79bd8e85492366fd4bd8327.log.
+
+To help make Turbopack better, report this error by clicking here.
+-----
+
+Ôùï Compiling /_error ...
+
+thread 'tokio-runtime-worker' (501812) panicked at C:\actions-runner\_work\next.js\next.js\turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Data for resolve_internal (TaskId 36766))
+
+Caused by:
+    0: Looking up data for TaskId 36766 from database failed
+    1: Unable to open static sorted file referenced from 00000019.meta
+    2: Unable to open static sorted file 00000015.sst
+    3: The system cannot find the path specified. (os error 3)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'tokio-runtime-worker' (501812) panicked at C:\actions-runner\_work\next.js\next.js\turbopack\crates\turbo-tasks-backend\src\backend\operation\mod.rs:156:17:
+Failed to restore task data (corrupted database or bug): Data for resolve_internal (TaskId 36766))
+
+Caused by:
+    0: Looking up data for TaskId 36766 from database failed
+    1: Unable to open static sorted file referenced from 00000019.meta
+    2: Unable to open static sorted file 00000015.sst
+    3: The system cannot find the path specified. (os error 3)
+Error: Turbopack build failed with 1 errors:
+./app
+Error: Next.js inferred your workspace root, but it may not be correct.
+    We couldn't find the Next.js package (next/package.json) from the project directory: D:\antigravity\ayosinau\app
+     To fix this, set turbopack.root in your Next.js config, or ensure the Next.js package is resolvable from this directory.
+    Note: For security and performance reasons, files outside of the project directory will not be compiled.
+    See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+
+    at ignore-listed frames
+[?25h

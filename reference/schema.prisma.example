@@ -1,0 +1,316 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  directUrl    = env("DIRECT_URL")
+}
+
+// --- USER & AUTH MODELS ---
+
+model User {
+  id                         String   @id @default(cuid())
+  email                      String   @unique
+  name                       String?
+  photoURL                   String?
+  role                       UserRole @default(USER)
+  createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @updatedAt
+  
+  // Gamification & Progress
+  xp                         Int      @default(0)
+  level                      Int      @default(1)
+  learningStreak             Int      @default(0)
+  lastActivityAt             DateTime?
+
+  // Counters for denormalization and achievements
+  lessonsCompletedCount      Int @default(0)
+  quizCompletions            Int @default(0)
+  moduleCompletions          Int @default(0)
+  feedbackSubmissionsCount   Int @default(0)
+  lessonNotesCount           Int @default(0)
+  learnedWordsViaSrsCount    Int @default(0)
+
+  // UI Preferences
+  themePreference            String?
+
+  // Relations
+  progressAchievements       UserProgressAchievement[]
+  lessonProgress             UserLessonProgress[]
+  srsItems                   UserWordSpacedRepetition[]
+  xpEvents                   UserXpEvent[]
+  notes                      UserLessonNote[]
+  feedback                   Feedback[]
+  quizProgress               UserQuizProgress[]
+  notifications              Notification[]
+}
+
+enum UserRole {
+  USER
+  CONTENT_EDITOR
+  ADMIN
+}
+
+// --- CONTENT MODELS ---
+
+model Module {
+  id            String   @id @default(cuid())
+  title         String   @unique
+  description   String?
+  level         String
+  order         Int
+  isPublished   Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  lessons       Lesson[]
+}
+
+model Lesson {
+  id            String   @id @default(cuid())
+  moduleId      String
+  title         String
+  description   String?
+  order         Int
+  isPublished   Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Flexible Content Structure
+  sectionsJson  Json?
+
+  // Relations
+  module        Module               @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress      UserLessonProgress[]
+  notes         UserLessonNote[]
+  
+  @@unique([title, moduleId])
+}
+
+enum WordLevel {
+  A1
+  A2
+  B1
+  B2
+  C1
+  C2
+}
+
+enum WordFormality {
+  Ngoko
+  KramaMadya
+  KramaInggil
+  Neutral
+}
+
+model Word {
+  id                       String   @id @default(cuid())
+  javanese                 String
+  dutch                    String
+  image                    String?
+  aiHint                   String?  // For generating placeholder images
+  audioJavanese            String?
+  category                 String?
+  exampleSentenceJavanese  String?
+  exampleSentenceDutch     String?
+  notes                    String?
+  level                    WordLevel?
+  formality                WordFormality?
+  tags                     String?  // JSON array of strings
+  isPublished              Boolean  @default(false)
+  createdAt                DateTime @default(now())
+  updatedAt                DateTime @updatedAt
+
+  srsItems                 UserWordSpacedRepetition[]
+
+  @@unique([javanese, dutch])
+}
+
+model Quiz {
+  id           String    @id @default(cuid())
+  title        String    @unique
+  description  String?
+  questions    Json      
+  isPublished  Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  
+  userProgress UserQuizProgress[]
+}
+
+// --- PROGRESS & INTERACTION MODELS ---
+
+model UserProgressAchievement {
+  userId          String
+  achievementCode String
+  awardedAt       DateTime @default(now())
+  
+  user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievement     Achievement @relation(fields: [achievementCode], references: [code], onDelete: Cascade)
+
+  @@id([userId, achievementCode])
+  @@index([userId])
+}
+
+model Achievement {
+  id              String   @id @default(cuid())
+  code            String   @unique
+  name            String
+  description     String
+  iconName        String
+  xpValue         Int
+  eventType       AchievementEventType
+  criteria        Json
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  awards          UserProgressAchievement[]
+}
+
+enum AchievementEventType {
+  user_registered
+  profile_updated
+  streak_updated
+  lesson_completed
+  module_completed
+  all_modules_completed
+  quiz_completed
+  srs_session_started
+  word_learned_srs
+  pronunciation_session_completed
+  feedback_submitted
+  note_created
+}
+
+model UserLessonProgress {
+  userId        String
+  lessonId      String
+  status        String   // e.g., "IN_PROGRESS", "COMPLETED"
+  startedAt     DateTime @default(now())
+  completedAt   DateTime?
+  
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson        Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  
+  @@id([userId, lessonId])
+}
+
+model UserWordSpacedRepetition {
+  id             String    @id @default(cuid())
+  userId         String
+  wordId         String
+  
+  repetitions    Int
+  interval       Int
+  easinessFactor Float
+  nextReviewDate DateTime
+  lastReviewedAt DateTime?
+  
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word           Word      @relation(fields: [wordId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, wordId])
+}
+
+model UserXpEvent {
+  id          String           @id @default(cuid())
+  userId      String
+  xpGained    Int
+  source      UserXpEventSource
+  description String
+  createdAt   DateTime         @default(now())
+  
+  user        User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, createdAt])
+}
+
+enum UserXpEventSource {
+  LESSON_COMPLETION
+  QUIZ_COMPLETION
+  STREAK_BONUS
+  ACHIEVEMENT_UNLOCKED
+}
+
+model UserLessonNote {
+  id          String   @id @default(cuid())
+  userId      String
+  lessonId    String
+  content     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lesson      Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  
+  @@index([userId, lessonId])
+}
+
+// --- FEEDBACK & NOTIFICATIONS ---
+
+model Feedback {
+  id           String         @id @default(cuid())
+  userId       String?
+  pageUrl      String?
+  feedbackType String?
+  message      String
+  status       FeedbackStatus @default(NEW)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  
+  user         User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+enum FeedbackStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+model Notification {
+  id         String   @id @default(cuid())
+  userId     String
+  message    String
+  link       String?
+  isRead     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+}
+
+model UserQuizProgress {
+  userId        String
+  quizId        String
+  status        QuizProgressStatus @default(IN_PROGRESS)
+  lastScore     Float? // Percentage
+  lastAttemptAt DateTime @updatedAt
+  
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz Quiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  
+  @@id([userId, quizId])
+}
+
+enum QuizProgressStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+}
+
+// --- APP SETTINGS ---
+
+model AppSettings {
+  key   String @id
+  value String
+}

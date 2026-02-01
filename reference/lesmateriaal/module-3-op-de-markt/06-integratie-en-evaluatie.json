@@ -1,0 +1,69 @@
+
+[
+    {
+        "javanese": "pasar",
+        "dutch": "markt",
+        "aiHint": "market stall",
+        "audioJavanese": "/audio/uploads/pasar.mp3",
+        "category": "Plaatsen",
+        "exampleSentenceJavanese": "Ing pasar akeh bakul.",
+        "exampleSentenceDutch": "Op de markt zijn veel verkopers.",
+        "notes": "Centrale plek in het sociale en economische leven.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["winkelen", "handel"]
+    },
+    {
+        "javanese": "tuku",
+        "dutch": "kopen",
+        "aiHint": "shopping cart",
+        "audioJavanese": "/audio/uploads/tuku.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku arep tuku woh-wohan.",
+        "exampleSentenceDutch": "Ik ga fruit kopen.",
+        "notes": "Informeel werkwoord voor kopen. De beleefde vorm is 'tumbas'.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["actie", "stamwoord"]
+    },
+    {
+        "javanese": "rega",
+        "dutch": "prijs",
+        "aiHint": "price tag",
+        "audioJavanese": "/audio/uploads/rega.mp3",
+        "category": "Economie",
+        "exampleSentenceJavanese": "Rega lombok lagi larang.",
+        "exampleSentenceDutch": "De prijs van pepers is momenteel duur.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["prijs", "kosten", "geld"]
+    },
+    {
+        "javanese": "nganyang",
+        "dutch": "afdingen",
+        "aiHint": "bargaining market",
+        "audioJavanese": "/audio/uploads/anyang.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Ibu pinter nganyang ing pasar.",
+        "exampleSentenceDutch": "Moeder is goed in afdingen op de markt.",
+        "notes": "Een veelvoorkomende en geaccepteerde praktijk op traditionele markten.",
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["handel", "actie", "cultuur"]
+    },
+    {
+        "javanese": "larang",
+        "dutch": "duur",
+        "aiHint": "expensive price tag",
+        "audioJavanese": "/audio/uploads/larang.mp3",
+        "category": "Economie",
+        "exampleSentenceJavanese": "Rega klambi iki larang banget.",
+        "exampleSentenceDutch": "De prijs van dit hemd is erg duur.",
+        "notes": "De beleefde (Krama) vorm is 'awis'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["prijs", "kosten"]
+    },
+    { "javanese": "siji", "dutch": "één", "category": "Telwoorden", "level": "A1", "formality": "Ngoko", "aiHint": "number one", "audioJavanese": "/audio/uploads/siji.mp3", "exampleSentenceJavanese": "Aku duwe siji buku.", "exampleSentenceDutch": "Ik heb één boek.", "notes": "Basis telwoord voor één.", "tags": ["getal", "basis"] }
+]

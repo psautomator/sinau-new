@@ -1,0 +1,81 @@
+
+[
+    {
+        "javanese": "wedus",
+        "dutch": "geit",
+        "aiHint": "farm goat",
+        "audioJavanese": "/audio/uploads/wedus.mp3",
+        "category": "Dieren",
+        "exampleSentenceJavanese": "Wedus loro padha mbregudul.",
+        "exampleSentenceDutch": "Die twee geiten waren allebei koppig.",
+        "notes": "Een veelvoorkomend dier in Javaanse fabels.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["dier", "fabel"]
+    },
+    {
+        "javanese": "ngalah",
+        "dutch": "toegeven / opgeven",
+        "aiHint": "white flag surrender",
+        "audioJavanese": "/audio/uploads/ngalah.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Kanggo njaga kerukunan, kadhangkala kita kudu ngalah.",
+        "exampleSentenceDutch": "Om de harmonie te bewaren, moeten we soms toegeven.",
+        "notes": "Een cultureel gewaardeerde eigenschap die wijsheid toont.",
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["conflict", "oplossing", "cultuur"]
+    },
+    {
+        "javanese": "rukun",
+        "dutch": "harmonie / in vrede leven",
+        "aiHint": "harmony peace symbol",
+        "audioJavanese": null,
+        "category": "Concept",
+        "exampleSentenceJavanese": "Urip rukun karo tangga iku penting.",
+        "exampleSentenceDutch": "In harmonie leven met de buren is belangrijk.",
+        "notes": "Een kernwaarde in de Javaanse cultuur.",
+        "level": "B2",
+        "formality": "Neutral",
+        "tags": ["concept", "harmonie", "cultuur"]
+    },
+    {
+        "javanese": "nyuwun pangapunten",
+        "dutch": "excuses vragen (formeel)",
+        "aiHint": "asking forgiveness",
+        "audioJavanese": "/audio/uploads/nyuwun_pangapunten.mp3",
+        "category": "Uitdrukking",
+        "exampleSentenceJavanese": "Menawi wonten lepat, kula nyuwun pangapunten.",
+        "exampleSentenceDutch": "Als er een fout is, vraag ik om vergeving.",
+        "notes": "Een zeer formele en respectvolle manier om 'sorry' te zeggen.",
+        "level": "B1",
+        "formality": "KramaInggil",
+        "tags": ["beleefdheid", "excuses", "krama"]
+    },
+    {
+        "javanese": "pakdhe",
+        "dutch": "Oom (oudere broer van ouder)",
+        "aiHint": "older uncle",
+        "audioJavanese": "/audio/uploads/pak_dhe.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Pakdheku manggon ing Lelydorp.",
+        "exampleSentenceDutch": "Mijn oom woont in Lelydorp.",
+        "notes": "Respectvolle aanspreektitel, van 'Bapak Gedhe'.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["familie", "aanspreekvorm", "respect"]
+    },
+    {
+        "javanese": "budhe",
+        "dutch": "Tante (oudere zus van ouder)",
+        "aiHint": "older aunt",
+        "audioJavanese": "/audio/uploads/bude.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Kula diwenehi hadiah dening Budhe.",
+        "exampleSentenceDutch": "Ik heb een cadeau gekregen van tante.",
+        "notes": "Respectvolle aanspreektitel, van 'Ibu Gedhe'.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["familie", "aanspreekvorm", "respect"]
+    }
+]

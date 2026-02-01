@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "rembugan",
+    "dutch": "overleg / bespreking",
+    "aiHint": "group discussion",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Keluarga lagi rembugan babagan liburan.",
+    "exampleSentenceDutch": "De familie is aan het overleggen over de vakantie.",
+    "notes": "Impliceert een zoektocht naar consensus, in tegenstelling tot een debat.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["discussie", "overleg", "samenwerking", "cultuur"]
+  },
+  {
+    "javanese": "sanggah",
+    "dutch": "weerleggen / tegenspreken",
+    "aiHint": "rebuttal argument",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku arep nyanggah argumentasimu.",
+    "exampleSentenceDutch": "Ik ga jouw argumentatie weerleggen.",
+    "notes": "Een formele term die in debatten wordt gebruikt. Actieve vorm is 'nyanggah'.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["debat", "argument", "werkwoord"]
+  },
+  {
+    "javanese": "jiwa",
+    "dutch": "ziel / geest",
+    "aiHint": "soul spirit",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Musik iku bisa ngademké jiwa.",
+    "exampleSentenceDutch": "Muziek kan de ziel kalmeren.",
+    "notes": "Verwijst naar de innerlijke essentie of geest van een persoon of cultuur.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "spiritualiteit", "filosofie"]
+  }
+]

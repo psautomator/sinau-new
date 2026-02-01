@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "seneng",
+    "dutch": "leuk vinden / houden van",
+    "aiHint": "person smiling happy",
+    "audioJavanese": "/audio/uploads/seneng.mp3",
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku seneng maca buku.",
+    "exampleSentenceDutch": "Ik vind boeken lezen leuk.",
+    "notes": "Kan worden gebruikt voor hobby's, eten, en algemene voorkeuren.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "gevoel", "voorkeur", "hobby" ]
+  },
+  {
+    "javanese": "dolanan",
+    "dutch": "spelen",
+    "aiHint": "children playing game",
+    "audioJavanese": "/audio/uploads/dolanan.mp3",
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Aku seneng dolanan badminton.",
+    "exampleSentenceDutch": "Ik vind het leuk om badminton te spelen.",
+    "notes": "Kan zowel 'spelen' (werkwoord) als 'een spel' (zelfstandig naamwoord) betekenen.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "vrije tijd", "spel", "activiteit" ]
+  },
+  {
+    "javanese": "maca",
+    "dutch": "lezen",
+    "aiHint": "person reading book",
+    "audioJavanese": "/audio/uploads/maca.mp3",
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Aku seneng maca buku crita.",
+    "exampleSentenceDutch": "Ik lees graag verhalenboeken.",
+    "notes": "Informeel (Ngoko). Formeel is ‘maos’.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "werkwoord", "activiteit", "hobby" ]
+  },
+  {
+    "javanese": "pinter",
+    "dutch": "slim / goed in iets",
+    "aiHint": "brain lightbulb",
+    "audioJavanese": "/audio/uploads/pinter.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Siti pinter nggambar.",
+    "exampleSentenceDutch": "Siti is goed in tekenen.",
+    "notes": null,
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": [ "persoonlijkheid", "slim" ]
+  },
+  {
+    "javanese": "nggambar",
+    "dutch": "tekenen",
+    "aiHint": "person drawing art",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Siti pinter nggambar.",
+    "exampleSentenceDutch": "Siti is goed in tekenen.",
+    "notes": "Actieve vorm van 'gambar' (tekening).",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": [ "kunst", "hobby", "activiteit" ]
+  }
+]

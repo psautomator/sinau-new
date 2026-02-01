@@ -1,0 +1,54 @@
+[
+  {
+    "javanese": "pasar",
+    "dutch": "markt",
+    "aiHint": "market stall",
+    "audioJavanese": "/audio/uploads/pasar.mp3",
+    "category": "Plaatsen",
+    "exampleSentenceJavanese": "Ing pasar akeh bakul.",
+    "exampleSentenceDutch": "Op de markt zijn veel verkopers.",
+    "notes": "Centrale plek in het sociale en economische leven.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["winkelen", "handel"]
+  },
+  {
+    "javanese": "tuku",
+    "dutch": "kopen",
+    "aiHint": "shopping cart",
+    "audioJavanese": "/audio/uploads/tuku.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku arep tuku woh-wohan.",
+    "exampleSentenceDutch": "Ik ga fruit kopen.",
+    "notes": "Informeel werkwoord voor kopen. De beleefde vorm is 'tumbas'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["actie", "stamwoord"]
+  },
+  {
+    "javanese": "tumbas",
+    "dutch": "kopen (beleefd)",
+    "aiHint": "formal shopping basket",
+    "audioJavanese": "/audio/uploads/tumbas.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Kula badhe tumbas gendhis.",
+    "exampleSentenceDutch": "Ik wil suiker kopen.",
+    "notes": "Krama-vorm van 'tuku'.",
+    "level": "A1",
+    "formality": "KramaMadya",
+    "tags": ["actie", "stamwoord", "krama", "winkelen"]
+  },
+  {
+    "javanese": "sayur",
+    "dutch": "groente",
+    "aiHint": "vegetables",
+    "audioJavanese": "/audio/uploads/sayur.mp3",
+    "category": "Eten",
+    "exampleSentenceJavanese": "Aku seneng mangan sayur.",
+    "exampleSentenceDutch": "Ik eet graag groente.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["eten", "gezond"]
+  }
+]

@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m12-l3",
+  "title": "Module 12: Les 3 Quiz - Problemen Oplossen",
+  "description": "Test je kennis over het toegeven van fouten en passieve werkwoorden.",
+  "questions": [
+    {
+      "id": "q1-m12-l3-mcq",
+      "order": 1,
+      "questionText": "Wat is volgens Pak Budi het belangrijkste als je een fout maakt?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m12-l3-opt1", "text": "Dat je het snel zelf oplost.", "isCorrect": false },
+        { "id": "q1-m12-l3-opt2", "text": "Dat je het niet nog een keer doet.", "isCorrect": false },
+        { "id": "q1-m12-l3-opt3", "text": "Dat je eerlijk (`jujur`) bent.", "isCorrect": true, "wordId": "jujur" },
+        { "id": "q1-m12-l3-opt4", "text": "Dat je direct om hulp vraagt.", "isCorrect": false }
+      ],
+      "explanation": "Pak Budi zegt: 'Sing penting jujur' (Het belangrijkste is eerlijkheid). Dit wordt in de werkcultuur zeer gewaardeerd."
+    },
+    {
+      "id": "q2-m12-l3-mcq-grammar",
+      "order": 2,
+      "questionText": "De actieve zin is 'Aku wis ndandani sepedané' (Ik heb zijn fiets gerepareerd). Wat is de correcte passieve vorm?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m12-l3-opt1", "text": "Sepedané wis didandani.", "isCorrect": false },
+        { "id": "q2-m12-l3-opt2", "text": "Sepedané wis kokdandani.", "isCorrect": false },
+        { "id": "q2-m12-l3-opt3", "text": "Sepedané wis takdandani.", "isCorrect": true, "wordId": "tak-" },
+        { "id": "q2-m12-l3-opt4", "text": "Sepedané wis dipundandani.", "isCorrect": false }
+      ],
+      "explanation": "Voor de eerste persoon ('ik') wordt het passieve voorvoegsel 'tak-' gebruikt. Het object komt naar voren, en het werkwoord verliest zijn neusklank."
+    }
+  ]
+}

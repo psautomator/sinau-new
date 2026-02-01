@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "serakah",
+    "dutch": "hebzuchtig",
+    "aiHint": "greedy person grabbing money",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Wong serakah ora tau marem.",
+    "exampleSentenceDutch": "Een hebzuchtig persoon is nooit tevreden.",
+    "notes": "Wordt als een zeer negatieve eigenschap beschouwd.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["eigenschap", "negatief", "hebzucht"]
+  },
+  {
+    "javanese": "ayang-ayangané",
+    "dutch": "zijn/haar spiegelbeeld",
+    "aiHint": "person reflection",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Asu iku weruh ayang-ayangané ing banyu.",
+    "exampleSentenceDutch": "De hond zag zijn eigen spiegelbeeld in het water.",
+    "notes": "Letterlijk 'zijn/haar schaduw-schaduw', gebruikt voor spiegelbeeld.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["concept", "reflectie", "visueel"]
+  },
+  {
+    "javanese": "ngrebut",
+    "dutch": "afpakken / veroveren",
+    "aiHint": "grabbing something",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aja ngrebut dolanane adhikmu.",
+    "exampleSentenceDutch": "Pak het speelgoed van je zusje niet af.",
+    "notes": "Een agressieve actie, vaak in de context van conflict.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["werkwoord", "conflict", "actie"]
+  },
+  {
+    "javanese": "nyawang",
+    "dutch": "kijken naar, aanschouwen",
+    "aiHint": "person gazing",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku seneng nyawang srengéngé surup.",
+    "exampleSentenceDutch": "Ik kijk graag naar de zonsondergang.",
+    "notes": "Een actievere vorm van kijken dan 'weruh' (zien).",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["actie", "zien", "zintuig"]
+  },
+  {
+    "javanese": "wareg",
+    "dutch": "vol / voldaan (na eten)",
+    "aiHint": "satisfied person full",
+    "audioJavanese": null,
+    "category": "Staat",
+    "exampleSentenceJavanese": "Aku wis wareg, ora usah nambah.",
+    "exampleSentenceDutch": "Ik zit vol, ik hoef niet meer.",
+    "notes": "Beschrijft het gevoel van verzadiging.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "staat", "eten"]
+  }
+]

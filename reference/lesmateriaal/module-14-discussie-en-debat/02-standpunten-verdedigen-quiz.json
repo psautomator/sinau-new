@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m14-l2",
+  "title": "Module 14: Les 2 Quiz - Standpunten Verdedigen",
+  "description": "Test je kennis van het verdedigen van een standpunt.",
+  "questions": [
+    {
+      "id": "q1-m14-l2-mcq",
+      "order": 1,
+      "questionText": "Wat is het belangrijkste argument van Siti om het leren van Javaans te verdedigen?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m14-l2-opt1", "text": "Het is makkelijker dan andere talen.", "isCorrect": false },
+        { "id": "q1-m14-l2-opt2", "text": "Het is belangrijk voor je werk (`padamelan`).", "isCorrect": false },
+        { "id": "q1-m14-l2-opt3", "text": "Het is onderdeel van je culturele `identitas` (identiteit).", "isCorrect": true, "wordId": "identitas" },
+        { "id": "q1-m14-l2-opt4", "text": "Alle vrienden spreken het.", "isCorrect": false }
+      ],
+      "explanation": "Siti's argument is dat de Javaanse taal niet alleen om werk gaat, maar om de culturele identiteit."
+    },
+    {
+      "id": "q2-m14-l2-mcq-culture",
+      "order": 2,
+      "questionText": "Wat is het verschil tussen een `debat` en een `rembugan` in de Javaanse cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m14-l2-opt1", "text": "Er is geen verschil.", "isCorrect": false },
+        { "id": "q2-m14-l2-opt2", "text": "Een `debat` is informeel, een `rembugan` is formeel.", "isCorrect": false },
+        { "id": "q2-m14-l2-opt3", "text": "Een `debat` is gericht op winnen, een `rembugan` is gericht op overleg en consensus.", "isCorrect": true, "wordId": "rembugan" },
+        { "id": "q2-m14-l2-opt4", "text": "Een `rembugan` is alleen voor familie.", "isCorrect": false }
+      ],
+      "explanation": "Zoals de cultuurreflectie aangeeft, is een `rembugan` (overleg) gericht op het vinden van een gezamenlijke oplossing, in tegenstelling tot een confronterend debat."
+    }
+  ]
+}

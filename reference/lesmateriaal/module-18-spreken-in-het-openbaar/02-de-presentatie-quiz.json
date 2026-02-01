@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m18-l2",
+  "title": "Module 18: Les 2 Quiz - De Presentatie",
+  "description": "Test je begrip van Siti's presentatie.",
+  "questions": [
+    {
+      "id": "q1-m18-l2-mcq",
+      "order": 1,
+      "questionText": "Volgens Siti is de Javaanse taal de `jiwa` van de cultuur. Wat betekent `jiwa`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m18-l2-opt1", "text": "De geschiedenis", "isCorrect": false },
+        { "id": "q1-m18-l2-opt2", "text": "De ziel / geest", "isCorrect": true, "wordId": "jiwa" },
+        { "id": "q1-m18-l2-opt3", "text": "De toekomst", "isCorrect": false },
+        { "id": "q1-m18-l2-opt4", "text": "Het probleem", "isCorrect": false }
+      ],
+      "explanation": "`Jiwa` verwijst naar de innerlijke essentie, de ziel of de geest. Siti gebruikt dit om het diepe culturele belang van de taal te benadrukken."
+    },
+    {
+      "id": "q2-m18-l2-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Een goede spreker weet logica en ___ te combineren.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["emotie", "gevoel"],
+      "explanation": "De cultuurreflectie stelt dat een overtuigende toespraak zowel logica (`argumentasi`) als gevoel (`rasa`) combineert."
+    }
+  ]
+}

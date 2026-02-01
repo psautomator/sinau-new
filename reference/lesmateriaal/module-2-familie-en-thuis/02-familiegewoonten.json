@@ -1,0 +1,72 @@
+
+[
+  {
+    "javanese": "panjenengan",
+    "dutch": "u (zeer beleefd)",
+    "aiHint": "respectful greeting",
+    "audioJavanese": "/audio/uploads/panjenengan.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Kadospundi kabaripun panjenengan?",
+    "exampleSentenceDutch": "Hoe gaat het met u?",
+    "notes": "De meest formele en respectvolle manier om 'u' te zeggen. Gebruikt tegen ouderen, leiders, of in zeer formele settings.",
+    "level": "B1",
+    "formality": "KramaInggil",
+    "tags": ["pronomen", "krama inggil", "persoonlijk", "tweede persoon", "zeer formeel"]
+  },
+  {
+    "javanese": "kowé",
+    "dutch": "jij / je",
+    "aiHint": "person pointing other",
+    "audioJavanese": "/audio/uploads/kowe.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Kowé saka ngendi?",
+    "exampleSentenceDutch": "Waar kom jij vandaan?",
+    "notes": "Standaard informeel woord voor 'jij', gebruikt onder vrienden en gelijken.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [
+      "voornaamwoord",
+      "persoonlijk",
+      "informeel"
+    ]
+  },
+  {
+    "javanese": "kula",
+    "dutch": "ik (beleefd)",
+    "aiHint": "person bowing",
+    "audioJavanese": "/audio/uploads/kula.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Kula badhe tumbas buku.",
+    "exampleSentenceDutch": "Ik wil graag een boek kopen.",
+    "notes": "Standaard beleefde vorm voor 'ik' (Krama).",
+    "level": "A2",
+    "formality": "KramaMadya",
+    "tags": ["pronomen", "krama", "persoonlijk", "formeel"]
+  },
+  {
+    "javanese": "wong tuwa",
+    "dutch": "oudere / ouders",
+    "aiHint": "elderly person",
+    "audioJavanese": "/audio/uploads/wong_tuwa.mp3",
+    "category": "Familie",
+    "exampleSentenceJavanese": "Kita kudu hormat marang wong tuwa.",
+    "exampleSentenceDutch": "We moeten respect hebben voor ouderen.",
+    "notes": "Kan zowel 'ouders' als een 'ouder persoon' in het algemeen betekenen.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["familie", "respect", "leeftijd"]
+  },
+  {
+    "javanese": "ngomong",
+    "dutch": "spreken",
+    "aiHint": "person talking",
+    "audioJavanese": "/audio/uploads/ngomong.mp3",
+    "category": "Communicatie",
+    "exampleSentenceJavanese": "Aja ngomong kasar.",
+    "exampleSentenceDutch": "Praat niet grof.",
+    "notes": "Informeel (Ngoko). Beleefd is 'ngendika' of 'matur'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["communicatie", "praten", "werkwoord"]
+  }
+]

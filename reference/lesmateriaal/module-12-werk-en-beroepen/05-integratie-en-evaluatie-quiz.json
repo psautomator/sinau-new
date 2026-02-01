@@ -1,0 +1,62 @@
+
+{
+  "id": "quiz-m12-l5-integratie",
+  "title": "Module 12 Eindquiz: Werk en Beroepen",
+  "description": "Test je kennis over de wereld van werk en beroepen uit Module 12.",
+  "questions": [
+    {
+      "id": "q1-m12-l5-mcq-vocab",
+      "order": 1,
+      "questionText": "Hoe zeg je 'kantoor' in het Javaans?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m12-l5-opt1", "text": "Pabrik", "isCorrect": false, "wordId": "pabrik" },
+        { "id": "q1-m12-l5-opt2", "text": "Kantor", "isCorrect": true, "wordId": "kantor" },
+        { "id": "q1-m12-l5-opt3", "text": "Sekolah", "isCorrect": false },
+        { "id": "q1-m12-l5-opt4", "text": "Rumah Sakit", "isCorrect": false }
+      ],
+      "explanation": "'Kantor' is een leenwoord uit het Nederlands en betekent 'kantoor'."
+    },
+    {
+      "id": "q2-m12-l5-mcq-profession",
+      "order": 2,
+      "questionText": "Een `tukang` is een...",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m12-l5-opt1", "text": "Leraar", "isCorrect": false, "wordId": "guru"},
+        { "id": "q2-m12-l5-opt2", "text": "Dokter", "isCorrect": false },
+        { "id": "q2-m12-l5-opt3", "text": "Vakman", "isCorrect": true, "wordId": "tukang" },
+        { "id": "q2-m12-l5-opt4", "text": "Werknemer", "isCorrect": false, "wordId": "pegawai" }
+      ],
+      "explanation": "Een 'tukang' is een vakman, zoals een timmerman (`tukang kayu`) of elektricien (`tukang listrik`)."
+    },
+    {
+      "id": "q3-m12-l5-mcq-grammar",
+      "order": 3,
+      "questionText": "De actieve zin is 'Siti damel kopi' (Siti maakt koffie). Wat is de correcte passieve vorm?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m12-l5-opt1", "text": "Kopi takdamel.", "isCorrect": false },
+        { "id": "q3-m12-l5-opt2", "text": "Kopi kokdamel.", "isCorrect": false },
+        { "id": "q3-m12-l5-opt3", "text": "Kopi dipundamel Siti.", "isCorrect": true, "wordId": "dipun-" },
+        { "id": "q3-m12-l5-opt4", "text": "Kopi didamel Siti.", "isCorrect": false }
+      ],
+      "explanation": "Voor de derde persoon in beleefde (Krama) context, wordt het passieve voorvoegsel 'dipun-' gebruikt. 'didamel' zou de Ngoko-passief zijn."
+    },
+    {
+      "id": "q4-m12-l5-audio",
+      "order": 4,
+      "questionText": "Luister naar het fragment. Welke formele uitdrukking hoor je?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/nyuwun_pangapunten.mp3",
+      "options": [
+        { "id": "q4-m12-l5-opt1", "text": "Dank u wel", "isCorrect": false },
+        { "id": "q4-m12-l5-opt2", "text": "Mijn excuses", "isCorrect": true, "wordId": "nyuwun pangapunten" },
+        { "id": "q4-m12-l5-opt3", "text": "Ik begrijp het", "isCorrect": false },
+        { "id": "q4-m12-l5-opt4", "text": "Welkom", "isCorrect": false }
+      ],
+      "explanation": "De spreker zegt: 'Nyuwun pangapunten', de zeer formele en beleefde manier om 'sorry' of 'mijn excuses' te zeggen."
+    }
+  ]
+}
+

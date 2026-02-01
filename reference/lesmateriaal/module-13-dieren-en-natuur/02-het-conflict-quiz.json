@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m13-l2",
+  "title": "Module 13: Les 2 Quiz - Het Conflict",
+  "description": "Test je kennis van het conflict en de symboliek.",
+  "questions": [
+    {
+      "id": "q1-m13-l2-mcq",
+      "order": 1,
+      "questionText": "Welk dier staat in dit verhaal symbool voor een onheilspellend voorteken of verborgen gevaar?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m13-l2-opt1", "text": "De `wedus` (geit)", "isCorrect": false, "wordId": "wedus" },
+        { "id": "q1-m13-l2-opt2", "text": "De `manuk` (vogel)", "isCorrect": false, "wordId": "manuk" },
+        { "id": "q1-m13-l2-opt3", "text": "De `ula` (slang)", "isCorrect": true, "wordId": "ula" },
+        { "id": "q1-m13-l2-opt4", "text": "De `kancil` (kantjil)", "isCorrect": false }
+      ],
+      "explanation": "De `ula` (slang) die sist vanuit het gras voorspelt dat de koppigheid van de geiten slecht zal aflopen."
+    },
+    {
+      "id": "q2-m13-l2-mcq-vocab",
+      "order": 2,
+      "questionText": "Wat betekent de term 'adu rosa' die de fabel gebruikt om de vechtpartij te beschrijven?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m13-l2-opt1", "text": "Een discussie", "isCorrect": false },
+        { "id": "q2-m13-l2-opt2", "text": "Een krachtmeting", "isCorrect": true, "wordId": "adu rosa" },
+        { "id": "q2-m13-l2-opt3", "text": "Een race", "isCorrect": false },
+        { "id": "q2-m13-l2-opt4", "text": "Een dans", "isCorrect": false }
+      ],
+      "explanation": "'Adu rosa' betekent letterlijk 'kracht meten' en beschrijft de fysieke confrontatie van de geiten."
+    }
+  ]
+}

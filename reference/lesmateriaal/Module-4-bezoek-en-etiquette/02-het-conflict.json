@@ -1,0 +1,45 @@
+
+[
+    {
+        "javanese": "adu rosa",
+        "dutch": "krachtmeting",
+        "aiHint": "arm wrestling",
+        "audioJavanese": "/audio/uploads/adu_rosa.mp3",
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Wedus loro iku adu rosa ing ndhuwur jembatan.",
+        "exampleSentenceDutch": "De twee geiten hielden een krachtmeting op de brug.",
+        "notes": "Een directe fysieke confrontatie om te bepalen wie de sterkste is.",
+        "level": "C1",
+        "formality": "Ngoko",
+        "tags": [
+            "conflict",
+            "strijd"
+        ]
+    },
+    {
+        "javanese": "ngalah",
+        "dutch": "toegeven / opgeven",
+        "aiHint": "white flag surrender",
+        "audioJavanese": "/audio/uploads/ngalah.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Ing sawijining wektu, luwih becik ngalah.",
+        "exampleSentenceDutch": "Soms is het beter om toe te geven.",
+        "notes": "Wordt cultureel gezien als een teken van wijsheid, niet van zwakte.",
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["conflict", "oplossing", "cultuur"]
+    },
+    {
+        "javanese": "rukun",
+        "dutch": "harmonie / in vrede leven",
+        "aiHint": "harmony peace symbol",
+        "audioJavanese": null,
+        "category": "Concept",
+        "exampleSentenceJavanese": "Urip rukun karo tangga iku penting.",
+        "exampleSentenceDutch": "In harmonie leven met de buren is belangrijk.",
+        "notes": "Een zeer belangrijke culturele waarde in de Javaanse samenleving, vaak het doel van conflictoplossing.",
+        "level": "B2",
+        "formality": "Neutral",
+        "tags": ["concept", "harmonie", "vrede", "cultuur"]
+    }
+]

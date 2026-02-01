@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "kantor",
+    "dutch": "kantoor",
+    "aiHint": "office building",
+    "audioJavanese": "/audio/uploads/kantor.mp3",
+    "category": "Plaatsen",
+    "exampleSentenceJavanese": "Bapak kerja ing kantor pos.",
+    "exampleSentenceDutch": "Vader werkt op het postkantoor.",
+    "notes": "Leenwoord uit het Nederlands.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["werk", "gebouw", "locatie"]
+  },
+  {
+    "javanese": "pegawai",
+    "dutch": "werknemer / ambtenaar",
+    "aiHint": "office worker",
+    "audioJavanese": null,
+    "category": "Beroep",
+    "exampleSentenceJavanese": "Dhèwèké pegawai bank.",
+    "exampleSentenceDutch": "Hij/zij is een bankmedewerker.",
+    "notes": "Algemene term voor iemand in loondienst.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["beroep", "werk", "ambtenaar"]
+  },
+  {
+    "javanese": "pagaweyan",
+    "dutch": "werk / baan",
+    "aiHint": "person working desk",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Pagaweyané abot banget.",
+    "exampleSentenceDutch": "Zijn/haar werk is erg zwaar.",
+    "notes": "Afgeleid van 'gawe' (maken/werken).",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["werk", "concept", "baan"]
+  },
+  {
+    "javanese": "sinau",
+    "dutch": "leren",
+    "aiHint": "person studying",
+    "audioJavanese": "/audio/uploads/sinau.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku sregep sinau.",
+    "exampleSentenceDutch": "Ik leer ijverig.",
+    "notes": "Essentieel werkwoord in een leercontext.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["educatie", "leren", "activiteit"]
+  },
+  {
+    "javanese": "sregep",
+    "dutch": "ijverig / vlijtig",
+    "aiHint": "hardworking student",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Siti iku murid sing sregep.",
+    "exampleSentenceDutch": "Siti is een ijverige leerling.",
+    "notes": "Een gewaardeerde eigenschap die inzet en toewijding toont.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["eigenschap", "persoonlijkheid", "werkethiek"]
+  }
+]

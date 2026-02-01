@@ -1,0 +1,43 @@
+
+{
+  "id": "quiz-m3-l2",
+  "title": "Module 3: Les 2 Quiz - Producten Kiezen",
+  "description": "Test je kennis over het kiezen van producten op de markt.",
+  "questions": [
+    {
+      "id": "q1-m3-l2-mcq",
+      "order": 1,
+      "questionText": "Welke kleur pepers kiest de moeder van Siti?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m3-l2-opt1", "text": "Groen (ijo)", "isCorrect": false, "wordId": "ijo" },
+        { "id": "q1-m3-l2-opt2", "text": "Rood (abang)", "isCorrect": true, "wordId": "abang" },
+        { "id": "q1-m3-l2-opt3", "text": "Beide kleuren", "isCorrect": false },
+        { "id": "q1-m3-l2-opt4", "text": "Geen van beide", "isCorrect": false }
+      ],
+      "explanation": "In de dialoog zegt de moeder: 'Sing abang waé', wat 'De rode maar' betekent."
+    },
+    {
+      "id": "q2-m3-l2-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Siti, tulung ___-ke lombok sing apik.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["pilih"],
+      "explanation": "'Pilih' is het werkwoord voor 'kiezen'. De moeder vraagt Siti om de pepers uit te kiezen."
+    },
+    {
+      "id": "q3-m3-l2-audio",
+      "order": 3,
+      "questionText": "Luister naar het woord. Wat wordt er aangeboden door de verkoopster, naast groenten?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/iwak.mp3",
+      "options": [
+        { "id": "q3-m3-l2-opt1", "text": "Fruit", "isCorrect": false },
+        { "id": "q3-m3-l2-opt2", "text": "Vis", "isCorrect": true, "wordId": "iwak" },
+        { "id": "q3-m3-l2-opt3", "text": "Kruiden", "isCorrect": false },
+        { "id": "q3-m3-l2-opt4", "text": "Rijst", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'iwak', wat 'vis' betekent. De verkoopster biedt ook vis aan."
+    }
+  ]
+}

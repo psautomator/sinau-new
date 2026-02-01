@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "setuju",
+    "dutch": "eens zijn",
+    "aiHint": "agreement handshake",
+    "audioJavanese": null,
+    "category": "Mening",
+    "exampleSentenceJavanese": "Aku setuju karo pendapatmu.",
+    "exampleSentenceDutch": "Ik ben het eens met jouw mening.",
+    "notes": "Leenwoord uit het Indonesisch, maar volledig ingeburgerd.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["mening", "akkoord", "discussie"]
+  },
+  {
+    "javanese": "ora setuju",
+    "dutch": "oneens zijn",
+    "aiHint": "disagreement conflict",
+    "audioJavanese": null,
+    "category": "Mening",
+    "exampleSentenceJavanese": "Kula ora setuju, amarga...",
+    "exampleSentenceDutch": "Ik ben het er niet mee eens, omdat...",
+    "notes": "Directe manier om een meningsverschil aan te geven.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["mening", "conflict", "discussie"]
+  },
+  {
+    "javanese": "alasan",
+    "dutch": "reden / argument",
+    "aiHint": "reason logic",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Apa alasanmu ora teka?",
+    "exampleSentenceDutch": "Wat is je reden om niet te komen?",
+    "notes": null,
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["logica", "argument", "reden"]
+  },
+  {
+    "javanese": "pendapat",
+    "dutch": "mening / opinie",
+    "aiHint": "opinion bubble",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Saben uwong duwe pendapat dhewe-dhewe.",
+    "exampleSentenceDutch": "Iedereen heeft zijn eigen mening.",
+    "notes": null,
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["mening", "opinie", "concept"]
+  }
+]

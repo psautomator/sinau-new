@@ -1,0 +1,94 @@
+
+[
+  {
+    "javanese": "lara",
+    "dutch": "ziek, pijn",
+    "aiHint": "person in pain",
+    "audioJavanese": "/audio/uploads/lara.mp3",
+    "category": "Staat",
+    "exampleSentenceJavanese": "Aku lagi lara.",
+    "exampleSentenceDutch": "Ik ben ziek.",
+    "notes": "Algemeen woord voor pijn of ziekte.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "gezondheid", "ziekte" ]
+  },
+  {
+    "javanese": "sirah",
+    "dutch": "hoofd",
+    "aiHint": "human head",
+    "audioJavanese": "/audio/uploads/sirah.mp3",
+    "category": "Lichaamsdelen",
+    "exampleSentenceJavanese": "Sirahku ngelu.",
+    "exampleSentenceDutch": "Mijn hoofd is duizelig.",
+    "notes": "De Krama-vorm is 'mustaka'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "lichaam", "hoofd" ]
+  },
+  {
+    "javanese": "weteng",
+    "dutch": "buik",
+    "aiHint": "human stomach",
+    "audioJavanese": "/audio/uploads/weteng.mp3",
+    "category": "Lichaamsdelen",
+    "exampleSentenceJavanese": "Wetengku lara.",
+    "exampleSentenceDutch": "Ik heb buikpijn.",
+    "notes": "De Krama-vorm is 'padharan'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "lichaam", "buik" ]
+  },
+  {
+    "javanese": "panas",
+    "dutch": "heet / koorts",
+    "aiHint": "hot sun",
+    "audioJavanese": "/audio/uploads/panas.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Awakku panas.",
+    "exampleSentenceDutch": "Mijn lichaam is heet (ik heb koorts).",
+    "notes": "Kan zowel temperatuur als een symptoom van ziekte betekenen.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "temperatuur", "weer", "symptoom" ]
+  },
+  {
+    "javanese": "awak",
+    "dutch": "lichaam",
+    "aiHint": "human body",
+    "audioJavanese": null,
+    "category": "Lichaamsdelen",
+    "exampleSentenceJavanese": "Awakku krasa ora kepénak.",
+    "exampleSentenceDutch": "Mijn lichaam voelt niet prettig.",
+    "notes": "De Krama-vorm is 'salira'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "lichaam", "algemeen" ]
+  },
+  {
+    "javanese": "ora kepénak",
+    "dutch": "niet lekker / onprettig",
+    "aiHint": "feeling unwell",
+    "audioJavanese": null,
+    "category": "Staat",
+    "exampleSentenceJavanese": "Awakku rasane ora kepénak.",
+    "exampleSentenceDutch": "Mijn lichaam voelt onprettig.",
+    "notes": "Veelgebruikte uitdrukking om aan te geven dat je je niet lekker voelt.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": [ "gevoel", "ziekte" ]
+  },
+  {
+    "javanese": "rada",
+    "dutch": "een beetje / enigszins",
+    "aiHint": "little bit",
+    "audioJavanese": null,
+    "category": "Bijwoord",
+    "exampleSentenceJavanese": "Awakmu rada panas.",
+    "exampleSentenceDutch": "Je bent een beetje warm.",
+    "notes": "Wordt gebruikt om een eigenschap af te zwakken.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": [ "hoeveelheid", "gradatie" ]
+  }
+]

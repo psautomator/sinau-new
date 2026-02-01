@@ -1,0 +1,57 @@
+
+{
+  "id": "quiz-m10-l5-integratie",
+  "title": "Module 10 Eindquiz: Gezondheid en Ziekte",
+  "description": "Test je kennis over de hele module, van klachten beschrijven tot culturele context.",
+  "questions": [
+    {
+      "id": "q1-m10-l5-mcq-vocab",
+      "order": 1,
+      "questionText": "Welk woord wordt gebruikt voor een traditionele genezer?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m10-l5-opt1", "text": "Dhokter", "isCorrect": false, "wordId": "dhokter" },
+        { "id": "q1-m10-l5-opt2", "text": "Guru", "isCorrect": false },
+        { "id": "q1-m10-l5-opt3", "text": "Tabib", "isCorrect": true, "wordId": "tabib" },
+        { "id": "q1-m10-l5-opt4", "text": "Pasien", "isCorrect": false }
+      ],
+      "explanation": "Een `tabib` is een traditionele genezer die vaak kruiden en rituelen gebruikt, zoals besproken in les 3."
+    },
+    {
+      "id": "q2-m10-l5-reorder",
+      "order": 2,
+      "questionText": "Zet de woorden in de juiste volgorde om 'Mijn buik doet pijn' te zeggen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [{"value": "Wetengku"}, {"value": "lara."}],
+      "explanation": "De correcte zinsvolgorde is 'Wetengku lara', waarbij het bezit ('-ku') aan het lichaamsdeel wordt vastgeplakt."
+    },
+    {
+      "id": "q3-m10-l5-audio-choice",
+      "order": 3,
+      "questionText": "Luister naar de audio. Welk symptoom wordt beschreven?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/watuk.mp3",
+      "options": [
+        { "id": "q3-m10-l5-opt1", "text": "Koorts", "isCorrect": false, "wordId": "panas" },
+        { "id": "q3-m10-l5-opt2", "text": "Hoest", "isCorrect": true, "wordId": "watuk" },
+        { "id": "q3-m10-l5-opt3", "text": "Duizeligheid", "isCorrect": false, "wordId": "mumet" },
+        { "id": "q3-m10-l5-opt4", "text": "Verkoudheid", "isCorrect": false, "wordId": "pileg" }
+      ],
+      "explanation": "De audio zegt 'watuk', wat hoest betekent."
+    },
+    {
+        "id": "q4-m10-l5-mcq-culture",
+        "order": 4,
+        "questionText": "Wat is een cultureel gepaste eerste reactie als een familielid klaagt over hoofdpijn in een Javaanse context?",
+        "questionType": "MULTIPLE_CHOICE",
+        "options": [
+          { "id": "q4-m10-l5-opt1", "text": "Direct sterke pijnstillers geven.", "isCorrect": false },
+          { "id": "q4-m10-l5-opt2", "text": "Eerst warme thee of een huismiddeltje aanbieden en rust adviseren.", "isCorrect": true },
+          { "id": "q4-m10-l5-opt3", "text": "Aanraden om onmiddellijk naar het ziekenhuis te gaan.", "isCorrect": false },
+          { "id": "q4-m10-l5-opt4", "text": "Het probleem negeren.", "isCorrect": false }
+        ],
+        "explanation": "Zoals besproken in de cultuurreflectie, is de eerste zorg bij ziekte vaak binnen de familie, waar kennis over huismiddeltjes zoals warme thee of jamu wordt ingezet voordat men naar een dokter stapt."
+      }
+  ]
+}
+

@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m6-l1",
+  "title": "Module 6: Les 1 Quiz - Eerste Schooldag",
+  "description": "Test je kennis van de eerste les over school.",
+  "questions": [
+    {
+      "id": "q1-m6-l1-mcq",
+      "order": 1,
+      "questionText": "Hoe voelde Siti zich op haar eerste lesdag Javaans, en wat betekent het woord dat ze gebruikte?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m6-l1-opt1", "text": "Blij (seneng)", "isCorrect": false },
+        { "id": "q1-m6-l1-opt2", "text": "Nerveus (deg-degan)", "isCorrect": true, "wordId": "deg-degan" },
+        { "id": "q1-m6-l1-opt3", "text": "Moe (kesel)", "isCorrect": false },
+        { "id": "q1-m6-l1-opt4", "text": "Slim (pinter)", "isCorrect": false }
+      ],
+      "explanation": "Siti voelde zich 'deg-degan', wat nerveus of 'hartkloppingen hebbend' betekent, omdat er een nieuwe lerares was."
+    },
+    {
+      "id": "q2-m6-l1-mcq-culture",
+      "order": 2,
+      "questionText": "Waarom is het tonen van 'hormat' (respect) aan een 'guru' (leraar) belangrijk in de Javaanse cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m6-l1-opt1", "text": "Omdat de leraar anders boos wordt.", "isCorrect": false },
+        { "id": "q2-m6-l1-opt2", "text": "Omdat een leraar wordt gezien als een bron van kennis en wijsheid.", "isCorrect": true, "wordId": "guru" },
+        { "id": "q2-m6-l1-opt3", "text": "Het is alleen belangrijk op de eerste schooldag.", "isCorrect": false },
+        { "id": "q2-m6-l1-opt4", "text": "Omdat je dan een hoger cijfer krijgt.", "isCorrect": false }
+      ],
+      "explanation": "In de Javaanse cultuur wordt een leraar ('guru') zeer gerespecteerd als een bron van kennis ('ilmu') en wijsheid. Respect tonen is een teken van goede opvoeding."
+    }
+  ]
+}

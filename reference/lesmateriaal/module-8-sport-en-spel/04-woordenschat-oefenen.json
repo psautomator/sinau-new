@@ -1,0 +1,68 @@
+
+[
+    {
+        "javanese": "olahraga",
+        "dutch": "sport",
+        "aiHint": "person exercising",
+        "audioJavanese": null,
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Olahraga iku penting kanggo kasarasan.",
+        "exampleSentenceDutch": "Sporten is belangrijk voor de gezondheid.",
+        "notes": "Algemeen woord voor sport.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["sport", "gezondheid", "activiteit"]
+    },
+    {
+        "javanese": "bal",
+        "dutch": "bal",
+        "aiHint": "soccer ball",
+        "audioJavanese": null,
+        "category": "Sport",
+        "exampleSentenceJavanese": "Ayo dolanan bal.",
+        "exampleSentenceDutch": "Laten we met de bal spelen.",
+        "notes": "Leenwoord uit het Nederlands.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["sport", "spel", "object"]
+    },
+    {
+        "javanese": "skor",
+        "dutch": "score",
+        "aiHint": "scoreboard game",
+        "audioJavanese": null,
+        "category": "Sport",
+        "exampleSentenceJavanese": "Skoré pira-pira?",
+        "exampleSentenceDutch": "Wat is de score?",
+        "notes": "Leenwoord.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["sport", "competitie", "resultaat"]
+    },
+    {
+        "javanese": "mlayu",
+        "dutch": "rennen",
+        "aiHint": "person running",
+        "audioJavanese": null,
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Budi mlayu banter banget.",
+        "exampleSentenceDutch": "Budi rent heel snel.",
+        "notes": "",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["sport", "rennen", "actie"]
+    },
+    {
+        "javanese": "nendhang",
+        "dutch": "schoppen",
+        "aiHint": "person kicking ball",
+        "audioJavanese": null,
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Dhèwèké nendhang balé nganti adoh.",
+        "exampleSentenceDutch": "Hij schopt de bal ver weg.",
+        "notes": "",
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["sport", "voetbal", "actie"]
+    }
+]

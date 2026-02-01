@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m8-l1",
+  "title": "Module 8: Les 1 Quiz - De Sportdag Begint",
+  "description": "Test je kennis over de start van de sportdag.",
+  "questions": [
+    {
+      "id": "q1-m8-l1-mcq",
+      "order": 1,
+      "questionText": "Welk Javaans woord voor 'team' wordt gebruikt in de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m8-l1-opt1", "text": "Tim", "isCorrect": true, "wordId": "tim" },
+        { "id": "q1-m8-l1-opt2", "text": "Kelompok", "isCorrect": false },
+        { "id": "q1-m8-l1-opt3", "text": "Grup", "isCorrect": false },
+        { "id": "q1-m8-l1-opt4", "text": "Pasukan", "isCorrect": false }
+      ],
+      "explanation": "'Tim' is een leenwoord uit het Nederlands/Engels en wordt vaak gebruikt in de context van sport."
+    },
+    {
+      "id": "q2-m8-l1-fib",
+      "order": 2,
+      "questionText": "Siti doet mee met de wedstrijd ___.",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["tarik tambang"],
+      "explanation": "Siti vertelt Dewi dat ze meedoet aan 'tarik tambang' (touwtrekken) met haar klas."
+    }
+  ]
+}

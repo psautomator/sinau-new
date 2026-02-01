@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSinau - Javanese Learning Quiz</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10B981", // Emerald 500
+                        primaryDark: "#059669", // Emerald 600
+                        "background-light": "#F3F4F6", // Gray 100
+                        "background-dark": "#0F172A", // Slate 900
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E293B", // Slate 800
+                        "border-light": "#E2E8F0",
+                        "border-dark": "#334155",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        serif: ["Merriweather", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        xl: "1rem",
+                        '2xl': "1.5rem",
+                    },
+                    backgroundImage: {
+                        'batik-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310B981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        };
+    </script>
+<style>::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .dark .glass-effect {
+            background: rgba(30, 41, 59, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-sans h-screen flex overflow-hidden transition-colors duration-300">
+<aside class="w-64 flex-shrink-0 border-r border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark flex flex-col justify-between transition-colors duration-300 z-20 hidden md:flex">
+<div>
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-primary flex items-center justify-center shadow-lg shadow-emerald-500/20">
+<span class="material-symbols-rounded text-white text-2xl">school</span>
+</div>
+<div>
+<h1 class="font-bold text-lg leading-tight tracking-tight text-slate-900 dark:text-white">AyoSinau</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Javanese Learning</p>
+</div>
+</div>
+<nav class="px-4 space-y-1 mt-2">
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-rounded text-[20px]">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl bg-primary/10 text-primary dark:text-emerald-400 dark:bg-primary/20 shadow-sm ring-1 ring-primary/20" href="#">
+<span class="material-symbols-rounded text-[20px]">menu_book</span>
+                    Modules
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-rounded text-[20px]">style</span>
+                    Flashcards
+                </a>
+<a class="flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-primary dark:hover:text-primary group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-rounded text-[20px]">smart_toy</span>
+                        AI Tutor
+                    </div>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-gradient-to-r from-emerald-400 to-teal-400 text-white shadow-sm">BETA</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-rounded text-[20px]">emoji_events</span>
+                    Achievements
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700/50 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-symbols-rounded text-[20px]">leaderboard</span>
+                    Leaderboard
+                </a>
+</nav>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<button class="flex items-center gap-3 w-full p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-left">
+<div class="relative">
+<img alt="User Avatar" class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-700 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNRC0LOddCxDhAdOzcss1-Q01qIgD15z0fmmDv_TC7osWJxeIwuQ-9O3BTq8UQmXDf0p8qqU74PICuJ_9L7PxSelJiGiduTpqTwKwE2kgOlg5Wqthi5A_JJuhnN0Wb2JWF9sQqIQy57ru-_stesoBwjSN5iDRHNEH0IUKbz-9R7zRcsgvKr2qW2qKEv_bsR8and8e0yPO31Xuf0iU6eHriASZyceOZHu4kc8ncj025NZeQOo2UDK1gxU6qpeZ9qDJ_XG7ZKutlwuw"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full border-2 border-white dark:border-slate-800"></div>
+</div>
+<div class="flex-1 overflow-hidden">
+<h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200 truncate">Budi Santoso</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 truncate">Free Account</p>
+</div>
+<span class="material-symbols-rounded text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">settings</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 relative flex flex-col h-screen overflow-hidden">
+<div class="absolute inset-0 bg-batik-pattern opacity-100 dark:opacity-50 pointer-events-none z-0"></div>
+<header class="h-16 flex items-center justify-between px-8 z-10 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+<div class="flex items-center gap-4">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-primary">
+<span class="material-symbols-rounded text-lg">school</span>
+</div>
+<h2 class="font-bold text-slate-800 dark:text-white">AyoSinau Quiz</h2>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-red-500 transition-colors">
+<span class="material-symbols-rounded">close</span>
+</button>
+</header>
+<div class="flex-1 overflow-y-auto z-10 p-6 md:p-12 flex flex-col items-center">
+<div class="w-full max-w-3xl mb-8 flex flex-col gap-2">
+<div class="flex justify-between items-end mb-1">
+<span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Question 1 of 3</span>
+<span class="text-xs text-primary font-medium bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded-md border border-emerald-100 dark:border-emerald-800">Formal Speech (Krama)</span>
+</div>
+<div class="h-2 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden flex gap-0.5">
+<div class="h-full w-1/3 bg-primary rounded-full"></div>
+<div class="h-full w-1/3 bg-slate-300 dark:bg-slate-600 rounded-full opacity-50"></div>
+<div class="h-full w-1/3 bg-slate-300 dark:bg-slate-600 rounded-full opacity-50"></div>
+</div>
+</div>
+<div class="w-full max-w-3xl bg-surface-light dark:bg-surface-dark rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50 border border-border-light dark:border-border-dark overflow-hidden flex flex-col relative">
+<div class="h-1.5 w-full bg-gradient-to-r from-emerald-400 via-primary to-teal-500"></div>
+<div class="absolute top-6 right-6 group">
+<button class="flex items-center justify-center w-8 h-8 rounded-full bg-amber-50 dark:bg-amber-900/20 text-amber-500 border border-amber-100 dark:border-amber-800/30 hover:shadow-md transition-all">
+<span class="material-symbols-rounded text-lg">lightbulb</span>
+</button>
+<div class="absolute right-0 mt-2 w-64 p-3 bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-100 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform translate-y-2 group-hover:translate-y-0">
+<span class="font-bold block mb-1 text-amber-600">Culture Tip:</span>
+                        Javanese language has hierarchy levels. 'Krama Inggil' is the most respectful form.
+                    </div>
+</div>
+<div class="p-8 md:p-10">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold tracking-wide uppercase bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 mb-6 border border-indigo-100 dark:border-indigo-800">
+<span class="material-symbols-rounded text-sm">checklist</span>
+                        Multiple Choice
+                    </span>
+<h3 class="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-8 leading-tight">
+                        Wat is de formele en zeer beleefde manier om <span class="text-primary italic font-serif">'Welkom'</span> te zeggen in de dialoog?
+                    </h3>
+<div class="grid grid-cols-1 gap-4">
+<button class="group relative flex items-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-200 text-left">
+<span class="flex-shrink-0 w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center mr-4 group-hover:bg-primary group-hover:text-white transition-colors">A</span>
+<span class="text-lg text-slate-700 dark:text-slate-200 font-medium">Halo</span>
+<div class="absolute inset-0 rounded-xl ring-0 group-focus:ring-2 ring-primary ring-offset-2 dark:ring-offset-slate-800 pointer-events-none transition-all"></div>
+</button>
+<button class="group relative flex items-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-200 text-left">
+<span class="flex-shrink-0 w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center mr-4 group-hover:bg-primary group-hover:text-white transition-colors">B</span>
+<span class="text-lg text-slate-700 dark:text-slate-200 font-medium">Sugeng rawuh</span>
+</button>
+<button class="group relative flex items-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-200 text-left">
+<span class="flex-shrink-0 w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center mr-4 group-hover:bg-primary group-hover:text-white transition-colors">C</span>
+<span class="text-lg text-slate-700 dark:text-slate-200 font-medium">Piye kabaré?</span>
+</button>
+<button class="group relative flex items-center p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-primary dark:hover:border-primary hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition-all duration-200 text-left">
+<span class="flex-shrink-0 w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-bold flex items-center justify-center mr-4 group-hover:bg-primary group-hover:text-white transition-colors">D</span>
+<span class="text-lg text-slate-700 dark:text-slate-200 font-medium">Matur nuwun</span>
+</button>
+</div>
+</div>
+<div class="px-8 py-6 bg-slate-50 dark:bg-slate-800/50 border-t border-border-light dark:border-border-dark flex justify-between items-center">
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 text-sm font-medium flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-700/50 transition-colors">
+<span class="material-symbols-rounded text-lg">arrow_back</span>
+                        Previous
+                    </button>
+<button class="bg-primary hover:bg-primaryDark text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/40 transform active:scale-95 transition-all flex items-center gap-2">
+                        Check Answer
+                        <span class="material-symbols-rounded text-lg">check_circle</span>
+</button>
+</div>
+</div>
+<div class="mt-8 flex gap-6 text-sm text-slate-400 dark:text-slate-500">
+<button class="hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-rounded text-base">flag</span>
+                    Report Issue
+                </button>
+<button class="hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-rounded text-base">help</span>
+                    Help Center
+                </button>
+</div>
+</div>
+</main>
+
+</body></html>

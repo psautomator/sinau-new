@@ -1,0 +1,203 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                    String                    @id @default(cuid())
+  email                 String                    @unique
+  name                  String?
+  photoURL              String?
+  role                  String                    @default("USER")
+  createdAt             DateTime                  @default(now())
+  updatedAt             DateTime                  @updatedAt
+  
+  // Gamification & Progress
+  xp                    Int                       @default(0)
+  level                 Int                       @default(1)
+  learningStreak        Int                       @default(0)
+  lastActivityAt        DateTime?
+  
+  // Counters for achievements
+  lessonsCompletedCount Int                       @default(0)
+  learnedWordsCount     Int                       @default(0)
+  
+  // Relations
+  progress              UserProgress[]
+  stats                 UserStats?
+  xpEvents              UserXpEvent[]
+  srsItems              UserWordSpacedRepetition[]
+  achievements          UserAchievement[]
+  feedback              Feedback[]
+  notifications         Notification[]
+  notes                 UserLessonNote[]
+}
+
+model UserStats {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  xp        Int      @default(0)
+  level     Int      @default(1)
+  streak    Int      @default(0)
+  dailyGoal Int      @default(50)
+  updatedAt DateTime @updatedAt
+}
+
+model Module {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  level       String   @default("A1")
+  imageColor  String?  // for UI color coding
+  icon        String?
+  order       Int      @default(0)
+  published   Boolean  @default(false)
+  lessons     Lesson[]
+  vocabulary  Vocabulary[]
+}
+
+model Lesson {
+  id          String         @id @default(cuid())
+  title       String
+  slug        String         @unique
+  description String         @default("")
+  content     Json           // Structured lesson data (dialogue, grammar, etc.)
+  order       Int            @default(0)
+  published   Boolean        @default(false)
+  moduleId    String
+  module      Module         @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  progress    UserProgress[]
+  notes       UserLessonNote[]
+  quiz        Quiz?
+}
+
+model Quiz {
+  id          String         @id @default(cuid())
+  title       String
+  description String?
+  lessonId    String         @unique
+  lesson      Lesson         @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  questions   QuizQuestion[]
+  published   Boolean        @default(false)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model QuizQuestion {
+  id           String   @id @default(cuid())
+  quizId       String
+  quiz         Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  order        Int      @default(0)
+  questionText String
+  questionType String   @default("MULTIPLE_CHOICE")
+  options      Json?     // Array of { text: string, isCorrect: boolean, wordId?: string }
+  explanation  String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Vocabulary {
+  id              String                     @id @default(cuid())
+  word            String
+  translation     String
+  phonetic        String?
+  audioUrl        String?
+  aiHint          String?
+  exampleJavanese String?
+  exampleDutch    String?
+  notes           String?
+  tags            String[]                   @default([])
+  formality       Formality                  @default(NGOKO)
+  context         String?
+  category        String?                    // e.g. "Greetings", "Family"
+  moduleId        String?
+  module          Module?                    @relation(fields: [moduleId], references: [id])
+  srsItems        UserWordSpacedRepetition[]
+}
+
+model UserWordSpacedRepetition {
+  id             String    @id @default(cuid())
+  userId         String
+  wordId         String
+  repetitions    Int       @default(0)
+  interval       Int       @default(0)
+  easinessFactor Float     @default(2.5)
+  nextReviewDate DateTime  @default(now())
+  lastReviewedAt DateTime?
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word           Vocabulary @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, wordId])
+}
+
+model UserAchievement {
+  id              String   @id @default(cuid())
+  userId          String
+  achievementCode String
+  awardedAt       DateTime @default(now())
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserXpEvent {
+  id          String   @id @default(cuid())
+  userId      String
+  xpGained    Int
+  source      String   // e.g. "LESSON_COMPLETION", "QUIZ_COMPLETION"
+  description String?
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Feedback {
+  id           String   @id @default(cuid())
+  userId       String?
+  message      String
+  feedbackType String?
+  status       String   @default("NEW")
+  createdAt    DateTime @default(now())
+  user         User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId    String
+  lesson      Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  completedAt DateTime @default(now())
+
+  @@unique([userId, lessonId])
+}
+
+model UserLessonNote {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId  String
+  lesson    Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  note      String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, lessonId])
+}
+
+enum Formality {
+  NGOKO
+  KRAMA
+  KRAMA_INGGIL
+}

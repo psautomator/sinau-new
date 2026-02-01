@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "bal-balan",
+    "dutch": "voetballen",
+    "aiHint": "people playing football",
+    "audioJavanese": null,
+    "category": "Sport",
+    "exampleSentenceJavanese": "Ayo dolanan bal-balan ing lapangan.",
+    "exampleSentenceDutch": "Laten we gaan voetballen op het veld.",
+    "notes": "Reduplicatie van 'bal'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["sport", "voetbal", "team"]
+  },
+  {
+    "javanese": "tarik tambang",
+    "dutch": "touwtrekken",
+    "aiHint": "tug of war",
+    "audioJavanese": null,
+    "category": "Sport",
+    "exampleSentenceJavanese": "Tarik tambang butuh kekuwatan lan kekompakan.",
+    "exampleSentenceDutch": "Touwtrekken vereist kracht en teamwerk.",
+    "notes": "Een populaire sport op feestdagen.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["sport", "team", "kracht"]
+  },
+  {
+    "javanese": "tim",
+    "dutch": "team",
+    "aiHint": "sports team huddle",
+    "audioJavanese": null,
+    "category": "Sport",
+    "exampleSentenceJavanese": "Tim kita menang.",
+    "exampleSentenceDutch": "Ons team heeft gewonnen.",
+    "notes": "Leenwoord uit het Engels/Nederlands.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["sport", "groep", "samenwerking"]
+  },
+   {
+    "javanese": "lomba",
+    "dutch": "wedstrijd / competitie",
+    "aiHint": "competition trophy",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Ana lomba apa waé dina iki?",
+    "exampleSentenceDutch": "Welke wedstrijden zijn er vandaag?",
+    "notes": null,
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["competitie", "evenement", "sport"]
+  },
+  {
+    "javanese": "melu",
+    "dutch": "meedoen",
+    "aiHint": "person joining group",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Kowé melu sing endi?",
+    "exampleSentenceDutch": "Aan welke doe jij mee?",
+    "notes": null,
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["actie", "deelname", "sociaal"]
+  }
+]

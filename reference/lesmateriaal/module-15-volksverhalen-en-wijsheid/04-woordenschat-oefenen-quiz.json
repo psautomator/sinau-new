@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m15-l4",
+  "title": "Les 4 Quiz: Woordenschat Oefenen",
+  "description": "Test je kennis van de kernvocabulaire en spreekwoorden.",
+  "questions": [
+    {
+      "id": "q1-m15-l4-mcq",
+      "order": 1,
+      "questionText": "Wat is het Javaanse woord voor 'hebzuchtig'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m15-l4-opt1", "text": "Rejeki", "isCorrect": false, "wordId": "rejeki" },
+        { "id": "q1-m15-l4-opt2", "text": "Serakah", "isCorrect": true, "wordId": "serakah" },
+        { "id": "q1-m15-l4-opt3", "text": "Nrima", "isCorrect": false },
+        { "id": "q1-m15-l4-opt4", "text": "Alon", "isCorrect": false }
+      ],
+      "explanation": "'Serakah' is de term voor hebzucht, de negatieve eigenschap die centraal staat in de fabel van Asu Goblok."
+    },
+    {
+      "id": "q2-m15-l4-mcq-proverb",
+      "order": 2,
+      "questionText": "Welk spreekwoord adviseert geduld en bedachtzaamheid?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m15-l4-opt1", "text": "Becik ketitik, ala ketara", "isCorrect": false, "wordId": "becik ketitik, ala ketara" },
+        { "id": "q2-m15-l4-opt2", "text": "Nrima ing pandum", "isCorrect": false, "wordId": "nrima ing pandum" },
+        { "id": "q2-m15-l4-opt3", "text": "Alon-alon waton kelakon", "isCorrect": true, "wordId": "alon-alon waton kelakon" },
+        { "id": "q2-m15-l4-opt4", "text": "Aja serakah", "isCorrect": false }
+      ],
+      "explanation": "'Alon-alon waton kelakon' betekent letterlijk 'langzaam-langzaam, zolang het maar gebeurt', vergelijkbaar met 'haastige spoed is zelden goed'."
+    }
+  ]
+}

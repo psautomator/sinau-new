@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m12-l1",
+  "title": "Module 12: Les 1 Quiz - De Eerste Stagedag",
+  "description": "Test je kennis over een formele kennismaking op het werk.",
+  "questions": [
+    {
+      "id": "q1-m12-l1-mcq",
+      "order": 1,
+      "questionText": "Welk woord gebruikt Siti om te zeggen dat ze 'ijverig' zal leren?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m12-l1-opt1", "text": "Abot", "isCorrect": false },
+        { "id": "q1-m12-l1-opt2", "text": "Sregep", "isCorrect": true, "wordId": "sregep" },
+        { "id": "q1-m12-l1-opt3", "text": "Wedi", "isCorrect": false },
+        { "id": "q1-m12-l1-opt4", "text": "Anyar", "isCorrect": false }
+      ],
+      "explanation": "'Sregep' betekent ijverig of vlijtig, en toont haar goede intentie en werkethiek."
+    },
+    {
+      "id": "q2-m12-l1-mcq-culture",
+      "order": 2,
+      "questionText": "Waarom is het gebruik van `Kula` (ik) en `Pak` (meneer) belangrijk in de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m12-l1-opt1", "text": "Het is een oude, ongebruikelijke gewoonte.", "isCorrect": false },
+        { "id": "q2-m12-l1-opt2", "text": "Het toont respect en professionaliteit in een formele werkomgeving.", "isCorrect": true },
+        { "id": "q2-m12-l1-opt3", "text": "Het is alleen nodig als je een fout hebt gemaakt.", "isCorrect": false },
+        { "id": "q2-m12-l1-opt4", "text": "Het maakt de zinnen langer en duidelijker.", "isCorrect": false }
+      ],
+      "explanation": "Het gebruik van beleefde taal (`Krama`) is essentieel op de werkvloer om respect te tonen voor hiërarchie en een goede eerste indruk te maken."
+    }
+  ]
+}

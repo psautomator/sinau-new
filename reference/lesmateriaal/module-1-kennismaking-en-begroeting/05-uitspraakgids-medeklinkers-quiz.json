@@ -1,0 +1,44 @@
+
+{
+  "id": "quiz-m1-l5",
+  "title": "Module 1: Les 5 Quiz - Uitspraak Medeklinkers",
+  "description": "Test je kennis van de Javaanse medeklinkers.",
+  "questions": [
+    {
+      "id": "q1-m1-l5-mcq",
+      "order": 1,
+      "questionText": "Hoe wordt de letter 'c' in het Javaans, zoals in het woord 'cabe', doorgaans uitgesproken?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m1-l5-opt1", "text": "Als de 's' in 'soep'", "isCorrect": false },
+        { "id": "q1-m1-l5-opt2", "text": "Als de 'k' in 'kat'", "isCorrect": false },
+        { "id": "q1-m1-l5-opt3", "text": "Als de 'tj' in 'Tjechië'", "isCorrect": true, "wordId": "cabe" },
+        { "id": "q1-m1-l5-opt4", "text": "Als de 'g' in 'goed'", "isCorrect": false }
+      ],
+      "explanation": "De Javaanse 'c' wordt consequent uitgesproken als 'tj'. 'Cabe' klinkt dus als 'tjabe'."
+    },
+    {
+      "id": "q2-m1-l5-audio",
+      "order": 2,
+      "questionText": "Luister naar de audio. Welk woord hoor je en wat betekent het?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/nyapu.mp3",
+      "options": [
+        { "id": "q2-m1-l5-opt1", "text": "jajan (snack)", "isCorrect": false, "wordId": "jajan" },
+        { "id": "q2-m1-l5-opt2", "text": "nyapu (vegen)", "isCorrect": true, "wordId": "nyapu" },
+        { "id": "q2-m1-l5-opt3", "text": "lawang (deur)", "isCorrect": false, "wordId": "lawang" },
+        { "id": "q2-m1-l5-opt4", "text": "mboten (niet)", "isCorrect": false, "wordId": "mboten" }
+      ],
+      "explanation": "De audio zegt 'nyapu', waarbij de 'ny' klinkt als de Spaanse 'ñ'. Het betekent 'vegen'."
+    },
+    {
+      "id": "q3-m1-l5-typeheard",
+      "order": 3,
+      "questionText": "Luister naar de audio en typ wat je hoort.",
+      "questionType": "TYPE_HEARD_AUDIO",
+      "audioPromptUrl": "/audio/uploads/rokok.mp3",
+      "fillInAnswers": ["rokok"],
+      "explanation": "Je hoorde 'rokok' (sigaret), met een duidelijk rollende 'r'."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+
+{
+  "id": "quiz-m17-l2",
+  "title": "Module 17: Les 2 Quiz - Het Gesprek",
+  "description": "Test je kennis van de formele dialoog.",
+  "questions": [
+    {
+      "id": "q1-m17-l2-mcq",
+      "order": 1,
+      "questionText": "Welk beleefd woord gebruikt Ibu Dewi om Siti uit te nodigen om te gaan zitten?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m17-l2-opt1", "text": "Rawuh", "isCorrect": false, "wordId": "rawuh" },
+        { "id": "q1-m17-l2-opt2", "text": "Tindak", "isCorrect": false },
+        { "id": "q1-m17-l2-opt3", "text": "Pinarak", "isCorrect": true, "wordId": "pinarak" },
+        { "id": "q1-m17-l2-opt4", "text": "Lungguh", "isCorrect": false }
+      ],
+      "explanation": "'Pinarak' is een zeer beleefd (Krama Inggil) woord om een gerespecteerde gast uit te nodigen om te zitten."
+    },
+    {
+      "id": "q2-m17-l2-match",
+      "order": 2,
+      "questionText": "Combineer het Ngoko-woord met de Krama-vorm die in de dialoog door Siti wordt gebruikt.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Seneng (leuk vinden)"},
+        {"value": "Duwé (hebben)"}
+      ],
+      "matchItemsRight": [
+        {"value": "Remen"},
+        {"value": "Gadhah"}
+      ],
+      "explanation": "Siti gebruikt de correcte Krama-vormen `remen` en `gadhah` om haar zinnen formeel en respectvol te maken."
+    }
+  ]
+}

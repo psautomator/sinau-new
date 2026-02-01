@@ -1,0 +1,43 @@
+
+{
+  "id": "quiz-m1-l1",
+  "title": "Module 1: Les 1 Quiz - De Eerste Schooldag",
+  "description": "Test je kennis van de eerste les.",
+  "questions": [
+    {
+      "id": "q1-m1-l1-mcq",
+      "order": 1,
+      "questionText": "Wat is de formele en zeer beleefde manier om 'Welkom' te zeggen in de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m1-l1-opt1", "text": "Halo", "isCorrect": false, "wordId": "hallo" },
+        { "id": "q1-m1-l1-opt2", "text": "Sugeng rawuh", "isCorrect": true, "wordId": "sugeng rawuh" },
+        { "id": "q1-m1-l1-opt3", "text": "Piye kabaré?", "isCorrect": false, "wordId": "piye kabaré?" },
+        { "id": "q1-m1-l1-opt4", "text": "Matur nuwun", "isCorrect": false, "wordId": "matur nuwun" }
+      ],
+      "explanation": "'Sugeng rawuh' is de meest formele en beleefde welkomstgroet, gebruikt door Mbak Intan om gastvrijheid en respect te tonen."
+    },
+    {
+      "id": "q2-m1-l1-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: '___ kabaré?' (Hoe gaat het?)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["Piye"],
+      "explanation": "'Piye kabaré?' is de standaard informele vraag naar iemands welzijn."
+    },
+    {
+      "id": "q3-m1-l1-audio",
+      "order": 3,
+      "questionText": "Luister naar het audiofragment. Wat betekent het woord dat je hoort?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/sae.mp3",
+      "options": [
+        { "id": "q3-m1-l1-opt1", "text": "Hallo", "isCorrect": false },
+        { "id": "q3-m1-l1-opt2", "text": "Dank u wel", "isCorrect": false },
+        { "id": "q3-m1-l1-opt3", "text": "Goed (beleefd)", "isCorrect": true, "wordId": "saé" },
+        { "id": "q3-m1-l1-opt4", "text": "Welkom", "isCorrect": false }
+      ],
+      "explanation": "Het audiofragment zegt 'saé', de beleefde (Krama) vorm voor 'goed', zoals Siti antwoordde aan haar lerares."
+    }
+  ]
+}

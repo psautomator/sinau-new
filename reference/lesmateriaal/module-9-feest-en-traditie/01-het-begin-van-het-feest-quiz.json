@@ -1,0 +1,43 @@
+
+{
+  "id": "quiz-m9-l1",
+  "title": "Module 9: Les 1 Quiz - Het Begin van het Feest",
+  "description": "Test je kennis van de eerste les over feesten.",
+  "questions": [
+    {
+      "id": "q1-m9-l1-mcq",
+      "order": 1,
+      "questionText": "Wat is een `slametan`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m9-l1-opt1", "text": "Een verjaardagsfeest", "isCorrect": false },
+        { "id": "q1-m9-l1-opt2", "text": "Een rituele maaltijd om dankbaarheid te tonen", "isCorrect": true, "wordId": "slametan" },
+        { "id": "q1-m9-l1-opt3", "text": "Een sportwedstrijd", "isCorrect": false },
+        { "id": "q1-m9-l1-opt4", "text": "Een schooluitje", "isCorrect": false }
+      ],
+      "explanation": "Een `slametan` is een belangrijk ritueel en een gezamenlijke maaltijd die gehouden wordt om dankbaarheid te tonen en om veiligheid of voorspoed te vragen."
+    },
+    {
+      "id": "q2-m9-l1-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Muga-muga nggawa ___.' (Hopelijk brengt het voorspoed.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["rejeki"],
+      "explanation": "`Rejeki` is het concept van voorspoed, zegen of geluk, wat vaak de wens is bij een `slametan`."
+    },
+    {
+        "id": "q3-m9-l1-audio",
+        "order": 3,
+        "questionText": "Luister naar het woord. Wat betekent het?",
+        "questionType": "AUDIO_CHOICE",
+        "audioPromptUrl": "/audio/uploads/pesta.mp3",
+        "options": [
+          { "id": "q3-m9-l1-opt1", "text": "Feest", "isCorrect": true, "wordId": "pesta" },
+          { "id": "q3-m9-l1-opt2", "text": "Recept", "isCorrect": false },
+          { "id": "q3-m9-l1-opt3", "text": "Cadeau", "isCorrect": false },
+          { "id": "q3-m9-l1-opt4", "text": "Koken", "isCorrect": false }
+        ],
+        "explanation": "Het woord 'pesta' is een algemene term voor 'feest'."
+    }
+  ]
+}

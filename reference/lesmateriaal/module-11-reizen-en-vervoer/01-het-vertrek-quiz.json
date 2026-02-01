@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m11-l1",
+  "title": "Module 11: Les 1 Quiz - Het Vertrek",
+  "description": "Test je kennis van de start van de reis.",
+  "questions": [
+    {
+      "id": "q1-m11-l1-mcq",
+      "order": 1,
+      "questionText": "Waarom kiest de moeder van Siti voor de bus in plaats van de auto?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m11-l1-opt1", "text": "Omdat het sneller is.", "isCorrect": false },
+        { "id": "q1-m11-l1-opt2", "text": "Omdat de auto kapot is.", "isCorrect": false },
+        { "id": "q1-m11-l1-opt3", "text": "Omdat het gezelliger (`gayeng`) en meer ontspannen is.", "isCorrect": true, "wordId": "gayeng" },
+        { "id": "q1-m11-l1-opt4", "text": "Omdat ze geen benzine hebben.", "isCorrect": false }
+      ],
+      "explanation": "De moeder zegt: 'Numpak bis waé, luwih gayeng! ... nèk numpak bis isa santai.' Dit betekent dat de bus gezelliger is en dat ze kunnen ontspannen."
+    },
+    {
+      "id": "q2-m11-l1-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Ayo cepet! Mengko ketinggalan ___!' (Schiet op, straks missen we de...!)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["bis"],
+      "explanation": "De moeder waarschuwt dat ze de bus (`bis`) zullen missen als ze niet opschieten."
+    }
+  ]
+}

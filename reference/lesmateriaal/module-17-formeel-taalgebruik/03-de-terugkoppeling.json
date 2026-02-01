@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "panuwun",
+    "dutch": "dank / verzoek",
+    "aiHint": "formal thank you note",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Kula ngaturaken panuwun.",
+    "exampleSentenceDutch": "Ik breng mijn dank over.",
+    "notes": "Een formele manier om dankbaarheid of een verzoek uit te drukken. 'Matur nuwun' is de meest gebruikte uitdrukking.",
+    "level": "C1",
+    "formality": "KramaMadya",
+    "tags": ["concept", "dankbaarheid", "formeel", "krama"]
+  },
+  {
+    "javanese": "saran",
+    "dutch": "suggestie / advies",
+    "aiHint": "suggestion lightbulb",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Matur nuwun kagem saranipun.",
+    "exampleSentenceDutch": "Dank u wel voor uw suggestie.",
+    "notes": "Leenwoord, wordt gebruikt in formele en informele contexten.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["concept", "advies", "communicatie"]
+  },
+  {
+    "javanese": "percaya dhiri",
+    "dutch": "zelfverzekerd",
+    "aiHint": "confident person",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Panjenengan kedah langkung percaya dhiri.",
+    "exampleSentenceDutch": "U moet wat zelfverzekerder zijn.",
+    "notes": "Combinatie van 'percaya' (geloven) en 'dhiri' (zelf).",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["eigenschap", "persoonlijkheid", "zelfvertrouwen"]
+  }
+]

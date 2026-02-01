@@ -1,0 +1,94 @@
+
+[
+    {
+        "javanese": "guru",
+        "dutch": "leraar",
+        "aiHint": "teacher classroom",
+        "audioJavanese": "/audio/uploads/guru.mp3",
+        "category": "Beroep",
+        "exampleSentenceJavanese": "Guru Basa Jawa iku sabar.",
+        "exampleSentenceDutch": "De leraar Javaans is geduldig.",
+        "notes": "Een zeer gerespecteerd beroep.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["beroep", "educatie", "school"]
+    },
+    {
+        "javanese": "tukang",
+        "dutch": "vakman",
+        "aiHint": "carpenter working",
+        "audioJavanese": null,
+        "category": "Beroep",
+        "exampleSentenceJavanese": "Tukang kayu lagi ndandani lawang.",
+        "exampleSentenceDutch": "De timmerman is de deur aan het repareren.",
+        "notes": "Wordt gebruikt als voorvoegsel voor specifieke ambachten (e.g., tukang kayu - timmerman, tukang listrik - elektricien).",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["beroep", "ambacht", "vakman"]
+    },
+    {
+        "javanese": "pager",
+        "dutch": "omheining",
+        "aiHint": "wooden fence",
+        "audioJavanese": "/audio/uploads/pager.mp3",
+        "category": "Objecten",
+        "exampleSentenceJavanese": "Omahku ana pageré.",
+        "exampleSentenceDutch": "Mijn huis heeft een omheining.",
+        "notes": "Kan worden gebruikt in werkwoorden zoals 'mageri' (omheinen).",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["huis", "tuin", "object"]
+    },
+    {
+        "javanese": "nambani",
+        "dutch": "medicijn geven / behandelen",
+        "aiHint": "giving medicine",
+        "audioJavanese": "/audio/uploads/nambani.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Dhokter nambani pasien.",
+        "exampleSentenceDutch": "De dokter behandelt de patiënt.",
+        "notes": "Afgeleid van 'tamba' (medicijn).",
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["gezondheid", "werkwoord", "actie"]
+    },
+    {
+        "javanese": "ngresiki",
+        "dutch": "schoonmaken",
+        "aiHint": "person cleaning",
+        "audioJavanese": "/audio/uploads/ngresiki.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku ngresiki kamarku.",
+        "exampleSentenceDutch": "Ik maak mijn kamer schoon.",
+        "notes": "Afgeleid van 'resik' (schoon).",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["huishouden", "werkwoord", "actie"]
+    },
+    {
+        "javanese": "damel",
+        "dutch": "maken (beleefd)",
+        "aiHint": "person crafting",
+        "audioJavanese": "/audio/uploads/damel.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Kula badhe damel kopi.",
+        "exampleSentenceDutch": "Ik wil graag koffie maken.",
+        "notes": "De Krama-vorm van 'gawe' (maken).",
+        "level": "B1",
+        "formality": "KramaMadya",
+        "tags": ["werkwoord", "actie", "krama"]
+    },
+    {
+        "javanese": "ndandani",
+        "dutch": "repareren",
+        "aiHint": "person repairing",
+        "audioJavanese": "/audio/uploads/ndandani.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Bapak lagi ndandani pager.",
+        "exampleSentenceDutch": "Vader is de omheining aan het repareren.",
+        "notes": "Actieve vorm van 'dandan'. De beleefde vorm is 'ndandosi'.",
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": ["werkwoord", "actie", "reparatie"]
+    }
+]

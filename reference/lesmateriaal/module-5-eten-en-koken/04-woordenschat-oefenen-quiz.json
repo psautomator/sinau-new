@@ -1,0 +1,49 @@
+
+{
+  "id": "quiz-m5-l4",
+  "title": "Module 5: Les 4 Quiz - Woordenschat Oefenen",
+  "description": "Test je kennis van de kookvocabulaire.",
+  "questions": [
+    {
+      "id": "q1-m5-l4-match",
+      "order": 1,
+      "questionText": "Combineer het Javaanse ingrediënt met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Bawang"},
+        {"value": "Uyah"},
+        {"value": "Gula"},
+        {"value": "Apel"}
+      ],
+      "matchItemsRight": [
+        {"value": "Ui"},
+        {"value": "Zout"},
+        {"value": "Suiker"},
+        {"value": "Appel"}
+      ],
+      "explanation": "Dit zijn correcte vertalingen voor veelvoorkomende ingrediënten in de Javaanse keuken."
+    },
+    {
+      "id": "q2-m5-l4-audio",
+      "order": 2,
+      "questionText": "Luister naar het woord. Wat voor object is dit?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/wajan.mp3",
+      "options": [
+        { "id": "q2-m5-l4-opt1", "text": "Een mes", "isCorrect": false },
+        { "id": "q2-m5-l4-opt2", "text": "Een wok / koekenpan", "isCorrect": true, "wordId": "wajan" },
+        { "id": "q2-m5-l4-opt3", "text": "Een bord", "isCorrect": false },
+        { "id": "q2-m5-l4-opt4", "text": "Een lepel", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'wajan', wat het essentiële kookgerei is voor bakken en roerbakken."
+    },
+    {
+      "id": "q3-m5-l4-fib",
+      "order": 3,
+      "questionText": "Vul het ontbrekende woord in: '___ iku legi, nanging uyah iku asin.' (___ is zoet, maar zout is zoutig.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["Gula"],
+      "explanation": "'Gula' betekent suiker en heeft een zoete smaak ('legi')."
+    }
+  ]
+}

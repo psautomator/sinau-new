@@ -1,0 +1,107 @@
+
+[
+    {
+        "javanese": "kulawarga",
+        "dutch": "familie / gezin",
+        "aiHint": "family portrait",
+        "audioJavanese": "/audio/uploads/kulawarga.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Kulawargaku manggon ing Paramaribo.",
+        "exampleSentenceDutch": "Mijn familie woont in Paramaribo.",
+        "notes": "Algemeen woord voor familie/gezin.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": [ "familie", "relaties", "gezin" ]
+    },
+    {
+        "javanese": "bapak",
+        "dutch": "vader",
+        "aiHint": "father parent",
+        "audioJavanese": "/audio/uploads/bapak.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Iki bapakku.",
+        "exampleSentenceDutch": "Dit is mijn vader.",
+        "notes": "Respectvolle term.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["familie", "ouders", "respect"]
+    },
+    {
+        "javanese": "ibu",
+        "dutch": "Moeder",
+        "aiHint": "moeder familielid",
+        "audioJavanese": "/audio/uploads/ibu.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Iki ibuku.",
+        "exampleSentenceDutch": "Dit is mijn moeder.",
+        "notes": "Respectvolle term.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["familie", "ouders", "respect"]
+    },
+    {
+        "javanese": "simbah",
+        "dutch": "grootouder (oma/opa)",
+        "aiHint": "oma opa",
+        "audioJavanese": "/audio/uploads/simbah.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Aku sowan menyang omahé simbah.",
+        "exampleSentenceDutch": "Ik ga op bezoek bij mijn grootouder.",
+        "notes": "Algemeen en respectvol woord voor grootouders.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": [ "familie", "aanspreekvorm", "respect" ]
+    },
+    {
+        "javanese": "kakang",
+        "dutch": "oudere broer",
+        "aiHint": "older brother",
+        "audioJavanese": "/audio/uploads/kakang.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Kakangku jenengé Budi.",
+        "exampleSentenceDutch": "Mijn oudere broer heet Budi.",
+        "notes": "Vaak aangesproken als 'Mas'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": [ "familie", "broer" ]
+    },
+    {
+        "javanese": "adhik",
+        "dutch": "jongere broer/zus",
+        "aiHint": "jongere broer/zus",
+        "audioJavanese": "/audio/uploads/adhik.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Iki adhikku.",
+        "exampleSentenceDutch": "Dit is mijn jongere broer/zus.",
+        "notes": "Genderneutraal woord voor jongere sibling.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": [ "familie", "sibling", "relaties" ]
+    },
+    {
+        "javanese": "kowé",
+        "dutch": "jij / je",
+        "aiHint": "person pointing other",
+        "audioJavanese": "/audio/uploads/kowe.mp3",
+        "category": "Voornaamwoord",
+        "exampleSentenceJavanese": "Kowé saka ngendi?",
+        "exampleSentenceDutch": "Waar kom jij vandaan?",
+        "notes": "Standaard informeel woord voor 'jij', gebruikt onder vrienden en gelijken.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [ "voornaamwoord", "persoonlijk", "informeel" ]
+    },
+    {
+        "javanese": "panjenengan",
+        "dutch": "u (zeer beleefd)",
+        "aiHint": "respectful greeting",
+        "audioJavanese": "/audio/uploads/panjenengan.mp3",
+        "category": "Voornaamwoord",
+        "exampleSentenceJavanese": "Kadospundi kabaripun panjenengan?",
+        "exampleSentenceDutch": "Hoe gaat het met u?",
+        "notes": "De meest formele en respectvolle manier om 'u' te zeggen.",
+        "level": "B1",
+        "formality": "KramaInggil",
+        "tags": ["pronomen", "krama inggil", "persoonlijk", "zeer formeel"]
+    }
+]

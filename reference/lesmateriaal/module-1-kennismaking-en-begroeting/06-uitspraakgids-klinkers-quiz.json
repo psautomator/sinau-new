@@ -1,0 +1,47 @@
+
+{
+  "id": "quiz-m1-l6",
+  "title": "Module 1: Les 6 Quiz - Uitspraak Klinkers",
+  "description": "Test je kennis van de Javaanse klinkerregels.",
+  "questions": [
+    {
+      "id": "q1-m1-l6-mcq-rule",
+      "order": 1,
+      "questionText": "In welk van de volgende woorden klinkt de 'a' als een doffe 'e' (schwa), zoals uitgelegd in de les?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m1-l6-opt1", "text": "sapa", "isCorrect": false, "wordId": "sapa" },
+        { "id": "q1-m1-l6-opt2", "text": "pasar", "isCorrect": true, "wordId": "pasar" },
+        { "id": "q1-m1-l6-opt3", "text": "toko", "isCorrect": false, "wordId": "toko" },
+        { "id": "q1-m1-l6-opt4", "text": "buku", "isCorrect": false, "wordId": "buku" }
+      ],
+      "explanation": "De 'a' in 'pasar' staat in een gesloten lettergreep ('sar') en klinkt daarom als een doffe 'e' (pa-sər). In 'sapa' staat de 'a' in een open lettergreep en klinkt hij helder."
+    },
+    {
+      "id": "q2-m1-l6-mcq-h",
+      "order": 2,
+      "questionText": "Welke invloed heeft een '-h' aan het einde van een woord op de voorgaande klinker 'i', zoals in 'sugih' (rijk)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m1-l6-opt1", "text": "De 'i' wordt een korte, doffe 'i'.", "isCorrect": false },
+        { "id": "q2-m1-l6-opt2", "text": "De 'i' blijft onveranderd.", "isCorrect": false },
+        { "id": "q2-m1-l6-opt3", "text": "De 'i' wordt een heldere 'é' (su-géh).", "isCorrect": true, "wordId": "sugih" },
+        { "id": "q2-m1-l6-opt4", "text": "De 'i' wordt een doffe 'o'.", "isCorrect": false }
+      ],
+      "explanation": "Een 'h' aan het einde van een woord verandert de voorgaande 'i' in een heldere 'é'-klank. 'Sugih' wordt dus uitgesproken als 'su-géh'."
+    },
+     {
+      "id": "q3-m1-l6-mcq-k",
+      "order": 3,
+      "questionText": "Welke invloed heeft een '-k' aan het einde van een woord op de voorgaande klinker 'i', zoals in 'pitik' (kip)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m1-l6-opt1", "text": "De 'i' wordt een korte, doffe 'i'.", "isCorrect": false },
+        { "id": "q3-m1-l6-opt2", "text": "De 'i' blijft onveranderd.", "isCorrect": false },
+        { "id": "q3-m1-l6-opt3", "text": "De 'i' wordt een heldere 'é' (pi-ték).", "isCorrect": true, "wordId": "pitik" },
+        { "id": "q3-m1-l6-opt4", "text": "De 'i' wordt een doffe 'o'.", "isCorrect": false }
+      ],
+      "explanation": "Een '-k' (glottal stop) aan het einde van een woord verandert de voorgaande 'i' in een heldere 'é'-klank. 'Pitik' wordt dus uitgesproken als 'pi-ték'."
+    }
+  ]
+}

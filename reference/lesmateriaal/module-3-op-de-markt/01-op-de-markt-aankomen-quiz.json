@@ -1,0 +1,36 @@
+
+{
+  "id": "quiz-m3-l1",
+  "title": "Module 3: Les 1 Quiz - Op de Markt Aankomen",
+  "description": "Test je kennis van de eerste les op de markt.",
+  "questions": [
+    {
+      "id": "q1-m3-l1-mcq-culture",
+      "order": 1,
+      "questionText": "Wat is het eerste wat Siti's moeder doet als ze bij het kraampje aankomt, en wat leert dit ons over de markt-etiquette?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m3-l1-opt1", "text": "Ze vraagt direct naar de prijs om efficiënt te zijn.", "isCorrect": false },
+        { "id": "q1-m3-l1-opt2", "text": "Ze begroet de verkoopster en maakt een praatje, wat respect toont.", "isCorrect": true },
+        { "id": "q1-m3-l1-opt3", "text": "Ze pakt de groenten om de versheid te controleren.", "isCorrect": false },
+        { "id": "q1-m3-l1-opt4", "text": "Ze negeert de verkoopster en praat alleen met Siti.", "isCorrect": false }
+      ],
+      "explanation": "Op een Javaanse markt is het maken van een praatje en het tonen van respect door te groeten een belangrijk onderdeel van de interactie."
+    },
+    {
+      "id": "q2-m3-l1-match-verbs",
+      "order": 2,
+      "questionText": "Combineer het Javaanse werkwoord voor 'kopen' met de juiste context.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Tuku"},
+        {"value": "Tumbas"}
+      ],
+      "matchItemsRight": [
+        {"value": "Informeel (Siti tegen haar moeder)"},
+        {"value": "Beleefd (Moeder tegen de verkoopster)"}
+      ],
+      "explanation": "'Tumbas' is de beleefde (Krama) vorm van 'kopen', terwijl 'tuku' de informele (Ngoko) vorm is."
+    }
+  ]
+}

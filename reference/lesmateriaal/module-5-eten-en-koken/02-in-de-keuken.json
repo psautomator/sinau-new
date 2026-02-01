@@ -1,0 +1,81 @@
+
+[
+    {
+        "javanese": "ngiris",
+        "dutch": "snijden",
+        "aiHint": "cutting vegetables",
+        "audioJavanese": "/audio/uploads/ngiris.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku lagi ngiris bawang.",
+        "exampleSentenceDutch": "Ik ben ui aan het snijden.",
+        "notes": "Actieve vorm van 'iris'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["koken", "actie"]
+    },
+    {
+        "javanese": "nggodhog",
+        "dutch": "koken (in water)",
+        "aiHint": "boiling water pot",
+        "audioJavanese": "/audio/uploads/nggodhog.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Ibu nggodhok banyu kanggo teh.",
+        "exampleSentenceDutch": "Moeder kookt water voor de thee.",
+        "notes": "Actieve vorm van 'godhog'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["koken", "actie"]
+    },
+    {
+        "javanese": "nggoreng",
+        "dutch": "bakken / frituren",
+        "aiHint": "frying pan",
+        "audioJavanese": "/audio/uploads/nggoreng.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku arep nggoreng iwak.",
+        "exampleSentenceDutch": "Ik ga vis bakken.",
+        "notes": "Actieve vorm van 'goreng'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["koken", "actie"]
+    },
+    {
+        "javanese": "panas",
+        "dutch": "heet / warm",
+        "aiHint": "hot temperature",
+        "audioJavanese": "/audio/uploads/panas.mp3",
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Awas, wajané isih panas.",
+        "exampleSentenceDutch": "Pas op, de wok is nog heet.",
+        "notes": "",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["temperatuur", "gevoel"]
+    },
+    {
+        "javanese": "wangi",
+        "dutch": "geurig / heerlijk ruiken",
+        "aiHint": "smelling flower",
+        "audioJavanese": null,
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Bumbuné wangi banget.",
+        "exampleSentenceDutch": "De kruiden ruiken erg lekker.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["geur", "zintuig", "positief"]
+    },
+    {
+        "javanese": "rahasia",
+        "dutch": "geheim",
+        "aiHint": "secret key",
+        "audioJavanese": null,
+        "category": "Concept",
+        "exampleSentenceJavanese": "Iki resep rahasia.",
+        "exampleSentenceDutch": "Dit is een geheim recept.",
+        "notes": "Leenwoord, wordt gebruikt voor vertrouwelijke informatie.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["concept", "geheim"]
+    }
+]

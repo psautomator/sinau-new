@@ -1,0 +1,61 @@
+
+{
+  "id": "quiz-m3-l3",
+  "title": "Module 3: Les 3 Quiz - Kleuren en Eigenschappen",
+  "description": "Test je kennis van Javaanse kleuren en eigenschappen met gevarieerde vragen.",
+  "questions": [
+    {
+      "id": "q1-m3-l3-mcq",
+      "order": 1,
+      "questionText": "Hoe zeg je 'een klein huis' in het Javaans (Ngoko)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m3-l3-opt1", "text": "Gedhé omah", "isCorrect": false },
+        { "id": "q1-m3-l3-opt2", "text": "Cilik omah", "isCorrect": false },
+        { "id": "q1-m3-l3-opt3", "text": "Omah cilik", "isCorrect": true, "wordId": "cilik" },
+        { "id": "q1-m3-l3-opt4", "text": "Omah gedhé", "isCorrect": false, "wordId": "gedhé" }
+      ],
+      "explanation": "In het Javaans komt het bijvoeglijk naamwoord ('cilik') na het zelfstandig naamwoord ('omah')."
+    },
+    {
+      "id": "q2-m3-l3-match",
+      "order": 2,
+      "questionText": "Combineer de kleur met de juiste Ngoko-vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Rood"}, 
+        {"value": "Groen"}, 
+        {"value": "Geel"},
+        {"value": "Zwart"}
+      ],
+      "matchItemsRight": [
+        {"value": "Abang"}, 
+        {"value": "Ijo"}, 
+        {"value": "Kuning"},
+        {"value": "Ireng"}
+      ],
+      "explanation": "Dit zijn de correcte informele (Ngoko) vertalingen voor deze basiskleuren."
+    },
+    {
+      "id": "q3-m3-l3-fib",
+      "order": 3,
+      "questionText": "Vul het ontbrekende woord in uit de dialoog: 'Kain ___ iki apik lan murah.' (Deze groene doek is mooi en goedkoop.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["ijo"],
+      "explanation": "In de dialoog beschrijft de verkoper een 'kain ijo' (groene doek)."
+    },
+    {
+      "id": "q4-m3-l3-audio-choice",
+      "order": 4,
+      "questionText": "Luister naar de audio. Welke twee kleuren hoor je?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/abang_lan_ijo.mp3",
+      "options": [
+        { "id": "q4-m3-l3-opt1", "text": "Rood en Groen", "isCorrect": true },
+        { "id": "q4-m3-l3-opt2", "text": "Geel en Zwart", "isCorrect": false },
+        { "id": "q4-m3-l3-opt3", "text": "Blauw en Wit", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'abang lan ijo', wat rood en groen betekent."
+    }
+  ]
+}

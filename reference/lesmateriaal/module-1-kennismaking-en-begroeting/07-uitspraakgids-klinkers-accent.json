@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "déwé",
+    "dutch": "wij / we",
+    "aiHint": "group people",
+    "audioJavanese": null,
+    "category": "Uitspraak",
+    "exampleSentenceJavanese": "Ayo sinau déwé-déwé.",
+    "exampleSentenceDutch": "Laten we zelfstandig leren.",
+    "notes": "De 'é'-klank is helder en hoog, zoals in 'café'.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["uitspraak", "klank", "klinker-e", "pronomen"]
+  },
+  {
+    "javanese": "péthèk",
+    "dutch": "aap",
+    "aiHint": "monkey primate",
+    "audioJavanese": null,
+    "category": "Uitspraak",
+    "exampleSentenceJavanese": "Péthèk mangan gedhang.",
+    "exampleSentenceDutch": "De aap eet een banaan.",
+    "notes": "Een alternatief woord voor aap, met de 'é' klank.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["uitspraak", "klank", "klinker-e", "dier"]
+  },
+  {
+    "javanese": "dhèwèké",
+    "dutch": "hij / zij",
+    "aiHint": "silhouette person",
+    "audioJavanese": "/audio/uploads/dheweke.mp3",
+    "category": "Uitspraak",
+    "exampleSentenceJavanese": "Dhèwèké lagi maca buku.",
+    "exampleSentenceDutch": "Hij/zij is een boek aan het lezen.",
+    "notes": "De 'è'-klank is dof en open, zoals in het Nederlandse 'bed'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["uitspraak", "klank", "klinker-e", "pronomen"]
+  },
+  {
+    "javanese": "mlèbu",
+    "dutch": "binnenkomen",
+    "aiHint": "entering a door",
+    "audioJavanese": "/audio/uploads/mlebu.mp3",
+    "category": "Uitspraak",
+    "exampleSentenceJavanese": "Ayo mlèbu, udan arep teka.",
+    "exampleSentenceDutch": "Kom binnen, de regen komt eraan.",
+    "notes": "De 'è' aan het begin van een werkwoord is een veelvoorkomend patroon.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["uitspraak", "klank", "klinker-e", "werkwoord"]
+  }
+]

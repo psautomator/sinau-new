@@ -1,0 +1,73 @@
+{
+  "id": "quiz-m7-l5-integratie",
+  "title": "Module 7 Eindquiz: Vrienden Maken",
+  "description": "Test je kennis over vriendschap, hobby's en sociale interacties uit Module 7.",
+  "questions": [
+    {
+      "id": "q1-m7-l5-mcq-vocab",
+      "order": 1,
+      "questionText": "Hoe zeg je 'vriend' in het Javaans?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m7-l5-opt1", "text": "Guru", "isCorrect": false },
+        { "id": "q1-m7-l5-opt2", "text": "Kanca", "isCorrect": true, "wordId": "kanca" },
+        { "id": "q1-m7-l5-opt3", "text": "Adhik", "isCorrect": false },
+        { "id": "q1-m7-l5-opt4", "text": "Simbah", "isCorrect": false }
+      ],
+      "explanation": "'Kanca' is het algemene woord voor vriend in het Javaans."
+    },
+    {
+      "id": "q2-m7-l5-mcq-property",
+      "order": 2,
+      "questionText": "Welk woord gebruik je om te zeggen dat iemand 'geduldig' is?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m7-l5-opt1", "text": "Pinter", "isCorrect": false, "wordId": "pinter" },
+        { "id": "q2-m7-l5-opt2", "text": "Sabar", "isCorrect": true, "wordId": "sabar" },
+        { "id": "q2-m7-l5-opt3", "text": "Seneng", "isCorrect": false, "wordId": "seneng" },
+        { "id": "q2-m7-l5-opt4", "text": "Lali", "isCorrect": false, "wordId": "lali" }
+      ],
+      "explanation": "'Sabar' is een gewaardeerde eigenschap en betekent 'geduldig'."
+    },
+    {
+      "id": "q3-m7-l5-mcq-hobby",
+      "order": 3,
+      "questionText": "Wat betekent `maca`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m7-l5-opt1", "text": "Zingen", "isCorrect": false },
+        { "id": "q3-m7-l5-opt2", "text": "Tekenen", "isCorrect": false },
+        { "id": "q3-m7-l5-opt3", "text": "Lezen", "isCorrect": true, "wordId": "maca" },
+        { "id": "q3-m7-l5-opt4", "text": "Spelen", "isCorrect": false }
+      ],
+      "explanation": "'Maca' is het Javaanse werkwoord voor 'lezen'."
+    },
+    {
+      "id": "q4-m7-l5-audio-choice",
+      "order": 4,
+      "questionText": "Luister en kies de juiste zin voor 'Laten we samen spelen'.",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/ayo_dolanan_bareng.mp3",
+      "options": [
+        { "id": "q4-m7-l5-opt1", "text": "Ayo sinau bareng.", "isCorrect": false },
+        { "id": "q4-m7-l5-opt2", "text": "Ayo dolanan bareng.", "isCorrect": true },
+        { "id": "q4-m7-l5-opt3", "text": "Ayo mangan bareng.", "isCorrect": false },
+        { "id": "q4-m7-l5-opt4", "text": "Ayo mulih bareng.", "isCorrect": false }
+      ],
+      "explanation": "'Ayo dolanan bareng' is een informele uitnodiging om samen te spelen."
+    },
+    {
+      "id": "q5-m7-l5-mcq-culture",
+      "order": 5,
+      "questionText": "Waarom is `tulung-tinulung` (elkaar helpen) belangrijk voor het opbouwen van een vriendschap?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q5-m7-l5-opt1", "text": "Het is een manier om te laten zien wie de baas is.", "isCorrect": false },
+        { "id": "q5-m7-l5-opt2", "text": "Het is alleen voor familie, niet voor vrienden.", "isCorrect": false },
+        { "id": "q5-m7-l5-opt3", "text": "Het bouwt vertrouwen en versterkt de sociale band.", "isCorrect": true, "wordId": "tulung-tinulung" },
+        { "id": "q5-m7-l5-opt4", "text": "Het is niet belangrijk, plezier maken wel.", "isCorrect": false }
+      ],
+      "explanation": "Het concept van wederzijdse hulp ('tulung-tinulung') is een kernwaarde die vertrouwen, solidariteit en gemeenschapszin bevordert, wat essentieel is voor een sterke vriendschap."
+    }
+  ]
+}

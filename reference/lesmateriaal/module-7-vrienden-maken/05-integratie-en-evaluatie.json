@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "kanca",
+    "dutch": "vriend",
+    "aiHint": "friends together",
+    "audioJavanese": "/audio/uploads/kanca.mp3",
+    "category": "Personen",
+    "exampleSentenceJavanese": "Aku duwe kanca akeh.",
+    "exampleSentenceDutch": "Ik heb veel vrienden.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "sociaal", "vriendschap" ]
+  },
+  {
+    "javanese": "seneng",
+    "dutch": "leuk vinden / houden van",
+    "aiHint": "person smiling happy",
+    "audioJavanese": "/audio/uploads/seneng.mp3",
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku seneng maca buku.",
+    "exampleSentenceDutch": "Ik vind boeken lezen leuk.",
+    "notes": "Kan worden gebruikt voor hobby's, eten, en algemene voorkeuren.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "gevoel", "voorkeur", "hobby" ]
+  },
+  {
+    "javanese": "pinter",
+    "dutch": "slim / goed in iets",
+    "aiHint": "brain lightbulb",
+    "audioJavanese": "/audio/uploads/pinter.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Siti pinter nggambar.",
+    "exampleSentenceDutch": "Siti is goed in tekenen.",
+    "notes": null,
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": [ "persoonlijkheid", "slim" ]
+  },
+  {
+    "javanese": "sabar",
+    "dutch": "geduldig",
+    "aiHint": "patience hourglass",
+    "audioJavanese": "/audio/uploads/sabar.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Guru iku kudu sabar.",
+    "exampleSentenceDutch": "Een leraar moet geduldig zijn.",
+    "notes": "",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": [ "eigenschap", "persoonlijkheid" ]
+  },
+  {
+    "javanese": "tulung-tinulung",
+    "dutch": "elkaar helpen",
+    "aiHint": "people helping community",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Ing desa, wong-wong isih padha tulung-tinulung.",
+    "exampleSentenceDutch": "In het dorp helpen de mensen elkaar nog steeds.",
+    "notes": "Een belangrijk cultureel concept van wederzijdse hulp en solidariteit.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": [ "cultuur", "gemeenschap", "helpen" ]
+  }
+]

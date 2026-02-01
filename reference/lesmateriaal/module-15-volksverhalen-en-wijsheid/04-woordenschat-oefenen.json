@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "rejeki",
+    "dutch": "voorspoed, zegen, geluk",
+    "aiHint": "lucky charm",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Muga-muga diparingi rejeki lancar.",
+    "exampleSentenceDutch": "Hopelijk wordt je een vlotte voorspoed gegeven.",
+    "notes": "Kan materieel (geld, oogst) en immaterieel (geluk, gezondheid) zijn.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["concept", "geluk", "voorspoed"]
+  },
+  {
+    "javanese": "serakah",
+    "dutch": "hebzuchtig",
+    "aiHint": "greedy person grabbing money",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Wong serakah ora tau marem.",
+    "exampleSentenceDutch": "Een hebzuchtig persoon is nooit tevreden.",
+    "notes": "Wordt als een zeer negatieve eigenschap beschouwd.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["eigenschap", "negatief", "hebzucht"]
+  },
+  {
+    "javanese": "nrima ing pandum",
+    "dutch": "tevreden zijn met je deel",
+    "aiHint": "grateful hands",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Wong Jawa iku kudu nrima ing pandum.",
+    "exampleSentenceDutch": "Een Javaan moet tevreden zijn met zijn deel.",
+    "notes": "Een kernfilosofie in de Javaanse cultuur over tevredenheid en acceptatie.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "tevredenheid", "cultuur"]
+  },
+  {
+    "javanese": "alon-alon waton kelakon",
+    "dutch": "haastige spoed is zelden goed",
+    "aiHint": "slow turtle winning",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Ora usah kesusu, alon-alon waton kelakon.",
+    "exampleSentenceDutch": "Je hoeft je niet te haasten, rustig aan dan komt het goed.",
+    "notes": "Een filosofie die geduld en bedachtzaamheid benadrukt.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "geduld"]
+  },
+  {
+    "javanese": "becik ketitik, ala ketara",
+    "dutch": "het goede en kwade komt altijd uit",
+    "aiHint": "truth revealed light",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Aja goroh, amarga becik ketitik, ala ketara.",
+    "exampleSentenceDutch": "Lieg niet, want de waarheid komt altijd aan het licht.",
+    "notes": "Een gezegde over de onvermijdelijkheid van de waarheid.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "waarheid", "karma"]
+  }
+]

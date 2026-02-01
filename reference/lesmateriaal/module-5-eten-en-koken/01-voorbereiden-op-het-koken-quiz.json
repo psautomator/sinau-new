@@ -1,0 +1,48 @@
+
+{
+  "id": "quiz-m5-l1",
+  "title": "Module 5: Les 1 Quiz - Voorbereiden op het Koken",
+  "description": "Test je kennis van de basiswoorden en de context in de keuken.",
+  "questions": [
+    {
+      "id": "q1-m5-l1-mcq",
+      "order": 1,
+      "questionText": "Wat is het Javaanse woord voor 'keuken' dat in de dialoog wordt gebruikt?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m5-l1-opt1", "text": "Kamar", "isCorrect": false },
+        { "id": "q1-m5-l1-opt2", "text": "Pasar", "isCorrect": false },
+        { "id": "q1-m5-l1-opt3", "text": "Pawon", "isCorrect": true, "wordId": "pawon" },
+        { "id": "q1-m5-l1-opt4", "text": "Omah", "isCorrect": false }
+      ],
+      "explanation": "'Pawon' is het Javaanse woord voor keuken, het hart van het huis waar gekookt wordt."
+    },
+    {
+      "id": "q2-m5-l1-mcq-context",
+      "order": 2,
+      "questionText": "Wat stelt Siti voor om te doen om haar tante te helpen?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m5-l1-opt1", "text": "Rijst koken", "isCorrect": false },
+        { "id": "q2-m5-l1-opt2", "text": "De tafel dekken", "isCorrect": false },
+        { "id": "q2-m5-l1-opt3", "text": "De kruiden halen", "isCorrect": false },
+        { "id": "q2-m5-l1-opt4", "text": "Pepers snijden", "isCorrect": true, "wordId": "ngiris" }
+      ],
+      "explanation": "Siti vraagt aan haar tante: 'Kula saged mbantu ngiris lombok, nggih?', wat betekent 'Ik kan helpen met het snijden van de pepers, toch?'."
+    },
+    {
+      "id": "q3-m5-l1-audio",
+      "order": 3,
+      "questionText": "Luister naar het woord. Wat betekent het?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/bumbu.mp3",
+      "options": [
+        { "id": "q3-m5-l1-opt1", "text": "Koken", "isCorrect": false },
+        { "id": "q3-m5-l1-opt2", "text": "Kruiden / Specerijen", "isCorrect": true, "wordId": "bumbu" },
+        { "id": "q3-m5-l1-opt3", "text": "Snijden", "isCorrect": false },
+        { "id": "q3-m5-l1-opt4", "text": "Keuken", "isCorrect": false }
+      ],
+      "explanation": "Het woord 'bumbu' betekent kruiden of specerijen, essentieel in de Javaanse keuken."
+    }
+  ]
+}

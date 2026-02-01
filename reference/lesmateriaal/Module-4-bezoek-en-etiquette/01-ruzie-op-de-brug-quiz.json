@@ -1,0 +1,52 @@
+
+{
+  "id": "quiz-m4-l1",
+  "title": "Module 4: Les 1 Quiz - Ruzie op de Brug",
+  "description": "Test je kennis over de start van de fabel.",
+  "questions": [
+    {
+      "id": "q1-m4-l1-mcq",
+      "order": 1,
+      "questionText": "Wat is de kern van het conflict tussen de twee geiten?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m4-l1-opt1", "text": "Ze willen allebei als eerste passeren en gunnen elkaar de ruimte niet.", "isCorrect": true },
+        { "id": "q1-m4-l1-opt2", "text": "De brug is van een van de twee geiten.", "isCorrect": false },
+        { "id": "q1-m4-l1-opt3", "text": "Ze hebben haast om naar huis te gaan.", "isCorrect": false },
+        { "id": "q1-m4-l1-opt4", "text": "Een van de geiten heeft de ander beledigd.", "isCorrect": false }
+      ],
+      "explanation": "Het conflict ontstaat omdat beide geiten koppig zijn en vinden dat ze het recht hebben om als eerste te passeren, zonder rekening te houden met de ander."
+    },
+    {
+      "id": "q2-m4-l1-match",
+      "order": 2,
+      "questionText": "Combineer het Javaanse werkwoord met de juiste betekenis in de context van de dialoog.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Liwat"},
+        {"value": "Mundur"}
+      ],
+      "matchItemsRight": [
+        {"value": "Passeren / voorbijgaan"},
+        {"value": "Achteruit gaan"}
+      ],
+      "explanation": "'Liwat' betekent passeren, terwijl 'mundur' het tegenovergestelde is: achteruit gaan."
+    },
+    {
+      "id": "q3-m4-l1-reorder",
+      "order": 3,
+      "questionText": "Zet de woorden uit de fabel in de juiste volgorde om de zin 'Jij moet achteruit gaan!' te vormen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [{"value": "Kowé"}, {"value": "sing"}, {"value": "kudu"}, {"value": "mundur!"}],
+      "explanation": "Dit is de koppige eis van de tweede geit, een directe zin uit de fabel."
+    },
+    {
+      "id": "q4-m4-l1-fib",
+      "order": 4,
+      "questionText": "Vul het ontbrekende woord uit de fabel in: 'Minggir! Aku arep ___ ndisik!'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["liwat"],
+      "explanation": "'Liwat' betekent passeren. Dit is de eis van de eerste geit die de confrontatie start."
+    }
+  ]
+}

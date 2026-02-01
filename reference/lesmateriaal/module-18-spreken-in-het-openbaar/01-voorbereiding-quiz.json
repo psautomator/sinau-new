@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m18-l1",
+  "title": "Module 18: Les 1 Quiz - De Voorbereiding",
+  "description": "Test je kennis over het voorbereiden van een toespraak.",
+  "questions": [
+    {
+      "id": "q1-m18-l1-mcq",
+      "order": 1,
+      "questionText": "Wat is het Javaanse woord voor een formele toespraak of redevoering?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m18-l1-opt1", "text": "Rembugan", "isCorrect": false },
+        { "id": "q1-m18-l1-opt2", "text": "Argumentasi", "isCorrect": false },
+        { "id": "q1-m18-l1-opt3", "text": "Pidato", "isCorrect": true, "wordId": "pidato" },
+        { "id": "q1-m18-l1-opt4", "text": "Sanggah", "isCorrect": false }
+      ],
+      "explanation": "'Pidato' is de term voor een formele toespraak, zoals Siti die voorbereidt."
+    },
+    {
+      "id": "q2-m18-l1-mcq-concept",
+      "order": 2,
+      "questionText": "Welk concept wil Siti centraal stellen in haar toespraak om haar publiek te raken?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m18-l1-opt1", "text": "Logica", "isCorrect": false },
+        { "id": "q2-m18-l1-opt2", "text": "Rasa (gevoel/essentie)", "isCorrect": true, "wordId": "rasa" },
+        { "id": "q2-m18-l1-opt3", "text": "Feiten", "isCorrect": false },
+        { "id": "q2-m18-l1-opt4", "text": "Statistieken", "isCorrect": false }
+      ],
+      "explanation": "Siti wil praten over de 'rasa' (het gevoel) van trots om een Javaan te zijn, wat aangeeft dat ze haar boodschap met emotie wil overbrengen."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "menang",
+    "dutch": "winnen",
+    "aiHint": "winner trophy",
+    "audioJavanese": null,
+    "category": "Sport",
+    "exampleSentenceJavanese": "Tim kita menang!",
+    "exampleSentenceDutch": "Ons team heeft gewonnen!",
+    "notes": null,
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["competitie", "winst", "resultaat"]
+  },
+  {
+    "javanese": "selamat",
+    "dutch": "gefeliciteerd / heil",
+    "aiHint": "congratulations greeting",
+    "audioJavanese": null,
+    "category": "Uitdrukking",
+    "exampleSentenceJavanese": "Selamat, kowé menang!",
+    "exampleSentenceDutch": "Gefeliciteerd, je hebt gewonnen!",
+    "notes": "Leenwoord, veel gebruikt voor felicitaties.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["wensen", "felicitatie", "viering"]
+  },
+  {
+    "javanese": "dolanan",
+    "dutch": "spel / spelen",
+    "aiHint": "game playing",
+    "audioJavanese": "/audio/uploads/dolanan.mp3",
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Dolananmu apik banget.",
+    "exampleSentenceDutch": "Jouw spel was erg goed.",
+    "notes": "Kan zowel 'spelen' (werkwoord) als 'een spel' (zelfstandig naamwoord) betekenen.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "vrije tijd", "spel" ]
+  }
+]

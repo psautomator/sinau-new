@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m11-l3",
+  "title": "Module 11: Les 3 Quiz - Aankomst",
+  "description": "Test je kennis over de bestemming en de terugreis.",
+  "questions": [
+    {
+      "id": "q1-m11-l3-mcq",
+      "order": 1,
+      "questionText": "Welk vervoermiddel is volgens de moeder geen optie voor de terugreis?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m11-l3-opt1", "text": "De taxi (`taksi`)", "isCorrect": false, "wordId": "taksi" },
+        { "id": "q1-m11-l3-opt2", "text": "De trein (`sepur`)", "isCorrect": true, "wordId": "sepur" },
+        { "id": "q1-m11-l3-opt3", "text": "De bus (`bis`)", "isCorrect": false },
+        { "id": "q1-m11-l3-opt4", "text": "De boot (`kapal`)", "isCorrect": false, "wordId": "kapal" }
+      ],
+      "explanation": "De moeder zegt: 'Ora ana sepur liwat kene, Nduk', wat betekent dat er geen trein langs die plek rijdt."
+    },
+    {
+      "id": "q2-m11-l3-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Alhamdulillah, wis ___.' (Godzijdank, we zijn aangekomen.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["tekan"],
+      "explanation": "'Tekan' is het werkwoord voor aankomen of een bestemming bereiken."
+    }
+  ]
+}

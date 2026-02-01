@@ -1,0 +1,30 @@
+
+{
+  "id": "quiz-m10-l2",
+  "title": "Module 10: Les 2 Quiz - Naar de Dokter",
+  "description": "Test je kennis van een doktersbezoek.",
+  "questions": [
+    {
+      "id": "q1-m10-l2-mcq",
+      "order": 1,
+      "questionText": "Welk advies geeft de dokter aan Siti?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m10-l2-opt1", "text": "Ze moet een injectie (`suntik`) krijgen.", "isCorrect": false },
+        { "id": "q1-m10-l2-opt2", "text": "Ze moet alleen rusten en thee drinken.", "isCorrect": false },
+        { "id": "q1-m10-l2-opt3", "text": "Ze moet tabletten (`tablet`) innemen.", "isCorrect": true },
+        { "id": "q1-m10-l2-opt4", "text": "Ze moet naar het ziekenhuis gaan.", "isCorrect": false }
+      ],
+      "explanation": "De dokter zegt: 'Mboten usah disuntik, cekap ngunjuk tablet mawon', wat betekent dat een injectie niet nodig is en tabletten innemen voldoende is."
+    },
+    {
+      "id": "q2-m10-l2-match",
+      "order": 2,
+      "questionText": "Combineer het symptoom met de juiste Javaanse term.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [{"value": "Hoest"}, {"value": "Verkouden"}, {"value": "Duizelig"}],
+      "matchItemsRight": [{"value": "Watuk"}, {"value": "Pileg"}, {"value": "Mumet"}],
+      "explanation": "Dit zijn de correcte termen voor deze veelvoorkomende klachten."
+    }
+  ]
+}

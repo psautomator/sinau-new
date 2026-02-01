@@ -1,0 +1,94 @@
+
+[
+    {
+        "javanese": "kanca",
+        "dutch": "vriend",
+        "aiHint": "friends together",
+        "audioJavanese": "/audio/uploads/kanca.mp3",
+        "category": "Personen",
+        "exampleSentenceJavanese": "Budi iku kancaku.",
+        "exampleSentenceDutch": "Budi is mijn vriend.",
+        "notes": "Kanca-kanca is het meervoud.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [ "sociaal", "vriendschap" ]
+    },
+    {
+        "javanese": "dolanan",
+        "dutch": "spelen",
+        "aiHint": "children playing",
+        "audioJavanese": "/audio/uploads/dolanan.mp3",
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Ayo dolanan bal-balan.",
+        "exampleSentenceDutch": "Laten we voetballen.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [ "vrije tijd", "spel" ]
+    },
+    {
+        "javanese": "maca",
+        "dutch": "lezen",
+        "aiHint": "person reading",
+        "audioJavanese": "/audio/uploads/maca.mp3",
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Aku seneng maca buku.",
+        "exampleSentenceDutch": "Ik vind het leuk om boeken te lezen.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [ "hobby", "school" ]
+    },
+    {
+        "javanese": "nggambar",
+        "dutch": "tekenen",
+        "aiHint": "person drawing",
+        "audioJavanese": null,
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Siti pinter nggambar.",
+        "exampleSentenceDutch": "Siti is goed in tekenen.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": [ "hobby", "kunst" ]
+    },
+    {
+        "javanese": "nyanyi",
+        "dutch": "zingen",
+        "aiHint": "person singing",
+        "audioJavanese": null,
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Dewi pinter nyanyi.",
+        "exampleSentenceDutch": "Dewi is goed in zingen.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": [ "hobby", "muziek" ]
+    },
+    {
+        "javanese": "pinter",
+        "dutch": "slim / goed in iets",
+        "aiHint": "brain lightbulb",
+        "audioJavanese": "/audio/uploads/pinter.mp3",
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Kowé pinter matematika.",
+        "exampleSentenceDutch": "Jij bent goed in wiskunde.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": [ "persoonlijkheid", "slim" ]
+    },
+    {
+        "javanese": "sabar",
+        "dutch": "geduldig",
+        "aiHint": "patience hourglass",
+        "audioJavanese": "/audio/uploads/sabar.mp3",
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Guru iku kudu sabar.",
+        "exampleSentenceDutch": "Een leraar moet geduldig zijn.",
+        "notes": "",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": [ "eigenschap", "persoonlijkheid" ]
+    }
+]

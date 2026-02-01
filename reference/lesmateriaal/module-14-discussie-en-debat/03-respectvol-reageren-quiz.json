@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m14-l3",
+  "title": "Module 14: Les 3 Quiz - Respectvol Reageren",
+  "description": "Test je kennis over respectvol reageren in een discussie.",
+  "questions": [
+    {
+      "id": "q1-m14-l3-mcq",
+      "order": 1,
+      "questionText": "Welk woord gebruikt Siti om een tegenargument of weerlegging te geven?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m14-l3-opt1", "text": "Pendapat", "isCorrect": false, "wordId": "pendapat" },
+        { "id": "q1-m14-l3-opt2", "text": "Sanggahan", "isCorrect": true, "wordId": "sanggah" },
+        { "id": "q1-m14-l3-opt3", "text": "Alasan", "isCorrect": false, "wordId": "alasan" },
+        { "id": "q1-m14-l3-opt4", "text": "Rembugan", "isCorrect": false, "wordId": "rembugan" }
+      ],
+      "explanation": "Siti zegt: 'Kula badhe maringi sanggahan', wat 'Ik wil graag een weerlegging geven' betekent. 'Sanggah' is de basisvorm."
+    },
+    {
+      "id": "q2-m14-l3-mcq-culture",
+      "order": 2,
+      "questionText": "Wat is het einddoel van 'musyawarah untuk mufakat' (overleg tot consensus)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m14-l3-opt1", "text": "De discussie winnen.", "isCorrect": false },
+        { "id": "q2-m14-l3-opt2", "text": "De ander overtuigen van je eigen gelijk.", "isCorrect": false },
+        { "id": "q2-m14-l3-opt3", "text": "Een oplossing vinden waar iedereen mee kan leven.", "isCorrect": true },
+        { "id": "q2-m14-l3-opt4", "text": "De discussie zo snel mogelijk beëindigen.", "isCorrect": false }
+      ],
+      "explanation": "Het doel is het bereiken van consensus en harmonie, niet het winnen van de discussie."
+    }
+  ]
+}

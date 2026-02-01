@@ -1,0 +1,39 @@
+[
+  {
+    "id": "dbfb2ac0-21ca-43be-bbc5-8e6daa183f32",
+    "type": "MARKDOWN",
+    "order": 1,
+    "content": {
+      "markdownText": "# Les 1: De Eerste Schooldag\r\n**Niveau:** A1 (Beginner), **Taalstijl:** Ngoko / Krama\r\n\r\n## 📜 Beschrijving\r\nIn deze eerste les maken we kennis met Siti, een 16-jarige tiener die haar eerste les Surinaams-Javaans volgt. Ze is een beetje nerveus, maar ook vastbesloten om de taal van haar oma te leren. We leren de meest essentiële begroetingen.\r\n\r\n## 🎯 Doel van de les\r\nAan het einde van deze les kun je:\r\n- Iemand begroeten met `sugeng rawuh` en `hallo`.\r\n- Vragen hoe het met iemand gaat met `piye kabaré?`.\r\n- Antwoord geven op de vraag hoe het met je gaat.\r\n- De culturele betekenis achter een Javaanse begroeting begrijpen.\r\n\r\n### 🗣️ Kernvocabulaire\r\n| Javaans | Nederlands | Context |\r\n|---|---|---|\r\n| `sugeng rawuh` | Welkom | Formeel, respectvol |\r\n| `piye kabaré?` | Hoe gaat het? | Informeel |\r\n| `saé` | Goed | Beleefd antwoord |\r\n| `matur nuwun` | Dank u wel | Beleefd |\r\n---\r\n\r\n## 📖 Verhaal: Scène 1\r\n*Siti komt voor het eerst de klas voor Javaanse les binnen. Haar lerares, Mbak Intan, begroet haar met een warme glimlach.*\r\n\r\n![Een lerares die een nieuwe leerling welkom heet in de klas](/images/lessons/teacher-welcome.png \"lerares heet nieuwe leerling welkom in klaslokaal\")\r\n\r\n**Dialoog:**\r\n**Mbak Intan:** \"Sugeng rawuh, Siti. Piye kabaré?\" (Welkom, Siti. Hoe gaat het?)\r\n**Siti:** (Verlegen) \"Saé, Bu Guru. Matur nuwun.\" (Goed, juffrouw. Dank u wel.)\r\n**Mbak Intan:** \"Aja wedi, sinau basa Jawa iku nyenengaké. Siap?\" (Wees niet bang, Javaans leren is leuk. Ben je er klaar voor?)\r\n**Siti:** (Knikt dapper) \"Inggih, siap!\" (Ja, ik ben er klaar voor!)\r\n\r\n---\r\n\r\n### 💡 Interactieve Vraag\r\nHoe zou jij je voelen op je eerste dag van een nieuwe cursus? Gebruik een Javaans woord als je er al een kent!\r\n\r\n---\r\n\r\n### 🎤 Voice Practice: De Dialoog Oefenen\r\nSpreek de zinnen uit de dialoog hardop na. Let op de intonatie!\r\n1. **Mbak Intan:** \"Sugeng rawuh, Siti. Piye kabaré?\"\r\n   <audio controls src=\"/audio/dialogs/m01-l01-d1.mp3\" class=\"w-full mt-1\"></audio>\r\n2. **Siti:** \"Saé, Bu Guru. Matur nuwun.\"\r\n   <audio controls src=\"/audio/dialogs/m01-l01-d2.mp3\" class=\"w-full mt-1\"></audio>\r\n3. **Mbak Intan:** \"Aja wedi, sinau basa Jawa iku nyenengaké. Siap?\"\r\n   <audio controls src=\"/audio/dialogs/m01-l01-d3.mp3\" class=\"w-full mt-1\"></audio>\r\n4. **Siti:** \"Inggih, siap!\"\r\n   <audio controls src=\"/audio/dialogs/m01-l01-d4.mp3\" class=\"w-full mt-1\"></audio>\r\n\r\n---\r\n\r\n### 🧠 Kennischeck\r\nTijd om te testen wat je hebt geleerd.\r\n[Verwijzing naar Lesquiz: 01-de-eerste-schooldag-quiz.json]\r\n\r\n---\r\n\r\n### 🌱 Samenvatting & Cultuurreflectie\r\nIn deze les hebben we de basisbegroetingen geleerd, zoals `sugeng rawuh` en `piye kabaré`. Een warme, respectvolle begroeting is essentieel in de Javaanse cultuur. Het stelt de ander direct op zijn of haar gemak en toont respect, vooral tegenover een nieuwkomer of gast. Het is meer dan alleen 'hallo'; het is een uitnodiging."
+    }
+  },
+  {
+    "id": "315ce0b4-ce33-4e53-aa58-9dfd64b3b975",
+    "type": "FLASHCARD_SET",
+    "order": 10,
+    "content": {
+      "title": "Woordenschat",
+      "wordIds": [
+        "cmcqu9krl00jac1dg9t57o9y6",
+        "cmcqu9ksh00jbc1dg0of25lmh",
+        "cmcqu9ktg00jcc1dgnas383e8",
+        "cmcqu9ku800jdc1dg4mnb39ng",
+        "cmcqu9kv600jec1dghktdr1qd",
+        "cmcqu9kw300jfc1dglyz4bqqs",
+        "cmcqu9kx000jgc1dgd5t55epu",
+        "cmcqu9kxx00jhc1dgrxxhb3oq",
+        "cmcqu9el300chc1dgju4593sb",
+        "cmcqu9kyv00jic1dgpmfhadur"
+      ]
+    }
+  },
+  {
+    "id": "ad407387-64b6-4a2d-8cff-6fec2dcef9db",
+    "type": "QUIZ_LINK",
+    "order": 20,
+    "content": {
+      "title": "Module 1: Les 1 Quiz - De Eerste Schooldag",
+      "quizId": "cmctgxvsr0007930v3w0n41k9"
+    }
+  }
+]

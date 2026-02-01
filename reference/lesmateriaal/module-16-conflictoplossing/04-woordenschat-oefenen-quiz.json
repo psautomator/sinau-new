@@ -1,0 +1,35 @@
+
+{
+  "id": "quiz-m16-l4",
+  "title": "Les 4 Quiz: Woordenschat Oefenen",
+  "description": "Test je kennis van de vocabulaire van conflictoplossing.",
+  "questions": [
+    {
+      "id": "q1-m16-l4-match",
+      "order": 1,
+      "questionText": "Combineer de Javaanse term met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Nesu"},
+        {"value": "Kuciwa"},
+        {"value": "Lega"},
+        {"value": "Rukun"}
+      ],
+      "matchItemsRight": [
+        {"value": "Boos"},
+        {"value": "Teleurgesteld"},
+        {"value": "Opgelucht"},
+        {"value": "Harmonie"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor de kernwoorden uit deze module."
+    },
+    {
+      "id": "q2-m16-l4-fib",
+      "order": 2,
+      "questionText": "Als je een meningsverschil wilt oplossen door te praten, noem je dat een ___.",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["rembugan"],
+      "explanation": "'Rembugan' is de Javaanse term voor een overleg dat gericht is op het vinden van een oplossing."
+    }
+  ]
+}

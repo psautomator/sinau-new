@@ -1,0 +1,36 @@
+
+{
+  "id": "quiz-m12-l4-vocab",
+  "title": "Les 4 Quiz: Woordenschat Werk",
+  "description": "Test je kennis van de werk-gerelateerde vocabulaire.",
+  "questions": [
+    {
+      "id": "q1-m12-l4-match",
+      "order": 1,
+      "questionText": "Combineer het beroep met de juiste Javaanse term.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Leraar"},
+        {"value": "Vakman"},
+        {"value": "Arbeider"},
+        {"value": "Werknemer"}
+      ],
+      "matchItemsRight": [
+        {"value": "Guru"},
+        {"value": "Tukang"},
+        {"value": "Buruh"},
+        {"value": "Pegawai"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor deze beroepen."
+    },
+    {
+      "id": "q2-m12-l4-fib",
+      "order": 2,
+      "questionText": "Een werkplek met veel machines heet een ___.",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["pabrik"],
+      "explanation": "'Pabrik' (fabriek) is een leenwoord uit het Nederlands."
+    }
+  ]
+}
+

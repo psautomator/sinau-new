@@ -1,0 +1,95 @@
+
+[
+  {
+    "javanese": "kembang",
+    "dutch": "bloem",
+    "aiHint": "colorful flower",
+    "audioJavanese": "/audio/uploads/kembang.mp3",
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Kembangé abang.",
+    "exampleSentenceDutch": "De bloem is rood.",
+    "notes": "Formeel (Krama) is 'sekar'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["natuur", "plant", "bloem"]
+  },
+  {
+    "javanese": "kembang melathi",
+    "dutch": "jasmijn",
+    "aiHint": "jasmine flower",
+    "audioJavanese": null,
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Kembang melathi ambuné wangi.",
+    "exampleSentenceDutch": "De jasmijnbloem ruikt heerlijk.",
+    "notes": "Een cultureel belangrijke bloem in Indonesië en Java.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["bloem", "geur", "cultuur"]
+  },
+  {
+    "javanese": "kembang kenanga",
+    "dutch": "kenongobloem",
+    "aiHint": "ylang-ylang flower",
+    "audioJavanese": null,
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Kembang kenanga asring dianggo ing upacara adat.",
+    "exampleSentenceDutch": "De kenongobloem wordt vaak gebruikt in traditionele ceremonies.",
+    "notes": "Ook bekend als ylang-ylang.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["bloem", "ritueel", "geur"]
+  },
+  {
+    "javanese": "kembang angkrèk",
+    "dutch": "orchidee",
+    "aiHint": "orchid flower",
+    "audioJavanese": null,
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Budheku seneng nandur kembang angkrèk.",
+    "exampleSentenceDutch": "Mijn tante plant graag orchideeën.",
+    "notes": null,
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["bloem", "sierplant"]
+  },
+  {
+    "javanese": "kembang mawar",
+    "dutch": "roos",
+    "aiHint": "red rose",
+    "audioJavanese": null,
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Aku diwenehi kembang mawar abang.",
+    "exampleSentenceDutch": "Ik heb een rode roos gekregen.",
+    "notes": null,
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["bloem", "liefde"]
+  },
+  {
+    "javanese": "kembang teraté",
+    "dutch": "waterlelie",
+    "aiHint": "water lily",
+    "audioJavanese": null,
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Kembang teraté urip ing banyu.",
+    "exampleSentenceDutch": "De waterlelie leeft in het water.",
+    "notes": null,
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["bloem", "waterplant"]
+  },
+  {
+    "javanese": "kembang srengéngé",
+    "dutch": "zonnebloem",
+    "aiHint": "sunflower",
+    "audioJavanese": null,
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Kembang srengéngé madhep menyang srengéngé.",
+    "exampleSentenceDutch": "De zonnebloem kijkt naar de zon.",
+    "notes": "Letterlijk 'zonnebloem'.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["bloem", "zon"]
+  }
+]
+

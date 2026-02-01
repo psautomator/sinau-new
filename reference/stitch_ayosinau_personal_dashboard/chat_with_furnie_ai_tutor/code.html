@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSinau - Furnie AI Tutor</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bee79",
+                        "background-light": "#f8fcfa",
+                        "background-dark": "#102217",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2c22",
+                        "text-main": "#0d1b13",
+                        "text-sub": "#4c9a6b",
+                        "bubble-user": "#2bee79",
+                        "bubble-ai": "#e7f3ec",
+                        "accent-feedback": "#ffd54f"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "2xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for chat area */
+        .chat-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .chat-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .chat-scroll::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display h-screen flex flex-col overflow-hidden text-text-main dark:text-white transition-colors duration-200">
+<!-- Top Navigation -->
+<header class="flex-none h-16 border-b border-[#e7f3ec] dark:border-[#2a3f33] bg-surface-light dark:bg-surface-dark px-6 flex items-center justify-between z-20">
+<div class="flex items-center gap-4">
+<div class="size-8 text-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">AyoSinau</h2>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-primary" href="#">Scenarios</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Leaderboard</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 bg-[#e7f3ec] dark:bg-[#203628] px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-orange-500 text-[20px]">local_fire_department</span>
+<span class="text-sm font-bold text-orange-600 dark:text-orange-400">12 Days</span>
+</div>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 border-2 border-white dark:border-[#2a3f33] shadow-sm cursor-pointer" data-alt="User profile avatar showing a smiling person" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPUcZkfI8SnVsuA1z6WRJau9aCeyDcuFFYlwjzR9Of2xVraZbilgwKlWsJWdlYwhSbAkY5q0KS5Lj5BWZiIu-hzq6r7Gh3yU-9Ep1GEzjs29laJQZka1GnuShjoZ7Rm3TFiDEo6P3w_nANAkmsnF9qwWFQpSN_Ykc3zvO2ARcKPVsxOrdHBJRdZ7VwOSnqJQ3RSrZEd05b9augzzAcRBvWF8T0JjN-TL6Ca5rie1QihzioDBD0nbaXjx6sV5cs9KIadhNwKSoKlro");'></div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Sidebar: Scenarios -->
+<aside class="w-[400px] flex flex-col border-r border-[#e7f3ec] dark:border-[#2a3f33] bg-background-light dark:bg-background-dark hidden lg:flex">
+<div class="p-6 pb-2">
+<h1 class="text-2xl font-bold mb-4">Choose a Scenario</h1>
+<!-- Filter Chips -->
+<div class="flex gap-2 overflow-x-auto pb-4 scrollbar-hide">
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-primary text-text-main text-sm font-bold shadow-sm shadow-primary/30">
+                        Recommended
+                    </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-white dark:bg-[#203628] border border-[#e7f3ec] dark:border-[#2a3f33] text-sm font-medium hover:bg-gray-50 dark:hover:bg-[#2a4533] transition-colors">
+                        Daily Life
+                    </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-white dark:bg-[#203628] border border-[#e7f3ec] dark:border-[#2a3f33] text-sm font-medium hover:bg-gray-50 dark:hover:bg-[#2a4533] transition-colors">
+                        Travel
+                    </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-white dark:bg-[#203628] border border-[#e7f3ec] dark:border-[#2a3f33] text-sm font-medium hover:bg-gray-50 dark:hover:bg-[#2a4533] transition-colors">
+                        Krama
+                    </button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto px-6 pb-6 space-y-4 chat-scroll">
+<!-- Active Scenario Card -->
+<div class="group relative bg-white dark:bg-[#203628] p-4 rounded-2xl shadow-sm border-2 border-primary cursor-pointer hover:shadow-md transition-all">
+<div class="absolute -right-2 -top-2 bg-primary text-text-main text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-sm">Active</div>
+<div class="flex gap-4 items-start">
+<div class="size-14 rounded-xl bg-cover bg-center shrink-0" data-alt="Traditional Indonesian food stall or warung" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBKCEfU87Zm4PtQNkBWVATjDx24NffQ_H4GGA7NnGYTpOo8RZqs3tOXD2Elq563YKfCeJVE2Tm0DZ5EmyTIzJHdHkjke8vI90RuqXb_D8shFIf0Xt6rvSS8LlE_Tl851ZReTeoFuWJ40ON0GUjY8P6XUio8ZFOII4mGEQIk-lqv4lDpR-KScp6lCsdBIl5u97JqOjxLtYyCpl4Wp741KOaNol86ihp_j-OSPI2k15GQgv0gJ6_pPgA9mmffoVdKspY1AXWNZ7gJRio");'></div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate">Ordering at a Warung</h3>
+<p class="text-xs text-text-sub dark:text-gray-400 mt-1 line-clamp-2">Practice ordering food in Ngoko &amp; Krama Alus with a local vendor.</p>
+<div class="mt-3">
+<div class="flex justify-between text-[10px] font-bold text-text-sub mb-1">
+<span>PROGRESS</span>
+<span>15%</span>
+</div>
+<div class="h-1.5 w-full bg-gray-100 dark:bg-[#1a2c22] rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[15%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Scenario Card 2 -->
+<div class="group relative bg-white dark:bg-[#1a2c22] p-4 rounded-2xl shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-[#2a3f33] cursor-pointer hover:shadow-md transition-all">
+<div class="flex gap-4 items-start">
+<div class="size-14 rounded-xl bg-cover bg-center shrink-0" data-alt="Bustling traditional market scene" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCfBr2GohQSYVJFlL-MeqUdns48EhHkkauR2LXf74-td7aALB6lgsREV_kgXa34cs9IUIXEvtTU1x0uK_cojKYyJWR1dj-6RJPNNApNWFVQBJwLG2vihtz8k8SU0wZKJ0Wd4tFUdKROyXJD9ObXPl-VRJbVRluZIuLLRAaucYmLv4olp_Iv36qW4U4gD5zSlrudxyVUSUpqX8dyWSdoP54OeEE_L4R8sYhVtMW_CDeaJ8Pvg6ZEDsbYXYHSR3w81SBf705JrGIcYI");'></div>
+<div class="flex-1 min-w-0">
+<h3 class="font-bold text-base truncate text-gray-700 dark:text-gray-200">Bargaining at Pasar Gede</h3>
+<p class="text-xs text-text-sub dark:text-gray-500 mt-1 line-clamp-2">Learn numbers and bargaining phrases in a busy market setting.</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-gray-100 dark:bg-[#2a3f33] text-gray-600 dark:text-gray-400 text-[10px] px-2 py-0.5 rounded font-medium">Beginner</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Scenario Card 3 -->
+<div class="group relative bg-white dark:bg-[#1a2c22] p-4 rounded-2xl shadow-sm border border-transparent hover:border-gray-200 dark:hover:border-[#2a3f33] cursor-pointer hover:shadow-md transition-all">
+<div class="flex gap-4 items-start">
+<div class="size-14 rounded-xl bg-cover bg-center shrink-0 grayscale opacity-80" data-alt="Person greeting an elder respectfully" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAtxWYhwJphlXLuh4N0n54GNoCeTUJ0efp1O54YdIR-fmCMs5h5VB5faCOTnLiTLKtEdsMTXpU3AionJ7SaTMMaC5CSPtFxkBeArBy8oKkKw5niL2cyLfIzKFpf1RMWZ3yiUqRWnZ6Nmahs3xVcC18UU53601XDoZ8a3cThOo9_OrqkMvkx099ZR7Zbf6C1xBbpcFu8FRH74PxzO45x1X-SJs2pUsiUdsQRI8g3djm0GU_U27Wf4Q8ZE_5ufCNycxhgxxnyWg14JDI");'></div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-center">
+<h3 class="font-bold text-base truncate text-gray-700 dark:text-gray-200">Meeting an Elder</h3>
+<span class="material-symbols-outlined text-gray-400 text-[18px]">lock</span>
+</div>
+<p class="text-xs text-text-sub dark:text-gray-500 mt-1 line-clamp-2">Master Krama Inggil for respectful conversations with elders.</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-[10px] px-2 py-0.5 rounded font-medium">Intermediate</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Side: Chat Interface -->
+<section class="flex-1 flex flex-col bg-white dark:bg-[#1a2c22] relative">
+<!-- Chat Header -->
+<div class="h-16 border-b border-gray-100 dark:border-[#2a3f33] flex items-center justify-between px-6 bg-white/80 dark:bg-[#1a2c22]/90 backdrop-blur-sm absolute top-0 w-full z-10">
+<div class="flex items-center gap-3">
+<div class="lg:hidden">
+<button class="p-2 -ml-2 rounded-full hover:bg-gray-100 dark:hover:bg-[#2a3f33]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="size-10 bg-primary/20 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<h2 class="font-bold text-sm md:text-base leading-tight">Ordering at a Warung</h2>
+<p class="text-xs text-text-sub">Daily Life • Ngoko &amp; Krama Alus</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold text-gray-500 hover:bg-gray-100 dark:hover:bg-[#2a3f33] transition-colors">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+<span>Dictionary</span>
+</button>
+<button class="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 px-4 py-2 rounded-xl text-sm font-bold hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors">
+                        End Session
+                    </button>
+</div>
+</div>
+<!-- Chat Area -->
+<div class="flex-1 overflow-y-auto p-4 md:p-8 pt-20 pb-4 space-y-6 chat-scroll bg-[#fcfdfd] dark:bg-[#15261d]">
+<!-- Date/System Divider -->
+<div class="flex justify-center">
+<span class="text-xs font-medium text-gray-400 bg-gray-100 dark:bg-[#2a3f33] px-3 py-1 rounded-full">Today, 10:23 AM</span>
+</div>
+<!-- Furnie Message 1 -->
+<div class="flex gap-4 max-w-[80%] md:max-w-[70%]">
+<div class="size-10 rounded-full bg-cover bg-center shadow-sm shrink-0 border border-gray-100 dark:border-gray-700" data-alt="Furnie AI Avatar, a friendly looking cartoon robot or character" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBS94_sg9fgl-czeASZ5w5xcLHGoVZ1k1k0wUmUgabn9XQG_hzSE3zqhI_EZkXHR-W5_WyDAA2YpQ3Kfi8n5SgvSfVutMIeb44_PuLrcp_lgGD8u_ilKw5lJVtSVsTT9ckzPwSQvMn0oluy-ga8ephXxERaDVDp8fjnW6oIYPlTIVGqhZof-Oxa4s92W2-ee2THSvKLaOVYFZyY0WyZZ7tp1TrYai_RW3LpbKgZmcICvNDt05jD9U-GZhMu_GdZLt5M89NKihTvt7k");'></div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-500 ml-1">Furnie AI</span>
+<div class="bg-bubble-ai dark:bg-[#203628] p-4 rounded-2xl rounded-tl-none text-text-main dark:text-gray-100 shadow-sm text-[15px] leading-relaxed">
+<p>Sugeng rawuh! 👋</p>
+<p class="mt-2">Arep pesen opo nang warung iki? Kene ono soto, rawon, karo gudeg.</p>
+</div>
+<!-- Translation Hint -->
+<button class="self-start mt-1 ml-1 text-xs text-primary font-medium hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">visibility</span> Show Translation
+                        </button>
+</div>
+</div>
+<!-- User Message 1 -->
+<div class="flex flex-row-reverse gap-4 max-w-[80%] md:max-w-[70%] ml-auto group">
+<div class="size-10 rounded-full bg-cover bg-center shadow-sm shrink-0 border-2 border-primary" data-alt="User Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDDdOtuZgRwK03JCKZCpLGYdHSlE84ro6xOdtONgtMPecEcSjZS1QCHAR5n3eQtopohnDPSTEVhaIJtFJTtQt2PrY_rIkg4AHx3s8B_BIPtWnp2pqqg4zmwQjC5z7B-agxDDo-i8-l6kl_E9uFWWrFYU-p62rUOebLH8DHBljER3p3eCO6420oPyeK4nZ5bNw6mfNKgm5nrBya7L3u1IHvSVmyzbgDlkHkiP3ORWU4fYRfdG2dXQYKJOi-gp-OGd_TlH3EujJ1j0SI");'></div>
+<div class="flex flex-col gap-1 items-end">
+<span class="text-xs font-bold text-gray-500 mr-1">You</span>
+<div class="relative bg-primary text-text-main p-4 rounded-2xl rounded-tr-none shadow-md shadow-primary/20 text-[15px] leading-relaxed">
+<p>Kulo badhe maem soto.</p>
+<!-- Feedback Button (Interactive) -->
+<button class="absolute -left-3 -bottom-3 bg-white dark:bg-[#2a3f33] text-orange-500 rounded-full p-1 shadow-sm border border-orange-100 dark:border-orange-900 hover:scale-110 transition-transform" title="View Feedback">
+<span class="material-symbols-outlined text-[16px] block">lightbulb</span>
+</button>
+</div>
+<!-- Feedback Context (Expanded) -->
+<div class="bg-orange-50 dark:bg-orange-900/20 border border-orange-100 dark:border-orange-900/30 rounded-xl p-3 mt-2 max-w-sm mr-1 animate-in fade-in slide-in-from-top-2 duration-300">
+<div class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-orange-500 text-[18px] mt-0.5">auto_awesome</span>
+<div>
+<p class="text-xs font-bold text-orange-800 dark:text-orange-300 mb-1">Tip from Furnie:</p>
+<p class="text-xs text-gray-700 dark:text-gray-300 leading-normal">
+                                        Great start! In a formal context (Krama), try using <span class="font-bold text-orange-600 dark:text-orange-400">"badhe nedha"</span> for "want to eat". <span class="italic">"Maem"</span> is fine for casual (Ngoko) settings with friends!
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Furnie Message 2 -->
+<div class="flex gap-4 max-w-[80%] md:max-w-[70%]">
+<div class="size-10 rounded-full bg-cover bg-center shadow-sm shrink-0 border border-gray-100 dark:border-gray-700" data-alt="Furnie AI Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoMYCggdg9fToq_KXRJjAvEgCAwjpVfPzIxr4_sL_yoXiBWeZMNCQAZEUNS38vv4TmxaTKNedcX2TkSzaYvT_mS30hqr4CXBns5mExkQ2PVIL3xrVdGqV4VFpRxW6OFOCQrFgrcgeLJvYTlyVNqg438XIz04S_AjydY11DCAY74B9zcakjfTnn5tRJC1yqYypo69MI8B-QL6CWZowOgPtrniSpkjyWJgMnj_yS1ngvcBf2KDGo0h6-WT1rJBZxyZ1jB9N0sBu2dMw");'></div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold text-gray-500 ml-1">Furnie AI</span>
+<div class="bg-bubble-ai dark:bg-[#203628] p-4 rounded-2xl rounded-tl-none text-text-main dark:text-gray-100 shadow-sm text-[15px] leading-relaxed">
+<div class="flex gap-2 mb-2">
+<span class="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Correct Grammar</span>
+</div>
+<p>Inggih, soto ayam napa soto daging, Mas?</p>
+</div>
+<div class="flex gap-2 mt-1 ml-1">
+<button class="size-8 flex items-center justify-center rounded-full bg-white dark:bg-[#203628] border border-gray-200 dark:border-[#2a3f33] text-gray-500 hover:text-primary hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">volume_up</span>
+</button>
+<button class="size-8 flex items-center justify-center rounded-full bg-white dark:bg-[#203628] border border-gray-200 dark:border-[#2a3f33] text-gray-500 hover:text-primary hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="hidden flex gap-4 max-w-[70%] animate-pulse">
+<div class="size-8 rounded-full bg-gray-200 dark:bg-gray-700 shrink-0"></div>
+<div class="h-10 w-24 bg-gray-100 dark:bg-[#203628] rounded-2xl rounded-tl-none flex items-center justify-center gap-1">
+<div class="size-1.5 bg-gray-400 rounded-full animate-bounce"></div>
+<div class="size-1.5 bg-gray-400 rounded-full animate-bounce delay-75"></div>
+<div class="size-1.5 bg-gray-400 rounded-full animate-bounce delay-150"></div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="p-4 md:px-8 md:pb-8 bg-white dark:bg-[#1a2c22] border-t border-gray-100 dark:border-[#2a3f33]">
+<!-- Suggestion Chips -->
+<div class="flex gap-2 mb-3 overflow-x-auto scrollbar-hide">
+<button class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-[#2a3f33] text-xs font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#203628] hover:text-primary transition-colors">
+                        Soto ayam mawon
+                    </button>
+<button class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-[#2a3f33] text-xs font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#203628] hover:text-primary transition-colors">
+                        Kula nyuwun soto daging
+                    </button>
+<button class="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-[#2a3f33] text-xs font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#203628] hover:text-primary transition-colors">
+                        Boten, matur nuwun
+                    </button>
+</div>
+<div class="relative flex items-end gap-2">
+<div class="flex-1 relative">
+<input class="w-full bg-gray-50 dark:bg-[#203628] border-0 rounded-2xl py-4 pl-5 pr-12 text-text-main dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/50 shadow-inner resize-none" placeholder="Hold mic to speak or type here..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+</div>
+<!-- Mic Button (Big & Floating Visual) -->
+<button class="size-14 rounded-2xl bg-primary text-text-main shadow-lg shadow-primary/40 hover:bg-[#25d66d] hover:scale-105 active:scale-95 transition-all flex items-center justify-center shrink-0 group relative overflow-hidden">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+<span class="material-symbols-outlined text-[28px]">mic</span>
+</button>
+<!-- Send Button (Small) -->
+<button class="size-14 rounded-2xl bg-gray-100 dark:bg-[#2a3f33] text-gray-500 hover:bg-gray-200 dark:hover:bg-[#354f40] transition-colors flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<div class="text-center mt-2">
+<p class="text-[10px] text-gray-400">Press and hold spacebar to speak</p>
+</div>
+</div>
+</section>
+</main>
+</body></html>

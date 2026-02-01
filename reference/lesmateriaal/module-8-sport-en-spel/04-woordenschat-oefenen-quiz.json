@@ -1,0 +1,33 @@
+
+{
+  "id": "quiz-m8-l4",
+  "title": "Module 8 / Les 4: Woordenschat Sport",
+  "description": "Test je kennis van de vocabulaire over reizen.",
+  "questions": [
+    {
+      "id": "q1-m8-l4-match",
+      "order": 1,
+      "questionText": "Combineer de Javaanse actie met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Mlayu"},
+        {"value": "Nendhang"},
+        {"value": "Olahraga"}
+      ],
+      "matchItemsRight": [
+        {"value": "Rennen"},
+        {"value": "Schoppen"},
+        {"value": "Sport"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor deze sport-gerelateerde acties."
+    },
+    {
+      "id": "q2-m8-l4-fib",
+      "order": 2,
+      "questionText": "De uitslag van de wedstrijd noem je de ___.",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["skor"],
+      "explanation": "'Skor' is het leenwoord voor score, gebruikt om de uitslag van een wedstrijd aan te duiden."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m10-l3",
+  "title": "Module 10: Les 3 Quiz - Volksgeneeskunde",
+  "description": "Test je kennis van traditionele geneeswijzen.",
+  "questions": [
+    {
+      "id": "q1-m10-l3-mcq",
+      "order": 1,
+      "questionText": "Wat is een `jamu`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m10-l3-opt1", "text": "Een modern medicijn", "isCorrect": false },
+        { "id": "q1-m10-l3-opt2", "text": "Een traditioneel kruidendrankje", "isCorrect": true, "wordId": "jamu" },
+        { "id": "q1-m10-l3-opt3", "text": "Een soort dokter", "isCorrect": false },
+        { "id": "q1-m10-l3-opt4", "text": "Een medisch onderzoek", "isCorrect": false }
+      ],
+      "explanation": "`Jamu` is een traditioneel Javaans kruidendrankje dat wordt gebruikt voor medicinale doeleinden."
+    },
+    {
+      "id": "q2-m10-l3-mcq-culture",
+      "order": 2,
+      "questionText": "Wat leert deze les over de Javaanse kijk op gezondheidszorg?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m10-l3-opt1", "text": "Men vertrouwt alleen op moderne artsen.", "isCorrect": false },
+        { "id": "q2-m10-l3-opt2", "text": "Moderne en traditionele geneeskunde bestaan vaak naast elkaar en worden gecombineerd.", "isCorrect": true },
+        { "id": "q2-m10-l3-opt3", "text": "Men vertrouwt alleen op traditionele genezers (`tabib`).", "isCorrect": false },
+        { "id": "q2-m10-l3-opt4", "text": "Men gebruikt alleen huismiddeltjes en nooit medicijnen.", "isCorrect": false }
+      ],
+      "explanation": "De dialoog laat zien dat Siti's familie zowel de medicijnen van de dokter ('obat dhokter') als de `jamu` van de `tabib` gebruikt, wat illustreert hoe beide systemen naast elkaar bestaan."
+    }
+  ]
+}

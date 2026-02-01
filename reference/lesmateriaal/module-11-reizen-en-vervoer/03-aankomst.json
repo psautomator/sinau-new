@@ -1,0 +1,81 @@
+
+[
+  {
+    "javanese": "taksi",
+    "dutch": "taxi",
+    "aiHint": "yellow taxi",
+    "audioJavanese": "/audio/uploads/taksi.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Aku pesen taksi online.",
+    "exampleSentenceDutch": "Ik bestel een taxi online.",
+    "notes": "Leenwoord.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["vervoer", "stad", "taxi"]
+  },
+  {
+    "javanese": "sepur",
+    "dutch": "trein",
+    "aiHint": "train on tracks",
+    "audioJavanese": "/audio/uploads/sepur.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Sepur iku luwih cepet tinimbang bis.",
+    "exampleSentenceDutch": "De trein is sneller dan de bus.",
+    "notes": "Leenwoord uit het Nederlands ('spoor').",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["vervoer", "spoorwegen", "reizen"]
+  },
+  {
+    "javanese": "kapal",
+    "dutch": "schip",
+    "aiHint": "large ship",
+    "audioJavanese": "/audio/uploads/kapal.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Kapal iku arep menyang Walanda.",
+    "exampleSentenceDutch": "Dat schip gaat naar Nederland.",
+    "notes": "Gebruikt voor grote boten of schepen.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["vervoer", "water", "zee"]
+  },
+  {
+    "javanese": "stasiun",
+    "dutch": "station",
+    "aiHint": "train station",
+    "audioJavanese": null,
+    "category": "Infrastructuur",
+    "exampleSentenceJavanese": "Aku nunggu sepur ing stasiun.",
+    "exampleSentenceDutch": "Ik wacht op de trein op het station.",
+    "notes": "Leenwoord uit het Nederlands.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["vervoer", "reizen", "gebouw"]
+  },
+  {
+    "javanese": "tekan",
+    "dutch": "aangekomen",
+    "aiHint": "destination pin",
+    "audioJavanese": "/audio/uploads/tekan.mp3",
+    "category": "Staat",
+    "exampleSentenceJavanese": "Aku wis tekan.",
+    "exampleSentenceDutch": "Ik ben aangekomen.",
+    "notes": "Werkwoord om aan te geven dat een bestemming is bereikt.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["staat", "aankomst", "reizen"]
+  },
+  {
+    "javanese": "ayem",
+    "dutch": "vredig / rustig",
+    "aiHint": "peaceful lake",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Hawane ayem tenan.",
+    "exampleSentenceDutch": "De sfeer/lucht is echt vredig.",
+    "notes": "Beschrijft een kalme, vredige toestand.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["gevoel", "sfeer", "rust"]
+  }
+]

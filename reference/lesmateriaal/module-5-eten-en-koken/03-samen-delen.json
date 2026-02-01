@@ -1,0 +1,71 @@
+
+[
+    {
+        "javanese": "enak",
+        "dutch": "lekker (eten)",
+        "aiHint": "delicious food",
+        "audioJavanese": "/audio/uploads/enak.mp3",
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Masakan iki énak tenan.",
+        "exampleSentenceDutch": "Dit gerecht is echt lekker.",
+        "notes": null,
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [
+            "smaak",
+            "eten"
+        ]
+    },
+    {
+        "javanese": "lempeng",
+        "dutch": "(Javaanse) pannenkoek",
+        "aiHint": "javanese pancake",
+        "audioJavanese": "/audio/uploads/lempeng.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Lempeng dipangan karo gula jawa.",
+        "exampleSentenceDutch": "Lempeng wordt gegeten met palmsuiker.",
+        "notes": "Een dunne pannenkoek, vaak gemaakt van rijstmeel.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["eten", "snack", "traditioneel"]
+    },
+    {
+        "javanese": "monggo",
+        "dutch": "alstublieft / ga uw gang",
+        "aiHint": "inviting gesture",
+        "audioJavanese": "/audio/uploads/mangga.mp3",
+        "category": "Uitdrukking",
+        "exampleSentenceJavanese": "Monggo, dipun dhahar.",
+        "exampleSentenceDutch": "Alstublieft, eet u maar.",
+        "notes": "Een zeer veelgebruikt en beleefd woord om iets aan te bieden of iemand uit te nodigen.",
+        "level": "A1",
+        "formality": "KramaMadya",
+        "tags": ["beleefdheid", "uitnodiging", "krama"]
+    },
+    {
+        "javanese": "dhahar",
+        "dutch": "eten (zeer beleefd)",
+        "aiHint": "person eating formally",
+        "audioJavanese": "/audio/uploads/dahar.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Bapak nembe dhahar.",
+        "exampleSentenceDutch": "Vader is aan het eten.",
+        "notes": "Krama Inggil-vorm, gebruikt voor het eten van een gerespecteerd persoon.",
+        "level": "B2",
+        "formality": "KramaInggil",
+        "tags": ["eten", "werkwoord", "krama"]
+    },
+    {
+        "javanese": "Kangmas",
+        "dutch": "Oudere broer (zeer respectvol)",
+        "aiHint": "respectful man",
+        "audioJavanese": null,
+        "category": "Familie",
+        "exampleSentenceJavanese": "Kula badhe sowan dhateng Kangmas.",
+        "exampleSentenceDutch": "Ik ga op bezoek bij mijn oudere broer.",
+        "notes": "Een zeer formele en respectvolle aanspreekvorm voor een oudere broer of een man van vergelijkbare status.",
+        "level": "C1",
+        "formality": "KramaInggil",
+        "tags": ["familie", "aanspreekvorm", "respect", "krama"]
+    }
+]

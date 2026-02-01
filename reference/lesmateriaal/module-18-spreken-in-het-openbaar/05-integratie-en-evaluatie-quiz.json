@@ -1,0 +1,48 @@
+
+{
+  "id": "quiz-m18-l5-integratie",
+  "title": "Module 18 Eindquiz: Spreken in het Openbaar",
+  "description": "Test je vaardigheden in het geven van een presentatie.",
+  "questions": [
+    {
+      "id": "q1-m18-l5-mcq-structure",
+      "order": 1,
+      "questionText": "Wat is een `purwaka basa` in de context van een `pidato`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m18-l5-opt1", "text": "De kern van het betoog", "isCorrect": false },
+        { "id": "q1-m18-l5-opt2", "text": "De afsluiting", "isCorrect": false },
+        { "id": "q1-m18-l5-opt3", "text": "De opening en inleiding", "isCorrect": true, "wordId": "purwaka basa" },
+        { "id": "q1-m18-l5-opt4", "text": "Het tegenargument", "isCorrect": false }
+      ],
+      "explanation": "`Purwaka basa` is de traditionele term voor de opening of inleiding van een formele toespraak."
+    },
+    {
+      "id": "q2-m18-l5-reorder",
+      "order": 2,
+      "questionText": "Zet de woorden in de juiste volgorde om de zin 'Naar mijn mening is dit belangrijk' te vormen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [
+        {"value": "Miturut"},
+        {"value": "pamanggih"},
+        {"value": "kula,"},
+        {"value": "punika"},
+        {"value": "wigatos."}
+      ],
+      "explanation": "Dit is een formele (Krama) manier om je mening te geven. 'Miturut pamanggih kula' betekent 'naar mijn mening'."
+    },
+    {
+      "id": "q3-m18-l5-mcq-vocab",
+      "order": 3,
+      "questionText": "Wat is de beste vertaling voor `persuasif`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m18-l5-opt1", "text": "Argumentatief", "isCorrect": false },
+        { "id": "q3-m18-l5-opt2", "text": "Emotioneel", "isCorrect": false },
+        { "id": "q3-m18-l5-opt3", "text": "Respectvol", "isCorrect": false },
+        { "id": "q3-m18-l5-opt4", "text": "Overtuigend", "isCorrect": true, "wordId": "persuasif" }
+      ],
+      "explanation": "'Persuasif' is een leenwoord dat 'overtuigend' betekent, een sleutelkwaliteit voor een goede spreker."
+    }
+  ]
+}

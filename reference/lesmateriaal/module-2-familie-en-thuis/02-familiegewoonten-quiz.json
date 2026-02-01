@@ -1,0 +1,35 @@
+
+{
+  "id": "quiz-m2-l2",
+  "title": "Module 2: Les 2 Quiz - Taalgebruik Thuis",
+  "description": "Test je kennis over de Javaanse taalregisters.",
+  "questions": [
+    {
+      "id": "q1-m2-l2-mcq",
+      "order": 1,
+      "questionText": "Welk woord gebruik je om 'jij/u' te zeggen tegen een ouder persoon zoals een vader, om respect te tonen?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m2-l2-opt1", "text": "Kowé", "isCorrect": false, "wordId": "kowé" },
+        { "id": "q1-m2-l2-opt2", "text": "Aku", "isCorrect": false, "wordId": "aku" },
+        { "id": "q1-m2-l2-opt3", "text": "Panjenengan", "isCorrect": true, "wordId": "panjenengan" },
+        { "id": "q1-m2-l2-opt4", "text": "Kula", "isCorrect": false, "wordId": "kula" }
+      ],
+      "explanation": "Zoals Siti's broer uitlegt, gebruik je de Krama Inggil-vorm 'panjenengan' om respectvol tegen ouderen te spreken."
+    },
+    {
+      "id": "q2-m2-l2-match",
+      "order": 2,
+      "questionText": "Combineer het Javaanse voornaamwoord met de juiste omschrijving.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [{"value": "Aku"}, {"value": "Kula"}, {"value": "Kowé"}, {"value": "Panjenengan"}],
+      "matchItemsRight": [
+        {"value": "Ik (informeel, Ngoko)"}, 
+        {"value": "Ik (beleefd, Krama)"}, 
+        {"value": "Jij (informeel, Ngoko)"},
+        {"value": "U (zeer beleefd, Krama Inggil)"}
+      ],
+      "explanation": "Dit zijn de correcte voornaamwoorden en hun bijbehorende taalregisters."
+    }
+  ]
+}

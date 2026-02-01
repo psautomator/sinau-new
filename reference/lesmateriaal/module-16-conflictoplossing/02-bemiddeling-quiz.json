@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m16-l2",
+  "title": "Module 16: Les 2 Quiz - Bemiddeling",
+  "description": "Test je kennis over het bemiddelingsproces.",
+  "questions": [
+    {
+      "id": "q1-m16-l2-mcq-role",
+      "order": 1,
+      "questionText": "Wat is de eerste stap die Siti als bemiddelaar neemt?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m16-l2-opt1", "text": "Ze kiest direct een kant.", "isCorrect": false },
+        { "id": "q1-m16-l2-opt2", "text": "Ze stelt voor om de ruzie te stoppen en rustig te overleggen (`rembugan`).", "isCorrect": true },
+        { "id": "q1-m16-l2-opt3", "text": "Ze vertelt Budi dat hij ongelijk heeft.", "isCorrect": false },
+        { "id": "q1-m16-l2-opt4", "text": "Ze loopt weg om het conflict te vermijden.", "isCorrect": false }
+      ],
+      "explanation": "Siti's eerste actie is de-escalatie: 'Wis, wis, aja padha padu. Coba dirembug apik-apik' (Stop, stop, maak geen ruzie. Probeer het goed te overleggen)."
+    },
+    {
+      "id": "q2-m16-l2-mcq-revelation",
+      "order": 2,
+      "questionText": "Wat is de daadwerkelijke oorzaak van het misverstand die tijdens de bemiddeling aan het licht komt?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m16-l2-opt1", "text": "Andi's batterij was leeg.", "isCorrect": false },
+        { "id": "q2-m16-l2-opt2", "text": "Budi had zijn telefoon uitgezet.", "isCorrect": false },
+        { "id": "q2-m16-l2-opt3", "text": "Andi had een bericht naar Budi's oude nummer gestuurd.", "isCorrect": true },
+        { "id": "q2-m16-l2-opt4", "text": "Siti had het verkeerde tijdstip doorgegeven.", "isCorrect": false }
+      ],
+      "explanation": "Het conflict wordt opgelost wanneer Budi beseft: 'Lho, iki nomer lawas. Aku wis ganti nomer!', wat betekent dat Andi het bericht naar een oud nummer stuurde."
+    }
+  ]
+}

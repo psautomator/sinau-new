@@ -1,0 +1,45 @@
+
+[
+    {
+        "javanese": "ngalah",
+        "dutch": "toegeven, opgeven",
+        "aiHint": "white flag surrender",
+        "audioJavanese": "/audio/uploads/ngalah.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Amarga ora ana sing gelem ngalah, wedus loro-loroné padha klelep.",
+        "exampleSentenceDutch": "Omdat niemand wilde toegeven, vielen beide geiten in het water.",
+        "notes": "Wordt cultureel gezien als een teken van wijsheid, niet van zwakte.",
+        "level": "B1",
+        "formality": "Ngoko",
+        "tags": [
+            "conflict",
+            "oplossing"
+        ]
+    },
+    {
+        "javanese": "salah",
+        "dutch": "fout, verkeerd",
+        "aiHint": "wrong cross mark",
+        "audioJavanese": "/audio/uploads/salah.mp3",
+        "category": "Staat",
+        "exampleSentenceJavanese": "Aku ngakoni yèn aku salah.",
+        "exampleSentenceDutch": "Ik geef toe dat ik fout was.",
+        "notes": "Ngoko-vorm. De Krama-vorm is 'lepat'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["fout", "negatief", "staat"]
+    },
+    {
+        "javanese": "lepat",
+        "dutch": "fout, verkeerd (beleefd)",
+        "aiHint": "formal apology gesture",
+        "audioJavanese": "/audio/uploads/lepat.mp3",
+        "category": "Staat",
+        "exampleSentenceJavanese": "Kula wau lepat, nyuwun pangapunten.",
+        "exampleSentenceDutch": "Ik was daarnet fout, mijn excuses.",
+        "notes": "Krama-vorm van 'salah'.",
+        "level": "B1",
+        "formality": "KramaMadya",
+        "tags": ["fout", "beleefdheid", "krama"]
+    }
+]

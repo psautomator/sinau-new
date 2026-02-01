@@ -1,0 +1,38 @@
+
+{
+  "id": "quiz-m6-l4",
+  "title": "Module 6 / Les 4 Quiz: Woordenschat School",
+  "description": "Test je kennis van de school-vocabulaire.",
+  "questions": [
+    {
+      "id": "q1-m6-l4-match",
+      "order": 1,
+      "questionText": "Combineer de persoon op school met de juiste Javaanse term.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Leraar"},
+        {"value": "Leerling"}
+      ],
+      "matchItemsRight": [
+        {"value": "Guru"},
+        {"value": "Murid"}
+      ],
+      "explanation": "'Guru' is het woord voor leraar, en 'murid' is het woord voor leerling."
+    },
+    {
+      "id": "q2-m6-l4-audio",
+      "order": 2,
+      "questionText": "Luister naar het woord. Wat betekent het?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/potlot.mp3",
+      "options": [
+        { "id": "q2-m6-l4-opt1", "text": "Boek", "isCorrect": false },
+        { "id": "q2-m6-l4-opt2", "text": "Klas", "isCorrect": false },
+        { "id": "q2-m6-l4-opt3", "text": "Potlood", "isCorrect": true, "wordId": "potlot" },
+        { "id": "q2-m6-l4-opt4", "text": "Schoolbord", "isCorrect": false }
+      ],
+      "explanation": "Je hoorde 'potlot', een leenwoord uit het Nederlands voor 'potlood'."
+    }
+  ]
+}
+

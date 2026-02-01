@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "sabar",
+    "dutch": "geduldig",
+    "aiHint": "patience hourglass",
+    "audioJavanese": "/audio/uploads/sabar.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Guru iku kudu sabar.",
+    "exampleSentenceDutch": "Een leraar moet geduldig zijn.",
+    "notes": "",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": [ "eigenschap", "persoonlijkheid" ]
+  },
+  {
+    "javanese": "tulung-tinulung",
+    "dutch": "elkaar helpen",
+    "aiHint": "people helping community",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Ing desa, wong-wong isih padha tulung-tinulung.",
+    "exampleSentenceDutch": "In het dorp helpen de mensen elkaar nog steeds.",
+    "notes": "Een belangrijk cultureel concept van wederzijdse hulp en solidariteit.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": [ "cultuur", "gemeenschap", "helpen" ]
+  },
+  {
+    "javanese": "lali",
+    "dutch": "vergeten",
+    "aiHint": "person forgetting",
+    "audioJavanese": "/audio/uploads/lali.mp3",
+    "category": "Staat",
+    "exampleSentenceJavanese": "Aku lali jenengé.",
+    "exampleSentenceDutch": "Ik ben zijn/haar naam vergeten.",
+    "notes": "Informeel (Ngoko). De beleefde vorm is 'kesupen'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["geheugen", "staat"]
+  },
+  {
+    "javanese": "ngeterke",
+    "dutch": "brengen / begeleiden",
+    "aiHint": "person escorting",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Ayo tak terke mulih.",
+    "exampleSentenceDutch": "Kom, ik breng je naar huis.",
+    "notes": "Actieve vorm van 'ater'. Het betekent iemand ergens naartoe brengen.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["actie", "begeleiden", "sociaal"]
+  }
+]

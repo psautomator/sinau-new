@@ -1,0 +1,25 @@
+
+{
+  "id": "quiz-m1-l4",
+  "title": "Module 1: Les 4 Quiz - Woorden en Zinnen Oefenen",
+  "description": "Test je kennis van de basis vocabulaire uit deze les.",
+  "questions": [
+    {
+      "id": "q1-m1-l4-match",
+      "order": 1,
+      "questionText": "Combineer het Javaanse persoonlijk voornaamwoord met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [{"value": "Aku"}, {"value": "Kowé"}, {"value": "Dhèwèké"}],
+      "matchItemsRight": [{"value": "Ik"}, {"value": "Jij"}, {"value": "Hij/Zij"}],
+      "explanation": "Dit zijn de correcte informele (Ngoko) voornaamwoorden die we in de les hebben herhaald."
+    },
+    {
+      "id": "q2-m1-l4-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Halo, ___ Siti.' (Hallo, ik ben Siti.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["aku"],
+      "explanation": "Om 'ik' te zeggen in een informele context zoals het voorstellen aan een vriend, gebruik je 'aku'."
+    }
+  ]
+}

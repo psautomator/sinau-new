@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "ula",
+    "dutch": "slang",
+    "aiHint": "green snake",
+    "audioJavanese": "/audio/uploads/ula.mp3",
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Ati-ati, ana ula ing dalan.",
+    "exampleSentenceDutch": "Voorzichtig, er is een slang op de weg.",
+    "notes": null,
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["dier", "reptiel", "gevaar"]
+  },
+  {
+    "javanese": "mbregudul",
+    "dutch": "koppig / eigenwijs",
+    "aiHint": "stubborn mule",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Wedus loro iku padha-padha mbregudul.",
+    "exampleSentenceDutch": "Die twee geiten zijn allebei koppig.",
+    "notes": "Een negatieve eigenschap die weerstand tegen overleg beschrijft.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["persoonlijkheid", "conflict", "negatief"]
+  },
+  {
+    "javanese": "ngalah",
+    "dutch": "toegeven / opgeven",
+    "aiHint": "white flag surrender",
+    "audioJavanese": "/audio/uploads/ngalah.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Ing sawijining wektu, luwih becik ngalah.",
+    "exampleSentenceDutch": "Soms is het beter om toe te geven.",
+    "notes": "Wordt cultureel gezien als een teken van wijsheid, niet van zwakte.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["conflict", "oplossing", "cultuur"]
+  },
+  {
+    "javanese": "adu rosa",
+    "dutch": "krachtmeting",
+    "aiHint": "arm wrestling",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Wedus loro iku banjur adu rosa.",
+    "exampleSentenceDutch": "De twee geiten hielden toen een krachtmeting.",
+    "notes": "Letterlijk 'kracht testen/botsen'. Een fysieke confrontatie om te bepalen wie sterker is.",
+    "level": "C1",
+    "formality": "Ngoko",
+    "tags": ["conflict", "strijd", "actie"]
+  }
+]

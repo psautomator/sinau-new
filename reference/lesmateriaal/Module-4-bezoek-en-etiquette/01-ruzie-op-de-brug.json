@@ -1,0 +1,90 @@
+
+[
+    {
+        "javanese": "sugeng rawuh",
+        "dutch": "Welkom",
+        "aiHint": "welcome handshake",
+        "audioJavanese": "/audio/uploads/sugeng_rawuh.mp3",
+        "category": "Begroeting",
+        "exampleSentenceJavanese": "Sugeng rawuh ing griya kula.",
+        "exampleSentenceDutch": "Welkom in mijn huis.",
+        "notes": "Een formele en zeer beleefde welkomstgroet, gebruikt om gasten te eren.",
+        "level": "A1",
+        "formality": "KramaInggil",
+        "tags": [
+            "begroeting",
+            "formeel",
+            "welkom",
+            "krama"
+        ]
+    },
+    {
+        "javanese": "nyuwun pangapunten",
+        "dutch": "excuses vragen",
+        "aiHint": "asking forgiveness",
+        "audioJavanese": "/audio/uploads/nyuwun_pangapunten.mp3",
+        "category": "Uitdrukking",
+        "exampleSentenceJavanese": "Kula nyuwun pangapunten menawi wonten kalepatan.",
+        "exampleSentenceDutch": "Ik vraag om vergeving als er een fout is gemaakt.",
+        "notes": "Een zeer formele en beleefde manier om sorry te zeggen.",
+        "level": "B1",
+        "formality": "KramaInggil",
+        "tags": [ "beleefdheid", "excuses", "formeel" ]
+    },
+    {
+        "javanese": "simbah",
+        "dutch": "grootouder (oma/opa)",
+        "aiHint": "oma opa",
+        "audioJavanese": "/audio/uploads/simbah.mp3",
+        "category": "Familie",
+        "exampleSentenceJavanese": "Iki simbahku saka desa.",
+        "exampleSentenceDutch": "Dit is mijn oma/opa uit het dorp.",
+        "notes": "Algemeen en respectvol woord voor grootouders.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": [
+            "familie",
+            "aanspreekvorm",
+            "respect"
+        ]
+    },
+    {
+        "javanese": "liwat",
+        "dutch": "passeren, langsgaan",
+        "aiHint": "person walking past",
+        "audioJavanese": "/audio/uploads/liwat.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku arep liwat dhisik.",
+        "exampleSentenceDutch": "Ik wil eerst passeren.",
+        "notes": "Gebruikt voor beweging langs een punt.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["beweging", "actie", "verkeer"]
+    },
+    {
+        "javanese": "mundur",
+        "dutch": "achteruit gaan",
+        "aiHint": "walking backwards",
+        "audioJavanese": "/audio/uploads/mundur.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Kowé sing kudu mundur.",
+        "exampleSentenceDutch": "Jij moet achteruit gaan.",
+        "notes": "Het tegenovergestelde van 'maju' (vooruitgaan).",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["beweging", "actie", "conflict"]
+    },
+    {
+        "javanese": "wedus",
+        "dutch": "geit",
+        "aiHint": "farm goat",
+        "audioJavanese": "/audio/uploads/wedus.mp3",
+        "category": "Dieren",
+        "exampleSentenceJavanese": "Wedusé mangan suket.",
+        "exampleSentenceDutch": "De geit eet gras.",
+        "notes": "Een veelvoorkomend dier in fabels.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["dier", "boerderij", "fabel"]
+    }
+]

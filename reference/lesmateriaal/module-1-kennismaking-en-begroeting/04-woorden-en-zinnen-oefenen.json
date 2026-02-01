@@ -1,0 +1,67 @@
+
+[
+  {
+    "javanese": "aku",
+    "dutch": "ik",
+    "aiHint": "person pointing self",
+    "audioJavanese": "/audio/uploads/aku.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Aku arep menyang pasar.",
+    "exampleSentenceDutch": "Ik ga naar de markt.",
+    "notes": "Standaard informeel woord voor 'ik', gebruikt onder vrienden en gelijken.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [
+      "voornaamwoord",
+      "persoonlijk",
+      "informeel"
+    ]
+  },
+  {
+    "javanese": "kowé",
+    "dutch": "jij / je",
+    "aiHint": "person pointing other",
+    "audioJavanese": "/audio/uploads/kowe.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Kowé saka ngendi?",
+    "exampleSentenceDutch": "Waar kom jij vandaan?",
+    "notes": "Standaard informeel woord voor 'jij', gebruikt onder vrienden en gelijken.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [
+      "voornaamwoord",
+      "persoonlijk",
+      "informeel"
+    ]
+  },
+  {
+    "javanese": "dhèwèké",
+    "dutch": "hij / zij",
+    "aiHint": "silhouette person",
+    "audioJavanese": "/audio/uploads/dheweke.mp3",
+    "category": "Voornaamwoord",
+    "exampleSentenceJavanese": "Dhèwèké lagi maca buku.",
+    "exampleSentenceDutch": "Hij/zij is een boek aan het lezen.",
+    "notes": "Genderneutraal voornaamwoord voor de derde persoon enkelvoud in informele taal.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": [
+      "voornaamwoord",
+      "persoonlijk",
+      "informeel"
+    ]
+  },
+  {
+    "javanese": "kanca",
+    "dutch": "vriend",
+    "aiHint": "friends together",
+    "audioJavanese": "/audio/uploads/kanca.mp3",
+    "category": "Personen",
+    "exampleSentenceJavanese": "Budi iku kancaku sing paling apik.",
+    "exampleSentenceDutch": "Budi is mijn beste vriend.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["sociaal", "vriendschap", "relaties"]
+  }
+]

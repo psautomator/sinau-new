@@ -1,0 +1,95 @@
+
+[
+  {
+    "javanese": "kebo",
+    "dutch": "waterbuffel",
+    "aiHint": "water buffalo",
+    "audioJavanese": null,
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Kebo iku gedhé lan kuat.",
+    "exampleSentenceDutch": "De karbouw is groot en sterk.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["dier", "boerderij"]
+  },
+  {
+    "javanese": "asu",
+    "dutch": "hond",
+    "aiHint": "dog",
+    "audioJavanese": null,
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Asu iku kancané manungsa.",
+    "exampleSentenceDutch": "De hond is de vriend van de mens.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["dier", "huisdier"]
+  },
+  {
+    "javanese": "kucing",
+    "dutch": "kat",
+    "aiHint": "cat sleeping",
+    "audioJavanese": "/audio/uploads/kucing.mp3",
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Kucingku seneng turu.",
+    "exampleSentenceDutch": "Mijn kat slaapt graag.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["dier", "huisdier"]
+  },
+  {
+    "javanese": "tikus",
+    "dutch": "muis",
+    "aiHint": "mouse eating",
+    "audioJavanese": "/audio/uploads/tikus.mp3",
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Tikus iku mangan keju.",
+    "exampleSentenceDutch": "De muis eet kaas.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["dier", "ongedierte"]
+  },
+  {
+    "javanese": "sapi",
+    "dutch": "koe",
+    "aiHint": "cow pasture",
+    "audioJavanese": "/audio/uploads/sapi.mp3",
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Sapi iku mangan suket.",
+    "exampleSentenceDutch": "De koe eet gras.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["dier", "boerderij"]
+  },
+  {
+    "javanese": "jaran",
+    "dutch": "paard",
+    "aiHint": "horse running",
+    "audioJavanese": "/audio/uploads/jaran.mp3",
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Jaran iku mlayu banter.",
+    "exampleSentenceDutch": "Het paard rent snel.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["dier", "vervoer"]
+  },
+  {
+    "javanese": "kembang",
+    "dutch": "bloem",
+    "aiHint": "colorful flower",
+    "audioJavanese": "/audio/uploads/kembang.mp3",
+    "category": "Natuur",
+    "exampleSentenceJavanese": "Kembangé abang.",
+    "exampleSentenceDutch": "De bloem is rood.",
+    "notes": "Formeel (Krama) is 'sekar'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["natuur", "plant", "bloem"]
+  }
+]
+

@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m17-l3",
+  "title": "Module 17: Les 3 Quiz - De Terugkoppeling",
+  "description": "Test je kennis van het omgaan met formele feedback.",
+  "questions": [
+    {
+      "id": "q1-m17-l3-mcq",
+      "order": 1,
+      "questionText": "Welk advies krijgt Siti van Ibu Dewi?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m17-l3-opt1", "text": "Ze moet meer ervaring opdoen.", "isCorrect": false },
+        { "id": "q1-m17-l3-opt2", "text": "Ze moet zelfverzekerder zijn.", "isCorrect": true },
+        { "id": "q1-m17-l3-opt3", "text": "Ze moet formelere kleding dragen.", "isCorrect": false },
+        { "id": "q1-m17-l3-opt4", "text": "Ze moet de taal beter leren.", "isCorrect": false }
+      ],
+      "explanation": "Ibu Dewi zegt: 'panjenengan kedah langkung percaya dhiri', wat betekent 'u moet wat zelfverzekerder zijn'."
+    },
+    {
+      "id": "q2-m17-l3-mcq-culture",
+      "order": 2,
+      "questionText": "Hoe reageert Siti op de feedback, en wat toont dit aan binnen de Javaanse cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m17-l3-opt1", "text": "Ze gaat in de verdediging en legt uit waarom ze nerveus was.", "isCorrect": false },
+        { "id": "q2-m17-l3-opt2", "text": "Ze negeert de feedback en verandert van onderwerp.", "isCorrect": false },
+        { "id": "q2-m17-l3-opt3", "text": "Ze wordt boos en loopt weg.", "isCorrect": false },
+        { "id": "q2-m17-l3-opt4", "text": "Ze bedankt respectvol en toont de intentie om te leren.", "isCorrect": true }
+      ],
+      "explanation": "Siti bedankt voor de feedback ('Matur nuwun sanget') en belooft te leren. Dit toont nederigheid en de wil om te groeien, wat zeer gewaardeerd wordt."
+    }
+  ]
+}

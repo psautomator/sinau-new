@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m7-l3",
+  "title": "Module 7: Les 3 Quiz - Vertrouwen en Helpen",
+  "description": "Test je kennis over vriendschap en cultuur.",
+  "questions": [
+    {
+      "id": "q1-m7-l3-mcq",
+      "order": 1,
+      "questionText": "Wat is de betekenis van het culturele concept 'tulung-tinulung'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m7-l3-opt1", "text": "Geduldig zijn met elkaar.", "isCorrect": false },
+        { "id": "q1-m7-l3-opt2", "text": "Elkaar helpen en wederzijdse steun.", "isCorrect": true, "wordId": "tulung-tinulung" },
+        { "id": "q1-m7-l3-opt3", "text": "Samen spelen en plezier maken.", "isCorrect": false },
+        { "id": "q1-m7-l3-opt4", "text": "Eerlijk zijn tegen elkaar.", "isCorrect": false }
+      ],
+      "explanation": "'Tulung-tinulung' is een kernwaarde die wederzijdse hulp en solidariteit binnen de gemeenschap en vriendschappen beschrijft."
+    },
+    {
+      "id": "q2-m7-l3-fib",
+      "order": 2,
+      "questionText": "Vul de zin aan met het juiste woord uit de dialoog: 'Matur nuwun ya, kowé ___ banget.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["sabar"],
+      "explanation": "Dewi bedankt Siti en noemt haar 'sabar' (geduldig) omdat ze haar rustig helpt de weg te vinden."
+    }
+  ]
+}

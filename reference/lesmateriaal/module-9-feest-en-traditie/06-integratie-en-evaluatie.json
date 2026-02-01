@@ -1,0 +1,81 @@
+
+[
+    {
+        "javanese": "pesta",
+        "dutch": "feest",
+        "aiHint": "party celebration",
+        "audioJavanese": "/audio/uploads/pesta.mp3",
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Keluarga kita arep nganakaké pesta.",
+        "exampleSentenceDutch": "Onze familie gaat een feest houden.",
+        "notes": "Algemeen woord voor feest.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": [ "feest", "viering", "sociaal" ]
+      },
+      {
+        "javanese": "slametan",
+        "dutch": "rituele feestmaaltijd",
+        "aiHint": "javanese ritual meal",
+        "audioJavanese": null,
+        "category": "Cultuur",
+        "exampleSentenceJavanese": "Slametan dianakake kanggo tolak bala.",
+        "exampleSentenceDutch": "Een slametan wordt gehouden om onheil af te weren.",
+        "notes": "Een zeer belangrijk gemeenschapsritueel.",
+        "level": "B2",
+        "formality": "Neutral",
+        "tags": ["cultuur", "ritueel", "feest", "gemeenschap"]
+      },
+      {
+        "javanese": "rejeki",
+        "dutch": "voorspoed / zegen",
+        "aiHint": "lucky charm",
+        "audioJavanese": null,
+        "category": "Concept",
+        "exampleSentenceJavanese": "Muga-muga diparingi rejeki lancar.",
+        "exampleSentenceDutch": "Hopelijk wordt je een vlotte voorspoed gegeven.",
+        "notes": "Kan materieel (geld, oogst) en immaterieel (geluk, gezondheid) zijn.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["concept", "geluk", "voorspoed"]
+      },
+      {
+        "javanese": "nyumbang",
+        "dutch": "een bijdrage/geschenk geven",
+        "aiHint": "giving a gift",
+        "audioJavanese": "/audio/uploads/nyumbang.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku arep nyumbang kanggo pesta.",
+        "exampleSentenceDutch": "Ik ga een bijdrage leveren voor het feest.",
+        "notes": "Cultureel belangrijk concept van bijdragen aan gemeenschapsevenementen.",
+        "level": "B2",
+        "formality": "Neutral",
+        "tags": [ "geven", "sociaal", "feest", "cultuur" ]
+      },
+      {
+        "javanese": "gotong royong",
+        "dutch": "samenwerking in de gemeenschap",
+        "aiHint": "community working together",
+        "audioJavanese": null,
+        "category": "Concept",
+        "exampleSentenceJavanese": "Gotong royong iku penting kanggo masyarakat.",
+        "exampleSentenceDutch": "Samenwerking is belangrijk voor de gemeenschap.",
+        "notes": "Een kernwaarde van wederzijdse hulp en samenwerking.",
+        "level": "B2",
+        "formality": "Neutral",
+        "tags": ["cultuur", "samenwerking", "gemeenschap"]
+      },
+      {
+        "javanese": "nrima ing pandum",
+        "dutch": "tevreden zijn met je deel",
+        "aiHint": "grateful hands",
+        "audioJavanese": null,
+        "category": "Gezegde",
+        "exampleSentenceJavanese": "Wong Jawa iku kudu nrima ing pandum.",
+        "exampleSentenceDutch": "Een Javaan moet tevreden zijn met zijn deel.",
+        "notes": "Een kernfilosofie in de Javaanse cultuur over tevredenheid en acceptatie.",
+        "level": "C1",
+        "formality": "Neutral",
+        "tags": ["gezegde", "filosofie", "tevredenheid", "cultuur"]
+      }
+]

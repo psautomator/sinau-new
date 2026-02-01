@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSinau - Dynamic Quiz Interface</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bee79",
+                        "primary-dark": "#23c263",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102217",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a3324",
+                        "text-main": "#0d1b13",
+                        "text-muted": "#4c9a6b",
+                        "border-light": "#e7f3ec",
+                        "border-dark": "#2a4a36",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'card': '0 0 0 1px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.04)',
+                        'floating': '0 10px 40px -10px rgba(0,0,0,0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased min-h-screen flex flex-col">
+<!-- Header Section with Progress -->
+<header class="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark px-4 md:px-8 py-4">
+<div class="max-w-5xl mx-auto w-full flex flex-col gap-4">
+<!-- Top Row: Logo & Close -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 flex items-center justify-center bg-primary/20 rounded-lg text-primary-dark dark:text-primary">
+<span class="material-symbols-outlined" style="font-size: 20px;">school</span>
+</div>
+<h2 class="text-text-main dark:text-white text-lg font-bold tracking-tight">AyoSinau</h2>
+</div>
+<button class="text-text-muted hover:text-text-main dark:text-gray-400 dark:hover:text-white transition-colors p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Progress Row -->
+<div class="flex items-center gap-4 w-full">
+<div class="flex-1 h-3 bg-border-light dark:bg-border-dark rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-500 ease-out" style="width: 40%;"></div>
+</div>
+<span class="text-sm font-medium text-text-muted dark:text-gray-400 whitespace-nowrap">4 of 10</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col items-center justify-start py-8 px-4 md:px-8 w-full">
+<div class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+<!-- Left Column: Fill in the blank (Current Question) -->
+<div class="flex flex-col h-full">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-card p-6 md:p-10 flex flex-col gap-8 flex-grow border border-border-light dark:border-border-dark relative overflow-hidden group">
+<!-- Decorative background accent -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+<!-- Question Header -->
+<div class="relative z-10">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-[16px]">drag_indicator</span>
+                            Fill in the blank
+                        </span>
+<h1 class="text-3xl md:text-4xl font-bold text-text-main dark:text-white leading-tight">
+                            Ibu tindak menyang <span class="inline-block min-w-[120px] border-b-4 border-dashed border-primary/50 mx-1 align-baseline transition-colors hover:bg-primary/5 rounded px-2 text-primary dark:text-primary">_____</span>.
+                        </h1>
+<p class="mt-4 text-text-muted dark:text-gray-400 text-lg font-normal italic">
+                            (Mother goes to the _____.)
+                        </p>
+</div>
+<!-- Draggable Options Area -->
+<div class="mt-auto relative z-10">
+<p class="text-sm font-semibold text-text-muted dark:text-gray-500 mb-4 uppercase tracking-wide">Drag the correct word</p>
+<div class="flex flex-wrap gap-3">
+<!-- Draggable Item 1 -->
+<div class="cursor-grab active:cursor-grabbing bg-white dark:bg-surface-dark border-2 border-border-light dark:border-border-dark hover:border-primary dark:hover:border-primary shadow-sm hover:shadow-md rounded-xl px-6 py-3 transition-all duration-200 group/drag">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-300 group-hover/drag:text-primary transition-colors text-sm">drag_handle</span>
+<span class="text-lg font-medium text-text-main dark:text-white">Pasar</span>
+</div>
+</div>
+<!-- Draggable Item 2 -->
+<div class="cursor-grab active:cursor-grabbing bg-white dark:bg-surface-dark border-2 border-border-light dark:border-border-dark hover:border-primary dark:hover:border-primary shadow-sm hover:shadow-md rounded-xl px-6 py-3 transition-all duration-200 group/drag">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-300 group-hover/drag:text-primary transition-colors text-sm">drag_handle</span>
+<span class="text-lg font-medium text-text-main dark:text-white">Sawah</span>
+</div>
+</div>
+<!-- Draggable Item 3 -->
+<div class="cursor-grab active:cursor-grabbing bg-white dark:bg-surface-dark border-2 border-border-light dark:border-border-dark hover:border-primary dark:hover:border-primary shadow-sm hover:shadow-md rounded-xl px-6 py-3 transition-all duration-200 group/drag">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-gray-300 group-hover/drag:text-primary transition-colors text-sm">drag_handle</span>
+<span class="text-lg font-medium text-text-main dark:text-white">Kantor</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Action Button -->
+<div class="mt-6">
+<button class="w-full bg-primary hover:bg-primary-dark text-text-main font-bold text-lg py-4 px-6 rounded-xl shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-200 flex items-center justify-center gap-2 transform active:scale-[0.99]">
+<span>Check Answer</span>
+<span class="material-symbols-outlined">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Multiple Choice Variant (Visual Demo) -->
+<div class="flex flex-col h-full opacity-90 scale-95 origin-top lg:scale-100 lg:opacity-100">
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-card p-6 md:p-10 flex flex-col gap-6 flex-grow border border-border-light dark:border-border-dark relative">
+<div class="absolute top-4 right-4 bg-gray-100 dark:bg-gray-800 text-gray-500 text-xs font-bold px-2 py-1 rounded">
+                        NEXT QUESTION PREVIEW
+                    </div>
+<!-- Question Header -->
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300 text-xs font-bold uppercase tracking-wider mb-4">
+<span class="material-symbols-outlined text-[16px]">list_alt</span>
+                            Multiple Choice
+                        </span>
+<h1 class="text-2xl font-bold text-text-main dark:text-white leading-tight">
+                            What is the polite Javanese (Krama Inggil) word for 'Eat'?
+                        </h1>
+</div>
+<!-- Multiple Choice Options -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+<!-- Option A -->
+<button class="group relative flex items-center p-4 bg-white dark:bg-surface-dark border-2 border-border-light dark:border-border-dark rounded-xl hover:border-purple-400 dark:hover:border-purple-500 hover:bg-purple-50/50 dark:hover:bg-purple-900/20 transition-all text-left">
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 group-hover:bg-purple-100 dark:group-hover:bg-purple-800 group-hover:text-purple-600 font-bold text-sm mr-4 transition-colors">A</span>
+<span class="text-lg font-medium text-text-main dark:text-white group-hover:text-purple-900 dark:group-hover:text-purple-100">Mangan</span>
+</button>
+<!-- Option B (Correct Selected State) -->
+<button class="group relative flex items-center p-4 bg-primary/10 dark:bg-primary/20 border-2 border-primary rounded-xl transition-all text-left shadow-sm">
+<div class="absolute -top-3 -right-3 bg-primary text-text-main rounded-full p-1 shadow-md">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-text-main font-bold text-sm mr-4">B</span>
+<span class="text-lg font-medium text-text-main dark:text-white">Dahar</span>
+</button>
+<!-- Option C -->
+<button class="group relative flex items-center p-4 bg-white dark:bg-surface-dark border-2 border-border-light dark:border-border-dark rounded-xl hover:border-purple-400 dark:hover:border-purple-500 hover:bg-purple-50/50 dark:hover:bg-purple-900/20 transition-all text-left">
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 group-hover:bg-purple-100 dark:group-hover:bg-purple-800 group-hover:text-purple-600 font-bold text-sm mr-4 transition-colors">C</span>
+<span class="text-lg font-medium text-text-main dark:text-white group-hover:text-purple-900 dark:group-hover:text-purple-100">Nedha</span>
+</button>
+<!-- Option D -->
+<button class="group relative flex items-center p-4 bg-white dark:bg-surface-dark border-2 border-border-light dark:border-border-dark rounded-xl hover:border-purple-400 dark:hover:border-purple-500 hover:bg-purple-50/50 dark:hover:bg-purple-900/20 transition-all text-left">
+<span class="flex items-center justify-center w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-500 group-hover:bg-purple-100 dark:group-hover:bg-purple-800 group-hover:text-purple-600 font-bold text-sm mr-4 transition-colors">D</span>
+<span class="text-lg font-medium text-text-main dark:text-white group-hover:text-purple-900 dark:group-hover:text-purple-100">Nguntal</span>
+</button>
+</div>
+<!-- Incorrect Feedback State (Demo) -->
+<div class="mt-auto pt-4 border-t border-red-100 dark:border-red-900/30">
+<div class="flex items-start gap-3 text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
+<span class="material-symbols-outlined shrink-0">error</span>
+<div>
+<p class="font-bold text-sm">Incorrect Answer</p>
+<p class="text-sm opacity-90">"Mangan" is Ngoko (informal). Try again!</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Action Button -->
+<div class="mt-6 opacity-50 pointer-events-none">
+<button class="w-full bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 font-bold text-lg py-4 px-6 rounded-xl flex items-center justify-center gap-2 cursor-not-allowed">
+<span>Check Answer</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Toast / Notification Area (Success Feedback) -->
+<div class="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 animate-bounce">
+<!-- This would normally be hidden and shown via JS. Displaying here for visual completeness of the request. -->
+<!-- Assuming the user got the Fill-in-the-blank correct -->
+<!-- Uncomment to visualize floating feedback
+        <div class="bg-surface-light dark:bg-surface-dark border-l-4 border-primary shadow-floating rounded-r-lg p-4 flex items-center gap-4 min-w-[320px]">
+            <div class="bg-primary/20 p-2 rounded-full text-primary-dark dark:text-primary">
+                <span class="material-symbols-outlined">celebration</span>
+            </div>
+            <div>
+                <h4 class="font-bold text-text-main dark:text-white">Excellent!</h4>
+                <p class="text-sm text-text-muted">That is the correct word.</p>
+            </div>
+            <button class="ml-auto text-gray-400 hover:text-gray-600 dark:hover:text-white">
+                <span class="material-symbols-outlined text-sm">close</span>
+            </button>
+        </div>
+        -->
+</div>
+</body></html>

@@ -1,0 +1,48 @@
+
+{
+  "id": "quiz-m5-l3",
+  "title": "Module 5: Les 3 Quiz - Samen Delen",
+  "description": "Test je kennis van complimenten en beleefdheid aan tafel.",
+  "questions": [
+    {
+      "id": "q1-m5-l3-mcq",
+      "order": 1,
+      "questionText": "Welk woord gebruik je om een compliment te geven en te zeggen dat het eten 'lekker' is?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m5-l3-opt1", "text": "Larang", "isCorrect": false },
+        { "id": "q1-m5-l3-opt2", "text": "Énak", "isCorrect": true, "wordId": "enak" },
+        { "id": "q1-m5-l3-opt3", "text": "Apik", "isCorrect": false },
+        { "id": "q1-m5-l3-opt4", "text": "Monggo", "isCorrect": false, "wordId": "monggo" }
+      ],
+      "explanation": "'Énak' wordt specifiek gebruikt om aan te geven dat eten of drinken lekker smaakt."
+    },
+    {
+      "id": "q2-m5-l3-audio",
+      "order": 2,
+      "questionText": "Luister naar het woord. In welke situatie gebruik je dit?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/mangga.mp3",
+      "options": [
+        { "id": "q2-m5-l3-opt1", "text": "Om te klagen over de prijs.", "isCorrect": false },
+        { "id": "q2-m5-l3-opt2", "text": "Om afscheid te nemen.", "isCorrect": false },
+        { "id": "q2-m5-l3-opt3", "text": "Om beleefd iets aan te bieden of iemand uit te nodigen.", "isCorrect": true, "wordId": "monggo" },
+        { "id": "q2-m5-l3-opt4", "text": "Om te zeggen dat je het niet begrijpt.", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'monggo', een zeer beleefd en veelgebruikt woord om iets aan te bieden, zoals Siti doet met de pannenkoekjes."
+    },
+    {
+      "id": "q3-m5-l3-context",
+      "order": 3,
+      "questionText": "Wat is een `lempeng` in de context van de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m5-l3-opt1", "text": "Een soort soep", "isCorrect": false },
+        { "id": "q3-m5-l3-opt2", "text": "Een Javaanse pannenkoek", "isCorrect": true, "wordId": "lempeng" },
+        { "id": "q3-m5-l3-opt3", "text": "Een pittig bijgerecht", "isCorrect": false },
+        { "id": "q3-m5-l3-opt4", "text": "Een soort kruid", "isCorrect": false }
+      ],
+      "explanation": "'Lempeng' is een traditionele Javaanse pannenkoek, die Siti in dit geval zelf heeft gemaakt."
+    }
+  ]
+}

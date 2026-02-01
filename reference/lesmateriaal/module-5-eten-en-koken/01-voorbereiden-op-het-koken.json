@@ -1,0 +1,110 @@
+
+[
+    {
+        "javanese": "pawon",
+        "dutch": "keuken",
+        "aiHint": "kitchen interior",
+        "audioJavanese": "/audio/uploads/pawon.mp3",
+        "category": "Locaties",
+        "exampleSentenceJavanese": "Ibu lagi masak ing pawon.",
+        "exampleSentenceDutch": "Moeder is aan het koken in de keuken.",
+        "notes": "Het hart van het Javaanse huis.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["huis", "koken", "locatie"]
+    },
+    {
+        "javanese": "bumbu",
+        "dutch": "kruiden / specerijen",
+        "aiHint": "spices herbs",
+        "audioJavanese": "/audio/uploads/bumbu.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Bumbu iki nggawe masakan luwih enak.",
+        "exampleSentenceDutch": "Deze kruiden maken het gerecht lekkerder.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["eten", "ingrediënt", "smaak"]
+    },
+    {
+        "javanese": "sega",
+        "dutch": "gekookte rijst",
+        "aiHint": "bowl of rice",
+        "audioJavanese": "/audio/uploads/sega.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Aku mangan sega saben dina.",
+        "exampleSentenceDutch": "Ik eet elke dag rijst.",
+        "notes": "Basisvoedsel in de Javaanse keuken.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [
+            "eten",
+            "basisvoedsel"
+        ]
+    },
+    {
+        "javanese": "masak",
+        "dutch": "koken",
+        "aiHint": "person cooking",
+        "audioJavanese": "/audio/uploads/masak.mp3",
+        "category": "Activiteit",
+        "exampleSentenceJavanese": "Sapa sing arep masak dina iki?",
+        "exampleSentenceDutch": "Wie gaat er vandaag koken?",
+        "notes": "Algemeen werkwoord voor koken.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["koken", "eten", "activiteit"]
+    },
+    {
+        "javanese": "ngiris",
+        "dutch": "snijden",
+        "aiHint": "cutting vegetables",
+        "audioJavanese": "/audio/uploads/ngiris.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Tulung ngiris bawang.",
+        "exampleSentenceDutch": "Snijd alsjeblieft de ui.",
+        "notes": "Actieve vorm van 'iris'.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["koken", "actie", "voorbereiding"]
+    },
+    {
+        "javanese": "lombok",
+        "dutch": "Spaanse peper / chili",
+        "aiHint": "red chili",
+        "audioJavanese": "/audio/uploads/lombok.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Sambel iki akeh lomboké.",
+        "exampleSentenceDutch": "Deze sambal bevat veel chilipepers.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["eten", "ingrediënt", "pittig"]
+    },
+    {
+        "javanese": "iwak pitik",
+        "dutch": "kippenvlees",
+        "aiHint": "chicken meat",
+        "audioJavanese": null,
+        "category": "Eten",
+        "exampleSentenceJavanese": "Opor ayam digawe saka iwak pitik.",
+        "exampleSentenceDutch": "Opor ayam wordt gemaakt van kippenvlees.",
+        "notes": "Letterlijk 'vis van kip', maar betekent kippenvlees.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["eten", "vlees", "kip"]
+    },
+    {
+        "javanese": "bantu",
+        "dutch": "helpen",
+        "aiHint": "helping hand",
+        "audioJavanese": null,
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Saged kula bantu?",
+        "exampleSentenceDutch": "Kan ik u helpen?",
+        "notes": "Basiswerkwoord voor helpen. 'Tulung' wordt ook vaak gebruikt.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["actie", "sociaal", "hulp"]
+    }
+]

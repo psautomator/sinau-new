@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "kelas",
+    "dutch": "klas",
+    "aiHint": "classroom students",
+    "audioJavanese": null,
+    "category": "School",
+    "exampleSentenceJavanese": "Kelas iki resik banget.",
+    "exampleSentenceDutch": "Deze klas is erg schoon.",
+    "notes": "Leenwoord uit het Nederlands.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["school", "locatie"]
+  },
+  {
+    "javanese": "kanca",
+    "dutch": "vriend",
+    "aiHint": "friends together",
+    "audioJavanese": "/audio/uploads/kanca.mp3",
+    "category": "Personen",
+    "exampleSentenceJavanese": "Budi iku kancaku.",
+    "exampleSentenceDutch": "Budi is mijn vriend.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "sociaal", "vriendschap" ]
+  },
+  {
+    "javanese": "dolanan",
+    "dutch": "spelen",
+    "aiHint": "children playing",
+    "audioJavanese": "/audio/uploads/dolanan.mp3",
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Ayo dolanan bal-balan.",
+    "exampleSentenceDutch": "Laten we voetballen.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "vrije tijd", "spel" ]
+  },
+  {
+    "javanese": "ketemu",
+    "dutch": "ontmoeten",
+    "aiHint": "people meeting",
+    "audioJavanese": "/audio/uploads/ketemu.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Seneng ketemu kowé.",
+    "exampleSentenceDutch": "Leuk je te ontmoeten.",
+    "notes": "Informeel werkwoord (Ngoko). De beleefde vorm is 'kepanggih'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["actie", "sociaal", "ontmoeten"]
+  }
+]

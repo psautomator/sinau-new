@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "pesta",
+    "dutch": "feest",
+    "aiHint": "party celebration",
+    "audioJavanese": "/audio/uploads/pesta.mp3",
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Keluarga kita arep nganakaké pesta.",
+    "exampleSentenceDutch": "Onze familie gaat een feest houden.",
+    "notes": "Algemeen woord voor feest.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": [ "feest", "viering", "sociaal" ]
+  },
+  {
+    "javanese": "slametan",
+    "dutch": "rituele feestmaaltijd",
+    "aiHint": "javanese ritual meal",
+    "audioJavanese": null,
+    "category": "Cultuur",
+    "exampleSentenceJavanese": "Slametan dianakake kanggo tolak bala.",
+    "exampleSentenceDutch": "Een slametan wordt gehouden om onheil af te weren.",
+    "notes": "Een zeer belangrijk gemeenschapsritueel.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["cultuur", "ritueel", "feest", "gemeenschap"]
+  },
+  {
+    "javanese": "rejeki",
+    "dutch": "voorspoed / zegen",
+    "aiHint": "lucky charm",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Muga-muga diparingi rejeki lancar.",
+    "exampleSentenceDutch": "Hopelijk wordt je een vlotte voorspoed gegeven.",
+    "notes": "Kan materieel (geld, oogst) en immaterieel (geluk, gezondheid) zijn.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["concept", "geluk", "voorspoed"]
+  },
+  {
+    "javanese": "undang",
+    "dutch": "uitnodigen",
+    "aiHint": "invitation card",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku arep undang kanca-kancaku.",
+    "exampleSentenceDutch": "Ik ga mijn vrienden uitnodigen.",
+    "notes": "Actieve vorm is 'ngundang'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["sociaal", "feest", "actie"]
+  }
+]

@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m7-l1",
+  "title": "Module 7: Les 1 Quiz - Eerste Kennismaking",
+  "description": "Test je kennis van de eerste kennismaking.",
+  "questions": [
+    {
+      "id": "q1-m7-l1-mcq",
+      "order": 1,
+      "questionText": "Welke formele begroeting gebruikt Siti om Dewi welkom te heten op school?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m7-l1-opt1", "text": "Halo", "isCorrect": false },
+        { "id": "q1-m7-l1-opt2", "text": "Piye kabaré?", "isCorrect": false },
+        { "id": "q1-m7-l1-opt3", "text": "Sugeng rawuh", "isCorrect": true, "wordId": "sugeng rawuh" },
+        { "id": "q1-m7-l1-opt4", "text": "Matur nuwun", "isCorrect": false }
+      ],
+      "explanation": "'Sugeng rawuh' is een beleefde en formele manier om 'welkom' te zeggen, wat laat zien dat Siti gastvrij is."
+    },
+    {
+      "id": "q2-m7-l1-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Muga-muga aku bisa duwé ___ akèh ing kene.'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["kanca"],
+      "explanation": "Dewi hoopt veel vrienden ('kanca') te maken op haar nieuwe school."
+    }
+  ]
+}

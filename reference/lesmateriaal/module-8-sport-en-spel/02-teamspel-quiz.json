@@ -1,0 +1,42 @@
+
+{
+  "id": "quiz-m8-l2",
+  "title": "Module 8: Les 2 Quiz - Teamspel",
+  "description": "Test je kennis over teamwerk en vergelijkingen.",
+  "questions": [
+    {
+      "id": "q1-m8-l2-mcq-culture",
+      "order": 1,
+      "questionText": "Wat is volgens Budi het belangrijkste om te winnen?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m8-l2-opt1", "text": "De sterkste zijn", "isCorrect": false },
+        { "id": "q1-m8-l2-opt2", "text": "Een eenheid vormen ('kompak' zijn)", "isCorrect": true, "wordId": "kompak" },
+        { "id": "q1-m8-l2-opt3", "text": "Heel veel enthousiasme ('semangat') hebben", "isCorrect": false },
+        { "id": "q1-m8-l2-opt4", "text": "De snelste zijn", "isCorrect": false }
+      ],
+      "explanation": "Budi benadrukt: 'Sing penting kompak!', wat de culturele waarde van samenwerking en teamgeest onderstreept."
+    },
+    {
+      "id": "q2-m8-l2-mcq-grammar",
+      "order": 2,
+      "questionText": "Hoe zeg je 'Ons team is sterker dan hun team' op de juiste manier?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m8-l2-opt1", "text": "Tim kita luwih kuwat tinimbang timé dhèwèké.", "isCorrect": true },
+        { "id": "q2-m8-l2-opt2", "text": "Tim kita padha kuwaté karo timé dhèwèké.", "isCorrect": false },
+        { "id": "q2-m8-l2-opt3", "text": "Tim kita paling kuwat dhewe.", "isCorrect": false },
+        { "id": "q2-m8-l2-opt4", "text": "Tim kita kuwat banget.", "isCorrect": false }
+      ],
+      "explanation": "De vergrotende trap wordt gevormd met 'luwih ... tinimbang ...'."
+    },
+    {
+      "id": "q3-m8-l2-fib",
+      "order": 3,
+      "questionText": "Vul de aanmoediging aan die vaak wordt geroepen: 'Ayo, ___!'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["semangat"],
+      "explanation": "'Semangat' betekent spirit of enthousiasme en wordt gebruikt als aanmoediging."
+    }
+  ]
+}

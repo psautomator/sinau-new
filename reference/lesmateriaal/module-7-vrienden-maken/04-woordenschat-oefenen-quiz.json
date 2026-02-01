@@ -1,0 +1,35 @@
+{
+  "id": "quiz-m7-l4",
+  "title": "Les 4 Quiz: Woordenschat Vriendschap",
+  "description": "Test je kennis van de vocabulaire over vriendschap en hobby's.",
+  "questions": [
+    {
+      "id": "q1-m7-l4-match",
+      "order": 1,
+      "questionText": "Combineer de karaktereigenschap met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Pinter"},
+        {"value": "Sabar"}
+      ],
+      "matchItemsRight": [
+        {"value": "Slim / goed in iets"},
+        {"value": "Geduldig"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor deze positieve eigenschappen."
+    },
+    {
+      "id": "q2-m7-l4-mcq",
+      "order": 2,
+      "questionText": "Hoe zeg je 'zingen' in het Javaans?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m7-l4-opt1", "text": "Maca", "isCorrect": false, "wordId": "maca" },
+        { "id": "q2-m7-l4-opt2", "text": "Nggambar", "isCorrect": false, "wordId": "nggambar" },
+        { "id": "q2-m7-l4-opt3", "text": "Nyanyi", "isCorrect": true, "wordId": "nyanyi" },
+        { "id": "q2-m7-l4-opt4", "text": "Dolanan", "isCorrect": false, "wordId": "dolanan" }
+      ],
+      "explanation": "'Nyanyi' is het Javaanse werkwoord voor zingen."
+    }
+  ]
+}

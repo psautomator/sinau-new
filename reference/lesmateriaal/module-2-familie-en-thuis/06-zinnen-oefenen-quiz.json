@@ -1,0 +1,77 @@
+
+{
+  "id": "quiz-m2-l6",
+  "title": "Les 6 Quiz: Zinnen Oefenen",
+  "description": "Test je vaardigheid in het vertalen en herkennen van Ngoko en Krama.",
+  "questions": [
+    {
+      "id": "q1-m2-l6-mcq-krama",
+      "order": 1,
+      "questionText": "Wat is het beleefde (Krama) woord voor 'huis'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m2-l6-opt1", "text": "Omah", "isCorrect": false, "wordId": "omah" },
+        { "id": "q1-m2-l6-opt2", "text": "Kamar", "isCorrect": false, "wordId": "kamar" },
+        { "id": "q1-m2-l6-opt3", "text": "Pakarangan", "isCorrect": false },
+        { "id": "q1-m2-l6-opt4", "text": "Griya", "isCorrect": true, "wordId": "griya" }
+      ],
+      "explanation": "'Griya' is de Krama-vorm voor 'omah' (huis)."
+    },
+    {
+      "id": "q2-m2-l6-match",
+      "order": 2,
+      "questionText": "Combineer het Ngoko woord met zijn Krama tegenhanger.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "cilik"},
+        {"value": "gedhé"},
+        {"value": "kayu"},
+        {"value": "watu"}
+      ],
+      "matchItemsRight": [
+        {"value": "alit"},
+        {"value": "ageng"},
+        {"value": "kajeng"},
+        {"value": "séla"}
+      ],
+      "explanation": "Dit zijn de correcte Ngoko-Krama paren voor deze bijvoeglijke naamwoorden en materialen."
+    },
+    {
+      "id": "q3-m2-l6-fib",
+      "order": 3,
+      "questionText": "Vul het ontbrekende Krama-woord in: 'Kursi punika saking ___.' (Die stoel is van hout.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["kajeng"],
+      "explanation": "'Kajeng' is de beleefde (Krama) vorm voor 'kayu' (hout)."
+    },
+    {
+        "id": "q4-m2-l6-reorder",
+        "order": 4,
+        "questionText": "Zet de woorden in de juiste volgorde: 'gedhé - omah - ana - iku - ing - dalan'",
+        "questionType": "REORDER_SENTENCE",
+        "sentencePartsToReorder": [{"value": "Ing"}, {"value": "dalan"}, {"value": "iku"}, {"value": "ana"}, {"value": "omah"}, {"value": "gedhé."}],
+        "explanation": "De correcte Ngoko-zin is 'Ing dalan iku ana omah gedhé', wat betekent 'In die straat staat een groot huis'."
+    },
+    {
+        "id": "q5-m2-l6-mcq-translate",
+        "order": 5,
+        "questionText": "Wat is de juiste Ngoko-vertaling voor de Krama-zin: 'Griya punika saking séla'?",
+        "questionType": "MULTIPLE_CHOICE",
+        "options": [
+            { "id": "q5-m2-l6-opt1", "text": "Omah iki saka kayu.", "isCorrect": false },
+            { "id": "q5-m2-l6-opt2", "text": "Omah iku saka watu.", "isCorrect": true },
+            { "id": "q5-m2-l6-opt3", "text": "Griya iki saka watu.", "isCorrect": false },
+            { "id": "q5-m2-l6-opt4", "text": "Omah iku saka kajeng.", "isCorrect": false }
+        ],
+        "explanation": "De Ngoko-vertaling is 'Omah iku saka watu'. 'Griya' wordt 'omah', 'punika' wordt 'iku', en 'séla' wordt 'watu'."
+    },
+    {
+        "id": "q6-m2-l6-fib-negation",
+        "order": 6,
+        "questionText": "Vul de ontbrekende woorden in de Krama-zin in: '___ ing kamar punika ___ wonten cendhéla.' (In die kamer is geen raam.)",
+        "questionType": "FILL_IN_THE_BLANK",
+        "fillInAnswers": ["Wonten", "mboten"],
+        "explanation": "'Wonten' betekent 'er is/zijn' in Krama, en 'mboten' is de beleefde ontkenning voor 'niet'."
+    }
+  ]
+}

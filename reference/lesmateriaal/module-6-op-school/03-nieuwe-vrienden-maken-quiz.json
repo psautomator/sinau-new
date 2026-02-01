@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m6-l3",
+  "title": "Module 6: Les 3 Quiz - Nieuwe Vrienden Maken",
+  "description": "Test je kennis over het starten van een gesprek.",
+  "questions": [
+    {
+      "id": "q1-m6-l3-mcq",
+      "order": 1,
+      "questionText": "Welke vraag stelt Budi aan Siti om het gesprek te beginnen?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m6-l3-opt1", "text": "Kowé seneng pelajaran apa?", "isCorrect": false },
+        { "id": "q1-m6-l3-opt2", "text": "Piye kabaré?", "isCorrect": false },
+        { "id": "q1-m6-l3-opt3", "text": "Omahmu nang endi?", "isCorrect": false },
+        { "id": "q1-m6-l3-opt4", "text": "Jenengmu sapa?", "isCorrect": true }
+      ],
+      "explanation": "Budi begint het gesprek door te vragen 'Jenengmu sapa?', wat 'Hoe heet je?' betekent."
+    },
+    {
+      "id": "q2-m6-l3-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord in: 'Ayo mengko ___ bal!' (Laten we straks voetballen!)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["dolanan"],
+      "explanation": "'Dolanan' betekent spelen en wordt hier gebruikt om een gezamenlijke activiteit voor te stellen."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+
+{
+  "id": "quiz-m1-l2",
+  "title": "Module 1: Les 2 Quiz - Jezelf Voorstellen",
+  "description": "Test je kennis van de tweede les.",
+  "questions": [
+    {
+      "id": "q1-m1-l2-mcq",
+      "order": 1,
+      "questionText": "Welk woord plaats je aan het begin van een zin om er een ja/nee-vraag van te maken?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m1-l2-opt1", "text": "Sapa", "isCorrect": false, "wordId": "sapa" },
+        { "id": "q1-m1-l2-opt2", "text": "Jeneng", "isCorrect": false, "wordId": "jeneng"},
+        { "id": "q1-m1-l2-opt3", "text": "Apa", "isCorrect": true },
+        { "id": "q1-m1-l2-opt4", "text": "Ngendi", "isCorrect": false, "wordId": "ngendi" }
+      ],
+      "explanation": "Het woord 'Apa' wordt vooraan een stelling geplaatst om er een ja/nee-vraag van te maken, zoals in 'Apa kowé bisa basa Inggris?'."
+    },
+    {
+      "id": "q2-m1-l2-reorder",
+      "order": 2,
+      "questionText": "Zet de woorden in de juiste volgorde om de vraag 'Wie is jouw naam?' te vormen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [{"value": "Sapa"}, {"value": "jenengmu?"}],
+      "explanation": "De correcte vraagvolgorde is 'Sapa jenengmu?', zoals Mbak Intan in de dialoog vraagt."
+    },
+    {
+      "id": "q3-m1-l2-context",
+      "order": 3,
+      "questionText": "In de dialoog fluistert Siti 'Aku deg-degan!'. Wat betekent 'deg-degan'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+          { "id": "q3-m1-l2-opt1", "text": "Blij", "isCorrect": false },
+          { "id": "q3-m1-l2-opt2", "text": "Nerveus", "isCorrect": true, "wordId": "deg-degan" },
+          { "id": "q3-m1-l2-opt3", "text": "Verdrietig", "isCorrect": false },
+          { "id": "q3-m1-l2-opt4", "text": "Boos", "isCorrect": false }
+      ],
+      "explanation": "'Deg-degan' beschrijft het gevoel van nervositeit, alsof je hart sneller klopt. Siti voelde zich zo omdat ze zich moest voorstellen."
+    }
+  ]
+}

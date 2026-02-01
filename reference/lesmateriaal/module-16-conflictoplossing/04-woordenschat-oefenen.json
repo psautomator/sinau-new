@@ -1,0 +1,94 @@
+
+[
+  {
+    "javanese": "nesu",
+    "dutch": "boos",
+    "aiHint": "angry face",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aja gampang nesu.",
+    "exampleSentenceDutch": "Word niet snel boos.",
+    "notes": "Informele term voor boosheid.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "emotie", "boos"]
+  },
+  {
+    "javanese": "kuciwa",
+    "dutch": "teleurgesteld",
+    "aiHint": "disappointed face",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku kuciwa karo keputusanmu.",
+    "exampleSentenceDutch": "Ik ben teleurgesteld in jouw beslissing.",
+    "notes": "Een veelvoorkomend gevoel bij misverstanden.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "emotie", "teleurstelling"]
+  },
+  {
+    "javanese": "salah paham",
+    "dutch": "misverstand",
+    "aiHint": "misunderstanding confusion",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Iki mung salah paham, ora perlu dadi gedhé.",
+    "exampleSentenceDutch": "Dit is slechts een misverstand, het hoeft niet groot te worden.",
+    "notes": "Letterlijk 'verkeerd begrijpen'.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["concept", "communicatie", "conflict"]
+  },
+  {
+    "javanese": "rembugan",
+    "dutch": "overleg / bespreking",
+    "aiHint": "group discussion",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Ayo dirembug bareng-bareng.",
+    "exampleSentenceDutch": "Laten we het samen bespreken.",
+    "notes": "Impliceert een zoektocht naar consensus.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["discussie", "overleg", "samenwerking"]
+  },
+  {
+    "javanese": "rukun",
+    "dutch": "harmonie, in vrede leven",
+    "aiHint": "harmony peace symbol",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Sing penting urip rukun.",
+    "exampleSentenceDutch": "Het belangrijkste is om in harmonie te leven.",
+    "notes": "Een zeer belangrijke culturele waarde.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "harmonie", "vrede", "cultuur"]
+  },
+  {
+    "javanese": "sepakat",
+    "dutch": "akkoord / het eens zijn",
+    "aiHint": "agreement handshake",
+    "audioJavanese": null,
+    "category": "Staat",
+    "exampleSentenceJavanese": "Kita wis sepakat.",
+    "exampleSentenceDutch": "We zijn het eens geworden.",
+    "notes": "Leenwoord, maar veel gebruikt.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["staat", "akkoord", "overeenkomst"]
+  },
+  {
+    "javanese": "lega",
+    "dutch": "opgelucht",
+    "aiHint": "relief sigh",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku lega masalahé wis rampung.",
+    "exampleSentenceDutch": "Ik ben opgelucht dat het probleem voorbij is.",
+    "notes": "Het gevoel van verlichting na spanning of zorg.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["gevoel", "emotie", "opluchting"]
+  }
+]

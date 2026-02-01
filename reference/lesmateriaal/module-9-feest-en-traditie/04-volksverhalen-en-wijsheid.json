@@ -1,0 +1,94 @@
+
+[
+  {
+    "javanese": "serakah",
+    "dutch": "hebzuchtig",
+    "aiHint": "greedy person grabbing money",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Wong serakah ora tau marem.",
+    "exampleSentenceDutch": "Een hebzuchtig persoon is nooit tevreden.",
+    "notes": "Wordt als een zeer negatieve eigenschap beschouwd.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["eigenschap", "negatief", "hebzucht"]
+  },
+  {
+    "javanese": "asu",
+    "dutch": "hond",
+    "aiHint": "dog",
+    "audioJavanese": "/audio/uploads/asu.mp3",
+    "category": "Dieren",
+    "exampleSentenceJavanese": "Asu iku kancané manungsa.",
+    "exampleSentenceDutch": "De hond is de vriend van de mens.",
+    "notes": "Basiswoord voor hond.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["dier", "huisdier"]
+  },
+  {
+    "javanese": "iwak",
+    "dutch": "vis / bijgerecht",
+    "aiHint": "fresh fish",
+    "audioJavanese": "/audio/uploads/iwak.mp3",
+    "category": "Eten",
+    "exampleSentenceJavanese": "Aku arep nggoreng iwak.",
+    "exampleSentenceDutch": "Ik ga vis bakken.",
+    "notes": "Kan algemeen 'bijgerecht' betekenen, maar meestal vis.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["eten", "dier", "vis"]
+  },
+  {
+    "javanese": "nrima ing pandum",
+    "dutch": "tevreden zijn met je deel",
+    "aiHint": "grateful hands",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Wong Jawa iku kudu nrima ing pandum.",
+    "exampleSentenceDutch": "Een Javaan moet tevreden zijn met zijn deel.",
+    "notes": "Een kernfilosofie in de Javaanse cultuur over tevredenheid en acceptatie.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "tevredenheid", "cultuur"]
+  },
+  {
+    "javanese": "becik ketitik, ala ketara",
+    "dutch": "het goede en kwade komt altijd uit",
+    "aiHint": "truth revealed light",
+    "audioJavanese": null,
+    "category": "Gezegde",
+    "exampleSentenceJavanese": "Aja goroh, amarga becik ketitik, ala ketara.",
+    "exampleSentenceDutch": "Lieg niet, want de waarheid komt altijd aan het licht.",
+    "notes": "Een gezegde over de onvermijdelijkheid van de waarheid.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["gezegde", "filosofie", "waarheid", "karma"]
+  },
+  {
+    "javanese": "getun",
+    "dutch": "spijt hebben",
+    "aiHint": "person feeling regret",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku getun banget amarga wis serakah.",
+    "exampleSentenceDutch": "Ik heb erge spijt omdat ik hebzuchtig was.",
+    "notes": "Een gevoel van berouw na een foute beslissing.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "emotie", "spijt"]
+  },
+  {
+    "javanese": "ayang-ayangané",
+    "dutch": "zijn/haar spiegelbeeld",
+    "aiHint": "person reflection",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Asu iku weruh ayang-ayangané ing banyu.",
+    "exampleSentenceDutch": "De hond zag zijn eigen spiegelbeeld in het water.",
+    "notes": "Letterlijk 'zijn/haar schaduw-schaduw', gebruikt voor spiegelbeeld.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["concept", "reflectie", "visueel"]
+  }
+]

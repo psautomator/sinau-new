@@ -1,0 +1,61 @@
+
+{
+  "id": "quiz-m4-l5-integratie",
+  "title": "Module 4 Eindquiz: Bezoek & Etiquette",
+  "description": "Test je kennis van Javaanse omgangsvormen, familie-aanspreektitels en de culturele lessen uit deze module.",
+  "questions": [
+    {
+      "id": "q1-m4-l5-mcq-culture",
+      "order": 1,
+      "questionText": "Wat is de diepere culturele betekenis van het Javaanse concept 'ngalah'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m4-l5-opt1", "text": "Altijd je eigen gelijk halen.", "isCorrect": false },
+        { "id": "q1-m4-l5-opt2", "text": "Toegeven om de harmonie te bewaren, wat als een teken van wijsheid wordt gezien.", "isCorrect": true, "wordId": "ngalah" },
+        { "id": "q1-m4-l5-opt3", "text": "Een conflict vermijden omdat je bang bent.", "isCorrect": false },
+        { "id": "q1-m4-l5-opt4", "text": "Alleen toegeven aan mensen die ouder zijn dan jij.", "isCorrect": false }
+      ],
+      "explanation": "'Ngalah' is niet zomaar opgeven; het is een bewuste keuze om de harmonie ('rukun') te prioriteren boven een persoonlijk conflict."
+    },
+    {
+      "id": "q2-m4-l5-mcq-vocab",
+      "order": 2,
+      "questionText": "Je bezoekt de jongere broer van je vader. Welke aanspreektitel gebruik je?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m4-l5-opt1", "text": "Pakdhe", "isCorrect": false, "wordId": "pakdhe" },
+        { "id": "q2-m4-l5-opt2", "text": "Simbah", "isCorrect": false, "wordId": "simbah" },
+        { "id": "q2-m4-l5-opt3", "text": "Bulik", "isCorrect": false, "wordId": "bulik" },
+        { "id": "q2-m4-l5-opt4", "text": "Paklik", "isCorrect": true, "wordId": "paklik" }
+      ],
+      "explanation": "De jongere broer van een ouder wordt aangesproken met 'Paklik' (van 'Bapak Cilik' - kleine vader)."
+    },
+    {
+      "id": "q3-m4-l5-mcq-formal",
+      "order": 3,
+      "questionText": "Wat is de meest formele manier om je te verontschuldigen?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m4-l5-opt1", "text": "Aku salah.", "isCorrect": false, "wordId": "salah" },
+        { "id": "q3-m4-l5-opt2", "text": "Sepurane.", "isCorrect": false },
+        { "id": "q3-m4-l5-opt3", "text": "Nyuwun pangapunten.", "isCorrect": true, "wordId": "nyuwun pangapunten" },
+        { "id": "q3-m4-l5-opt4", "text": "Ora apa-apa.", "isCorrect": false }
+      ],
+      "explanation": "'Nyuwun pangapunten' is de meest formele en respectvolle manier om excuses aan te bieden, geschikt voor ouderen of in formele situaties."
+    },
+    {
+      "id": "q4-m4-l5-audio-choice",
+      "order": 4,
+      "questionText": "Luister naar de audio. Welke beleefde uitnodiging hoor je?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/monggo_panjenengan_rumiyin.mp3",
+      "options": [
+        { "id": "q4-m4-l5-opt1", "text": "U moet wachten.", "isCorrect": false },
+        { "id": "q4-m4-l5-opt2", "text": "Gaat u maar eerst.", "isCorrect": true },
+        { "id": "q4-m4-l5-opt3", "text": "Ik ben het niet met u eens.", "isCorrect": false },
+        { "id": "q4-m4-l5-opt4", "text": "Waar gaat u heen?", "isCorrect": false }
+      ],
+      "explanation": "De zin 'Monggo, panjenengan rumiyin' is een zeer beleefde manier om iemand voorrang te geven, een belangrijk aspect van de Javaanse etiquette."
+    }
+  ]
+}

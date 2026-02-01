@@ -1,0 +1,51 @@
+
+{
+  "id": "quiz-m15-l5-integratie",
+  "title": "Module 15 Eindquiz: Volksverhalen & Wijsheid",
+  "description": "Test je kennis van de hele module over volksverhalen en culturele wijsheden.",
+  "questions": [
+    {
+      "id": "q1-m15-l5-mcq-fable-moral",
+      "order": 1,
+      "questionText": "Wat is de centrale moraal van de fabel 'Asu Goblok'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m15-l5-opt1", "text": "Dat je altijd moet delen met anderen.", "isCorrect": false },
+        { "id": "q1-m15-l5-opt2", "text": "Dat je moet oppassen voor je eigen spiegelbeeld.", "isCorrect": false },
+        { "id": "q1-m15-l5-opt3", "text": "Dat hebzucht leidt tot verlies.", "isCorrect": true },
+        { "id": "q1-m15-l5-opt4", "text": "Dat je nooit een brug over moet steken.", "isCorrect": false }
+      ],
+      "explanation": "De hond verliest zijn eigen vis omdat hij hebzuchtig is en meer wil. De les is dus dat hebzucht (`serakah`) tot verlies leidt."
+    },
+    {
+      "id": "q2-m15-l5-match-proverb",
+      "order": 2,
+      "questionText": "Combineer het Javaanse spreekwoord met de juiste Nederlandse betekenis.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Nrima ing pandum"},
+        {"value": "Alon-alon waton kelakon"},
+        {"value": "Becik ketitik, ala ketara"}
+      ],
+      "matchItemsRight": [
+        {"value": "Tevreden zijn met wat je hebt"},
+        {"value": "Haastige spoed is zelden goed"},
+        {"value": "De waarheid komt altijd uit"}
+      ],
+      "explanation": "Dit zijn de correcte interpretaties van de drie belangrijkste spreekwoorden uit deze module."
+    },
+    {
+      "id": "q3-m15-l5-mcq-concept",
+      "order": 3,
+      "questionText": "Het concept `rejeki` kan verwijzen naar...",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m15-l5-opt1", "text": "Alleen geld.", "isCorrect": false },
+        { "id": "q3-m15-l5-opt2", "text": "Alleen een goede oogst.", "isCorrect": false },
+        { "id": "q3-m15-l5-opt3", "text": "Zowel materiële als immateriële voorspoed, zoals geluk en gezondheid.", "isCorrect": true, "wordId": "rejeki" },
+        { "id": "q3-m15-l5-opt4", "text": "Alleen spirituele zegeningen.", "isCorrect": false }
+      ],
+      "explanation": "`Rejeki` is een breed concept dat alle vormen van voorspoed en zegeningen omvat, zowel materieel als immaterieel."
+    }
+  ]
+}

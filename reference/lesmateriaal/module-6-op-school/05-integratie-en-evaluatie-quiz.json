@@ -1,0 +1,64 @@
+{
+  "id": "quiz-m6-l5-integratie",
+  "title": "Module 6 Eindquiz: Op School",
+  "description": "Test je kennis over de schoolcontext uit Module 6.",
+  "questions": [
+    {
+      "id": "q1-m6-l5-mcq-vocab",
+      "order": 1,
+      "questionText": "Wat betekent `papan tulis`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m6-l5-opt1", "text": "Schrift", "isCorrect": false },
+        { "id": "q1-m6-l5-opt2", "text": "Schoolbord", "isCorrect": true, "wordId": "papan tulis" },
+        { "id": "q1-m6-l5-opt3", "text": "Klaslokaal", "isCorrect": false },
+        { "id": "q1-m6-l5-opt4", "text": "Potlood", "isCorrect": false, "wordId": "potlot" }
+      ],
+      "explanation": "'Papan tulis' betekent letterlijk 'plank om te schrijven', oftewel een schoolbord."
+    },
+    {
+      "id": "q2-m6-l5-match",
+      "order": 2,
+      "questionText": "Combineer het Javaanse schoolmateriaal met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Buku"},
+        {"value": "Potlot"},
+        {"value": "Papan tulis"}
+      ],
+      "matchItemsRight": [
+        {"value": "Boek"},
+        {"value": "Potlood"},
+        {"value": "Schoolbord"}
+      ],
+      "explanation": "Dit zijn de correcte termen voor deze schoolspullen."
+    },
+    {
+      "id": "q3-m6-l5-audio",
+      "order": 3,
+      "questionText": "Luister naar de zin. Wat wordt er gezegd?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/aku_nulis_ing_bukuku.mp3",
+      "options": [
+        { "id": "q3-m6-l5-opt1", "text": "Ik lees een boek.", "isCorrect": false },
+        { "id": "q3-m6-l5-opt2", "text": "Ik schrijf in mijn boek.", "isCorrect": true },
+        { "id": "q3-m6-l5-opt3", "text": "Ik koop een boek.", "isCorrect": false },
+        { "id": "q3-m6-l5-opt4", "text": "Mijn boek is nieuw.", "isCorrect": false }
+      ],
+      "explanation": "De zin is 'Aku nulis ing bukuku', wat 'Ik schrijf in mijn boek' betekent."
+    },
+    {
+      "id": "q4-m6-l5-mcq-culture",
+      "order": 4,
+      "questionText": "Waarom is het tonen van respect aan een `guru` zo belangrijk in de Javaanse cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q4-m6-l5-opt1", "text": "Het is een verouderde traditie.", "isCorrect": false },
+        { "id": "q4-m6-l5-opt2", "text": "Omdat de leraar als een opvoeder en bron van wijsheid wordt gezien.", "isCorrect": true },
+        { "id": "q4-m6-l5-opt3", "text": "Alleen als de leraar streng is.", "isCorrect": false },
+        { "id": "q4-m6-l5-opt4", "text": "Het is alleen belangrijk in formele lessen.", "isCorrect": false }
+      ],
+      "explanation": "De `guru` (leraar) heeft een zeer gerespecteerde positie in de cultuur als een opvoeder die kennis (`ilmu`) en wijsheid doorgeeft."
+    }
+  ]
+}

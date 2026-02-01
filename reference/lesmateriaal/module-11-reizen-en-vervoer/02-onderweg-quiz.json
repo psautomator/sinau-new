@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m11-l2",
+  "title": "Module 11: Les 2 Quiz - Onderweg",
+  "description": "Test je kennis over wat er onderweg gebeurt.",
+  "questions": [
+    {
+      "id": "q1-m11-l2-mcq",
+      "order": 1,
+      "questionText": "Wat ziet Siti langs de weg?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m11-l2-opt1", "text": "Hoge gebouwen en kantoren.", "isCorrect": false },
+        { "id": "q1-m11-l2-opt2", "text": "Veel rijstvelden (`sawah`).", "isCorrect": true, "wordId": "pemandangan" },
+        { "id": "q1-m11-l2-opt3", "text": "De zee en het strand.", "isCorrect": false },
+        { "id": "q1-m11-l2-opt4", "text": "Een treinstation.", "isCorrect": false }
+      ],
+      "explanation": "Siti zegt: 'Kanan-kiri isih akèh sawah', wat betekent dat er links en rechts nog veel rijstvelden zijn."
+    },
+    {
+      "id": "q2-m11-l2-mcq-advice",
+      "order": 2,
+      "questionText": "Welk advies geeft de moeder aan Randy als hij ongeduldig wordt?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m11-l2-opt1", "text": "Om te gaan slapen.", "isCorrect": false },
+        { "id": "q2-m11-l2-opt2", "text": "Om geduld (`sabar`) te hebben.", "isCorrect": true, "wordId": "sabar" },
+        { "id": "q2-m11-l2-opt3", "text": "Om uit het raam te kijken.", "isCorrect": false },
+        { "id": "q2-m11-l2-opt4", "text": "Om een spelletje te spelen.", "isCorrect": false }
+      ],
+      "explanation": "De moeder zegt 'Sabar, le', wat 'Geduld, jongen' betekent. 'Sabar' is een belangrijke deugd."
+    }
+  ]
+}

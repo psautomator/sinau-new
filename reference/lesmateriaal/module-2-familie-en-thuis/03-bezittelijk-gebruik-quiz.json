@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m2-l3",
+  "title": "Module 2: Les 3 Quiz - Bezit Aangeven",
+  "description": "Test je kennis van de bezittelijke achtervoegsels.",
+  "questions": [
+    {
+      "id": "q1-m2-l3-mcq",
+      "order": 1,
+      "questionText": "Hoe zeg je 'mijn huis' in het Javaans (Ngoko)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m2-l3-opt1", "text": "omahmu", "isCorrect": false },
+        { "id": "q1-m2-l3-opt2", "text": "omahku", "isCorrect": true, "wordId": "-ku" },
+        { "id": "q1-m2-l3-opt3", "text": "omahé", "isCorrect": false },
+        { "id": "q1-m2-l3-opt4", "text": "omah", "isCorrect": false, "wordId": "omah" }
+      ],
+      "explanation": "Het achtervoegsel voor 'mijn' is '-ku'. Dus 'omah' (huis) wordt 'omahku'."
+    },
+    {
+      "id": "q2-m2-l3-fib",
+      "order": 2,
+      "questionText": "Vul het juiste achtervoegsel in: 'Iki sepedan___.' (Dit is zijn/haar fiets.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["é"],
+      "explanation": "Het achtervoegsel voor 'zijn/haar' is '-é'. 'Sepeda' wordt 'sepedané'."
+    }
+  ]
+}

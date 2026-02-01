@@ -1,0 +1,94 @@
+
+[
+  {
+    "javanese": "pendapat",
+    "dutch": "mening / opinie",
+    "aiHint": "opinion bubble",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Saben uwong duwe pendapat dhewe-dhewe.",
+    "exampleSentenceDutch": "Iedereen heeft zijn eigen mening.",
+    "notes": null,
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["mening", "opinie", "concept"]
+  },
+  {
+    "javanese": "alasan",
+    "dutch": "reden / argument",
+    "aiHint": "reason logic",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Apa alasanmu ora teka?",
+    "exampleSentenceDutch": "Wat is je reden om niet te komen?",
+    "notes": null,
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["logica", "argument", "reden"]
+  },
+  {
+    "javanese": "setuju",
+    "dutch": "eens zijn",
+    "aiHint": "agreement handshake",
+    "audioJavanese": null,
+    "category": "Mening",
+    "exampleSentenceJavanese": "Aku setuju karo pendapatmu.",
+    "exampleSentenceDutch": "Ik ben het eens met jouw mening.",
+    "notes": "Leenwoord uit het Indonesisch, maar volledig ingeburgerd.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["mening", "akkoord", "discussie"]
+  },
+  {
+    "javanese": "ora setuju",
+    "dutch": "oneens zijn",
+    "aiHint": "disagreement conflict",
+    "audioJavanese": null,
+    "category": "Mening",
+    "exampleSentenceJavanese": "Kula ora setuju, amarga...",
+    "exampleSentenceDutch": "Ik ben het er niet mee eens, omdat...",
+    "notes": "Directe manier om een meningsverschil aan te geven.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["mening", "conflict", "discussie"]
+  },
+  {
+    "javanese": "rembugan",
+    "dutch": "overleg / bespreking",
+    "aiHint": "group discussion",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Keluarga lagi rembugan babagan liburan.",
+    "exampleSentenceDutch": "De familie is aan het overleggen over de vakantie.",
+    "notes": "Impliceert een zoektocht naar consensus, in tegenstelling tot een debat.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["discussie", "overleg", "samenwerking", "cultuur"]
+  },
+  {
+    "javanese": "debat",
+    "dutch": "debat",
+    "aiHint": "debate podium",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Siswa-siswa lagi debat babagan lingkungan.",
+    "exampleSentenceDutch": "De leerlingen zijn aan het debatteren over het milieu.",
+    "notes": "Leenwoord.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["discussie", "activiteit", "formeel"]
+  },
+  {
+    "javanese": "sanggah",
+    "dutch": "weerleggen / tegenspreken",
+    "aiHint": "rebuttal argument",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku arep nyanggah argumentasimu.",
+    "exampleSentenceDutch": "Ik ga jouw argumentatie weerleggen.",
+    "notes": "Een formele term die in debatten wordt gebruikt.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["debat", "argument", "werkwoord"]
+  }
+]

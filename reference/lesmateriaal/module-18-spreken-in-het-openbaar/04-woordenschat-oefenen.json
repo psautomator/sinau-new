@@ -1,0 +1,107 @@
+
+[
+  {
+    "javanese": "pidato",
+    "dutch": "redevoering / toespraak",
+    "aiHint": "person giving speech",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Bapak Presiden badhe maringi pidato.",
+    "exampleSentenceDutch": "De heer President zal een toespraak geven.",
+    "notes": "Een formele toespraak voor een publiek.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["activiteit", "spreken", "formeel", "publiek"]
+  },
+  {
+    "javanese": "argumentasi",
+    "dutch": "argumentatie",
+    "aiHint": "debate argument logic",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Argumentasi panjenengan kedah dipun dhasari data.",
+    "exampleSentenceDutch": "Uw argumentatie moet gebaseerd zijn op data.",
+    "notes": "Leenwoord, gebruikt in formele discussies en debatten.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["concept", "logica", "debat", "formeel"]
+  },
+  {
+    "javanese": "persuasif",
+    "dutch": "overtuigend",
+    "aiHint": "convincing speech",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Pidatonipun persuasif sanget.",
+    "exampleSentenceDutch": "Zijn/haar toespraak is erg overtuigend.",
+    "notes": "Leenwoord, beschrijft de kwaliteit van het overtuigen.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["eigenschap", "communicatie", "retoriek"]
+  },
+  {
+    "javanese": "sanggah",
+    "dutch": "weerleggen / tegenspreken",
+    "aiHint": "rebuttal argument",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku arep nyanggah argumentasimu.",
+    "exampleSentenceDutch": "Ik ga jouw argumentatie weerleggen.",
+    "notes": "Een formele term die in debatten wordt gebruikt.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["debat", "argument", "werkwoord"]
+  },
+  {
+    "javanese": "pendapat",
+    "dutch": "mening / opinie",
+    "aiHint": "opinion bubble",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Saben uwong duwe pendapat dhewe-dhewe.",
+    "exampleSentenceDutch": "Iedereen heeft zijn eigen mening.",
+    "notes": "Een woord dat in eerdere modules is geïntroduceerd, maar hier herhaald wordt.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["mening", "opinie", "concept"]
+  },
+  {
+    "javanese": "rasa",
+    "dutch": "gevoel / essentie / smaak",
+    "aiHint": "heart feeling taste",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Masakan iki duwe rasa sing unik.",
+    "exampleSentenceDutch": "Dit gerecht heeft een unieke smaak.",
+    "notes": "Een complex en diep concept in de Javaanse cultuur.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "gevoel", "smaak", "filosofie"]
+  },
+  {
+    "javanese": "jiwa",
+    "dutch": "ziel / geest",
+    "aiHint": "soul spirit",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Musik iku bisa ngademké jiwa.",
+    "exampleSentenceDutch": "Muziek kan de ziel kalmeren.",
+    "notes": "Verwijst naar de innerlijke essentie of geest.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "spiritualiteit", "filosofie"]
+  },
+  {
+    "javanese": "identitas",
+    "dutch": "identiteit",
+    "aiHint": "identity card",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Basa iku péranganing identitas.",
+    "exampleSentenceDutch": "Taal is een onderdeel van identiteit.",
+    "notes": "Leenwoord, gebruikt om het concept van 'wie je bent' te beschrijven.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "identiteit", "cultuur"]
+  }
+]

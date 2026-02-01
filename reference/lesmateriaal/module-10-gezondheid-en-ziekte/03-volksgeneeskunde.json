@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "tabib",
+    "dutch": "genezer",
+    "aiHint": "traditional healer",
+    "audioJavanese": null,
+    "category": "Beroep",
+    "exampleSentenceJavanese": "Simbah lunga menyang tabib.",
+    "exampleSentenceDutch": "Oma/opa gaat naar de traditionele genezer.",
+    "notes": "Een traditionele genezer die vaak kruiden en rituelen gebruikt.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["beroep", "traditioneel", "gezondheid"]
+  },
+  {
+    "javanese": "jamu",
+    "dutch": "kruidendrankje",
+    "aiHint": "herbal drink",
+    "audioJavanese": null,
+    "category": "Medisch",
+    "exampleSentenceJavanese": "Jamu kunir asem iku sehat.",
+    "exampleSentenceDutch": "Kurkuma-tamarinde jamu is gezond.",
+    "notes": "Traditioneel Javaans kruidendrankje met medicinale eigenschappen.",
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["traditioneel", "gezondheid", "drank"]
+  },
+  {
+    "javanese": "waras",
+    "dutch": "gezond / genezen",
+    "aiHint": "healthy person",
+    "audioJavanese": "/audio/uploads/waras.mp3",
+    "category": "Staat",
+    "exampleSentenceJavanese": "Aku wis waras maneh.",
+    "exampleSentenceDutch": "Ik ben weer gezond/genezen.",
+    "notes": "Wordt gebruikt om de staat van gezondheid of herstel aan te duiden.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["staat", "gezondheid", "herstel"]
+  }
+]

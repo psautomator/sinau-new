@@ -1,0 +1,39 @@
+
+{
+  "id": "quiz-m1-l7",
+  "title": "Module 1: Les 7 Quiz - Klinkers é en è",
+  "description": "Test je kennis van de Javaanse klinkers met accenten.",
+  "questions": [
+    {
+      "id": "q1-m1-l7-match",
+      "order": 1,
+      "questionText": "Combineer de klinker met de juiste uitspraakomschrijving.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "é (taling)"}, 
+        {"value": "è (taling-tarung)"},
+        {"value": "e (pepet)"}
+      ],
+      "matchItemsRight": [
+        {"value": "Helder en hoog, zoals in 'zee'"}, 
+        {"value": "Dof en laag, zoals in 'bed'"}, 
+        {"value": "Dof en onbeklemtoond, zoals in 'de'"}
+      ],
+      "explanation": "Dit zijn de basiskenmerken van de drie 'e'-klanken in het Javaans."
+    },
+    {
+      "id": "q2-m1-l7-audio",
+      "order": 2,
+      "questionText": "Luister naar de audio. Welk woord hoor je?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/dheweke.mp3",
+      "options": [
+        { "id": "q2-m1-l7-opt1", "text": "déwé (wij/we)", "isCorrect": false, "wordId": "déwé" },
+        { "id": "q2-m1-l7-opt2", "text": "dhèwèké (hij/zij)", "isCorrect": true, "wordId": "dhèwèké" },
+        { "id": "q2-m1-l7-opt3", "text": "sega (rijst)", "isCorrect": false, "wordId": "sega" },
+        { "id": "q2-m1-l7-opt4", "text": "pelem (mango)", "isCorrect": false, "wordId": "pelem" }
+      ],
+      "explanation": "De audio zegt 'dhèwèké', met de doffe 'è'-klank. Het betekent 'hij/zij'."
+    }
+  ]
+}

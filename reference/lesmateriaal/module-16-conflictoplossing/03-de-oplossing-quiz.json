@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m16-l3",
+  "title": "Module 16: Les 3 Quiz - De Oplossing",
+  "description": "Test je kennis van het oplossen van conflicten.",
+  "questions": [
+    {
+      "id": "q1-m16-l3-mcq-vocab",
+      "order": 1,
+      "questionText": "Welk woord beschrijft het gevoel van verlichting dat Budi voelt nadat het conflict is opgelost?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m16-l3-opt1", "text": "Nesu", "isCorrect": false, "wordId": "nesu" },
+        { "id": "q1-m16-l3-opt2", "text": "Kuciwa", "isCorrect": false, "wordId": "kuciwa" },
+        { "id": "q1-m16-l3-opt3", "text": "Rukun", "isCorrect": false, "wordId": "rukun" },
+        { "id": "q1-m16-l3-opt4", "text": "Lega", "isCorrect": true, "wordId": "lega" }
+      ],
+      "explanation": "'Lega' is het Javaanse woord voor het gevoel van opluchting na spanning of zorg."
+    },
+    {
+      "id": "q2-m16-l3-mcq-culture",
+      "order": 2,
+      "questionText": "Wat is het einddoel van een conflictoplossing in de Javaanse cultuur, zoals geïllustreerd in de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m16-l3-opt1", "text": "Een winnaar en een verliezer aanwijzen.", "isCorrect": false },
+        { "id": "q2-m16-l3-opt2", "text": "De sociale harmonie (`rukun`) herstellen.", "isCorrect": true, "wordId": "rukun" },
+        { "id": "q2-m16-l3-opt3", "text": "Het probleem negeren en verdergaan.", "isCorrect": false },
+        { "id": "q2-m16-l3-opt4", "text": "Bewijzen wie de meeste schuld had.", "isCorrect": false }
+      ],
+      "explanation": "Andi zegt: 'Saiki kita wis rukun manèh, ya?', wat aangeeft dat het herstellen van de vrede en harmonie het belangrijkste doel is."
+    }
+  ]
+}

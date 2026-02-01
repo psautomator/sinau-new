@@ -1,0 +1,29 @@
+
+{
+  "id": "quiz-m4-l2",
+  "title": "Module 4: Les 2 Quiz - Het Conflict",
+  "description": "Test je kennis over het escalerende conflict en de culturele betekenis.",
+  "questions": [
+    {
+      "id": "q1-m4-l2-mcq",
+      "order": 1,
+      "questionText": "In de Javaanse cultuur wordt 'ngalah' (toegeven) vaak gezien als...",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m4-l2-opt1", "text": "een teken van zwakte.", "isCorrect": false },
+        { "id": "q1-m4-l2-opt2", "text": "een teken van wijsheid om harmonie te bewaren.", "isCorrect": true, "wordId": "ngalah" },
+        { "id": "q1-m4-l2-opt3", "text": "iets wat alleen jonge mensen moeten doen.", "isCorrect": false },
+        { "id": "q1-m4-l2-opt4", "text": "een reden om de ander later terug te pakken.", "isCorrect": false }
+      ],
+      "explanation": "Toegeven ('ngalah') is cultureel gezien vaak een teken van wijsheid en kracht, omdat het de harmonie ('rukun') boven het eigen gelijk stelt."
+    },
+    {
+      "id": "q2-m4-l2-fib",
+      "order": 2,
+      "questionText": "De twee geiten beginnen een ___, wat een krachtmeting betekent.",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["adu rosa"],
+      "explanation": "'Adu rosa' is de term voor een krachtmeting, waarbij twee partijen hun kracht tegen elkaar testen."
+    }
+  ]
+}

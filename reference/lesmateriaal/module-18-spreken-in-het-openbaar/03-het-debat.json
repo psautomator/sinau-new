@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "sanggah",
+    "dutch": "weerleggen / tegenspreken",
+    "aiHint": "rebuttal argument",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku arep nyanggah argumentasimu.",
+    "exampleSentenceDutch": "Ik ga jouw argumentatie weerleggen.",
+    "notes": "Een formele term die in debatten wordt gebruikt.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["debat", "argument", "werkwoord"]
+  },
+  {
+    "javanese": "identitas",
+    "dutch": "identiteit",
+    "aiHint": "identity card",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Basa iku péranganing identitas.",
+    "exampleSentenceDutch": "Taal is een onderdeel van identiteit.",
+    "notes": "Leenwoord, gebruikt om het concept van 'wie je bent' te beschrijven.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "identiteit", "cultuur"]
+  },
+  {
+    "javanese": "pendapat",
+    "dutch": "mening / opinie",
+    "aiHint": "opinion bubble",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Saben uwong duwe pendapat dhewe-dhewe.",
+    "exampleSentenceDutch": "Iedereen heeft zijn eigen mening.",
+    "notes": null,
+    "level": "B1",
+    "formality": "Neutral",
+    "tags": ["mening", "opinie", "concept"]
+  }
+]

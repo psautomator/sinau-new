@@ -1,0 +1,83 @@
+
+{
+  "id": "quiz-m1-l8-integratie",
+  "title": "Module 1 Eindquiz: Integratie en Evaluatie",
+  "description": "Een uitgebreide quiz om je kennis van de hele module te testen, van woordenschat en grammatica tot culturele concepten.",
+  "questions": [
+    {
+      "id": "q1-m1-l8-match",
+      "order": 1,
+      "questionText": "Combineer de Javaanse zin met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Sugeng rawuh!"}, 
+        {"value": "Piye kabaré?"}, 
+        {"value": "Saka ngendi kowé?"},
+        {"value": "Apik tenan!"}
+      ],
+      "matchItemsRight": [
+        {"value": "Welkom!"}, 
+        {"value": "Hoe gaat het?"}, 
+        {"value": "Waar kom je vandaan?"},
+        {"value": "Echt goed!"}
+      ],
+      "explanation": "Dit zijn correcte vertalingen voor deze essentiële zinnen uit de kennismakingslessen."
+    },
+    {
+      "id": "q2-m1-l8-mcq-krama",
+      "order": 2,
+      "questionText": "Welk woord is de beleefde (Krama) vorm voor 'dank u wel'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m1-l8-opt1", "text": "Matur nuwun", "isCorrect": true, "wordId": "matur nuwun" },
+        { "id": "q2-m1-l8-opt2", "text": "Kesuwun", "isCorrect": false },
+        { "id": "q2-m1-l8-opt3", "text": "Sami-sami", "isCorrect": false },
+        { "id": "q2-m1-l8-opt4", "text": "Sugeng rawuh", "isCorrect": false, "wordId": "sugeng rawuh" }
+      ],
+      "explanation": "'Matur nuwun' is de standaard beleefde (Krama) manier om dank u wel te zeggen, zoals geleerd in les 1."
+    },
+    {
+      "id": "q3-m1-l8-fib-grammar",
+      "order": 3,
+      "questionText": "Vul het ontbrekende woord in om een ja/nee-vraag te maken: '___ kowé wis siap?' (Ben je al klaar?)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["Apa"],
+      "explanation": "Het woord 'Apa' wordt aan het begin van een zin geplaatst om er een ja/nee-vraag van te maken, zoals besproken in de grammaticatip van les 2."
+    },
+    {
+      "id": "q4-m1-l8-audio-meaning",
+      "order": 4,
+      "questionText": "Luister naar de audio. Wat betekent deze uitdrukking?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/apik_tenan.mp3",
+      "options": [
+        { "id": "q4-m1-l8-opt1", "text": "Echt goed", "isCorrect": true, "wordId": "apik tenan" },
+        { "id": "q4-m1-l8-opt2", "text": "Niet zo goed", "isCorrect": false },
+        { "id": "q4-m1-l8-opt3", "text": "Ik begrijp het niet", "isCorrect": false },
+        { "id": "q4-m1-l8-opt4", "text": "Dank u wel", "isCorrect": false }
+      ],
+      "explanation": "De audio zegt 'apik tenan', een veelgebruikte uitdrukking om een compliment te geven, zoals geleerd in les 3."
+    },
+    {
+        "id": "q5-m1-l8-mcq-culture",
+        "order": 5,
+        "questionText": "Welke culturele waarde wordt benadrukt met de uitdrukking 'wani nyoba' uit les 3?",
+        "questionType": "MULTIPLE_CHOICE",
+        "options": [
+          { "id": "q5-m1-l8-opt1", "text": "Perfectie, je mag geen fouten maken.", "isCorrect": false },
+          { "id": "q5-m1-l8-opt2", "text": "De moed om te proberen is belangrijker dan het resultaat.", "isCorrect": true, "wordId": "wani nyoba" },
+          { "id": "q5-m1-l8-opt3", "text": "Alleen de slimsten ('pinter') slagen.", "isCorrect": false },
+          { "id": "q5-m1-l8-opt4", "text": "Dat je altijd beleefd ('saé') moet zijn, ook als je het niet weet.", "isCorrect": false }
+        ],
+        "explanation": "Zoals besproken in les 3, waardeert de Javaanse cultuur de inzet en de moed om iets nieuws te proberen ('wani nyoba'), zelfs als het niet meteen perfect is."
+      },
+      {
+        "id": "q6-m1-l8-reorder-sentence",
+        "order": 6,
+        "questionText": "Zet de woorden in de juiste volgorde om de zin 'Wie is jouw naam?' te vormen.",
+        "questionType": "REORDER_SENTENCE",
+        "sentencePartsToReorder": [{"value": "Sapa"}, {"value": "jenengmu?"}],
+        "explanation": "De correcte vraagvolgorde is 'Sapa jenengmu?', zoals geleerd in de les over jezelf voorstellen."
+      }
+  ]
+}

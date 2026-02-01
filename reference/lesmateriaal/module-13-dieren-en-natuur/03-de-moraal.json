@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "seger",
+    "dutch": "fris / vers",
+    "aiHint": "fresh fruit",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Hawane seger banget.",
+    "exampleSentenceDutch": "De lucht is heel fris.",
+    "notes": "Kan zowel voor lucht, water als voedsel gebruikt worden.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["gevoel", "temperatuur", "smaak"]
+  },
+  {
+    "javanese": "rukun",
+    "dutch": "harmonie / in vrede leven",
+    "aiHint": "harmony peace symbol",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Urip rukun karo tangga iku penting.",
+    "exampleSentenceDutch": "In harmonie leven met de buren is belangrijk.",
+    "notes": "Een zeer belangrijke culturele waarde in de Javaanse samenleving.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "harmonie", "vrede", "cultuur"]
+  },
+  {
+    "javanese": "ketyemplung",
+    "dutch": "in het water vallen",
+    "aiHint": "person falling water",
+    "audioJavanese": null,
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Wedus loro mau padha ketyemplung nang got.",
+    "exampleSentenceDutch": "Die twee geiten vielen allebei in de sloot.",
+    "notes": "Een onomatopee die het geluid van een plons suggereert.",
+    "level": "B2",
+    "formality": "Ngoko",
+    "tags": ["actie", "water", "vallen", "fabel"]
+  }
+]

@@ -1,0 +1,42 @@
+
+[
+  {
+    "javanese": "kanca",
+    "dutch": "vriend",
+    "aiHint": "friends together",
+    "audioJavanese": "/audio/uploads/kanca.mp3",
+    "category": "Personen",
+    "exampleSentenceJavanese": "Aku duwe kanca akeh.",
+    "exampleSentenceDutch": "Ik heb veel vrienden.",
+    "notes": null,
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "sociaal", "vriendschap" ]
+  },
+  {
+    "javanese": "sugeng rawuh",
+    "dutch": "welkom (formeel)",
+    "aiHint": "formal welcome",
+    "audioJavanese": "/audio/uploads/sugeng_rawuh.mp3",
+    "category": "Begroeting",
+    "exampleSentenceJavanese": "Sugeng rawuh ing sekolah kita.",
+    "exampleSentenceDutch": "Welkom op onze school.",
+    "notes": "Een zeer beleefde manier om iemand welkom te heten.",
+    "level": "A1",
+    "formality": "KramaInggil",
+    "tags": ["begroeting", "formeel", "krama"]
+  },
+  {
+    "javanese": "ketemu",
+    "dutch": "ontmoeten",
+    "aiHint": "people meeting",
+    "audioJavanese": "/audio/uploads/ketemu.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Seneng ketemu kowé.",
+    "exampleSentenceDutch": "Leuk je te ontmoeten.",
+    "notes": "Informeel werkwoord (Ngoko). De beleefde vorm is 'kepanggih'.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["actie", "sociaal", "ontmoeten"]
+  }
+]

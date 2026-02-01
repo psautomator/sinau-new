@@ -1,0 +1,73 @@
+{
+  "id": "quiz-m5-l5-integratie",
+  "title": "Module 5 Eindquiz: Eten en Koken",
+  "description": "Een uitgebreide quiz om je kennis van de hele module te testen.",
+  "questions": [
+    {
+      "id": "q1-m5-l5-mcq-vocab",
+      "order": 1,
+      "questionText": "Wat is het Javaanse woord voor 'keuken'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m5-l5-opt1", "text": "Pasar", "isCorrect": false },
+        { "id": "q1-m5-l5-opt2", "text": "Pawon", "isCorrect": true, "wordId": "pawon" },
+        { "id": "q1-m5-l5-opt3", "text": "Omah", "isCorrect": false },
+        { "id": "q1-m5-l5-opt4", "text": "Kamar", "isCorrect": false }
+      ],
+      "explanation": "'Pawon' is het specifieke woord voor de keuken, de plaats waar gekookt wordt."
+    },
+    {
+      "id": "q2-m5-l5-mcq-taste",
+      "order": 2,
+      "questionText": "Als je wilt zeggen dat eten lekker smaakt, welk woord gebruik je dan?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m5-l5-opt1", "text": "Larang", "isCorrect": false },
+        { "id": "q2-m5-l5-opt2", "text": "Anyar", "isCorrect": false },
+        { "id": "q2-m5-l5-opt3", "text": "Énak", "isCorrect": true, "wordId": "enak" },
+        { "id": "q2-m5-l5-opt4", "text": "Panas", "isCorrect": false }
+      ],
+      "explanation": "'Énak' is het juiste woord om de smaak van eten als 'lekker' te beschrijven."
+    },
+    {
+      "id": "q3-m5-l5-mcq-ingredient",
+      "order": 3,
+      "questionText": "Welk ingrediënt maakt een gerecht `pedhes` (pittig)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m5-l5-opt1", "text": "Gula (suiker)", "isCorrect": false },
+        { "id": "q3-m5-l5-opt2", "text": "Bumbu (kruiden)", "isCorrect": false },
+        { "id": "q3-m5-l5-opt3", "text": "Uyah (zout)", "isCorrect": false },
+        { "id": "q3-m5-l5-opt4", "text": "Lombok (peper)", "isCorrect": true, "wordId": "lombok" }
+      ],
+      "explanation": "'Lombok' (chilipeper) is het ingrediënt dat zorgt voor een pittige smaak."
+    },
+    {
+      "id": "q4-m5-l5-audio",
+      "order": 4,
+      "questionText": "Luister naar het audiofragment. Welke handeling wordt beschreven?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/nggoreng_iwak.mp3",
+      "options": [
+        { "id": "q4-m5-l5-opt1", "text": "Vis koken in water", "isCorrect": false },
+        { "id": "q4-m5-l5-opt2", "text": "Vis bakken", "isCorrect": true, "wordId": "nggoreng" },
+        { "id": "q4-m5-l5-opt3", "text": "Vis snijden", "isCorrect": false },
+        { "id": "q4-m5-l5-opt4", "text": "Vis eten", "isCorrect": false }
+      ],
+      "explanation": "De zin 'Aku lagi nggoreng iwak' betekent 'Ik ben vis aan het bakken'."
+    },
+    {
+      "id": "q5-m5-l5-mcq-culture",
+      "order": 5,
+      "questionText": "Waarom is het aanbieden van eten (`suguh`) een belangrijk onderdeel van de Javaanse cultuur?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q5-m5-l5-opt1", "text": "Het is een manier om te laten zien dat je veel geld hebt.", "isCorrect": false },
+        { "id": "q5-m5-l5-opt2", "text": "Het is een verplichting die alleen voor familie geldt.", "isCorrect": false },
+        { "id": "q5-m5-l5-opt3", "text": "Het is een teken van gastvrijheid en een manier om gasten te eren.", "isCorrect": true },
+        { "id": "q5-m5-l5-opt4", "text": "Het is alleen bedoeld voor grote feesten.", "isCorrect": false }
+      ],
+      "explanation": "Gastvrijheid en het eren van de gast door eten en drinken aan te bieden is een kernwaarde in de Javaanse cultuur."
+    }
+  ]
+}

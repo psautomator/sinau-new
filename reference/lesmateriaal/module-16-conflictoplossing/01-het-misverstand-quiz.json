@@ -1,0 +1,34 @@
+
+{
+  "id": "quiz-m16-l1",
+  "title": "Module 16: Les 1 Quiz - Het Misverstand",
+  "description": "Test je kennis over het begin van het conflict.",
+  "questions": [
+    {
+      "id": "q1-m16-l1-mcq-vocab",
+      "order": 1,
+      "questionText": "Welk woord wordt gebruikt om aan te geven dat de vrienden een misverstand hebben?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m16-l1-opt1", "text": "nesu", "isCorrect": false, "wordId": "nesu" },
+        { "id": "q1-m16-l1-opt2", "text": "kuciwa", "isCorrect": false, "wordId": "kuciwa" },
+        { "id": "q1-m16-l1-opt3", "text": "salah paham", "isCorrect": true, "wordId": "salah paham" },
+        { "id": "q1-m16-l1-opt4", "text": "padu", "isCorrect": false }
+      ],
+      "explanation": "'Salah paham' betekent letterlijk 'verkeerd begrijpen' en is de term voor een misverstand."
+    },
+    {
+      "id": "q2-m16-l1-mcq-emotion",
+      "order": 2,
+      "questionText": "Welke twee emoties worden expliciet genoemd in de dialoog?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m16-l1-opt1", "text": "Blijdschap en verdriet", "isCorrect": false },
+        { "id": "q2-m16-l1-opt2", "text": "Boosheid en teleurstelling", "isCorrect": false },
+        { "id": "q2-m16-l1-opt3", "text": "Boosheid (nesu) wordt door beide vrienden genoemd.", "isCorrect": true },
+        { "id": "q2-m16-l1-opt4", "text": "Verwarring en opluchting", "isCorrect": false }
+      ],
+      "explanation": "Zowel Budi als Andi geven aan dat ze 'nesu' (boos) waren omdat ze op elkaar wachtten zonder nieuws."
+    }
+  ]
+}

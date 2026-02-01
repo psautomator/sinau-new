@@ -1,0 +1,67 @@
+[
+    {
+        "javanese": "lombok",
+        "dutch": "Spaanse peper / chili",
+        "aiHint": "red chili",
+        "audioJavanese": "/audio/uploads/lombok.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Sambel iki akeh lomboké.",
+        "exampleSentenceDutch": "Deze sambal bevat veel chilipepers.",
+        "notes": null,
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["eten", "ingrediënt", "pittig"]
+    },
+    {
+        "javanese": "iwak",
+        "dutch": "vis / bijgerecht",
+        "aiHint": "fresh fish",
+        "audioJavanese": "/audio/uploads/iwak.mp3",
+        "category": "Eten",
+        "exampleSentenceJavanese": "Aku arep nggoreng iwak.",
+        "exampleSentenceDutch": "Ik ga vis bakken.",
+        "notes": "Kan algemeen 'bijgerecht' betekenen, maar meestal vis.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["eten", "dier", "vis"]
+    },
+    {
+        "javanese": "abang",
+        "dutch": "rood",
+        "aiHint": "red color",
+        "audioJavanese": "/audio/uploads/abang.mp3",
+        "category": "Kleur",
+        "exampleSentenceJavanese": "Lombok abang pedhes banget.",
+        "exampleSentenceDutch": "Rode pepers zijn heel pittig.",
+        "notes": "Informeel (Ngoko). Beleefd is 'abrit'.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["kleur"]
+    },
+    {
+        "javanese": "ijo",
+        "dutch": "groen",
+        "aiHint": "green color",
+        "audioJavanese": "/audio/uploads/ijo.mp3",
+        "category": "Kleur",
+        "exampleSentenceJavanese": "Lombok ijo ora pati pedhes.",
+        "exampleSentenceDutch": "Groene pepers zijn niet zo pittig.",
+        "notes": "",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": ["kleur"]
+    },
+    {
+        "javanese": "pilih",
+        "dutch": "kiezen",
+        "aiHint": "choosing option",
+        "audioJavanese": "/audio/uploads/pilih.mp3",
+        "category": "Werkwoord",
+        "exampleSentenceJavanese": "Aku pilih sing abang.",
+        "exampleSentenceDutch": "Ik kies de rode.",
+        "notes": "Actieve vorm is 'milih'.",
+        "level": "A2",
+        "formality": "Neutral",
+        "tags": ["actie", "keuze", "werkwoord"]
+    }
+]

@@ -1,0 +1,55 @@
+
+[
+  {
+    "javanese": "pidato",
+    "dutch": "redevoering / toespraak",
+    "aiHint": "person giving speech",
+    "audioJavanese": null,
+    "category": "Activiteit",
+    "exampleSentenceJavanese": "Bapak Presiden badhe maringi pidato.",
+    "exampleSentenceDutch": "De heer President zal een toespraak geven.",
+    "notes": "Een formele toespraak voor een publiek.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["activiteit", "spreken", "formeel", "publiek"]
+  },
+  {
+    "javanese": "argumentasi",
+    "dutch": "argumentatie",
+    "aiHint": "debate argument logic",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Argumentasi panjenengan kedah dipun dhasari data.",
+    "exampleSentenceDutch": "Uw argumentatie moet gebaseerd zijn op data.",
+    "notes": "Leenwoord, gebruikt in formele discussies en debatten.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["concept", "logica", "debat", "formeel"]
+  },
+  {
+    "javanese": "rasa",
+    "dutch": "gevoel / essentie / smaak",
+    "aiHint": "heart feeling taste",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Masakan iki duwe rasa sing unik.",
+    "exampleSentenceDutch": "Dit gerecht heeft een unieke smaak.",
+    "notes": "Een complex en diep concept in de Javaanse cultuur dat zowel fysieke smaak als diep innerlijk gevoel kan betekenen.",
+    "level": "B2",
+    "formality": "Neutral",
+    "tags": ["concept", "gevoel", "smaak", "filosofie"]
+  },
+  {
+    "javanese": "purwaka basa",
+    "dutch": "openingstoespraak / inleiding",
+    "aiHint": "speech introduction",
+    "audioJavanese": null,
+    "category": "Structuur",
+    "exampleSentenceJavanese": "Purwaka basa ing pidato iku penting.",
+    "exampleSentenceDutch": "De inleiding in een toespraak is belangrijk.",
+    "notes": "Traditionele term voor de opening van een formele Javaanse toespraak.",
+    "level": "C1",
+    "formality": "Neutral",
+    "tags": ["structuur", "pidato", "formeel"]
+  }
+]

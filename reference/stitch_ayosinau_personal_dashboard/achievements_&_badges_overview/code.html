@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSinau - Achievements</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2bee79",
+              "primary-dark": "#22bd60",
+              "background-light": "#f6f8f7",
+              "background-dark": "#102217",
+              "card-light": "#ffffff",
+              "card-dark": "#162e20",
+              "text-main": "#0d1b13",
+              "text-muted": "#4c9a6b",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem", 
+                "lg": "0.75rem", 
+                "xl": "1rem", 
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cfe7d9;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #234530;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4c9a6b;
+        }
+        
+        /* Badge hover animation */
+        .badge-card {
+            transition: all 0.3s ease;
+        }
+        .badge-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Locked state filter */
+        .locked-badge {
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display antialiased h-screen flex overflow-hidden selection:bg-primary selection:text-black">
+<!-- Sidebar Navigation -->
+<aside class="w-20 lg:w-64 flex-shrink-0 flex flex-col bg-white dark:bg-card-dark border-r border-[#e7f3ec] dark:border-[#234530] transition-all duration-300">
+<div class="h-full flex flex-col justify-between p-4">
+<!-- Logo & Brand -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3 px-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0 border-2 border-primary" data-alt="AyoSinau Javanese Learning App Logo showing a stylized letter A" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBHeQdofSsLjqmP5zc468pyY-D3BoE03z4CiyGsacKsgKuoZ3sFBmwqXfZtPqmGivXMkoT-Arf8vpk_BCY4YpeltUr-XpK-2yNw-9I2X65DS7gla28fJdPpajsN9QZq0NnqxExlpsyu2C6Oh4C9Uw_Xdd8wyakNr4OG8Hxs4pMFS-vv-2B4J7Pd4zX2AtsB7uvtZ-2K3p2YSgvvwxW4KDi_CDqQ6a4xDt5nRHc-rjQfYHqksKXQc6zYeirJHEz3FRdyuir3JyOirUQ");'>
+</div>
+<div class="flex flex-col hidden lg:flex">
+<h1 class="text-text-main dark:text-white text-base font-bold leading-normal">AyoSinau</h1>
+<p class="text-text-muted dark:text-[#6dbd8c] text-xs font-normal leading-normal">Javanese Learning</p>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="flex flex-col gap-2">
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#e7f3ec] dark:hover:bg-[#1f3f2b] transition-colors" href="#">
+<span class="material-symbols-outlined text-text-main dark:text-gray-300 group-hover:text-primary transition-colors">home</span>
+<span class="text-text-main dark:text-gray-200 text-sm font-medium hidden lg:block">Home</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#e7f3ec] dark:hover:bg-[#1f3f2b] transition-colors" href="#">
+<span class="material-symbols-outlined text-text-main dark:text-gray-300 group-hover:text-primary transition-colors">menu_book</span>
+<span class="text-text-main dark:text-gray-200 text-sm font-medium hidden lg:block">Lessons</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#e7f3ec] dark:hover:bg-[#1f3f2b] transition-colors" href="#">
+<span class="material-symbols-outlined text-text-main dark:text-gray-300 group-hover:text-primary transition-colors">person</span>
+<span class="text-text-main dark:text-gray-200 text-sm font-medium hidden lg:block">Profile</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-3 px-3 py-3 rounded-lg bg-[#e7f3ec] dark:bg-[#1f3f2b]" href="#">
+<span class="material-symbols-outlined text-text-main dark:text-white fill-current">emoji_events</span>
+<span class="text-text-main dark:text-white text-sm font-bold hidden lg:block">Achievements</span>
+</a>
+<a class="group flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-[#e7f3ec] dark:hover:bg-[#1f3f2b] transition-colors" href="#">
+<span class="material-symbols-outlined text-text-main dark:text-gray-300 group-hover:text-primary transition-colors">leaderboard</span>
+<span class="text-text-main dark:text-gray-200 text-sm font-medium hidden lg:block">Leaderboard</span>
+</a>
+</nav>
+</div>
+<!-- User Mini Profile -->
+<div class="flex items-center gap-3 px-2 py-3 mt-auto border-t border-[#e7f3ec] dark:border-[#234530] pt-4 cursor-pointer hover:bg-gray-50 dark:hover:bg-[#1f3f2b]/50 rounded-lg">
+<div class="size-8 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">JD</div>
+<div class="flex flex-col hidden lg:flex">
+<p class="text-sm font-semibold dark:text-white">John Doe</p>
+<p class="text-xs text-text-muted">Pro Member</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-y-auto">
+<div class="w-full max-w-[1200px] mx-auto px-6 py-8 md:px-10 lg:py-10 flex flex-col gap-8">
+<!-- Header Section -->
+<header class="flex flex-col gap-6">
+<!-- Title & Subtitle -->
+<div class="flex flex-col gap-2">
+<h1 class="text-text-main dark:text-white text-4xl font-black leading-tight tracking-tight">Achievements</h1>
+<p class="text-text-muted dark:text-[#6dbd8c] text-base font-normal max-w-2xl">Track your learning journey, earn badges, and showcase your mastery of the Javanese language.</p>
+</div>
+<!-- Stats & Progress Dashboard -->
+<div class="bg-white dark:bg-card-dark rounded-xl p-6 shadow-sm border border-[#cfe7d9] dark:border-[#234530] flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+<!-- Stats Columns -->
+<div class="flex gap-8 w-full md:w-auto">
+<div class="flex flex-col gap-1">
+<span class="text-text-muted dark:text-[#6dbd8c] text-sm uppercase tracking-wider font-semibold">Total XP</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-text-main dark:text-white">1,250</span>
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">bolt</span>
+</div>
+</div>
+<div class="w-px bg-gray-200 dark:bg-[#234530]"></div>
+<div class="flex flex-col gap-1">
+<span class="text-text-muted dark:text-[#6dbd8c] text-sm uppercase tracking-wider font-semibold">Current Level</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-text-main dark:text-white">5</span>
+<span class="text-base font-medium text-text-main dark:text-gray-300">Sastrawan</span>
+</div>
+</div>
+</div>
+<!-- Progress Bar Section -->
+<div class="flex flex-col gap-3 w-full md:max-w-md">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-text-main dark:text-white">Level Progress</span>
+<span class="text-sm font-bold text-primary">80%</span>
+</div>
+<div class="h-3 w-full bg-[#e7f3ec] dark:bg-[#0d1f15] rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 80%"></div>
+</div>
+<div class="flex justify-between text-xs text-text-muted dark:text-[#6dbd8c]">
+<span>Level 5</span>
+<span>250 XP to Level 6</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Filters & Controls -->
+<section class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center sticky top-0 z-10 bg-background-light dark:bg-background-dark py-4 -my-4 mb-2">
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-text-main dark:bg-white text-white dark:text-black font-medium text-sm transition-transform hover:scale-105 active:scale-95 shadow-md">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                        All
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-[#e7f3ec] dark:border-[#234530] text-text-main dark:text-gray-300 font-medium text-sm transition-all hover:bg-[#e7f3ec] dark:hover:bg-[#1f3f2b]">
+<span class="material-symbols-outlined text-[18px]">lock_open</span>
+                        Unlocked
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-card-dark border border-[#e7f3ec] dark:border-[#234530] text-text-main dark:text-gray-300 font-medium text-sm transition-all hover:bg-[#e7f3ec] dark:hover:bg-[#1f3f2b]">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+                        Locked
+                    </button>
+</div>
+<div class="flex items-center gap-2 text-sm text-text-muted dark:text-[#6dbd8c]">
+<span class="material-symbols-outlined text-[20px]">info</span>
+<span>Tap badge for details</span>
+</div>
+</section>
+<!-- Badges Grid -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-12">
+<!-- Badge 1: Early Bird (Unlocked) -->
+<div class="group badge-card bg-white dark:bg-card-dark rounded-xl p-6 border-2 border-primary/20 dark:border-primary/20 hover:border-primary dark:hover:border-primary cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-md">EARNED</span>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gradient-to-br from-[#e0f7ea] to-[#b9f6ca] dark:from-[#1a3826] dark:to-[#0f291a] flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">wb_twilight</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Early Bird</h3>
+<p class="text-sm text-text-muted dark:text-[#6dbd8c]">7-day learning streak</p>
+</div>
+<div class="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
+                            Earned Oct 24, 2023
+                        </div>
+</div>
+</div>
+<!-- Badge 2: Word Smith (Unlocked) -->
+<div class="group badge-card bg-white dark:bg-card-dark rounded-xl p-6 border-2 border-primary/20 dark:border-primary/20 hover:border-primary dark:hover:border-primary cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-md">EARNED</span>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gradient-to-br from-[#e0f7ea] to-[#b9f6ca] dark:from-[#1a3826] dark:to-[#0f291a] flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">school</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Word Smith</h3>
+<p class="text-sm text-text-muted dark:text-[#6dbd8c]">Learned 50 words</p>
+</div>
+<div class="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
+                            Earned Nov 01, 2023
+                        </div>
+</div>
+</div>
+<!-- Badge 3: Sastrawan (Unlocked) -->
+<div class="group badge-card bg-white dark:bg-card-dark rounded-xl p-6 border-2 border-primary/20 dark:border-primary/20 hover:border-primary dark:hover:border-primary cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-md">EARNED</span>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gradient-to-br from-[#e0f7ea] to-[#b9f6ca] dark:from-[#1a3826] dark:to-[#0f291a] flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">history_edu</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Sastrawan</h3>
+<p class="text-sm text-text-muted dark:text-[#6dbd8c]">Reached Level 5</p>
+</div>
+<div class="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
+                            Earned Nov 12, 2023
+                        </div>
+</div>
+</div>
+<!-- Badge 4: Social Butterfly (Unlocked) -->
+<div class="group badge-card bg-white dark:bg-card-dark rounded-xl p-6 border-2 border-primary/20 dark:border-primary/20 hover:border-primary dark:hover:border-primary cursor-pointer relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3">
+<span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-md">EARNED</span>
+</div>
+<div class="flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gradient-to-br from-[#e0f7ea] to-[#b9f6ca] dark:from-[#1a3826] dark:to-[#0f291a] flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-5xl text-primary drop-shadow-sm">groups</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Social Butterfly</h3>
+<p class="text-sm text-text-muted dark:text-[#6dbd8c]">Added 5 friends</p>
+</div>
+<div class="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
+                            Earned Dec 05, 2023
+                        </div>
+</div>
+</div>
+<!-- Badge 5: Polyglot (Locked) -->
+<div class="group badge-card bg-gray-50 dark:bg-[#13251b] rounded-xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-not-allowed relative">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600">lock</span>
+</div>
+<div class="locked-badge flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-600">language</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-gray-500 dark:text-gray-400">Polyglot</h3>
+<p class="text-sm text-gray-400 dark:text-gray-500">Learn 500 words</p>
+</div>
+</div>
+<div class="mt-4 w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
+<div class="bg-gray-400 dark:bg-gray-600 h-full w-1/4"></div>
+</div>
+<p class="text-center text-xs text-gray-400 mt-2">125 / 500</p>
+</div>
+<!-- Badge 6: Devotee (Locked) -->
+<div class="group badge-card bg-gray-50 dark:bg-[#13251b] rounded-xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-not-allowed relative">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600">lock</span>
+</div>
+<div class="locked-badge flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-600">local_fire_department</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-gray-500 dark:text-gray-400">Devotee</h3>
+<p class="text-sm text-gray-400 dark:text-gray-500">30-day streak</p>
+</div>
+</div>
+<div class="mt-4 w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
+<div class="bg-gray-400 dark:bg-gray-600 h-full w-[45%]"></div>
+</div>
+<p class="text-center text-xs text-gray-400 mt-2">14 / 30 Days</p>
+</div>
+<!-- Badge 7: Krama Alus Expert (Locked) -->
+<div class="group badge-card bg-gray-50 dark:bg-[#13251b] rounded-xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-not-allowed relative">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600">lock</span>
+</div>
+<div class="locked-badge flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-600">diamond</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-gray-500 dark:text-gray-400">Krama Alus Expert</h3>
+<p class="text-sm text-gray-400 dark:text-gray-500">Finish Chapter 3</p>
+</div>
+</div>
+<div class="mt-4 w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
+<div class="bg-gray-400 dark:bg-gray-600 h-full w-0"></div>
+</div>
+<p class="text-center text-xs text-gray-400 mt-2">Locked</p>
+</div>
+<!-- Badge 8: Marathon Runner (Locked) -->
+<div class="group badge-card bg-gray-50 dark:bg-[#13251b] rounded-xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-not-allowed relative">
+<div class="absolute top-0 right-0 p-3">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600">lock</span>
+</div>
+<div class="locked-badge flex flex-col items-center text-center gap-4">
+<div class="size-24 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-600">directions_run</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-lg font-bold text-gray-500 dark:text-gray-400">Marathon Runner</h3>
+<p class="text-sm text-gray-400 dark:text-gray-500">Complete 20 lessons in a week</p>
+</div>
+</div>
+<div class="mt-4 w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
+<div class="bg-gray-400 dark:bg-gray-600 h-full w-[10%]"></div>
+</div>
+<p class="text-center text-xs text-gray-400 mt-2">2 / 20 Lessons</p>
+</div>
+</section>
+</div>
+</main>
+</body></html>

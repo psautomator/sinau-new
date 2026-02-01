@@ -1,0 +1,39 @@
+
+{
+  "id": "quiz-m3-l4",
+  "title": "Module 3: Les 4 Quiz - Tellen en Tijd",
+  "description": "Test je kennis van Javaanse getallen en dagen.",
+  "questions": [
+    {
+      "id": "q1-m3-l4-match",
+      "order": 1,
+      "questionText": "Combineer het Javaanse getal met het juiste cijfer.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [{"value": "Siji"}, {"value": "Telu"}, {"value": "Lima"}, {"value": "Papat"}],
+      "matchItemsRight": [{"value": "1"}, {"value": "3"}, {"value": "5"}, {"value": "4"}],
+      "explanation": "Dit zijn de correcte telwoorden voor 1, 3, 5 en 4."
+    },
+    {
+      "id": "q2-m3-l4-mcq",
+      "order": 2,
+      "questionText": "In de dialoog is het `Setu` (Zaterdag). Welke dag is het de volgende dag (`sésuk`)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m3-l4-opt1", "text": "Jemuah", "isCorrect": false, "wordId": "Jemuah" },
+        { "id": "q2-m3-l4-opt2", "text": "Minggu", "isCorrect": true, "wordId": "Minggu" },
+        { "id": "q2-m3-l4-opt3", "text": "Senèn", "isCorrect": false, "wordId": "Senèn" },
+        { "id": "q2-m3-l4-opt4", "text": "Rebo", "isCorrect": false, "wordId": "Rebo" }
+      ],
+      "explanation": "Na zaterdag (`Setu`) komt zondag (`Minggu`)."
+    },
+    {
+      "id": "q3-m3-l4-audio",
+      "order": 3,
+      "questionText": "Luister naar het getal en typ het cijfer dat je hoort.",
+      "questionType": "TYPE_HEARD_AUDIO",
+      "audioPromptUrl": "/audio/uploads/loro.mp3",
+      "fillInAnswers": ["2"],
+      "explanation": "De audio zegt 'loro', wat 'twee' (2) betekent."
+    }
+  ]
+}

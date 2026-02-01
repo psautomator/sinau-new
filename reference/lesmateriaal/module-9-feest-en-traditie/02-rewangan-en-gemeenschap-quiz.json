@@ -1,0 +1,42 @@
+
+{
+  "id": "quiz-m9-l2",
+  "title": "Module 9: Les 2 Quiz - Réwangan en Gemeenschap",
+  "description": "Test je kennis van de tekst en het concept 'réwangan'.",
+  "questions": [
+    {
+      "id": "q1-m9-l2-mcq",
+      "order": 1,
+      "questionText": "Wat is de culturele betekenis van 'réwangan'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m9-l2-opt1", "text": "Een betaalde baan voor het organiseren van feesten.", "isCorrect": false },
+        { "id": "q1-m9-l2-opt2", "text": "Een traditie van gemeenschappelijk en onbetaald helpen bij grote evenementen.", "isCorrect": true, "wordId": "réwangan" },
+        { "id": "q1-m9-l2-opt3", "text": "Een groot feest met veel muziek.", "isCorrect": false },
+        { "id": "q1-m9-l2-opt4", "text": "Alleen koken voor de familie.", "isCorrect": false }
+      ],
+      "explanation": "'Réwangan' is een vorm van sociale cohesie en wederzijdse hulp in de gemeenschap, waarbij men helpt zonder betaling."
+    },
+    {
+      "id": "q2-m9-l2-fib",
+      "order": 2,
+      "questionText": "Vul het ontbrekende woord uit de tekst in: 'Sing lanang-lanang pada ___.' (De mannen werken samen.)",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["sambatan"],
+      "explanation": "'Sambatan' verwijst naar het zwaardere werk dat de mannen gezamenlijk doen tijdens een réwangan."
+    },
+    {
+      "id": "q3-m9-l2-mcq-vocab",
+      "order": 3,
+      "questionText": "Wat betekent het woord 'warek' in de context van de aanvullende tekst?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m9-l2-opt1", "text": "Moe", "isCorrect": false, "wordId": "kesel" },
+        { "id": "q3-m9-l2-opt2", "text": "Vol / voldaan na het eten", "isCorrect": true, "wordId": "warek" },
+        { "id": "q3-m9-l2-opt3", "text": "Hongerig", "isCorrect": false },
+        { "id": "q3-m9-l2-opt4", "text": "Slaperig", "isCorrect": false }
+      ],
+      "explanation": "'Warek' beschrijft het gevoel van verzadiging na een maaltijd."
+    }
+  ]
+}

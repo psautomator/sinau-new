@@ -1,0 +1,55 @@
+
+{
+  "id": "quiz-m2-l5-integratie",
+  "title": "Module 2 Eindquiz: Familie en Thuis",
+  "description": "Test je kennis over familierelaties, bezit en taalgebruik uit Module 2.",
+  "questions": [
+    {
+      "id": "q1-m2-l5-mcq-culture",
+      "order": 1,
+      "questionText": "Welk woord beschrijft een respectvol bezoek aan een ouder persoon, zoals je `simbah` (grootouder)?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m2-l5-opt1", "text": "Dolan", "isCorrect": false },
+        { "id": "q1-m2-l5-opt2", "text": "Ketemu", "isCorrect": false },
+        { "id": "q1-m2-l5-opt3", "text": "Sowan", "isCorrect": true, "wordId": "sowan" },
+        { "id": "q1-m2-l5-opt4", "text": "Bali", "isCorrect": false }
+      ],
+      "explanation": "'Sowan' is een specifieke, respectvolle term voor een bezoek aan iemand die ouder of hogergeplaatst is."
+    },
+    {
+      "id": "q2-m2-l5-mcq-grammar",
+      "order": 2,
+      "questionText": "Je praat met je oudere broer over zijn nieuwe fiets. Welke zin is grammaticaal en cultureel correct?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m2-l5-opt1", "text": "Sepedaku anyar.", "isCorrect": false },
+        { "id": "q2-m2-l5-opt2", "text": "Sepedamu anyar.", "isCorrect": false },
+        { "id": "q2-m2-l5-opt3", "text": "Sepedané anyar.", "isCorrect": true, "wordId": "-é" },
+        { "id": "q2-m2-l5-opt4", "text": "Sepedaké anyar.", "isCorrect": false }
+      ],
+      "explanation": "Om naar bezit van de derde persoon ('zijn/haar fiets') te verwijzen, gebruik je het achtervoegsel '-é'. 'Sepeda' wordt dan 'sepedané'."
+    },
+    {
+      "id": "q3-m2-l5-reorder",
+      "order": 3,
+      "questionText": "Zet de woorden in de juiste volgorde om 'Dit is mijn jongere zusje' te zeggen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [{"value": "Iki"}, {"value": "adhikku"}, {"value": "wadon."}],
+      "explanation": "De correcte woordvolgorde is 'Iki adhikku wadon', waarbij 'iki' (dit is), 'adhikku' (mijn jongere broer/zus) en 'wadon' (vrouwelijk) samenkomen."
+    },
+    {
+      "id": "q4-m2-l5-mcq-formality",
+      "order": 4,
+      "questionText": "Als je respectvol tegen je vader praat, welk woord gebruik je dan voor 'jij/u'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q4-m2-l5-opt1", "text": "Kowé", "isCorrect": false, "wordId": "kowé" },
+        { "id": "q4-m2-l5-opt2", "text": "Panjenengan", "isCorrect": true, "wordId": "panjenengan" },
+        { "id": "q4-m2-l5-opt3", "text": "Sampeyan", "isCorrect": false },
+        { "id": "q4-m2-l5-opt4", "text": "Aku", "isCorrect": false, "wordId": "aku" }
+      ],
+      "explanation": "'Panjenengan' is de meest respectvolle Krama Inggil-vorm, die je gebruikt voor ouderen zoals je ouders."
+    }
+  ]
+}

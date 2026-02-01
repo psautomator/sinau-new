@@ -1,0 +1,68 @@
+
+[
+    {
+        "javanese": "dhokter",
+        "dutch": "dokter",
+        "aiHint": "doctor stethoscope",
+        "audioJavanese": null,
+        "category": "Beroep",
+        "exampleSentenceJavanese": "Aku arep menyang dhokter.",
+        "exampleSentenceDutch": "Ik ga naar de dokter.",
+        "notes": "Leenwoord uit het Nederlands.",
+        "level": "A1",
+        "formality": "Neutral",
+        "tags": ["beroep", "medisch", "gezondheid"]
+      },
+      {
+        "javanese": "jamu",
+        "dutch": "kruidendrankje",
+        "aiHint": "herbal drink",
+        "audioJavanese": null,
+        "category": "Medisch",
+        "exampleSentenceJavanese": "Jamu kunir asem iku sehat.",
+        "exampleSentenceDutch": "Kurkuma-tamarinde jamu is gezond.",
+        "notes": "Traditioneel Javaans kruidendrankje met medicinale eigenschappen.",
+        "level": "B1",
+        "formality": "Neutral",
+        "tags": ["traditioneel", "gezondheid", "drank"]
+      },
+      {
+        "javanese": "lara",
+        "dutch": "ziek, pijn",
+        "aiHint": "person in pain",
+        "audioJavanese": "/audio/uploads/lara.mp3",
+        "category": "Staat",
+        "exampleSentenceJavanese": "Aku lagi lara.",
+        "exampleSentenceDutch": "Ik ben ziek.",
+        "notes": "Algemeen woord voor pijn of ziekte.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [ "gezondheid", "ziekte" ]
+      },
+      {
+        "javanese": "panas",
+        "dutch": "heet / koorts",
+        "aiHint": "hot sun",
+        "audioJavanese": "/audio/uploads/panas.mp3",
+        "category": "Eigenschap",
+        "exampleSentenceJavanese": "Awakku panas.",
+        "exampleSentenceDutch": "Mijn lichaam is heet (ik heb koorts).",
+        "notes": "Kan zowel temperatuur als een symptoom van ziekte betekenen.",
+        "level": "A1",
+        "formality": "Ngoko",
+        "tags": [ "temperatuur", "weer", "symptoom" ]
+      },
+      {
+        "javanese": "waras",
+        "dutch": "gezond / genezen",
+        "aiHint": "healthy person",
+        "audioJavanese": "/audio/uploads/waras.mp3",
+        "category": "Staat",
+        "exampleSentenceJavanese": "Aku wis waras maneh.",
+        "exampleSentenceDutch": "Ik ben weer gezond/genezen.",
+        "notes": "Wordt gebruikt om de staat van gezondheid of herstel aan te duiden.",
+        "level": "A2",
+        "formality": "Ngoko",
+        "tags": ["staat", "gezondheid", "herstel"]
+      }
+]

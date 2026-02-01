@@ -1,0 +1,94 @@
+
+[
+  {
+    "javanese": "apik tenan",
+    "dutch": "echt goed",
+    "aiHint": "excellent work",
+    "audioJavanese": "/audio/uploads/apik_tenan.mp3",
+    "category": "Uitdrukking",
+    "exampleSentenceJavanese": "Gambaranmu apik tenan!",
+    "exampleSentenceDutch": "Jouw tekening is echt goed!",
+    "notes": "Een veelgebruikte manier om een compliment te geven.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["compliment", "positief", "uitdrukking"]
+  },
+  {
+    "javanese": "pinter",
+    "dutch": "slim",
+    "aiHint": "brain lightbulb",
+    "audioJavanese": "/audio/uploads/pinter.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Riman iku pinter tenan.",
+    "exampleSentenceDutch": "Riman is echt slim.",
+    "notes": "Leenwoord uit het Nederlands, maar wordt veel gebruikt.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["persoonlijkheid", "slim", "eigenschap"]
+  },
+  {
+    "javanese": "bener",
+    "dutch": "juist, correct",
+    "aiHint": "correct checkmark",
+    "audioJavanese": "/audio/uploads/bener.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Jawabanmu bener.",
+    "exampleSentenceDutch": "Jouw antwoord is juist.",
+    "notes": "Gebruikt om aan te geven dat iets klopt.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["correct", "kwaliteit"]
+  },
+  {
+    "javanese": "wani nyoba",
+    "dutch": "durven te proberen",
+    "aiHint": "brave attempt",
+    "audioJavanese": null,
+    "category": "Uitdrukking",
+    "exampleSentenceJavanese": "Sing penting wani nyoba!",
+    "exampleSentenceDutch": "Het belangrijkste is dat je durft te proberen!",
+    "notes": "Een cultureel belangrijke uitdrukking die inzet waardeert.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["moed", "aanmoediging", "cultuur"]
+  },
+   {
+    "javanese": "salah",
+    "dutch": "fout / verkeerd",
+    "aiHint": "wrong cross mark",
+    "audioJavanese": "/audio/uploads/salah.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Nèk salah ora apa-apa.",
+    "exampleSentenceDutch": "Als het fout is, geeft het niet.",
+    "notes": "Het tegenovergestelde van 'bener' (juist).",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["negatief", "staat", "evaluatie"]
+  },
+  {
+    "javanese": "penting",
+    "dutch": "belangrijk",
+    "aiHint": "important star",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Sing penting wani nyoba.",
+    "exampleSentenceDutch": "Het belangrijkste is dat je durft te proberen.",
+    "notes": "Leenwoord uit het Indonesisch.",
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["belang", "prioriteit"]
+  },
+  {
+    "javanese": "jawaban",
+    "dutch": "antwoord",
+    "aiHint": "answer sheet",
+    "audioJavanese": null,
+    "category": "Concept",
+    "exampleSentenceJavanese": "Jawabanmu bener.",
+    "exampleSentenceDutch": "Jouw antwoord is juist.",
+    "notes": null,
+    "level": "A2",
+    "formality": "Neutral",
+    "tags": ["school", "communicatie"]
+  }
+]

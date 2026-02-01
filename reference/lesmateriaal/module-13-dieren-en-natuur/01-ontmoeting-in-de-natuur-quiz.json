@@ -1,0 +1,46 @@
+
+{
+  "id": "quiz-m13-l1",
+  "title": "Module 13: Les 1 Quiz - Ontmoeting in de Natuur",
+  "description": "Test je kennis van de natuur en de fabel.",
+  "questions": [
+    {
+      "id": "q1-m13-l1-mcq",
+      "order": 1,
+      "questionText": "Waarom kunnen de twee geiten niet tegelijkertijd over het pad?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m13-l1-opt1", "text": "Omdat ze haast hebben.", "isCorrect": false },
+        { "id": "q1-m13-l1-opt2", "text": "Omdat het pad te smal ('ciyut') is.", "isCorrect": true, "wordId": "ciyut" },
+        { "id": "q1-m13-l1-opt3", "text": "Omdat de vogel in de weg zit.", "isCorrect": false },
+        { "id": "q1-m13-l1-opt4", "text": "Omdat ze bang zijn voor het water.", "isCorrect": false }
+      ],
+      "explanation": "In het verhaal staat: 'Wot iki ciyut', wat betekent dat het pad/bruggetje smal is."
+    },
+    {
+      "id": "q2-m13-l1-match",
+      "order": 2,
+      "questionText": "Combineer het Javaanse woord met de juiste Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Alas"},
+        {"value": "Wit"},
+        {"value": "Angin"}
+      ],
+      "matchItemsRight": [
+        {"value": "Bos"},
+        {"value": "Boom"},
+        {"value": "Wind"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor de natuurelementen uit de les."
+    },
+    {
+      "id": "q3-m13-l1-fib",
+      "order": 3,
+      "questionText": "Vul het ontbrekende woord in uit de fabel: 'Aku arep ___ ndisik!'",
+      "questionType": "FILL_IN_THE_BLANK",
+      "fillInAnswers": ["liwat"],
+      "explanation": "'Liwat' betekent passeren. Dit is de eis van de eerste geit die de confrontatie start."
+    }
+  ]
+}

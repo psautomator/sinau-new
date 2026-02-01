@@ -1,0 +1,94 @@
+
+[
+  {
+    "javanese": "jeneng",
+    "dutch": "naam",
+    "aiHint": "name tag",
+    "audioJavanese": "/audio/uploads/jeneng.mp3",
+    "category": "Persoonlijk",
+    "exampleSentenceJavanese": "Sapa jenengmu?",
+    "exampleSentenceDutch": "Wie is jouw naam?",
+    "notes": "Basiswoord voor 'naam'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["persoonlijk", "naam", "kennismaken"]
+  },
+  {
+    "javanese": "sapa",
+    "dutch": "wie",
+    "aiHint": "question mark person",
+    "audioJavanese": null,
+    "category": "Vraagwoord",
+    "exampleSentenceJavanese": "Sapa jenengmu?",
+    "exampleSentenceDutch": "Wie is jouw naam?",
+    "notes": "Informeel vraagwoord (Ngoko).",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["grammatica", "vraag", "persoon"]
+  },
+  {
+    "javanese": "deg-degan",
+    "dutch": "nerveus, hartkloppingen",
+    "aiHint": "anxious person",
+    "audioJavanese": null,
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku deg-degan sadurunge ujian.",
+    "exampleSentenceDutch": "Ik ben nerveus voor het examen.",
+    "notes": "Een onomatopee die het geluid van een kloppend hart nabootst.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "spanning", "emotie"]
+  },
+  {
+    "javanese": "isin",
+    "dutch": "verlegen, zich schamen",
+    "aiHint": "shy person",
+    "audioJavanese": "/audio/uploads/isin.mp3",
+    "category": "Gevoel",
+    "exampleSentenceJavanese": "Aku isin ngomong ing ngarep wong akeh.",
+    "exampleSentenceDutch": "Ik ben verlegen om voor veel mensen te praten.",
+    "notes": null,
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["gevoel", "emotie", "schaamte"]
+  },
+  {
+    "javanese": "mangan",
+    "dutch": "eten",
+    "aiHint": "person eating",
+    "audioJavanese": "/audio/uploads/mangan.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Apa kowé wis mangan?",
+    "exampleSentenceDutch": "Heb je al gegeten?",
+    "notes": "Informeel (Ngoko) werkwoord voor 'eten'.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["werkwoord", "eten", "actie"]
+  },
+  {
+    "javanese": "saka",
+    "dutch": "van / uit",
+    "aiHint": "origin point",
+    "audioJavanese": "/audio/uploads/saka.mp3",
+    "category": "Voorzetsel",
+    "exampleSentenceJavanese": "Aku saka Paramaribo.",
+    "exampleSentenceDutch": "Ik kom uit Paramaribo.",
+    "notes": "Wordt gebruikt om de oorsprong aan te duiden.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["grammatica", "oorsprong", "voorzetsel"]
+  },
+  {
+    "javanese": "ngendi",
+    "dutch": "waar",
+    "aiHint": "location question mark",
+    "audioJavanese": null,
+    "category": "Vraagwoord",
+    "exampleSentenceJavanese": "Saka ngendi kowé?",
+    "exampleSentenceDutch": "Waar kom je vandaan?",
+    "notes": "Informeel vraagwoord (Ngoko) om naar een locatie te vragen.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": ["vraag", "locatie"]
+  }
+]

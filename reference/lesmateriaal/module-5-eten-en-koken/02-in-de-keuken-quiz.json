@@ -1,0 +1,51 @@
+
+{
+  "id": "quiz-m5-l2",
+  "title": "Module 5: Les 2 Quiz - In de Keuken",
+  "description": "Test je kennis van kook-werkwoorden en familierecepten.",
+  "questions": [
+    {
+      "id": "q1-m5-l2-match",
+      "order": 1,
+      "questionText": "Combineer het Javaanse werkwoord met de juiste kooktechniek.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Ngiris"},
+        {"value": "Nggodhog"},
+        {"value": "Nggoreng"}
+      ],
+      "matchItemsRight": [
+        {"value": "Snijden"},
+        {"value": "Koken in water"},
+        {"value": "Bakken / Frituren"}
+      ],
+      "explanation": "Dit zijn de correcte vertalingen voor deze actieve kook-werkwoorden."
+    },
+    {
+      "id": "q2-m5-l2-mcq-context",
+      "order": 2,
+      "questionText": "Wat is het 'geheime recept' (`bumbu rahasia`) dat Budhe later aan Siti wil leren?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m5-l2-opt1", "text": "Een recept uit een kookboek", "isCorrect": false },
+        { "id": "q2-m5-l2-opt2", "text": "Een recept van de buurvrouw", "isCorrect": false },
+        { "id": "q2-m5-l2-opt3", "text": "Een recept dat ze zelf heeft uitgevonden", "isCorrect": false },
+        { "id": "q2-m5-l2-opt4", "text": "Een recept van Siti's oma", "isCorrect": true }
+      ],
+      "explanation": "Budhe zegt: 'Iki bumbu rahasia saka simbahmu', wat betekent dat het geheime recept van Siti's oma is."
+    },
+    {
+      "id": "q3-m5-l2-mcq-grammar",
+      "order": 3,
+      "questionText": "Welk voorvoegsel wordt vaak gebruikt om een actieve handeling aan te duiden bij kook-werkwoorden zoals 'goreng'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m5-l2-opt1", "text": "di-", "isCorrect": false },
+        { "id": "q3-m5-l2-opt2", "text": "ke-", "isCorrect": false },
+        { "id": "q3-m5-l2-opt3", "text": "ng-", "isCorrect": true },
+        { "id": "q3-m5-l2-opt4", "text": "pa-", "isCorrect": false }
+      ],
+      "explanation": "Het voorvoegsel 'ng-' wordt gebruikt om van het stamwoord 'goreng' (bakken) het actieve werkwoord 'nggoreng' te maken."
+    }
+  ]
+}

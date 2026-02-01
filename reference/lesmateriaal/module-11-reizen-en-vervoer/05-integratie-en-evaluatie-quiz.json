@@ -1,0 +1,48 @@
+
+{
+  "id": "quiz-m11-l5-integratie",
+  "title": "Module 11 Eindquiz: Reizen en Vervoer",
+  "description": "Test je kennis over reizen, vervoer en de bijbehorende cultuur.",
+  "questions": [
+    {
+      "id": "q1-m11-l5-mcq",
+      "order": 1,
+      "questionText": "Welk woord betekent 'lopen'?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m11-l5-opt1", "text": "Lunga", "isCorrect": false, "wordId": "lunga" },
+        { "id": "q1-m11-l5-opt2", "text": "Mlaku", "isCorrect": true, "wordId": "mlaku" },
+        { "id": "q1-m11-l5-opt3", "text": "Tekan", "isCorrect": false, "wordId": "tekan" },
+        { "id": "q1-m11-l5-opt4", "text": "Dalan", "isCorrect": false, "wordId": "dalan" }
+      ],
+      "explanation": "'Mlaku' is het specifieke werkwoord voor lopen. 'Mlaku-mlaku' betekent wandelen."
+    },
+    {
+      "id": "q2-m11-l5-reorder",
+      "order": 2,
+      "questionText": "Zet de woorden in de juiste volgorde om de zin 'De weg is erg druk' te vormen.",
+      "questionType": "REORDER_SENTENCE",
+      "sentencePartsToReorder": [
+          {"value": "Dalané"},
+          {"value": "rame"},
+          {"value": "banget."}
+      ],
+      "explanation": "De correcte woordvolgorde is 'Dalané rame banget'."
+    },
+    {
+      "id": "q3-m11-l5-audio",
+      "order": 3,
+      "questionText": "Luister naar de zin. Wat wordt er gezegd?",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/dalane_rame.mp3",
+      "options": [
+        { "id": "q3-m11-l5-opt1", "text": "De weg is mooi", "isCorrect": false },
+        { "id": "q3-m11-l5-opt2", "text": "De weg is lang", "isCorrect": false },
+        { "id": "q3-m11-l5-opt3", "text": "De weg is druk", "isCorrect": true },
+        { "id": "q3-m11-l5-opt4", "text": "De weg is kapot", "isCorrect": false }
+      ],
+      "explanation": "De zin 'Dalané rame' betekent 'De weg is druk', zoals de moeder van Siti opmerkte."
+    }
+  ]
+}
+

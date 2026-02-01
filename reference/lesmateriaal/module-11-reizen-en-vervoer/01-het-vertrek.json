@@ -1,0 +1,68 @@
+
+[
+  {
+    "javanese": "bis",
+    "dutch": "bus",
+    "aiHint": "city bus",
+    "audioJavanese": "/audio/uploads/bis.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Aku numpak bis menyang sekolah.",
+    "exampleSentenceDutch": "Ik neem de bus naar school.",
+    "notes": "Leenwoord uit het Nederlands.",
+    "level": "A1",
+    "formality": "Neutral",
+    "tags": ["vervoer", "openbaar", "reizen"]
+  },
+  {
+    "javanese": "montor",
+    "dutch": "auto / motorfiets",
+    "aiHint": "car motorcycle",
+    "audioJavanese": "/audio/uploads/montor.mp3",
+    "category": "Vervoer",
+    "exampleSentenceJavanese": "Bapak numpak montor anyar.",
+    "exampleSentenceDutch": "Vader rijdt in een nieuwe auto.",
+    "notes": "Kan afhankelijk van de context zowel auto als motorfiets betekenen.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["vervoer", "voertuig", "reizen"]
+  },
+  {
+    "javanese": "lunga",
+    "dutch": "gaan, weggaan",
+    "aiHint": "person leaving",
+    "audioJavanese": "/audio/uploads/lunga.mp3",
+    "category": "Werkwoord",
+    "exampleSentenceJavanese": "Aku arep lunga menyang kutha.",
+    "exampleSentenceDutch": "Ik ga naar de stad.",
+    "notes": "Basiswerkwoord voor vertrekken.",
+    "level": "A1",
+    "formality": "Ngoko",
+    "tags": [ "beweging", "actie" ]
+  },
+  {
+    "javanese": "rame",
+    "dutch": "druk / levendig",
+    "aiHint": "busy street",
+    "audioJavanese": "/audio/uploads/rame.mp3",
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Dalané rame banget.",
+    "exampleSentenceDutch": "De weg is erg druk.",
+    "notes": "Wordt gebruikt om drukte of een levendige sfeer te beschrijven.",
+    "level": "A2",
+    "formality": "Ngoko",
+    "tags": ["sfeer", "verkeer", "eigenschap"]
+  },
+  {
+    "javanese": "gayeng",
+    "dutch": "gezellig / leuk",
+    "aiHint": "friends laughing",
+    "audioJavanese": null,
+    "category": "Eigenschap",
+    "exampleSentenceJavanese": "Numpak bis waé, luwih gayeng!",
+    "exampleSentenceDutch": "Laten we de bus nemen, dat is gezelliger!",
+    "notes": "Beschrijft een plezierige, sociale sfeer.",
+    "level": "B1",
+    "formality": "Ngoko",
+    "tags": ["sfeer", "sociaal", "positief"]
+  }
+]

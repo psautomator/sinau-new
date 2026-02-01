@@ -1,0 +1,38 @@
+
+{
+  "id": "quiz-m6-l2",
+  "title": "Module 6: Les 2 Quiz - Schoolvakken en Materialen",
+  "description": "Test je kennis van schoolspullen en leenwoorden.",
+  "questions": [
+    {
+      "id": "q1-m6-l2-match",
+      "order": 1,
+      "questionText": "Combineer het Javaanse woord voor schoolspullen met de Nederlandse vertaling.",
+      "questionType": "MATCH_PAIRS",
+      "matchItemsLeft": [
+        {"value": "Buku"},
+        {"value": "Potlot"},
+        {"value": "Papan tulis"}
+      ],
+      "matchItemsRight": [
+        {"value": "Boek"},
+        {"value": "Potlood"},
+        {"value": "Schoolbord"}
+      ],
+      "explanation": "Veel van deze woorden, zoals 'buku' en 'potlot', zijn leenwoorden uit het Nederlands."
+    },
+    {
+      "id": "q2-m6-l2-mcq",
+      "order": 2,
+      "questionText": "Wat vindt Siti moeilijk ('kangelan') tijdens de les?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m6-l2-opt1", "text": "Spreken", "isCorrect": false },
+        { "id": "q2-m6-l2-opt2", "text": "Luisteren", "isCorrect": false },
+        { "id": "q2-m6-l2-opt3", "text": "Schrijven", "isCorrect": true, "wordId": "nulis" },
+        { "id": "q2-m6-l2-opt4", "text": "Lezen", "isCorrect": false }
+      ],
+      "explanation": "Siti vindt het schrijven ('nulis') moeilijk en zegt: 'kula kangelan' tegen de lerares."
+    }
+  ]
+}

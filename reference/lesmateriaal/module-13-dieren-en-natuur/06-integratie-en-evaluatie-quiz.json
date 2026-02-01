@@ -1,0 +1,63 @@
+
+{
+  "id": "quiz-m13-l6-integratie",
+  "title": "Module 13 Eindquiz: Dieren en Natuur",
+  "description": "Test je kennis van de hele module over dieren, natuur en culturele lessen.",
+  "questions": [
+    {
+      "id": "q1-m13-l6-mcq-vocab",
+      "order": 1,
+      "questionText": "Hoe zeg je 'boom' in het Javaans?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q1-m13-l6-opt1", "text": "Suket", "isCorrect": false, "wordId": "suket" },
+        { "id": "q1-m13-l6-opt2", "text": "Wit", "isCorrect": true, "wordId": "wit" },
+        { "id": "q1-m13-l6-opt3", "text": "Kembang", "isCorrect": false, "wordId": "kembang" },
+        { "id": "q1-m13-l6-opt4", "text": "Alas", "isCorrect": false, "wordId": "alas" }
+      ],
+      "explanation": "'Wit' is het Javaanse woord voor boom."
+    },
+    {
+      "id": "q2-m13-l6-mcq-fable",
+      "order": 2,
+      "questionText": "Welk dier wordt in het verhaal als 'koppig' (`mbregudul`) beschreven?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q2-m13-l6-opt1", "text": "Ula (slang)", "isCorrect": false, "wordId": "ula" },
+        { "id": "q2-m13-l6-opt2", "text": "Manuk (vogel)", "isCorrect": false, "wordId": "manuk" },
+        { "id": "q2-m13-l6-opt3", "text": "Asu (hond)", "isCorrect": false, "wordId": "asu" },
+        { "id": "q2-m13-l6-opt4", "text": "Wedus (geit)", "isCorrect": true, "wordId": "wedus" }
+      ],
+      "explanation": "De fabel 'Wedus Mbregudul' gaat over twee koppige geiten."
+    },
+    {
+      "id": "q3-m13-l6-mcq-vocab2",
+      "order": 3,
+      "questionText": "Wat betekent `seger`?",
+      "questionType": "MULTIPLE_CHOICE",
+      "options": [
+        { "id": "q3-m13-l6-opt1", "text": "Warm", "isCorrect": false },
+        { "id": "q3-m13-l6-opt2", "text": "Fris / Vers", "isCorrect": true, "wordId": "seger" },
+        { "id": "q3-m13-l6-opt3", "text": "Droog", "isCorrect": false },
+        { "id": "q3-m13-l6-opt4", "text": "Vredig", "isCorrect": false }
+      ],
+      "explanation": "'Seger' wordt gebruikt om de frisheid van bijvoorbeeld lucht, water of eten te beschrijven."
+    },
+    {
+      "id": "q4-m13-l6-audio",
+      "order": 4,
+      "questionText": "Luister en kies het juiste woord voor 'vogel'.",
+      "questionType": "AUDIO_CHOICE",
+      "audioPromptUrl": "/audio/uploads/manuk.mp3",
+      "options": [
+        { "id": "q4-m13-l6-opt1", "text": "Ula", "isCorrect": false, "wordId": "ula" },
+        { "id": "q4-m13-l6-opt2", "text": "Manuk", "isCorrect": true, "wordId": "manuk" },
+        { "id": "q4-m13-l6-opt3", "text": "Wedus", "isCorrect": false, "wordId": "wedus" },
+        { "id": "q4-m13-l6-opt4", "text": "Asu", "isCorrect": false, "wordId": "asu" }
+      ],
+      "explanation": "Je hoorde 'manuk', wat 'vogel' betekent."
+    }
+  ]
+}
+
+
