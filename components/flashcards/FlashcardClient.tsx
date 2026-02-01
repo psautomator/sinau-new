@@ -9,6 +9,7 @@ interface Vocabulary {
     audioUrl?: string | null;
     context?: string | null;
     formality: string;
+    level?: string | null;
 }
 
 import { useState, useEffect } from "react";

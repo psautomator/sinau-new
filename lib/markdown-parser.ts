@@ -41,6 +41,7 @@ export function parseMarkdownLesson(markdown: string): ParsedLesson {
     let order = 1;
     let level: string | undefined;
     let languageStyle: string | undefined;
+    let hasSeenMetadata = false;
 
     // Cultural note token
     const culturalToken = '### 🌱 Samenvatting & Cultuurreflectie';
@@ -59,14 +60,17 @@ export function parseMarkdownLesson(markdown: string): ParsedLesson {
             if (levelMatch || styleMatch) {
                 if (levelMatch) level = levelMatch[1].trim();
                 if (styleMatch) languageStyle = styleMatch[1].trim();
+                hasSeenMetadata = true;
                 continue; // Skip adding this as content
             }
 
             // Ignore empty lines at start
             if (!line.trim()) continue;
 
-            // Only treat as intro if it's substantial text, not just a label
-            currentSection = { title: "Lesson Intro", content: [line] };
+            // Only treat as intro if it's substantial text AND we haven't just seen metadata
+            if (!hasSeenMetadata) {
+                currentSection = { title: "Lesson Intro", content: [line] };
+            }
             continue;
         }
 

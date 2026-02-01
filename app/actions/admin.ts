@@ -126,6 +126,7 @@ export async function addVocabularyAction(formData: FormData) {
     const category = formData.get("category") as string;
     const audioUrl = formData.get("audioUrl") as string;
     const context = formData.get("context") as string;
+    const level = formData.get("level") as string;
     const moduleId = (formData.get("moduleId") as string) || undefined;
 
     try {
@@ -143,6 +144,7 @@ export async function addVocabularyAction(formData: FormData) {
             category,
             audioUrl,
             context,
+            level,
             moduleId
         });
 
@@ -170,6 +172,7 @@ export async function updateVocabularyAction(id: string, formData: FormData) {
     const category = formData.get("category") as string;
     const audioUrl = formData.get("audioUrl") as string;
     const context = formData.get("context") as string;
+    const level = formData.get("level") as string;
     const moduleId = (formData.get("moduleId") as string) || undefined;
 
     try {
@@ -187,6 +190,7 @@ export async function updateVocabularyAction(id: string, formData: FormData) {
             category,
             audioUrl,
             context,
+            level,
             moduleId
         });
 

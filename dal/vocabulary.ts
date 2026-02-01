@@ -12,10 +12,11 @@ export async function getVocabulary(params: {
     formality?: Formality;
     audioUrl?: string;
     audioStatus?: 'all' | 'hasAudio' | 'noAudio';
+    level?: string;
     skip?: number;
     take?: number;
 } = {}) {
-    const { search, category, formality, audioStatus, skip, take } = params;
+    const { search, category, formality, audioStatus, level, skip, take } = params;
 
     const where: any = {};
     if (search) {
@@ -26,6 +27,7 @@ export async function getVocabulary(params: {
     }
     if (category) where.category = category;
     if (formality) where.formality = formality;
+    if (level) where.level = level;
 
     if (audioStatus === 'hasAudio') {
         // Must have a value that is not null and not empty string
@@ -111,6 +113,7 @@ export async function createVocabulary(data: {
     context?: string;
     category?: string;
     audioUrl?: string;
+    level?: string;
     moduleId?: string;
 }) {
     return await prisma.vocabulary.create({
@@ -134,6 +137,7 @@ export async function updateVocabulary(id: string, data: Partial<{
     context: string;
     category: string;
     audioUrl: string;
+    level: string;
     moduleId: string;
 }>) {
     return await prisma.vocabulary.update({
@@ -299,6 +303,7 @@ export async function bulkUpsertVocabulary(words: any[]) {
             tags: wordData.tags || [],
             formality: (wordData.formality || "NGOKO").toUpperCase(),
             category: wordData.category || "",
+            level: wordData.level || "",
             audioUrl: wordData.audioUrl || wordData.audioJavanese || "",
         };
 

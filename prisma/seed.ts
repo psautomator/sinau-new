@@ -121,6 +121,7 @@ async function main() {
                             exampleJavanese: word.exampleSentenceJavanese,
                             exampleDutch: word.exampleSentenceDutch,
                             notes: word.notes,
+                            level: word.level || seededModule.level || "A1",
                             tags: word.tags || [],
                         },
                     });
@@ -135,6 +136,7 @@ async function main() {
                             exampleJavanese: word.exampleSentenceJavanese,
                             exampleDutch: word.exampleSentenceDutch,
                             notes: word.notes,
+                            level: word.level || seededModule.level || "A1",
                             tags: word.tags || [],
                         },
                     });

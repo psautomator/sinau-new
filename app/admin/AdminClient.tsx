@@ -374,18 +374,50 @@ export default function AdminClient({
                                             <option value="hasAudio">With Audio</option>
                                             <option value="noAudio">Without Audio</option>
                                         </select>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={levelFilter}
+                                            onChange={(e) => { setLevelFilter(e.target.value); updateFilters({ level: e.target.value }); }}
+                                        >
+                                            <option value="">All Levels</option>
+                                            <option value="A1">A1</option>
+                                            <option value="A2">A2</option>
+                                            <option value="B1">B1</option>
+                                            <option value="C1">C1</option>
+                                        </select>
                                     </>
                                 )}
                                 {activeTab === 'lessons' && (
-                                    <select
-                                        className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
-                                        onChange={(e) => updateFilters({ moduleId: e.target.value })}
-                                    >
-                                        <option value="">All Modules</option>
-                                        {initialModules.map(m => (
-                                            <option key={m.id} value={m.id}>{m.title}</option>
-                                        ))}
-                                    </select>
+                                    <>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            onChange={(e) => updateFilters({ moduleId: e.target.value })}
+                                        >
+                                            <option value="">All Modules</option>
+                                            {initialModules.map(m => (
+                                                <option key={m.id} value={m.id}>{m.title}</option>
+                                            ))}
+                                        </select>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            onChange={(e) => updateFilters({ lessonLevel: e.target.value })}
+                                        >
+                                            <option value="">All Levels</option>
+                                            <option value="A1">A1</option>
+                                            <option value="A2">A2</option>
+                                            <option value="B1">B1</option>
+                                            <option value="B2">B2</option>
+                                        </select>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            onChange={(e) => updateFilters({ lessonStyle: e.target.value })}
+                                        >
+                                            <option value="">All Styles</option>
+                                            <option value="Ngoko">Ngoko</option>
+                                            <option value="Krama">Krama</option>
+                                            <option value="Krama Inggil">Krama Inggil</option>
+                                        </select>
+                                    </>
                                 )}
                             </div>
                         </div>
@@ -423,6 +455,7 @@ export default function AdminClient({
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Javanese Word</th>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Translation</th>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Category</th>
+                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Level</th>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Formality</th>
                                                     <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
                                                 </>
@@ -568,6 +601,7 @@ export default function AdminClient({
                                                     </td>
                                                     <td className="px-8 py-6 text-sm font-medium text-slate-600">{vocab.translation}</td>
                                                     <td className="px-8 py-6"><span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{vocab.category || "General"}</span></td>
+                                                    <td className="px-8 py-6"><span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{vocab.level || "A1"}</span></td>
                                                     <td className="px-8 py-6 text-[10px] font-black uppercase text-slate-400">{vocab.formality}</td>
                                                     <td className="px-8 py-6 text-right" onClick={(e) => e.stopPropagation()}>
                                                         <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
@@ -721,6 +755,10 @@ export default function AdminClient({
                                             <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Category</span>
                                             <span className="text-sm font-black text-slate-700 dark:text-slate-300">{selectedVocab.category || "General"}</span>
                                         </div>
+                                        <div className="bg-slate-50 dark:bg-slate-900/50 px-6 py-4 rounded-2xl flex items-center justify-between border border-slate-100 dark:border-slate-800">
+                                            <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Level</span>
+                                            <span className="text-sm font-black text-slate-700 dark:text-slate-300">{selectedVocab.level || "A1"}</span>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -868,6 +906,12 @@ export default function AdminClient({
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Formality</label>
                                                 <select name="formality" defaultValue={editingVocab?.formality || 'NGOKO'} className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl font-black text-[10px] uppercase tracking-widest">
                                                     <option value="NGOKO">Ngoko</option><option value="KRAMA">Krama</option><option value="KRAMA_INGGIL">Krama Inggil</option>
+                                                </select>
+                                            </div>
+                                            <div className="flex flex-col gap-2">
+                                                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Level</label>
+                                                <select name="level" defaultValue={editingVocab?.level || 'A1'} className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl font-black text-[10px] uppercase tracking-widest">
+                                                    <option value="A1">A1</option><option value="A2">A2</option><option value="B1">B1</option><option value="C1">C1</option>
                                                 </select>
                                             </div>
                                         </div>

@@ -24,6 +24,8 @@ export default async function AdminPage({
     const formality = (resolvedParams?.formality as any) || undefined;
     const audioStatus = (resolvedParams?.audioStatus as any) || undefined;
     const moduleId = (resolvedParams?.moduleId as string) || undefined;
+    const lessonLevel = (resolvedParams?.lessonLevel as string) || undefined;
+    const lessonStyle = (resolvedParams?.lessonStyle as string) || undefined;
 
     // Fetch Data
     const [
@@ -40,7 +42,7 @@ export default async function AdminPage({
         getAdminModules({ search, level, skip, take: limit }),
         getVocabulary({ search, category, formality, audioStatus, skip, take: limit }),
         getQuizzes({ search, skip, take: limit }),
-        getLessons({ search, moduleId, skip, take: limit }),
+        getLessons({ search, moduleId, level: lessonLevel, languageStyle: lessonStyle, skip, take: limit }),
         getAllModulesSimple(),
         getAllQuizzesSimple(),
         getAllLessonsSimple(),

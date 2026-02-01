@@ -117,6 +117,7 @@ model Vocabulary {
   formality       Formality                  @default(NGOKO)
   context         String?
   category        String?                    // e.g. "Greetings", "Family"
+  level           String?                    @default("A1")
   moduleId        String?
   module          Module?                    @relation(fields: [moduleId], references: [id])
   srsItems        UserWordSpacedRepetition[]

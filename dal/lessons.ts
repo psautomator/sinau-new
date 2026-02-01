@@ -72,11 +72,15 @@ export async function getUserModuleProgress(userId: string, moduleId: string) {
 export async function getLessons({
     search,
     moduleId,
+    level,
+    languageStyle,
     skip = 0,
     take = 10,
 }: {
     search?: string;
     moduleId?: string;
+    level?: string;
+    languageStyle?: string;
     skip?: number;
     take?: number;
 }) {
@@ -91,6 +95,14 @@ export async function getLessons({
 
     if (moduleId) {
         where.moduleId = moduleId;
+    }
+
+    if (level) {
+        where.level = { contains: level, mode: "insensitive" };
+    }
+
+    if (languageStyle) {
+        where.languageStyle = { contains: languageStyle, mode: "insensitive" };
     }
 
     const [lessons, total] = await Promise.all([
