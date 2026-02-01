@@ -3,13 +3,31 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isActive = (path: string) => {
+        if (path === "/") {
+            return pathname === "/";
+        }
+        return pathname.startsWith(path);
+    };
+
+    const navItems = [
+        { href: "/", label: "Dashboard", icon: "dashboard" },
+        { href: "/modules", label: "Modules", icon: "menu_book" },
+        { href: "/flashcards", label: "Flashcards", icon: "style" },
+        { href: "/ai-tutor", label: "AI Tutor", icon: "smart_toy", badge: "Beta" },
+        { href: "/achievements", label: "Achievements", icon: "emoji_events" },
+        { href: "/leaderboard", label: "Leaderboard", icon: "leaderboard" },
+    ];
 
     return (
         <>
-            {/* Mobile Hamburger Button */}
+            {/* ... (mobile menu code remains same) */}
             <button
                 onClick={() => setIsOpen(true)}
                 className="md:hidden fixed top-4 left-4 z-[40] bg-white dark:bg-surface-dark p-2 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 text-text-main-light dark:text-text-main-dark flex items-center justify-center transition-all active:scale-95"
@@ -46,69 +64,45 @@ export default function Sidebar() {
                     </button>
                 </div>
                 <nav className="flex-1 px-4 py-2 space-y-1 overflow-y-auto">
-                    {/* Dashboard (Active) */}
-                    <Link
-                        href="/"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl bg-primary/20 text-text-main-light dark:text-white font-medium relative overflow-hidden group"
-                    >
-                        <div className="absolute inset-0 bg-batik-pattern opacity-50 pointer-events-none"></div>
-                        <span
-                            className="material-symbols-outlined z-10"
-                            style={{ fontVariationSettings: "'FILL' 1" }}
-                        >
-                            dashboard
-                        </span>
-                        <span className="z-10">Dashboard</span>
-                    </Link>
-                    <Link
-                        href="/modules"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium transition-colors"
-                    >
-                        <span className="material-symbols-outlined">menu_book</span>
-                        <span>Modules</span>
-                    </Link>
-                    <Link
-                        href="/flashcards"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium transition-colors"
-                    >
-                        <span className="material-symbols-outlined">style</span>
-                        <span>Flashcards</span>
-                    </Link>
-                    <Link
-                        href="/ai-tutor"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium transition-colors"
-                    >
-                        <span className="material-symbols-outlined">smart_toy</span>
-                        <span>AI Tutor</span>
-                        <span className="ml-auto bg-primary/20 text-primary-dark dark:text-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">
-                            Beta
-                        </span>
-                    </Link>
-                    <Link
-                        href="/achievements"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium transition-colors"
-                    >
-                        <span className="material-symbols-outlined">emoji_events</span>
-                        <span>Achievements</span>
-                    </Link>
-                    <Link
-                        href="/leaderboard"
-                        onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium transition-colors"
-                    >
-                        <span className="material-symbols-outlined">leaderboard</span>
-                        <span>Leaderboard</span>
-                    </Link>
+                    {navItems.map((item) => {
+                        const active = isActive(item.href);
+                        return (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all relative overflow-hidden group ${active
+                                    ? "bg-primary/20 text-text-main-light dark:text-white"
+                                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
+                                    }`}
+                            >
+                                {active && (
+                                    <div className="absolute inset-0 bg-batik-pattern opacity-50 pointer-events-none"></div>
+                                )}
+                                <span
+                                    className="material-symbols-outlined z-10"
+                                    style={{ fontVariationSettings: active ? "'FILL' 1" : undefined }}
+                                >
+                                    {item.icon}
+                                </span>
+                                <span className="z-10">{item.label}</span>
+                                {item.badge && (
+                                    <span className="ml-auto bg-primary/20 text-primary-dark dark:text-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase z-10">
+                                        {item.badge}
+                                    </span>
+                                )}
+                            </Link>
+                        );
+                    })}
+
                     <div className="my-2 border-t border-gray-100 dark:border-gray-800"></div>
                     <Link
                         href="/admin"
                         onClick={() => setIsOpen(false)}
-                        className="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-500 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium transition-colors text-sm"
+                        className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-colors text-sm ${isActive("/admin")
+                            ? "bg-primary/20 text-text-main-light dark:text-white"
+                            : "text-gray-500 dark:text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800"
+                            }`}
                     >
                         <span className="material-symbols-outlined">admin_panel_settings</span>
                         <span>Admin Panel</span>
