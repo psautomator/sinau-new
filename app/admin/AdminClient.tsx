@@ -13,9 +13,11 @@ import {
     updateVocabularyAction,
     bulkMatchAudioAction
 } from "@/app/actions/admin";
-import { saveLessonAction, deleteLessonAction, saveQuizAction, deleteQuizAction, deleteUserAction, toggleLessonPublishAction } from "./actions";
+import { saveLessonAction, deleteLessonAction, saveQuizAction, deleteQuizAction, deleteUserAction, toggleLessonPublishAction } from "@/app/actions/admin";
 import LessonBlockEditor from "@/components/admin/LessonBlockEditor";
 import QuizQuestionEditor from "@/components/admin/QuizQuestionEditor";
+import QuizWorkspace from "@/components/admin/QuizWorkspace";
+import LessonArchitect from "@/components/admin/LessonArchitect";
 
 interface AdminClientProps {
     initialModules: any[];
@@ -1127,70 +1129,33 @@ export default function AdminClient({
                     </div>
                 </div>
             )}
-            {/* Quiz Add/Edit Modal */}
+            {/* Quiz Add/Edit Workspace */}
             {isQuizModalOpen && (
-                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-                    <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setIsQuizModalOpen(false)} />
-                    <div className="relative w-full max-w-4xl bg-white dark:bg-slate-800 rounded-[3rem] shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
-                        <form action={async (formData) => {
-                            const result = await saveQuizAction(formData);
-                            if (result.success) setIsQuizModalOpen(false);
-                            else alert("Failed to save quiz");
-                        }} className="h-full max-h-[95vh] overflow-y-auto">
-                            <input type="hidden" name="id" value={editingQuiz?.id || ""} />
-                            <div className="p-10">
-                                <h2 className="text-4xl font-black text-slate-900 dark:text-white mb-10 tracking-tighter">
-                                    {editingQuiz ? 'Edit Quiz' : 'Create New Quiz'}
-                                </h2>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                                    <div className="space-y-6">
-                                        <div className="flex flex-col gap-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-blue-600">Quiz Title</label>
-                                            <input name="title" required defaultValue={editingQuiz?.title} className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-black text-xl tracking-tight focus:ring-4 focus:ring-blue-500/10 outline-none transition-all" />
-                                        </div>
-                                        <div className="flex flex-col gap-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Linked Lesson</label>
-                                            <select name="lessonId" required defaultValue={editingQuiz?.lessonId} className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl font-black text-[10px] uppercase tracking-widest">
-                                                {allLessons.map(l => (
-                                                    <option key={l.id} value={l.id}>{l.title}</option>
-                                                ))}
-                                            </select>
-                                        </div>
-                                        <div className="flex items-center gap-3 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-700">
-                                            <input type="checkbox" name="published" defaultChecked={editingQuiz?.published} id="quiz-published" className="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500" />
-                                            <label htmlFor="quiz-published" className="text-sm font-bold text-slate-700 dark:text-white">Published</label>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-6">
-                                        <div className="flex flex-col gap-2">
-                                            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Description</label>
-                                            <textarea name="description" defaultValue={editingQuiz?.description} className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-medium min-h-[100px]" />
-                                        </div>
-                                        <div className="flex flex-col gap-2">
-                                            <QuizQuestionEditor initialQuestions={editingQuiz?.questions} />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="px-10 py-8 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 flex justify-end gap-4 mt-auto">
-                                <button type="button" onClick={() => setIsQuizModalOpen(false)} className="px-8 py-3 text-sm font-bold text-slate-500">Cancel</button>
-                                <button type="submit" className="px-12 py-4 bg-blue-600 text-white rounded-[1.5rem] text-[10px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/20 hover:-translate-y-1 transition-all">Save Quiz</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                <QuizWorkspace
+                    quiz={editingQuiz}
+                    allLessons={allLessons}
+                    onClose={() => setIsQuizModalOpen(false)}
+                    onSave={async (formData: FormData) => {
+                        const result = await saveQuizAction(formData);
+                        if (result.success) setIsQuizModalOpen(false);
+                        else alert("Failed to save quiz");
+                    }}
+                />
             )}
 
-            {/* Lesson Block Editor Modal */}
+            {/* Lesson Architect Workspace */}
             {isBlockEditorOpen && (
-                <LessonBlockEditor
-                    isOpen={isBlockEditorOpen}
-                    onClose={() => setIsBlockEditorOpen(false)}
+                <LessonArchitect
                     lesson={blockEditingLesson}
                     allVocabulary={allVocabulary}
                     allQuizzes={allQuizzes}
+                    allModules={initialModules}
+                    onClose={() => setIsBlockEditorOpen(false)}
+                    onSave={async (formData: FormData) => {
+                        const result = await saveLessonAction(formData);
+                        if (result.success) setIsBlockEditorOpen(false);
+                        else alert("Failed to save lesson: " + result.error);
+                    }}
                 />
             )}
         </div>

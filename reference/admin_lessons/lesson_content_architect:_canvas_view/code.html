@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson Content Architect: Canvas View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.batik-pattern {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBJCAVRHqlEGatg1wiDqjPhdrGIUKq9KAZ85DDNvx3e4OMd50aQj1O4ILpmiXKn1nsl1D3Fr59EIELlhrxEFJMUvRGiAc_Df9z145l4w3sJ7rK1A7bj4WHy7aWhdcNioZjYcmsaazG3E7CS_fyICK5QepW0b6k5V7nPHLJ2M-z-vHOLua80GWyPl4rUKdFY0DxbQbXIFc6eDOdxD3SBDJD5Z62UMyH5Kiv_LF4OVJ_Z3Iw3HnUzDE-BZ-2KpsY8ev99NOLq6EpmvBw);
+    opacity: 0.03
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-solid border-[#283039] bg-background-dark/80 backdrop-blur-md px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">AyoSinau Admin</h2>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-[#9dabb9] hover:text-white text-sm font-medium transition-colors" href="#">Dashboard</a>
+<a class="text-[#9dabb9] hover:text-white text-sm font-medium transition-colors" href="#">Courses</a>
+<a class="text-white text-sm font-medium border-b-2 border-primary pb-1" href="#">Content Architect</a>
+<a class="text-[#9dabb9] hover:text-white text-sm font-medium transition-colors" href="#">Users</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex gap-2">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90">
+<span class="truncate">Save Changes</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-9 px-4 bg-[#283039] text-white text-sm font-bold transition-all hover:bg-[#343e49]">
+<span class="truncate">Preview</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-[#283039]"></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-[#283039]" data-alt="Admin user profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMAVMmPPS2NFg4fRebAWpelSU2rIhxPHU7kEdP0sv7gMUdw3kCEXiu4yJz4pXm0sX6RABF_XC7JM3dQqv--OWBdsohKKPVpUbtQ-GS3AXrxTTI1ZFUKAjiGRTRbNGgXDiyKcqM35ve--QqyCEK5kSVWDRrqfkEgNhKWmk_Y0LMpw_VAlbxRC1TIs-ToJKia2NGV6P1IMwva_kmqHguohs8c9cUA-9Zf7xfPSqxdb75_wTr_5_w7KOt1zX068fH-L3452SvaiQyHs4");'></div>
+</div>
+</header>
+<div class="flex grow h-[calc(100vh-64px)] overflow-hidden">
+<!-- Left Sidebar: Block Palette -->
+<aside class="w-64 border-r border-[#283039] bg-[#111418] flex flex-col">
+<div class="p-6">
+<h3 class="text-white text-lg font-bold mb-1">Block Palette</h3>
+<p class="text-[#9dabb9] text-xs font-normal">Drag and drop to canvas</p>
+</div>
+<div class="flex-1 overflow-y-auto px-4 pb-6 space-y-6">
+<!-- Text Blocks Section -->
+<section>
+<h4 class="text-[#9dabb9] text-[10px] font-bold uppercase tracking-wider mb-3 px-2">Text Content</h4>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#283039] border border-transparent hover:border-primary/50 cursor-grab group transition-all">
+<span class="material-symbols-outlined text-primary text-xl">subject</span>
+<span class="text-white text-sm font-medium">Paragraph</span>
+<span class="material-symbols-outlined text-[#4f5b66] ml-auto group-hover:text-white text-lg">drag_indicator</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#283039] border border-transparent hover:border-primary/50 cursor-grab group transition-all">
+<span class="material-symbols-outlined text-primary text-xl">format_size</span>
+<span class="text-white text-sm font-medium">Heading</span>
+<span class="material-symbols-outlined text-[#4f5b66] ml-auto group-hover:text-white text-lg">drag_indicator</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#283039] border border-transparent hover:border-primary/50 cursor-grab group transition-all">
+<span class="material-symbols-outlined text-primary text-xl">format_list_bulleted</span>
+<span class="text-white text-sm font-medium">List Item</span>
+<span class="material-symbols-outlined text-[#4f5b66] ml-auto group-hover:text-white text-lg">drag_indicator</span>
+</div>
+</div>
+</section>
+<!-- Media Blocks Section -->
+<section>
+<h4 class="text-[#9dabb9] text-[10px] font-bold uppercase tracking-wider mb-3 px-2">Media</h4>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#283039] border border-transparent hover:border-primary/50 cursor-grab group transition-all">
+<span class="material-symbols-outlined text-primary text-xl">image</span>
+<span class="text-white text-sm font-medium">Image</span>
+<span class="material-symbols-outlined text-[#4f5b66] ml-auto group-hover:text-white text-lg">drag_indicator</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#283039] border border-transparent hover:border-primary/50 cursor-grab group transition-all">
+<span class="material-symbols-outlined text-primary text-xl">play_circle</span>
+<span class="text-white text-sm font-medium">Video Player</span>
+<span class="material-symbols-outlined text-[#4f5b66] ml-auto group-hover:text-white text-lg">drag_indicator</span>
+</div>
+</div>
+</section>
+<!-- Assessments Section -->
+<section>
+<h4 class="text-[#9dabb9] text-[10px] font-bold uppercase tracking-wider mb-3 px-2">Assessments</h4>
+<div class="grid grid-cols-1 gap-2">
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#283039] border border-transparent hover:border-primary/50 cursor-grab group transition-all">
+<span class="material-symbols-outlined text-primary text-xl">quiz</span>
+<span class="text-white text-sm font-medium">Multiple Choice</span>
+<span class="material-symbols-outlined text-[#4f5b66] ml-auto group-hover:text-white text-lg">drag_indicator</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#283039] border border-transparent hover:border-primary/50 cursor-grab group transition-all">
+<span class="material-symbols-outlined text-primary text-xl">swipe</span>
+<span class="text-white text-sm font-medium">Match Pairs</span>
+<span class="material-symbols-outlined text-[#4f5b66] ml-auto group-hover:text-white text-lg">drag_indicator</span>
+</div>
+</div>
+</section>
+</div>
+<div class="p-4 border-t border-[#283039]">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg h-10 bg-primary/10 border border-primary/20 text-primary text-xs font-bold hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-lg">add_box</span>
+<span>Add Custom Block</span>
+</button>
+</div>
+</aside>
+<!-- Main Content: Canvas -->
+<main class="flex-1 flex flex-col relative overflow-hidden">
+<!-- Batik Overlay -->
+<div class="absolute inset-0 batik-pattern pointer-events-none"></div>
+<!-- Page Heading Area -->
+<div class="px-8 py-6 z-10">
+<div class="flex items-center gap-2 mb-2">
+<a class="text-[#9dabb9] text-xs font-medium hover:text-white transition-colors" href="#">Admin</a>
+<span class="text-[#4f5b66] text-xs font-medium">/</span>
+<span class="text-white text-xs font-medium">Content Architect</span>
+</div>
+<div class="flex flex-wrap justify-between items-end gap-3">
+<div class="flex flex-col gap-1">
+<h1 class="text-white text-3xl font-black tracking-tight">Architecture: Introduction to Ngoko</h1>
+<p class="text-[#9dabb9] text-sm font-normal">Manage and sequence your lesson blocks for the Javanese Foundations course</p>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/20">
+<span class="truncate">Publish Lesson</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Canvas Area -->
+<div class="flex-1 overflow-y-auto px-8 pb-12 z-10">
+<div class="max-w-4xl mx-auto flex flex-col gap-4">
+<div class="flex items-center gap-2 px-2 py-2">
+<h2 class="text-white text-lg font-bold">Lesson Canvas</h2>
+<div class="h-[1px] flex-1 bg-[#283039]"></div>
+<span class="text-xs text-[#9dabb9] font-medium">3 Blocks Active</span>
+</div>
+<!-- Block 1: Introduction -->
+<div class="group relative flex items-start gap-4 p-5 rounded-xl bg-[#1e242a] border border-[#283039] hover:border-primary/40 transition-all shadow-xl">
+<div class="flex flex-col items-center gap-1 opacity-40 group-hover:opacity-100 cursor-grab">
+<span class="material-symbols-outlined">drag_indicator</span>
+<div class="w-1 h-12 bg-[#283039] rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-primary/20 text-primary border border-primary/30">TEXT BLOCK</span>
+<h3 class="text-white font-bold">Introduction to Ngoko</h3>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 hover:bg-[#283039] rounded text-[#9dabb9] hover:text-white transition-all"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 hover:bg-[#283039] rounded text-[#9dabb9] hover:text-white transition-all"><span class="material-symbols-outlined text-lg">content_copy</span></button>
+<button class="p-1.5 hover:bg-red-500/10 rounded text-[#9dabb9] hover:text-red-400 transition-all"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+<p class="text-[#9dabb9] text-sm leading-relaxed line-clamp-2">
+                                Ngoko is the most common level of the Javanese language. It is used among friends, equals, and towards younger people. This block introduces the phonetic rules...
+                            </p>
+</div>
+</div>
+<!-- Block 2: Video -->
+<div class="group relative flex items-start gap-4 p-5 rounded-xl bg-[#1e242a] border border-primary transition-all shadow-xl ring-1 ring-primary/30">
+<div class="flex flex-col items-center gap-1 opacity-100 cursor-grab text-primary">
+<span class="material-symbols-outlined">drag_indicator</span>
+<div class="w-1 h-12 bg-primary/30 rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">VIDEO MEDIA</span>
+<h3 class="text-white font-bold">Basic Politeness Levels</h3>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 bg-primary text-white rounded transition-all shadow-md shadow-primary/20"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 hover:bg-[#283039] rounded text-[#9dabb9] hover:text-white transition-all"><span class="material-symbols-outlined text-lg">content_copy</span></button>
+<button class="p-1.5 hover:bg-red-500/10 rounded text-[#9dabb9] hover:text-red-400 transition-all"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-32 h-20 rounded-lg bg-[#111418] flex items-center justify-center border border-[#283039] overflow-hidden group/thumb relative" data-alt="Video thumbnail placeholder">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+<span class="material-symbols-outlined text-primary text-3xl">play_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-[#9dabb9] text-sm italic mb-1">Source: vimeo.com/77382109</p>
+<p class="text-white/60 text-xs">Video duration: 04:32 • Auto-play disabled</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Block 3: Quiz -->
+<div class="group relative flex items-start gap-4 p-5 rounded-xl bg-[#1e242a] border border-[#283039] hover:border-primary/40 transition-all shadow-xl">
+<div class="flex flex-col items-center gap-1 opacity-40 group-hover:opacity-100 cursor-grab">
+<span class="material-symbols-outlined">drag_indicator</span>
+<div class="w-1 h-12 bg-[#283039] rounded-full"></div>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">ASSESSMENT</span>
+<h3 class="text-white font-bold">Vocabulary Checkpoint</h3>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 hover:bg-[#283039] rounded text-[#9dabb9] hover:text-white transition-all"><span class="material-symbols-outlined text-lg">edit</span></button>
+<button class="p-1.5 hover:bg-[#283039] rounded text-[#9dabb9] hover:text-white transition-all"><span class="material-symbols-outlined text-lg">content_copy</span></button>
+<button class="p-1.5 hover:bg-red-500/10 rounded text-[#9dabb9] hover:text-red-400 transition-all"><span class="material-symbols-outlined text-lg">delete</span></button>
+</div>
+</div>
+<div class="bg-[#111418] p-3 rounded-lg border border-[#283039]">
+<p class="text-[#9dabb9] text-xs font-medium uppercase tracking-widest mb-2">5 Questions Multiple Choice</p>
+<div class="flex items-center gap-2">
+<div class="flex -space-x-1">
+<div class="w-6 h-6 rounded-full bg-emerald-500/20 border border-[#1e242a] flex items-center justify-center text-[10px] text-emerald-400">1</div>
+<div class="w-6 h-6 rounded-full bg-emerald-500/20 border border-[#1e242a] flex items-center justify-center text-[10px] text-emerald-400">2</div>
+<div class="w-6 h-6 rounded-full bg-[#283039] border border-[#1e242a] flex items-center justify-center text-[10px] text-[#9dabb9]">3</div>
+</div>
+<span class="text-[#4f5b66] text-xs">• Draft status</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Drop Target -->
+<div class="border-2 border-dashed border-[#283039] rounded-xl p-8 flex flex-col items-center justify-center text-[#4f5b66] hover:border-primary/50 hover:text-primary transition-all cursor-pointer">
+<span class="material-symbols-outlined text-4xl mb-2">add_circle</span>
+<p class="text-sm font-bold tracking-tight">Drop a block here or click to add</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Right Sidebar: Metadata & Settings -->
+<aside class="w-72 border-l border-[#283039] bg-[#111418] flex flex-col">
+<div class="p-6">
+<h3 class="text-white text-base font-bold mb-4">Lesson Metadata</h3>
+<div class="space-y-6">
+<!-- Status Card -->
+<div class="p-4 rounded-xl bg-[#1e242a] border border-[#283039]">
+<label class="text-[#9dabb9] text-[10px] font-bold uppercase tracking-wider mb-2 block">Status</label>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="text-white text-sm font-medium">Drafting</span>
+</div>
+<div class="h-1.5 w-full bg-[#283039] rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%] rounded-full"></div>
+</div>
+<p class="text-[10px] text-[#9dabb9] mt-2">65% complete to publish readiness</p>
+</div>
+<!-- General Info -->
+<div class="space-y-4">
+<div>
+<label class="text-[#9dabb9] text-[10px] font-bold uppercase tracking-wider mb-1 block">Module Association</label>
+<p class="text-white text-sm font-medium">Javanese Basics 101</p>
+<button class="text-primary text-[10px] font-bold mt-1 hover:underline">Change Module</button>
+</div>
+<div>
+<label class="text-[#9dabb9] text-[10px] font-bold uppercase tracking-wider mb-1 block">Est. Completion Time</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#4f5b66] text-base">schedule</span>
+<span class="text-white text-sm font-medium">12 Minutes</span>
+</div>
+</div>
+<div>
+<label class="text-[#9dabb9] text-[10px] font-bold uppercase tracking-wider mb-1 block">Last Modified</label>
+<p class="text-white text-sm font-medium">Today, 14:45 PM</p>
+<p class="text-[#4f5b66] text-[10px]">by Admin: Felix W.</p>
+</div>
+</div>
+<div class="pt-4 border-t border-[#283039]">
+<h4 class="text-white text-xs font-bold mb-3">Lesson Settings</h4>
+<div class="space-y-3">
+<label class="flex items-center justify-between cursor-pointer">
+<span class="text-xs text-[#9dabb9]">Force Sequential</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4 bg-[#283039] rounded-full peer peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-4"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer">
+<span class="text-xs text-[#9dabb9]">Allow Comments</span>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4 bg-[#283039] rounded-full peer peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:after:translate-x-4"></div>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto p-4 flex flex-col gap-2">
+<button class="w-full flex items-center justify-center gap-2 rounded-lg h-10 border border-[#283039] text-[#9dabb9] text-xs font-bold hover:bg-[#283039] hover:text-white transition-all">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span>Advanced Configurations</span>
+</button>
+</div>
+</aside>
+</div>
+</body></html>

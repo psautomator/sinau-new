@@ -194,6 +194,36 @@ export default function BlockEditorDialog({
                             </div>
                         </div>
                     )}
+
+                    {editedBlock.type === "EMBEDDED_MEDIA" && (
+                        <div className="space-y-6 pt-6 border-t border-slate-100 dark:border-slate-700/50">
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Media Type</label>
+                                    <select
+                                        className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-bold outline-none"
+                                        value={editedBlock.content.mediaType || "YOUTUBE"}
+                                        onChange={(e) => handleContentChange("mediaType", e.target.value)}
+                                    >
+                                        <option value="YOUTUBE">YouTube</option>
+                                        <option value="VIMEO">Vimeo</option>
+                                        <option value="MP4">Direct MP4 Video</option>
+                                        <option value="MP3">Direct MP3 Audio</option>
+                                        <option value="IMAGE">Direct Image URL</option>
+                                    </select>
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Source URL</label>
+                                    <input
+                                        className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-2xl font-bold outline-none"
+                                        value={editedBlock.content.mediaUrl || ""}
+                                        onChange={(e) => handleContentChange("mediaUrl", e.target.value)}
+                                        placeholder="https://youtube.com/watch?v=..."
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* Footer */}
