@@ -203,6 +203,21 @@ export async function updateVocabularyAction(id: string, formData: FormData) {
         return { success: false, error: "Failed to update vocabulary item" };
     }
 }
+
+export async function bulkUploadVocabAction(words: any[]) {
+    try {
+        const { bulkUpsertVocabulary } = await import("@/dal/vocabulary");
+        const result = await bulkUpsertVocabulary(words);
+
+        const { revalidatePath } = await import("next/cache");
+        revalidatePath("/admin");
+
+        return { success: true, ...result };
+    } catch (error) {
+        console.error("Failed bulk upload:", error);
+        return { success: false, error: "Bulk upload failed" };
+    }
+}
 export async function bulkMatchAudioAction() {
     try {
         const { bulkMatchAudioFiles } = await import("@/dal/vocabulary");

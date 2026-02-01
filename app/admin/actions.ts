@@ -15,14 +15,16 @@ export async function saveLessonAction(formData: FormData) {
         const moduleId = formData.get("moduleId") as string;
         const quizId = formData.get("quizId") as string;
         const published = formData.get("published") === "on";
+        const level = formData.get("level") as string;
+        const languageStyle = formData.get("languageStyle") as string;
 
         const contentRaw = formData.get("content") as string;
         const content = contentRaw ? JSON.parse(contentRaw) : undefined;
 
         if (id) {
-            await updateLesson(id, { title, slug, description, order, moduleId, content, quizId, published });
+            await updateLesson(id, { title, slug, description, order, moduleId, content, quizId, published, level, languageStyle });
         } else {
-            await createLesson({ title, slug, description, order, moduleId, content: content || {}, quizId, published });
+            await createLesson({ title, slug, description, order, moduleId, content: content || {}, quizId, published, level, languageStyle });
         }
 
         revalidatePath("/admin");

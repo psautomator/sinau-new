@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin: Auto-match Audio Tool - AyoSinau</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.batik-bg {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDyO7tmXFszsK0DVoGZfff-pf4ZnvlFwMk_iucsfKmB2SlTHanyTaKO66AJ5X1yHZV-z96jYPdkc_obXmsriyNyv2F0xxjJixE-fkGxuTzjxNGgtYXwJmofUe_-at0pEmtJUtWJF6ajxYQfuIIH_dvT77951r4pPyEp-SlF7sisr2WPVi5OBTk_i5bwKUvJufIPQvxP9G1x3syPM2KBv0E2aZFTJtSGKv5wne27mFHHDxk72wKLf5XOPUBQpP-EGPiMd7ZZQ3bV9fA);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0d141b] transition-colors duration-200">
+<!-- Background Watermark -->
+<div class="fixed inset-0 batik-bg z-0"></div>
+<div class="relative flex min-h-screen w-full z-10">
+<!-- Side Navigation -->
+<aside class="w-72 flex flex-col border-r border-[#e7edf3] dark:border-slate-800 bg-white dark:bg-[#15202b] h-screen sticky top-0">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-primary rounded-lg p-1.5">
+<svg class="size-6 text-white" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<div>
+<h1 class="text-lg font-bold tracking-tight dark:text-white">AyoSinau Admin</h1>
+<p class="text-xs text-[#4c739a] font-medium">System Control</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">translate</span>
+<span class="text-sm font-medium">Vocabulary</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">graphic_eq</span>
+<span class="text-sm font-medium">Audio Matcher</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">group</span>
+<span class="text-sm font-medium">User Management</span>
+</a>
+<div class="my-4 border-t border-[#e7edf3] dark:border-slate-800"></div>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-[#e7edf3] dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center overflow-hidden">
+<img alt="Admin user avatar thumbnail" class="w-full h-full object-cover" data-alt="Admin user avatar thumbnail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjKR5lkwXeO7ferk051cK-yxix-qnLf8f0vSufR_AyHU1h2uB41MCrP5hXElsksOdaZyjE3Imd9XyNMGbL-HqYHY3dgm4GAsdYzW0Iy4pxE0yH-azC2Z7bFMbc-ZFYA2tHXcNEGMizEcQNrHFSy6ZWr4OTLfjjH4iW0IUfbZ9qmqhmR7jWth4zNy9NxSVa10HPQzcOspSXhJNUgZca7NSvyxetN8QMebdr0KktjD6s6j-HwPPO58rJ_zSFyqPGVWmdRlu56PyDLS8"/>
+</div>
+<div>
+<p class="text-sm font-bold dark:text-white">Admin User</p>
+<p class="text-xs text-[#4c739a]">System Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Header / Top Bar -->
+<header class="h-16 flex items-center justify-between px-10 bg-white/80 dark:bg-[#15202b]/80 backdrop-blur-md border-b border-[#e7edf3] dark:border-slate-800 sticky top-0 z-20">
+<div class="flex items-center gap-4">
+<span class="text-sm text-[#4c739a]">Tools / Audio Matcher</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-slate-400 text-lg mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm p-0 w-48 text-slate-700 dark:text-slate-200" placeholder="Search words..." type="text"/>
+</div>
+<button class="relative text-[#4c739a] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 size-2 bg-red-500 rounded-full border-2 border-white dark:border-[#15202b]"></span>
+</button>
+<button class="text-[#4c739a] hover:text-primary transition-colors">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</header>
+<!-- Tool Content -->
+<div class="p-10 max-w-6xl w-full mx-auto">
+<!-- Page Heading -->
+<div class="mb-8">
+<h2 class="text-3xl font-black tracking-tight dark:text-white mb-2">Auto-match Audio Tool</h2>
+<p class="text-[#4c739a] max-w-2xl leading-relaxed">Automatically scan your vocabulary database and link items with corresponding audio files based on naming conventions (e.g., word_name.mp3).</p>
+</div>
+<!-- Progress Section (Simulation of running state) -->
+<div class="bg-white dark:bg-[#15202b] rounded-xl border border-[#e7edf3] dark:border-slate-800 p-6 mb-8 shadow-sm">
+<div class="flex flex-col gap-3">
+<div class="flex gap-6 justify-between items-end">
+<div>
+<h3 class="text-[#0d141b] dark:text-white text-lg font-bold leading-none mb-1">Scanning Files</h3>
+<p class="text-[#4c739a] text-sm">Validating naming conventions and file existence...</p>
+</div>
+<p class="text-primary text-2xl font-black">75%</p>
+</div>
+<div class="h-3 w-full rounded-full bg-slate-100 dark:bg-slate-800 overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+<p class="text-[#4c739a] text-xs font-medium">Processing 120 of 160 items</p>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+<div class="bg-white dark:bg-[#15202b] p-6 rounded-xl border border-[#e7edf3] dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-4 mb-3">
+<div class="size-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">calendar_today</span>
+</div>
+<p class="text-sm font-semibold text-[#4c739a]">Last Scan Date</p>
+</div>
+<p class="text-2xl font-bold dark:text-white">Oct 24, 2023</p>
+</div>
+<div class="bg-white dark:bg-[#15202b] p-6 rounded-xl border border-[#e7edf3] dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-4 mb-3">
+<div class="size-10 rounded-lg bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600">
+<span class="material-symbols-outlined">audio_file</span>
+</div>
+<p class="text-sm font-semibold text-[#4c739a]">Unmatched Words</p>
+</div>
+<p class="text-2xl font-bold dark:text-white">15 items</p>
+</div>
+<div class="flex items-center justify-center">
+<button class="w-full h-full min-h-[110px] bg-primary hover:bg-primary/90 text-white rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-[0.98] flex items-center justify-center gap-3">
+<span class="material-symbols-outlined text-2xl">play_circle</span>
+<span class="text-lg font-bold">Start Audio Match</span>
+</button>
+</div>
+</div>
+<!-- Results Area -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Successfully Matched -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-500">check_circle</span>
+                                Successfully Matched
+                            </h3>
+<span class="px-2.5 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-bold">145 Words</span>
+</div>
+<div class="bg-white dark:bg-[#15202b] rounded-xl border border-[#e7edf3] dark:border-slate-800 overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-4 py-3 text-xs font-bold text-[#4c739a] uppercase tracking-wider border-b border-[#e7edf3] dark:border-slate-800">Word (Javanese)</th>
+<th class="px-4 py-3 text-xs font-bold text-[#4c739a] uppercase tracking-wider border-b border-[#e7edf3] dark:border-slate-800">File Name</th>
+<th class="px-4 py-3 text-xs font-bold text-[#4c739a] uppercase tracking-wider border-b border-[#e7edf3] dark:border-slate-800 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7edf3] dark:divide-slate-800">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Maturnuwun</td>
+<td class="px-4 py-4 text-sm text-[#4c739a] italic">maturnuwun.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500 text-xl">link</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Sugeng Enjang</td>
+<td class="px-4 py-4 text-sm text-[#4c739a] italic">sugeng_enjang.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500 text-xl">link</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Pripun Kabare</td>
+<td class="px-4 py-4 text-sm text-[#4c739a] italic">pripun_kabare.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500 text-xl">link</span>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Sami-sami</td>
+<td class="px-4 py-4 text-sm text-[#4c739a] italic">sami_sami.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500 text-xl">link</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 text-center">
+<button class="text-primary text-xs font-bold hover:underline">View All Matched Files</button>
+</div>
+</div>
+</div>
+<!-- Missing Audio Files -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-bold dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-red-500">warning</span>
+                                Missing Audio Files
+                            </h3>
+<span class="px-2.5 py-0.5 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-full text-xs font-bold">15 Missing</span>
+</div>
+<div class="bg-white dark:bg-[#15202b] rounded-xl border border-[#e7edf3] dark:border-slate-800 overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50 dark:bg-slate-800/50">
+<th class="px-4 py-3 text-xs font-bold text-[#4c739a] uppercase tracking-wider border-b border-[#e7edf3] dark:border-slate-800">Word (Javanese)</th>
+<th class="px-4 py-3 text-xs font-bold text-[#4c739a] uppercase tracking-wider border-b border-[#e7edf3] dark:border-slate-800">Expected File</th>
+<th class="px-4 py-3 text-xs font-bold text-[#4c739a] uppercase tracking-wider border-b border-[#e7edf3] dark:border-slate-800 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#e7edf3] dark:divide-slate-800">
+<tr class="hover:bg-red-50/50 dark:hover:bg-red-900/10 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Nyuwun Sewu</td>
+<td class="px-4 py-4 text-sm text-red-600 dark:text-red-400 italic font-medium">nyuwun_sewu.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-red-500 text-xl">error</span>
+</td>
+</tr>
+<tr class="hover:bg-red-50/50 dark:hover:bg-red-900/10 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Matur Nuwun Sanget</td>
+<td class="px-4 py-4 text-sm text-red-600 dark:text-red-400 italic font-medium">matur_sanget.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-red-500 text-xl">error</span>
+</td>
+</tr>
+<tr class="hover:bg-red-50/50 dark:hover:bg-red-900/10 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Nderek Langkung</td>
+<td class="px-4 py-4 text-sm text-red-600 dark:text-red-400 italic font-medium">nderek_langkung.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-red-500 text-xl">error</span>
+</td>
+</tr>
+<tr class="hover:bg-red-50/50 dark:hover:bg-red-900/10 transition-colors">
+<td class="px-4 py-4 text-sm font-medium dark:text-white">Sugeng Rawuh</td>
+<td class="px-4 py-4 text-sm text-red-600 dark:text-red-400 italic font-medium">sugeng_rawuh.mp3</td>
+<td class="px-4 py-4 text-right">
+<span class="material-symbols-outlined text-red-500 text-xl">error</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="p-4 flex flex-col items-center gap-3 bg-red-50/30 dark:bg-red-900/10">
+<p class="text-xs text-red-700 dark:text-red-400 font-medium">11 more items missing audio files</p>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-red-200 dark:border-red-900/50 rounded-lg text-xs font-bold text-red-700 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+                                    Export Missing List (.csv)
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto p-10 border-t border-[#e7edf3] dark:border-slate-800">
+<div class="flex items-center justify-between text-[#4c739a] text-sm">
+<p>© 2023 AyoSinau Admin Portal. All rights reserved.</p>
+<div class="flex gap-6 font-medium">
+<a class="hover:text-primary" href="#">System Health</a>
+<a class="hover:text-primary" href="#">API Docs</a>
+<a class="hover:text-primary" href="#">Support</a>
+</div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

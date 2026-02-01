@@ -12,6 +12,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { motion, AnimatePresence } from "framer-motion";
 import BlockEditorDialog from "./BlockEditorDialog";
+import { extractLessonMetadata } from "@/lib/metadata-utils";
 
 interface LessonArchitectProps {
     lesson: any;
@@ -37,6 +38,8 @@ export default function LessonArchitect({
     const [moduleId, setModuleId] = useState(lesson?.moduleId || "");
     const [slug, setSlug] = useState(lesson?.slug || "");
     const [published, setPublished] = useState(lesson?.published || false);
+    const [level, setLevel] = useState(lesson?.level || "A1");
+    const [languageStyle, setLanguageStyle] = useState(lesson?.languageStyle || "Ngoko");
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
@@ -98,6 +101,20 @@ export default function LessonArchitect({
         setEditingBlock(null);
     };
 
+    const handleAutoDetect = () => {
+        const { level: detectedLevel, languageStyle: detectedStyle } = extractLessonMetadata({
+            description,
+            content: { sections: blocks }
+        });
+
+        if (detectedLevel) setLevel(detectedLevel);
+        if (detectedStyle) setLanguageStyle(detectedStyle);
+
+        if (!detectedLevel && !detectedStyle) {
+            alert("No metadata signatures detected in content.");
+        }
+    };
+
     const handleSave = async () => {
         setIsSaving(true);
         try {
@@ -108,6 +125,8 @@ export default function LessonArchitect({
             formData.append("description", description);
             formData.append("moduleId", moduleId);
             formData.append("published", published ? "on" : "off");
+            formData.append("level", level);
+            formData.append("languageStyle", languageStyle);
             formData.append("content", JSON.stringify({ sections: blocks }));
 
             await onSave(formData);
@@ -354,7 +373,16 @@ export default function LessonArchitect({
                 <aside className="w-80 border-l border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md overflow-y-auto z-10">
                     <div className="p-8 space-y-10">
                         <section>
-                            <h3 className="font-black text-slate-500 text-[10px] uppercase tracking-[0.2em] mb-6">Blueprint Info</h3>
+                            <div className="flex items-center justify-between mb-6">
+                                <h3 className="font-black text-slate-500 text-[10px] uppercase tracking-[0.2em]">Blueprint Info</h3>
+                                <button
+                                    onClick={handleAutoDetect}
+                                    className="p-1.5 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 text-indigo-600 rounded-lg transition-all"
+                                    title="Auto-detect Level & Style from content"
+                                >
+                                    <Sparkles className="w-4 h-4" />
+                                </button>
+                            </div>
                             <div className="space-y-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Lesson Title</label>
@@ -377,6 +405,34 @@ export default function LessonArchitect({
                                             placeholder="lesson-slug"
                                         />
                                         <BookOpen className="absolute left-5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-300" />
+                                    </div>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Level</label>
+                                        <select
+                                            value={level}
+                                            onChange={(e) => setLevel(e.target.value)}
+                                            className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl px-5 py-3 text-[10px] font-black uppercase tracking-widest outline-none transition-all"
+                                        >
+                                            <option value="A1">A1</option>
+                                            <option value="A2">A2</option>
+                                            <option value="B1">B1</option>
+                                            <option value="B2">B2</option>
+                                            <option value="C1">C1</option>
+                                        </select>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Style</label>
+                                        <select
+                                            value={languageStyle}
+                                            onChange={(e) => setLanguageStyle(e.target.value)}
+                                            className="w-full bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl px-5 py-3 text-[10px] font-black uppercase tracking-widest outline-none transition-all"
+                                        >
+                                            <option value="Ngoko">Ngoko</option>
+                                            <option value="Krama">Krama</option>
+                                            <option value="Mixed">Mixed</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

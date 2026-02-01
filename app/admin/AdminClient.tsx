@@ -11,13 +11,22 @@ import {
     updateModuleAction,
     addVocabularyAction,
     updateVocabularyAction,
-    bulkMatchAudioAction
+    bulkMatchAudioAction,
+    bulkUploadVocabAction
 } from "@/app/actions/admin";
-import { saveLessonAction, deleteLessonAction, saveQuizAction, deleteQuizAction, deleteUserAction, toggleLessonPublishAction } from "@/app/actions/admin";
+import {
+    saveLessonAction,
+    deleteLessonAction,
+    saveQuizAction,
+    deleteQuizAction,
+    deleteUserAction,
+    toggleLessonPublishAction
+} from "@/app/admin/actions";
 import LessonBlockEditor from "@/components/admin/LessonBlockEditor";
 import QuizQuestionEditor from "@/components/admin/QuizQuestionEditor";
 import QuizWorkspace from "@/components/admin/QuizWorkspace";
 import LessonArchitect from "@/components/admin/LessonArchitect";
+import VocabularyFullEditor from "@/components/admin/VocabularyFullEditor";
 
 interface AdminClientProps {
     initialModules: any[];
@@ -81,6 +90,8 @@ export default function AdminClient({
     const [editingModule, setEditingModule] = useState<any>(null);
     const [isVocabModalOpen, setIsVocabModalOpen] = useState(false);
     const [editingVocab, setEditingVocab] = useState<any>(null);
+    const [isQuickEditOpen, setIsQuickEditOpen] = useState(false);
+    const [isFullEditorOpen, setIsFullEditorOpen] = useState(false);
     const [isLessonModalOpen, setIsLessonModalOpen] = useState(false);
     const [editingLesson, setEditingLesson] = useState<any>(null);
 
@@ -90,6 +101,8 @@ export default function AdminClient({
     const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
     const [editingQuiz, setEditingQuiz] = useState<any>(null);
     const [isMatching, setIsMatching] = useState(false);
+    const [isImportModalOpen, setIsImportModalOpen] = useState(false);
+    const [previewVocab, setPreviewVocab] = useState<any[]>([]);
 
     const playAudio = (url: string) => {
         const audio = new Audio(url);
@@ -315,7 +328,7 @@ export default function AdminClient({
                                         if (activeTab === 'modules') { setEditingModule(null); setIsModuleModalOpen(true); }
                                         else if (activeTab === 'lessons') { setEditingLesson(null); setIsLessonModalOpen(true); }
                                         else if (activeTab === 'quizzes') { setEditingQuiz(null); setIsQuizModalOpen(true); }
-                                        else { setEditingVocab(null); setIsVocabModalOpen(true); }
+                                        else { setEditingVocab(null); setIsFullEditorOpen(true); }
                                     }}
                                     className="w-full md:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 rounded-2xl text-sm font-black uppercase tracking-widest shadow-xl shadow-blue-600/20 transition-all hover:-translate-y-1 active:scale-95"
                                 >
@@ -331,6 +344,16 @@ export default function AdminClient({
                                     >
                                         <span className="material-symbols-outlined text-[20px]">{isMatching ? 'sync' : 'auto_fix_high'}</span>
                                         <span>{isMatching ? 'Matching...' : 'Auto-match Audio'}</span>
+                                    </button>
+                                )}
+
+                                {activeTab === 'vocabulary' && (
+                                    <button
+                                        onClick={() => setIsImportModalOpen(true)}
+                                        className="w-full md:w-auto flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 text-white px-6 py-3.5 rounded-2xl text-sm font-black uppercase tracking-widest shadow-xl shadow-slate-900/10 transition-all hover:-translate-y-1 active:scale-95"
+                                    >
+                                        <span className="material-symbols-outlined text-[20px]">upload_file</span>
+                                        <span>Bulk Import</span>
                                     </button>
                                 )}
                             </div>
@@ -405,15 +428,17 @@ export default function AdminClient({
                                     <>
                                         <select
                                             className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={searchParams.get("moduleId") || ""}
                                             onChange={(e) => updateFilters({ moduleId: e.target.value })}
                                         >
                                             <option value="">All Modules</option>
-                                            {initialModules.map(m => (
+                                            {(allModules || []).map(m => (
                                                 <option key={m.id} value={m.id}>{m.title}</option>
                                             ))}
                                         </select>
                                         <select
                                             className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={searchParams.get("lessonLevel") || ""}
                                             onChange={(e) => updateFilters({ lessonLevel: e.target.value })}
                                         >
                                             <option value="">All Levels</option>
@@ -421,15 +446,17 @@ export default function AdminClient({
                                             <option value="A2">A2</option>
                                             <option value="B1">B1</option>
                                             <option value="B2">B2</option>
+                                            <option value="C1">C1</option>
                                         </select>
                                         <select
                                             className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={searchParams.get("lessonStyle") || ""}
                                             onChange={(e) => updateFilters({ lessonStyle: e.target.value })}
                                         >
                                             <option value="">All Styles</option>
                                             <option value="Ngoko">Ngoko</option>
                                             <option value="Krama">Krama</option>
-                                            <option value="Krama Inggil">Krama Inggil</option>
+                                            <option value="Mixed">Mixed</option>
                                         </select>
                                     </>
                                 )}
@@ -507,6 +534,8 @@ export default function AdminClient({
                                                 <>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Lesson Title</th>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Module</th>
+                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Level</th>
+                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Style</th>
                                                     <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Order</th>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
                                                     <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
@@ -621,7 +650,13 @@ export default function AdminClient({
                                                         <p className="text-xs text-slate-500 line-clamp-1">{lesson.description}</p>
                                                     </td>
                                                     <td className="px-8 py-6">
-                                                        <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-[10px] font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest">{lesson.module?.title}</span>
+                                                        <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-[9px] font-black text-slate-500 uppercase tracking-tighter truncate max-w-[100px] block">{lesson.module?.title}</span>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">{lesson.level || 'A1'}</span>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className="px-3 py-1 bg-amber-50 dark:bg-amber-900/20 rounded-lg text-[10px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest">{lesson.languageStyle || 'Ngoko'}</span>
                                                     </td>
                                                     <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{lesson.order}</td>
                                                     <td className="px-8 py-6">
@@ -660,7 +695,7 @@ export default function AdminClient({
                                             ))
                                         ) : activeTab === 'vocabulary' ? (
                                             initialVocabulary.map((vocab) => (
-                                                <tr key={vocab.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 cursor-pointer transition-colors" onClick={() => setSelectedVocab(vocab)}>
+                                                <tr key={vocab.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 cursor-pointer transition-colors" onClick={() => { setEditingVocab(vocab); setIsQuickEditOpen(true); }}>
                                                     <td className="px-8 py-6">
                                                         <div className="flex items-center gap-3">
                                                             <span className="text-base font-black text-slate-900 dark:text-white tracking-tight">{vocab.word}</span>
@@ -689,7 +724,7 @@ export default function AdminClient({
                                                                     <span className="material-symbols-outlined">volume_up</span>
                                                                 </button>
                                                             )}
-                                                            <button onClick={() => { setEditingVocab(vocab); setIsVocabModalOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
+                                                            <button onClick={() => { setEditingVocab(vocab); setIsFullEditorOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
                                                                 <span className="material-symbols-outlined">edit</span>
                                                             </button>
                                                             <button onClick={() => handleDeleteVocabulary(vocab.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
@@ -1070,6 +1105,24 @@ export default function AdminClient({
                                         </div>
                                         <div className="grid grid-cols-2 gap-4">
                                             <div className="flex flex-col gap-2">
+                                                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Level</label>
+                                                <select name="level" defaultValue={editingLesson?.level || "A1"} className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl font-black text-[10px] uppercase tracking-widest">
+                                                    <option value="A1">A1 (Beginner)</option>
+                                                    <option value="A2">A2 (Elementary)</option>
+                                                    <option value="B1">B1 (Intermediate)</option>
+                                                    <option value="B2">B2 (Upper Int)</option>
+                                                    <option value="C1">C1 (Advanced)</option>
+                                                </select>
+                                            </div>
+                                            <div className="flex flex-col gap-2">
+                                                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Style</label>
+                                                <select name="languageStyle" defaultValue={editingLesson?.languageStyle || "Ngoko"} className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl font-black text-[10px] uppercase tracking-widest">
+                                                    <option value="Ngoko">Ngoko (Informal)</option>
+                                                    <option value="Krama">Krama (Formal)</option>
+                                                    <option value="Mixed">Mixed</option>
+                                                </select>
+                                            </div>
+                                            <div className="flex flex-col gap-2">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Order</label>
                                                 <input name="order" type="number" defaultValue={editingLesson?.order || 0} className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-bold" />
                                             </div>
@@ -1155,6 +1208,381 @@ export default function AdminClient({
                         const result = await saveLessonAction(formData);
                         if (result.success) setIsBlockEditorOpen(false);
                         else alert("Failed to save lesson: " + result.error);
+                    }}
+                />
+            )}
+
+            {/* Quick Edit Drawer for Vocabulary */}
+            <aside className={`fixed inset-y-0 right-0 w-full sm:w-[520px] bg-white dark:bg-slate-900 shadow-[0_0_50px_rgba(0,0,0,0.2)] border-l border-slate-200 dark:border-slate-800 flex flex-col z-[150] transition-transform duration-500 ease-in-out ${isQuickEditOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                {/* Drawer Header */}
+                <div className="p-8 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-10">
+                    <div>
+                        <h2 className="text-2xl font-black tracking-tight text-slate-900 dark:text-white">{editingVocab ? 'Quick Edit Entry' : 'New Vocabulary'}</h2>
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Direct dictionary control</p>
+                    </div>
+                    <button
+                        onClick={() => setIsQuickEditOpen(false)}
+                        className="p-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl text-slate-400 transition-all active:scale-90"
+                    >
+                        <span className="material-symbols-outlined text-2xl">close</span>
+                    </button>
+                </div>
+
+                {/* Drawer Body - Form */}
+                <div className="flex-1 overflow-y-auto p-8 custom-scrollbar relative">
+                    <form
+                        id="quick-edit-form"
+                        action={async (formData) => {
+                            const result = editingVocab
+                                ? await updateVocabularyAction(editingVocab.id, formData)
+                                : await addVocabularyAction(formData);
+                            if (result.success) {
+                                setIsQuickEditOpen(false);
+                                router.refresh();
+                            } else {
+                                alert(result.error);
+                            }
+                        }}
+                        className="space-y-8 relative z-10"
+                    >
+                        {/* Word & Translation */}
+                        <div className="space-y-6">
+                            <div className="flex flex-col gap-2">
+                                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600">Javanese Word</label>
+                                <input
+                                    name="word"
+                                    required
+                                    key={editingVocab?.id || 'new'}
+                                    defaultValue={editingVocab?.word}
+                                    className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-3xl font-black text-2xl tracking-tighter focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-300"
+                                    placeholder="Enter word..."
+                                />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <label className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Dutch Translation</label>
+                                <input
+                                    name="translation"
+                                    required
+                                    key={editingVocab?.id ? `trans-${editingVocab.id}` : 'new-trans'}
+                                    defaultValue={editingVocab?.translation}
+                                    className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-bold text-lg tracking-tight focus:ring-4 focus:ring-blue-500/10 outline-none transition-all"
+                                    placeholder="Betekenis..."
+                                />
+                            </div>
+                        </div>
+
+                        <div className="h-px bg-slate-100 dark:bg-slate-800" />
+
+                        {/* Metadata Grid */}
+                        <div className="grid grid-cols-2 gap-6">
+                            <div className="flex flex-col gap-2">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Level</label>
+                                <select
+                                    name="level"
+                                    key={editingVocab?.id ? `level-${editingVocab.id}` : 'new-level'}
+                                    defaultValue={editingVocab?.level || 'A1'}
+                                    className="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-black text-xs uppercase tracking-widest outline-none appearance-none"
+                                >
+                                    <option value="A1">A1</option><option value="A2">A2</option><option value="B1">B1</option><option value="C1">C1</option>
+                                </select>
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Formality</label>
+                                <select
+                                    name="formality"
+                                    key={editingVocab?.id ? `formality-${editingVocab.id}` : 'new-formality'}
+                                    defaultValue={editingVocab?.formality || 'NEUTRAL'}
+                                    className="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-black text-xs uppercase tracking-widest outline-none appearance-none"
+                                >
+                                    <option value="NEUTRAL">Neutral</option><option value="NGOKO">Ngoko</option><option value="KRAMA">Krama</option><option value="KRAMA_INGGIL">Krama Inggil</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Category</label>
+                            <select
+                                name="category"
+                                key={editingVocab?.id ? `category-${editingVocab.id}` : 'new-category'}
+                                defaultValue={editingVocab?.category || ''}
+                                className="w-full px-5 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-black text-xs uppercase tracking-widest outline-none appearance-none"
+                            >
+                                <option value="">General</option>
+                                <option value="Begroeting">Begroeting</option>
+                                <option value="Familie">Familie</option>
+                                <option value="Dagelijks Leven">Dagelijks Leven</option>
+                                <option value="Uitspraak">Uitspraak</option>
+                                <option value="Eten">Eten</option>
+                                <option value="Drinken">Drinken</option>
+                                <option value="School">School</option>
+                                <option value="Lichaamsdelen">Lichaamsdelen</option>
+                                <option value="Dieren">Dieren</option>
+                                <option value="Tijd">Tijd</option>
+                            </select>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Phonetic</label>
+                            <input
+                                name="phonetic"
+                                key={editingVocab?.id ? `phonetic-${editingVocab.id}` : 'new-phonetic'}
+                                defaultValue={editingVocab?.phonetic}
+                                className="w-full px-6 py-3.5 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-medium italic text-slate-500"
+                                placeholder="/phonetic/"
+                            />
+                        </div>
+
+                        <div className="h-px bg-slate-100 dark:bg-slate-800" />
+
+                        {/* Learning Context */}
+                        <div className="space-y-6">
+                            <div className="flex flex-col gap-2">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-indigo-500">Mnemonic / AI Hint</label>
+                                <input
+                                    name="aiHint"
+                                    key={editingVocab?.id ? `hint-${editingVocab.id}` : 'new-hint'}
+                                    defaultValue={editingVocab?.aiHint}
+                                    className="w-full px-6 py-4 bg-indigo-50/30 dark:bg-indigo-900/10 border border-indigo-100/50 dark:border-indigo-900/20 rounded-2xl font-bold text-sm tracking-tight"
+                                    placeholder="Memory hook..."
+                                />
+                            </div>
+                            <div className="space-y-3">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-emerald-600">Contextual Example</label>
+                                <input
+                                    name="exampleJavanese"
+                                    key={editingVocab?.id ? `ex-jv-${editingVocab.id}` : 'new-ex-jv'}
+                                    defaultValue={editingVocab?.exampleJavanese}
+                                    className="w-full px-6 py-4 bg-emerald-50/30 dark:bg-emerald-900/10 border border-emerald-100/50 dark:border-emerald-900/20 rounded-2xl font-black text-sm"
+                                    placeholder="Javanese sentence..."
+                                />
+                                <input
+                                    name="exampleDutch"
+                                    key={editingVocab?.id ? `ex-nl-${editingVocab.id}` : 'new-ex-nl'}
+                                    defaultValue={editingVocab?.exampleDutch}
+                                    className="w-full px-6 py-4 bg-emerald-50/10 dark:bg-emerald-900/5 border border-emerald-100/20 dark:border-emerald-900/10 rounded-2xl font-medium italic text-sm"
+                                    placeholder="Dutch translation..."
+                                />
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <label className="text-[10px] font-black uppercase tracking-widest text-amber-600">Linguistic Notes</label>
+                            <textarea
+                                name="notes"
+                                key={editingVocab?.id ? `notes-${editingVocab.id}` : 'new-notes'}
+                                defaultValue={editingVocab?.notes}
+                                className="w-full px-6 py-4 bg-amber-50/30 dark:bg-amber-900/10 border border-amber-100/50 dark:border-amber-900/20 rounded-2xl font-medium text-sm min-h-[80px] resize-none"
+                                placeholder="Usage tips, cultural context..."
+                            />
+                        </div>
+
+                        <div className="h-px bg-slate-100 dark:bg-slate-800" />
+
+                        {/* Media & Tags */}
+                        <div className="space-y-6">
+                            <div className="flex flex-col gap-2">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Audio Asset Path</label>
+                                <div className="flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800/50 border border-dashed border-slate-300 dark:border-slate-700 rounded-2xl">
+                                    <span className="material-symbols-outlined text-blue-600 p-2">audio_file</span>
+                                    <input
+                                        name="audioUrl"
+                                        key={editingVocab?.id ? `audio-${editingVocab.id}` : 'new-audio'}
+                                        defaultValue={editingVocab?.audioUrl}
+                                        className="flex-1 bg-transparent border-none outline-none text-xs font-bold text-slate-500"
+                                        placeholder="/uploads/filename.mp3"
+                                    />
+                                </div>
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Categorization Tags</label>
+                                <input
+                                    name="tags"
+                                    key={editingVocab?.id ? `tags-${editingVocab.id}` : 'new-tags'}
+                                    defaultValue={editingVocab?.tags?.join(", ")}
+                                    className="w-full px-6 py-4 bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl font-bold text-xs"
+                                    placeholder="Family, travel, food..."
+                                />
+                            </div>
+                        </div>
+
+                        <div className="h-24" />
+                    </form>
+                </div>
+
+                {/* Drawer Footer */}
+                <div className="p-8 border-t border-slate-100 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl sticky bottom-0 z-10">
+                    <button
+                        form="quick-edit-form"
+                        type="submit"
+                        className="w-full py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-[2rem] font-black text-xs uppercase tracking-[0.3em] shadow-2xl shadow-blue-500/30 transition-all hover:-translate-y-1 active:scale-[0.98] active:translate-y-0"
+                    >
+                        {editingVocab ? 'Update Entry' : 'Store Entry'}
+                    </button>
+                </div>
+            </aside>
+
+            {/* Drawer Overlay */}
+            {isQuickEditOpen && (
+                <div
+                    className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-[140] animate-in fade-in duration-500"
+                    onClick={() => setIsQuickEditOpen(false)}
+                />
+            )}
+
+            {/* Bulk Import Modal */}
+            {isImportModalOpen && (
+                <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+                    <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-md" onClick={() => setIsImportModalOpen(false)} />
+                    <div className="relative w-full max-w-5xl bg-white dark:bg-slate-800 rounded-[3rem] shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden flex flex-col max-h-[90vh]">
+                        {/* Modal Header */}
+                        <div className="p-10 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                            <div>
+                                <h2 className="text-4xl font-black tracking-tighter text-slate-900 dark:text-white">Bulk Vocabulary Import</h2>
+                                <p className="text-sm font-bold text-slate-400 mt-2 uppercase tracking-widest">Upload JSON or CSV dictionary files</p>
+                            </div>
+                            <button onClick={() => setIsImportModalOpen(false)} className="p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-2xl transition-all">
+                                <span className="material-symbols-outlined text-3xl">close</span>
+                            </button>
+                        </div>
+
+                        {/* Modal Body */}
+                        <div className="p-10 flex-1 overflow-y-auto custom-scrollbar">
+                            {previewVocab.length === 0 ? (
+                                <div
+                                    className="border-4 border-dashed border-slate-100 dark:border-slate-800 rounded-[3rem] p-20 flex flex-col items-center justify-center text-center gap-6 hover:border-blue-500/30 hover:bg-blue-500/5 transition-all cursor-pointer group"
+                                    onClick={() => document.getElementById('vocab-upload')?.click()}
+                                    onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                                    onDrop={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        const file = e.dataTransfer.files[0];
+                                        if (file) {
+                                            const reader = new FileReader();
+                                            reader.onload = (re) => {
+                                                try {
+                                                    const data = JSON.parse(re.target?.result as string);
+                                                    setPreviewVocab(Array.isArray(data) ? data : [data]);
+                                                } catch (err) {
+                                                    alert("Failed to parse JSON file");
+                                                }
+                                            };
+                                            reader.readAsText(file);
+                                        }
+                                    }}
+                                >
+                                    <input
+                                        type="file"
+                                        id="vocab-upload"
+                                        className="hidden"
+                                        accept=".json,.csv"
+                                        onChange={(e) => {
+                                            const file = e.target.files?.[0];
+                                            if (file) {
+                                                const reader = new FileReader();
+                                                reader.onload = (re) => {
+                                                    try {
+                                                        const data = JSON.parse(re.target?.result as string);
+                                                        setPreviewVocab(Array.isArray(data) ? data : [data]);
+                                                    } catch (err) {
+                                                        alert("Failed to parse JSON file");
+                                                    }
+                                                };
+                                                reader.readAsText(file);
+                                            }
+                                        }}
+                                    />
+                                    <div className="w-24 h-24 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <span className="material-symbols-outlined text-5xl text-blue-600">upload_file</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">Drag & Drop Vocabulary File</h3>
+                                        <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">or click to browse local files</p>
+                                    </div>
+                                    <div className="flex gap-3 mt-4">
+                                        <span className="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-xl text-[10px] font-black uppercase text-slate-500 tracking-widest">Supports JSON</span>
+                                        <span className="px-4 py-2 bg-slate-100 dark:bg-slate-700 rounded-xl text-[10px] font-black uppercase text-slate-500 tracking-widest">Auto-Upsert</span>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="space-y-8">
+                                    <div className="flex items-center justify-between">
+                                        <h3 className="text-xl font-black text-slate-900 dark:text-white">Import Preview ({previewVocab.length} items)</h3>
+                                        <button onClick={() => setPreviewVocab([])} className="text-xs font-black uppercase tracking-widest text-red-500 hover:underline">Clear List</button>
+                                    </div>
+                                    <div className="bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-100 dark:border-slate-800 overflow-hidden overflow-x-auto">
+                                        <table className="w-full text-left">
+                                            <thead>
+                                                <tr className="bg-slate-100 dark:bg-slate-800 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                                    <th className="px-8 py-4">Word</th>
+                                                    <th className="px-8 py-4">Translation</th>
+                                                    <th className="px-8 py-4">Level</th>
+                                                    <th className="px-8 py-4">Category</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                                                {previewVocab.slice(0, 50).map((v, i) => (
+                                                    <tr key={i} className="text-sm font-bold text-slate-700 dark:text-slate-300">
+                                                        <td className="px-8 py-4 text-blue-600 font-black">{v.word || v.javanese}</td>
+                                                        <td className="px-8 py-4">{v.translation || v.dutch}</td>
+                                                        <td className="px-8 py-4 uppercase">{v.level || "A1"}</td>
+                                                        <td className="px-8 py-4">{v.category || "-"}</td>
+                                                    </tr>
+                                                ))}
+                                                {previewVocab.length > 50 && (
+                                                    <tr>
+                                                        <td colSpan={4} className="px-8 py-4 text-center text-slate-400 text-xs italic">
+                                                            + {previewVocab.length - 50} more items...
+                                                        </td>
+                                                    </tr>
+                                                )}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Modal Footer */}
+                        <div className="p-10 border-t border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 flex justify-end gap-6 items-center">
+                            <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mr-auto italic">
+                                *Duplicates will be automatically updated
+                            </span>
+                            <button onClick={() => setIsImportModalOpen(false)} className="px-10 py-4 text-sm font-bold text-slate-500 hover:text-slate-900">Cancel</button>
+                            <button
+                                disabled={previewVocab.length === 0}
+                                onClick={async () => {
+                                    const result = await bulkUploadVocabAction(previewVocab) as any;
+                                    if (result.success) {
+                                        alert(`Success! Created: ${result.createdCount}, Updated: ${result.updatedCount}`);
+                                        setIsImportModalOpen(false);
+                                        setPreviewVocab([]);
+                                        router.refresh();
+                                    } else {
+                                        alert(result.error);
+                                    }
+                                }}
+                                className="px-16 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-[2rem] font-black text-xs uppercase tracking-[0.3em] shadow-2xl shadow-blue-500/20 disabled:opacity-30 disabled:translate-y-0 transition-all hover:-translate-y-1 active:scale-95"
+                            >
+                                Process & Import
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {isFullEditorOpen && (
+                <VocabularyFullEditor
+                    vocab={editingVocab}
+                    onClose={() => setIsFullEditorOpen(false)}
+                    onSave={async (formData: FormData) => {
+                        const result = editingVocab
+                            ? await updateVocabularyAction(editingVocab.id, formData)
+                            : await addVocabularyAction(formData);
+                        if (result.success) {
+                            setIsFullEditorOpen(false);
+                            router.refresh();
+                        } else {
+                            alert(result.error);
+                        }
                     }}
                 />
             )}

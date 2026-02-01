@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin: Vocabulary Editor Redesign</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Instrument+Serif:italic&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              "background-light": "#f1f5f9",
+              "background-dark": "#0f172a",
+              "card-light": "#ffffff",
+              "card-dark": "#1e293b",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+              serif: ["Instrument Serif", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              '2xl': '1.5rem',
+            },
+          },
+        },
+      };
+    </script>
+<style>body {
+    font-family: "Plus Jakarta Sans", sans-serif
+    }
+.batik-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuC-tQoUAAjL1hUpHU-bMg48rayYj9VRyLahlm-1Y7MhkhLjZ6x2MWVnVIkJ-xIEnp6s36_EMyrptjMsHm8TysF9DtCHHwPixJ-u6NwCo-erlq1jh9gt3X3HwOCxs677HvwX7ZRqqWnow2ryarB3_5Z_l8de3_3r-esgCmAGN9X_sHkL-nagSgKJw9i5J1-Ba58skjUYOqNOR-Q8VOkEYIACwcmFfm1XulBzikHmVpReIyEa1lxtVIycRr8-nCgxg5R6TAYs3sqQl8s);
+    opacity: 0.03;
+    pointer-events: none
+    }
+.dark .batik-overlay {
+    opacity: 0.05;
+    filter: invert(1)
+    }
+.form-input-focus {
+    transition: all 0.2s ease
+    }
+.form-input-focus:focus {
+    @apply ring-2 ring-primary ring-offset-2 dark: ring-offset-slate-900;
+    }</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center p-4">
+<div class="relative w-full max-w-5xl bg-card-light dark:bg-card-dark rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<div class="absolute inset-0 batik-overlay"></div>
+<div class="px-8 pt-8 pb-6 border-b border-slate-100 dark:border-slate-800 relative z-10">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Update Dictionary Entry</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1 font-medium">Refine linguistic data for the AyoSinau repository.</p>
+</div>
+<button class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+<span class="material-symbols-rounded">close</span>
+</button>
+</div>
+</div>
+<form class="p-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-rounded text-primary">translate</span>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Core Linguistics</h2>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-[10px] font-bold text-primary uppercase tracking-widest mb-1.5 ml-1">Javanese Word</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl px-4 py-4 text-xl font-bold text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" type="text" value="sewengi muput"/>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Dutch Translation</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-lg font-semibold text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-primary focus:border-transparent outline-none" type="text" value="de hele nacht lang"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Phonetic</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-slate-600 dark:text-slate-400 font-mono focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="/phonetic/" type="text"/>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Formality</label>
+<select class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-slate-700 dark:text-slate-300 font-bold focus:ring-2 focus:ring-primary focus:border-transparent outline-none appearance-none">
+<option>NGOKO</option>
+<option>KRAMA MADYA</option>
+<option>KRAMA INGGIL</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5 ml-1">CEFR Level</label>
+<select class="w-32 bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 text-slate-700 dark:text-slate-300 font-bold focus:ring-2 focus:ring-primary focus:border-transparent outline-none">
+<option>A1</option>
+<option>A2</option>
+<option>B1</option>
+<option>B2</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Audio URL / Path</label>
+<div class="relative">
+<input class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl pl-4 pr-12 py-3 text-sm text-slate-500 dark:text-slate-400 font-mono focus:ring-2 focus:ring-primary focus:border-transparent outline-none" type="text" value="/audio/uploads/sewengi_muput.mp3"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-primary hover:bg-primary/10 p-1.5 rounded-lg transition-colors" type="button">
+<span class="material-symbols-rounded text-xl">play_circle</span>
+</button>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1.5 ml-1">Tags (Comma Separated)</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3 text-slate-700 dark:text-slate-300 focus:ring-2 focus:ring-primary focus:border-transparent outline-none" type="text" value="tijd, duur, feest"/>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-rounded text-emerald-500">psychology</span>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">Context &amp; Learning</h2>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-[10px] font-bold text-primary uppercase tracking-widest mb-1.5 ml-1">Mnemonic / AI Hint</label>
+<input class="w-full bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 rounded-xl px-4 py-4 text-lg font-medium text-slate-700 dark:text-slate-300 italic focus:ring-2 focus:ring-primary focus:border-transparent outline-none" type="text" value="night sky clock"/>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-widest mb-1.5 ml-1">Example Javanese</label>
+<div class="bg-emerald-50/50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30 rounded-xl p-4">
+<textarea class="w-full bg-transparent border-none p-0 text-slate-900 dark:text-white font-semibold text-lg focus:ring-0 resize-none" rows="2">Kita jogètan sewengi muput.</textarea>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-widest mb-1.5 ml-1">Example Dutch</label>
+<div class="bg-emerald-50/50 dark:bg-emerald-900/10 border border-emerald-100 dark:border-emerald-900/30 rounded-xl p-4">
+<textarea class="w-full bg-transparent border-none p-0 text-slate-700 dark:text-slate-300 italic text-lg focus:ring-0 resize-none" rows="2">We dansten de hele nacht lang.</textarea>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-amber-600 dark:text-amber-500 uppercase tracking-widest mb-1.5 ml-1">Linguistic Notes</label>
+<div class="bg-amber-50/50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-900/30 rounded-xl p-4">
+<textarea class="w-full bg-transparent border-none p-0 text-slate-700 dark:text-slate-300 text-base focus:ring-0 resize-none" rows="3">'Muput' betekent 'volledig'. Het wordt vaak gebruikt in de context van tijd.</textarea>
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
+<div class="px-8 py-6 bg-slate-50/80 dark:bg-slate-900/80 border-t border-slate-100 dark:border-slate-800 flex justify-between lg:justify-end items-center gap-4 relative z-10">
+<button class="px-6 py-3 text-sm font-bold text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 transition-colors uppercase tracking-widest" type="button">
+                Cancel
+            </button>
+<button class="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold text-sm uppercase tracking-widest shadow-lg shadow-primary/25 transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2" type="submit">
+<span class="material-symbols-rounded text-lg">save</span>
+                Store Vocabulary
+            </button>
+</div>
+</div>
+<button class="fixed bottom-6 right-6 p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:scale-110 transition-transform" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-rounded dark:hidden">dark_mode</span>
+<span class="material-symbols-rounded hidden dark:block">light_mode</span>
+</button>
+
+</body></html>

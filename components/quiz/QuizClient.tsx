@@ -83,7 +83,7 @@ export default function QuizClient({ quiz }: { quiz: QuizWithQuestions }) {
 
         if (questionType === "FILL_IN_THE_BLANK" || questionType === "TYPE_HEARD_AUDIO") {
             const normalizedInput = textInput.trim().toLowerCase();
-            return acceptedAnswers.some(ans => ans.toLowerCase() === normalizedInput);
+            return acceptedAnswers.some((ans: string) => ans.toLowerCase() === normalizedInput);
         }
 
         if (questionType === "MATCH_PAIRS") {

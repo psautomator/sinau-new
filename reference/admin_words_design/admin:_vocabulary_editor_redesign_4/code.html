@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin: Bulk Vocabulary Import - AyoSinau</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Instrument+Serif:italic&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1d4ed8",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0f172a",
+                        "card-light": "#ffffff",
+                        "card-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        serif: ["Instrument Serif", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --radius: 1rem;
+            --primary-blue: #1d4ed8;
+        }
+        .batik-pattern {
+            background-color: transparent;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBS0vmTqjVKiUU9F-3XFzHechu28bWqaIscCfKd0Siawc71psE8BujZoyGAkTRwuMeBjdiQo4vrydbaFgTd1amInw4OKEVNM3uMwdhwcwrogCx67pbL-hM4t_uAW2bbavW6aqFYiXaH6vl-DQzwAZL5fzz6fRRRnHOwV7wTTeQw6ejsYmUedIvotE6IIK-Huq-1ivOPqgJ_YXwjBSqMPEZpK9YwFVJWxCGq0lbF_0we6p3pcjZBl7YdGSnV5WI9Yi1beUsC19aiGpg);
+            background-size: 600px;
+            background-repeat: repeat;
+            opacity: 0.03;pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+        .dark .batik-pattern {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBs8DWkuaDwlorQkn3W8gxmC22HF1EGq1McAxOXOk0_zjLK3JGPrwm0ThXBTVa-Et1AN3UfDYjc_tCRWWHUcUMiBCXJe-V3we3CAu7Kqi7g2o5Tgs8sfUfhYejr_XJ-I94U1H0kT2CiawTAdBS4AcopO4nhqrHVge2OtIEU-WdIyEZS-rZsswKmeU41-rIz34BoC7Ne5RC6D-d0gijZFu-B9fFaAky3y-Zu7N6p9OfJ2p0JWb0dD5_flQ65HMQEWwVNO4urfKPxGCY);
+            opacity: 0.02;
+        }
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background-color: #F8FAFC;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex text-slate-900 dark:text-slate-100">
+<div class="batik-pattern"></div>
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden lg:flex flex-col sticky top-0 h-screen z-10">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-[var(--primary-blue)] rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-xl">auto_stories</span>
+</div>
+<span class="font-extrabold text-xl tracking-tight">AyoSinau<span class="text-[var(--primary-blue)]">.</span></span>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-semibold text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-semibold text-sm">Dictionary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/20 text-[var(--primary-blue)] rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">upload_file</span>
+<span class="font-semibold text-sm">Bulk Import</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-semibold text-sm">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-semibold text-sm">Settings</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-[var(--radius)]">
+<div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-[var(--primary-blue)] text-sm">person</span>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase text-slate-400">Admin</p>
+<p class="text-xs font-bold">Admin Panel</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 min-w-0 overflow-y-auto relative z-10">
+<header class="p-8 pb-4 flex justify-between items-center">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Admin: Bulk Vocabulary Import</h1>
+<p class="text-slate-500 dark:text-slate-400 mt-1 font-medium text-sm">Import and manage large datasets efficiently.</p>
+</div>
+<div class="flex gap-4">
+<button class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</header>
+<div class="px-8 pb-12">
+<div class="max-w-6xl mx-auto space-y-8">
+<div class="bg-white dark:bg-slate-900 rounded-[var(--radius)] border-2 border-dashed border-slate-200 dark:border-slate-800 p-16 text-center transition-all hover:border-[var(--primary-blue)]/50 group card-shadow">
+<div class="w-20 h-20 bg-blue-50 dark:bg-blue-900/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[var(--primary-blue)] text-4xl">cloud_upload</span>
+</div>
+<h3 class="text-xl font-bold mb-2 text-slate-800 dark:text-white">Drag and drop your vocabulary file</h3>
+<p class="text-slate-500 dark:text-slate-400 mb-8 max-w-sm mx-auto text-sm">Supports CSV or Excel files (.csv, .xls, .xlsx). Ensure headers match required fields.</p>
+<label class="bg-[var(--primary-blue)] hover:bg-blue-700 text-white px-8 py-3.5 rounded-full font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/20 transition-all inline-flex items-center gap-2">
+<span class="material-symbols-outlined text-xl">attach_file</span>
+                        Browse Files
+                        <input class="hidden" type="file"/>
+</label>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<div class="xl:col-span-1 bg-white dark:bg-slate-900 rounded-[var(--radius)] border border-slate-200 dark:border-slate-800 p-8 card-shadow">
+<div class="flex items-center gap-2 mb-8">
+<span class="material-symbols-outlined text-[var(--primary-blue)]">alt_route</span>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">Column Mapping</h2>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">Database field: Word</label>
+<select class="w-full bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-[var(--primary-blue)] focus:border-[var(--primary-blue)] h-11">
+<option>Column A: Javanese</option>
+<option>Column B: Translation</option>
+<option>Column C: Note</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">Database field: Translation</label>
+<select class="w-full bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-[var(--primary-blue)] focus:border-[var(--primary-blue)] h-11">
+<option>Column B: Translation</option>
+<option>Column A: Javanese</option>
+<option>Column C: Note</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">Database field: Level</label>
+<select class="w-full bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-700 rounded-xl text-sm focus:ring-[var(--primary-blue)] focus:border-[var(--primary-blue)] h-11">
+<option>Column D: Level</option>
+<option>Manual Setting (A1)</option>
+<option>Manual Setting (B2)</option>
+</select>
+</div>
+<div class="pt-6 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-start gap-3 text-[11px] text-slate-400 font-medium leading-relaxed">
+<span class="material-symbols-outlined text-sm mt-0.5">info</span>
+<span>Unmapped columns will be ignored. Required fields: Word, Translation.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-2 bg-white dark:bg-slate-900 rounded-[var(--radius)] border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col card-shadow">
+<div class="p-5 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-slate-900">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[var(--primary-blue)]">visibility</span>
+<h2 class="text-xs font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400">Live Preview</h2>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[10px] bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 px-3 py-1.5 rounded-full font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">error</span>
+                                    2 ERRORS FOUND
+                                </span>
+</div>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider">Word</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider">Translation</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider">Level</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200 text-sm">Sega</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">Rijst</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-[var(--primary-blue)] rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500 text-lg">check_circle</span>
+</td>
+</tr>
+<tr class="bg-red-50/20 dark:bg-red-900/5">
+<td class="px-6 py-4 font-bold text-red-600 dark:text-red-400 text-sm">Gedhang</td>
+<td class="px-6 py-4 italic text-red-500 dark:text-red-500/60 text-xs">Missing translation error</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-[var(--primary-blue)] rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-red-500 text-lg">error</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200 text-sm">Kopi</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">Koffie</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-[var(--primary-blue)] rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500 text-lg">check_circle</span>
+</td>
+</tr>
+<tr class="bg-red-50/20 dark:bg-red-900/5">
+<td class="px-6 py-4 italic text-red-500 dark:text-red-500/60 text-xs">Missing word entry</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">Water</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-[var(--primary-blue)] rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-red-500 text-lg">error</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-200 text-sm">Mangan</td>
+<td class="px-6 py-4 text-slate-600 dark:text-slate-400 text-sm">Eten</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 dark:bg-blue-900/20 text-[var(--primary-blue)] rounded">A2</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500 text-lg">check_circle</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-slate-900">
+<span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Showing 5 of 124 entries</span>
+<button class="text-xs font-bold text-[var(--primary-blue)] hover:underline flex items-center gap-1 transition-all">
+                                View All Rows
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-[var(--radius)] border border-slate-200 dark:border-slate-800 p-8 flex flex-col md:flex-row justify-between items-center card-shadow gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-600">playlist_add_check</span>
+</div>
+<div class="flex flex-col">
+<p class="text-base font-bold text-slate-900 dark:text-white">Ready to import 122 valid entries</p>
+<p class="text-xs text-slate-500 font-medium">2 errors identified. These will be skipped if you proceed.</p>
+</div>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<button class="px-6 py-3.5 text-slate-400 dark:text-slate-500 font-bold text-xs uppercase tracking-widest hover:text-red-500 transition-colors">
+                            Clear File
+                        </button>
+<button class="bg-[var(--primary-blue)] hover:bg-blue-700 disabled:opacity-50 text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest shadow-lg shadow-blue-500/20 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">sync</span>
+                            Process &amp; Import
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

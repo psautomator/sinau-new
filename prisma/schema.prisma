@@ -82,8 +82,8 @@ model Quiz {
   id          String         @id @default(cuid())
   title       String
   description String?
-  lessonId    String         @unique
-  lesson      Lesson         @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  lessonId    String?        @unique
+  lesson      Lesson?        @relation(fields: [lessonId], references: [id], onDelete: Cascade)
   questions   QuizQuestion[]
   published   Boolean        @default(false)
   createdAt   DateTime       @default(now())

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin: Bulk Vocabulary Import - AyoSinau</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Instrument+Serif:italic&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1d4ed8", // AyoSinau Blue
+                        "background-base": "#F8FAFC",
+                        "card-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                        serif: ["Instrument Serif", "serif"],
+                    },
+                    borderRadius: {
+                        'DEFAULT': '0.75rem',
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --radius: 0.75rem;
+            --primary: #1d4ed8;
+        }
+        .batik-overlay {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBS0vmTqjVKiUU9F-3XFzHechu28bWqaIscCfKd0Siawc71psE8BujZoyGAkTRwuMeBjdiQo4vrydbaFgTd1amInw4OKEVNM3uMwdhwcwrogCx67pbL-hM4t_uAW2bbavW6aqFYiXaH6vl-DQzwAZL5fzz6fRRRnHOwV7wTTeQw6ejsYmUedIvotE6IIK-Huq-1ivOPqgJ_YXwjBSqMPEZpK9YwFVJWxCGq0lbF_0we6p3pcjZBl7YdGSnV5WI9Yi1beUsC19aiGpg);
+            background-size: 500px;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-base min-h-screen flex text-slate-900 relative">
+<div class="fixed inset-0 batik-overlay z-0"></div>
+<aside class="w-64 border-r border-slate-200 bg-white hidden lg:flex flex-col sticky top-0 h-screen z-10">
+<div class="p-6 border-b border-slate-100">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 bg-primary rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+<span class="material-symbols-outlined text-white text-xl">auto_stories</span>
+</div>
+<span class="font-extrabold text-xl tracking-tight">AyoSinau<span class="text-primary">.</span></span>
+</div>
+</div>
+<nav class="flex-1 p-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-semibold text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-semibold text-sm">Dictionary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 text-primary rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">upload_file</span>
+<span class="font-semibold text-sm">Bulk Import</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 rounded-[var(--radius)] transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-semibold text-sm">Analytics</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100">
+<div class="flex items-center gap-3 px-4 py-2 bg-slate-50 rounded-[var(--radius)]">
+<div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">person</span>
+</div>
+<div>
+<p class="text-[10px] font-bold uppercase text-slate-400">Admin</p>
+<p class="text-xs font-bold">Administrator</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 min-w-0 overflow-y-auto z-10">
+<header class="px-8 py-10 flex justify-between items-center">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900">Bulk Vocabulary Import</h1>
+<p class="text-slate-500 mt-1 font-medium">Streamline your database with batch CSV or Excel uploads.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-[var(--radius)] text-sm font-semibold text-slate-600 hover:bg-slate-50 transition-colors card-shadow">
+<span class="material-symbols-outlined text-lg">download</span>
+                    Download Template
+                </button>
+</div>
+</header>
+<div class="px-8 pb-12">
+<div class="max-w-6xl mx-auto space-y-8">
+<div class="bg-white rounded-[var(--radius)] border-2 border-dashed border-slate-200 p-16 text-center transition-all hover:border-primary/50 group card-shadow">
+<div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">cloud_upload</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Drag and drop your dataset here</h3>
+<p class="text-slate-400 mb-8 max-w-sm mx-auto text-sm">We support CSV, XLS, or XLSX files up to 10MB.</p>
+<label class="bg-primary hover:bg-blue-700 text-white px-10 py-3.5 rounded-full font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/20 transition-all inline-block">
+                        Choose File from Computer
+                        <input class="hidden" type="file"/>
+</label>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+<div class="xl:col-span-1 bg-white rounded-[var(--radius)] border border-slate-200 p-6 card-shadow">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">alt_route</span>
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-700">Column Mapping</h2>
+</div>
+<div class="space-y-5">
+<div class="space-y-2">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">Target: Word (JV)</label>
+<select class="w-full bg-slate-50 border-slate-200 rounded-[var(--radius)] text-sm focus:ring-primary focus:border-primary">
+<option>Column A: Javanese</option>
+<option>Column B: Translation</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">Target: Translation (NL)</label>
+<select class="w-full bg-slate-50 border-slate-200 rounded-[var(--radius)] text-sm focus:ring-primary focus:border-primary">
+<option>Column B: Translation</option>
+<option>Column A: Javanese</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-400">Target: Level</label>
+<select class="w-full bg-slate-50 border-slate-200 rounded-[var(--radius)] text-sm focus:ring-primary focus:border-primary">
+<option>Column C: Difficulty</option>
+<option>Manual Override (A1)</option>
+</select>
+</div>
+<div class="pt-4 border-t border-slate-100">
+<div class="flex items-start gap-2 text-xs text-slate-400 font-medium">
+<span class="material-symbols-outlined text-sm mt-0.5">info</span>
+<span>Unselected columns will be omitted during the import process.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="xl:col-span-2 bg-white rounded-[var(--radius)] border border-slate-200 overflow-hidden flex flex-col card-shadow">
+<div class="p-6 border-b border-slate-100 flex justify-between items-center bg-white">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">visibility</span>
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-700">Live Preview</h2>
+</div>
+<span class="text-[10px] bg-red-50 text-red-600 px-3 py-1 rounded-full font-bold border border-red-100">2 ERRORS FOUND</span>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50/50 border-b border-slate-100">
+<tr>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider">Word</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider">Translation</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider">Level</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase text-slate-400 tracking-wider text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td class="px-6 py-4 font-bold text-slate-900">Sega</td>
+<td class="px-6 py-4 text-slate-600">Rijst</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 text-primary rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500">check_circle</span>
+</td>
+</tr>
+<tr class="bg-red-50/20">
+<td class="px-6 py-4 font-bold text-red-600">Gedhang</td>
+<td class="px-6 py-4 italic text-red-400 text-sm">Missing translation</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 text-primary rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-red-500">error</span>
+</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-bold text-slate-900">Kopi</td>
+<td class="px-6 py-4 text-slate-600">Koffie</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 text-primary rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-emerald-500">check_circle</span>
+</td>
+</tr>
+<tr class="bg-red-50/20">
+<td class="px-6 py-4 italic text-red-400 text-sm">Missing entry</td>
+<td class="px-6 py-4 text-slate-600">Water</td>
+<td class="px-6 py-4">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-blue-50 text-primary rounded">A1</span>
+</td>
+<td class="px-6 py-4 text-right">
+<span class="material-symbols-outlined text-red-500">error</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 border-t border-slate-100 flex justify-center bg-white">
+<button class="text-xs font-bold text-primary hover:text-blue-700 transition-colors uppercase tracking-wider">View All 124 Rows</button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-[var(--radius)] border border-slate-200 p-8 flex flex-col md:flex-row justify-between items-center gap-6 card-shadow">
+<div class="flex flex-col text-center md:text-left">
+<p class="text-base font-bold text-slate-900">Ready to import 122 valid entries</p>
+<p class="text-sm text-slate-500 mt-0.5">Please resolve the 2 highlighted errors to proceed with the full dataset.</p>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-6 py-3.5 text-slate-400 font-bold text-sm hover:text-slate-600 transition-colors">
+                            Clear Data
+                        </button>
+<button class="flex-1 md:flex-none bg-primary hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold text-xs uppercase tracking-widest shadow-lg shadow-blue-500/30 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                            Process &amp; Import
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>
