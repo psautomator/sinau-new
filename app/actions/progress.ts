@@ -18,6 +18,18 @@ export async function completeLessonAction(lessonId: string) {
         await addExperience(MOCK_USER_ID, 50);
 
         // 3. Revalidate paths to update UI
+        // Fetch lesson to know which module to revalidate
+        // We need to import getLessonById or use prisma directly. 
+        // Since getLessonById exports partial selection, let's use a lightweight query or import what we have.
+        // Importing getLessonById from "@/dal/lessons" is best practice.
+        const { getLessonById } = await import("@/dal/lessons");
+        const lesson = await getLessonById(lessonId);
+
+        if (lesson) {
+            revalidatePath(`/modules/${lesson.moduleId}`);
+            revalidatePath(`/lessons/${lesson.slug}`);
+        }
+
         revalidatePath("/");
         revalidatePath("/modules");
         revalidatePath("/leaderboard");

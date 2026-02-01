@@ -122,11 +122,11 @@ export default async function ModulesPage() {
                                     </div>
 
                                     <Link
-                                        href={module.lessons[0] ? `/lessons/${module.lessons[0].slug}` : "#"}
+                                        href={`/modules/${module.id}`}
                                         className="group/btn relative flex items-center justify-center gap-3 w-full py-4 bg-primary hover:bg-primary-dark text-white rounded-2xl font-black text-xs tracking-[0.2em] uppercase transition-all duration-500 shadow-2xl shadow-primary/20 hover:shadow-primary/50 active:scale-[0.98] overflow-hidden"
                                     >
                                         <span className="relative z-10 transition-transform duration-500 group-hover/btn:-translate-x-2">
-                                            {module.progress > 0 ? "Doorgaan" : "Starten"}
+                                            {module.progress > 0 ? "Doorgaan" : "Bekijk Lessen"}
                                         </span>
                                         <span className="material-symbols-outlined text-xl transition-all duration-500 group-hover/btn:translate-x-2 relative z-10">arrow_forward_ios</span>
 

@@ -3,6 +3,7 @@
 import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { completeLessonAction } from "@/app/actions/progress";
 
 // Using any to bypass lint issues with generated Prisma types
 type QuizWithQuestions = any;
@@ -177,13 +178,19 @@ export default function QuizClient({ quiz }: { quiz: QuizWithQuestions }) {
         setIsChecked(false);
     };
 
-    const handleNext = () => {
+    const handleNext = async () => {
         if (currentQuestionIndex < totalQuestions - 1) {
             setCurrentQuestionIndex((p) => p + 1);
             setSelectedOption(null);
             setTextInput("");
             setIsChecked(false);
         } else {
+            // Quiz finished
+            try {
+                await completeLessonAction(quiz.lessonId);
+            } catch (err) {
+                console.error("Failed to complete lesson", err);
+            }
             router.push(`/lessons/${quiz.lesson.slug}`);
         }
     };

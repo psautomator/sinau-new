@@ -220,6 +220,8 @@ async function main() {
                     content: { sections: lessonSections } as any,
                     order: lIdx + 1,
                     moduleId: seededModule.id,
+                    level: parsed.level || "A1",
+                    languageStyle: parsed.languageStyle || "Ngoko",
                     published: true, // Auto-publish seeded lessons
                 },
                 create: {
@@ -229,6 +231,8 @@ async function main() {
                     content: { sections: lessonSections } as any,
                     order: lIdx + 1,
                     moduleId: seededModule.id,
+                    level: parsed.level || "A1",
+                    languageStyle: parsed.languageStyle || "Ngoko",
                     published: true, // Auto-publish seeded lessons
                 },
             });

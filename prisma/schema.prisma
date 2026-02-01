@@ -62,11 +62,13 @@ model Module {
 }
 
 model Lesson {
-  id          String         @id @default(cuid())
-  title       String
-  slug        String         @unique
-  description String         @default("")
-  content     Json           // Structured lesson data (dialogue, grammar, etc.)
+  id            String         @id @default(cuid())
+  title         String
+  slug          String         @unique
+  description   String         @default("")
+  level         String         @default("A1") // e.g. "A1 (Beginner)"
+  languageStyle String         @default("Ngoko") // e.g. "Ngoko / Krama"
+  content       Json           // Structured lesson data (dialogue, grammar, etc.)
   order       Int            @default(0)
   published   Boolean        @default(false)
   moduleId    String

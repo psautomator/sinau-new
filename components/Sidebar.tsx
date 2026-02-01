@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ export default function Sidebar() {
 
     return (
         <>
-            {/* ... (mobile menu code remains same) */}
+            {/* Mobile Menu Button */}
             <button
                 onClick={() => setIsOpen(true)}
                 className="md:hidden fixed top-4 left-4 z-[40] bg-white dark:bg-surface-dark p-2 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 text-text-main-light dark:text-text-main-dark flex items-center justify-center transition-all active:scale-95"
@@ -43,7 +44,9 @@ export default function Sidebar() {
                 />
             )}
 
+            {/* Sidebar Container */}
             <aside className={`fixed md:static inset-y-0 left-0 z-[60] flex flex-col w-64 h-full bg-surface-light dark:bg-surface-dark border-r border-gray-100 dark:border-gray-800 flex-shrink-0 transition-transform duration-300 ease-in-out md:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                {/* Header */}
                 <div className="p-6 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                         <div className="bg-primary aspect-square rounded-xl size-10 flex items-center justify-center text-text-main-light shadow-sm overflow-hidden relative">
@@ -58,11 +61,19 @@ export default function Sidebar() {
                             </p>
                         </div>
                     </div>
-                    {/* Close button for mobile */}
-                    <button onClick={() => setIsOpen(false)} className="md:hidden text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors">
-                        <span className="material-symbols-outlined">close</span>
-                    </button>
+
+                    {/* Theme Toggle & Close (Mobile) */}
+                    <div className="flex items-center gap-2">
+                        <div className="md:hidden">
+                            <ThemeToggle />
+                        </div>
+                        <button onClick={() => setIsOpen(false)} className="md:hidden text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors">
+                            <span className="material-symbols-outlined">close</span>
+                        </button>
+                    </div>
                 </div>
+
+                {/* Navigation */}
                 <nav className="flex-1 px-4 py-2 space-y-1 overflow-y-auto">
                     {navItems.map((item) => {
                         const active = isActive(item.href);
@@ -108,7 +119,13 @@ export default function Sidebar() {
                         <span>Admin Panel</span>
                     </Link>
                 </nav>
+
+                {/* Footer / Profile */}
                 <div className="p-4 border-t border-gray-100 dark:border-gray-800">
+                    <div className="flex items-center justify-between mb-2 px-2">
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Theme</span>
+                        <ThemeToggle />
+                    </div>
                     <Link
                         href="/profile"
                         onClick={() => setIsOpen(false)}
@@ -116,7 +133,6 @@ export default function Sidebar() {
                     >
                         <div
                             className="size-10 rounded-full bg-gray-200 bg-cover bg-center border-2 border-white dark:border-gray-700 shadow-sm"
-                            data-alt="Portrait of Budi, the user"
                             style={{
                                 backgroundImage:
                                     "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-av2hlIVBxc2iq2Re3gsL1jApS0FF4DXF2KTIFjPdQvqYCmAKWX7k9VZhOOdj3WwICYLTWWDfOTeA-uo7J5cDrqx9NXN4bzFFXns3CCV1uzZRNqyMYiA4KngO_5bgFbKgro_nljo3vqRIL3zNgmtqhTnHbOTqlwgsPma2WIOeJCRKRqXGw-PEj8aRSeesm6yJZ7lTDD3Y4ViwclfWYadM8UVzqi0Ranbo-WJVJfJRW6O0xSAVskJiswmA4tlsXDVPUDFXJWaA5-A')",

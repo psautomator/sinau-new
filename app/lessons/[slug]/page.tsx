@@ -7,6 +7,7 @@ import LessonNotes from "@/components/lesson/LessonNotes"; // Changed from Gramm
 import CulturalNote from "@/components/lesson/CulturalNote";
 import LessonFooter from "@/components/lesson/LessonFooter";
 import LessonSection from "@/components/lesson/LessonSection";
+import ScrollProgressTracker from "@/components/lesson/ScrollProgressTracker";
 import { getLessonBySlug, getNextLesson } from "@/dal/lessons";
 import { getWordsByIds } from "@/dal/vocabulary";
 import { getLessonNote } from "@/app/actions/notes";
@@ -104,6 +105,7 @@ export default async function LessonPage({ params, searchParams }: { params: Pro
                                 section={section as any}
                                 words={words}
                                 quizId={lesson.quiz?.id}
+                                lessonId={lesson.id}
                             />
                         ))}
 
@@ -126,6 +128,8 @@ export default async function LessonPage({ params, searchParams }: { params: Pro
                     nextLessonSlug={nextLessonSlug}
                     quizId={lesson.quiz?.id}
                 />
+
+                <ScrollProgressTracker lessonId={lesson.id} />
             </main>
         </>
     );

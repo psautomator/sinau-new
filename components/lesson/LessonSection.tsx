@@ -1,6 +1,7 @@
 import MarkdownRenderer from "./MarkdownRenderer";
 import VocabularyList from "./VocabularyList";
 import Link from "next/link";
+import InteractiveFlashcards from "./InteractiveFlashcards";
 
 interface SectionContent {
     title?: string;
@@ -20,11 +21,13 @@ type SectionProps = {
         word: string;
         translation: string;
         audioUrl?: string | null;
+        exampleJavanese?: string | null;
     }>;
     quizId?: string;
+    lessonId?: string;
 };
 
-export default function LessonSection({ section, words = [], quizId }: SectionProps) {
+export default function LessonSection({ section, words = [], quizId, lessonId }: SectionProps) {
     switch (section.type) {
         case "MARKDOWN": {
             const markdownText = typeof section.content === 'string'
@@ -51,9 +54,10 @@ export default function LessonSection({ section, words = [], quizId }: SectionPr
                             <MarkdownRenderer content={section.content.markdownText} />
                         </div>
                     )}
-                    <VocabularyList
+                    <InteractiveFlashcards
                         words={words.filter(w => section.content?.wordIds?.includes(w.id))}
                         title={section.content?.title}
+                        lessonId={lessonId}
                     />
                 </div>
             );

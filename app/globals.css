@@ -1,16 +1,22 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme inline {
   --color-primary: #2bee79;
   --color-primary-dark: #23c263;
   --color-background-light: #f6f8f7;
-  --color-background-dark: #102217;
+  --color-background-dark: #0f172a;
+  /* Slate 900 - Neutral Dark */
   --color-surface-light: #ffffff;
-  --color-surface-dark: #1a3324;
+  --color-surface-dark: #1e293b;
+  /* Slate 800 - Neutral Surface */
   --color-text-main-light: #0d1b13;
-  --color-text-main-dark: #f0fdf4;
+  --color-text-main-dark: #f8fafc;
+  /* Slate 50 - High Contrast Text */
   --color-text-secondary-light: #4c9a6b;
-  --color-text-secondary-dark: #8fcba8;
+  --color-text-secondary-dark: #94a3b8;
+  /* Slate 400 - Muted Text */
 
   --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
 

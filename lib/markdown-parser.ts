@@ -18,6 +18,8 @@ interface SectionContent {
 
 interface ParsedLesson {
     description: string;
+    level?: string;
+    languageStyle?: string;
     sections: Section[];
 }
 
@@ -37,6 +39,8 @@ export function parseMarkdownLesson(markdown: string): ParsedLesson {
     const sections: Section[] = [];
     let currentSection: { title: string; content: string[] } | null = null;
     let order = 1;
+    let level: string | undefined;
+    let languageStyle: string | undefined;
 
     // Cultural note token
     const culturalToken = '### 🌱 Samenvatting & Cultuurreflectie';
@@ -46,11 +50,22 @@ export function parseMarkdownLesson(markdown: string): ParsedLesson {
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
 
-        // 1. Initial Content (Before any ## heading)
+        // 0. Metadata Extraction (e.g., **Niveau:** A1 (Beginner), **Taalstijl:** Ngoko / Krama)
         if (!line.startsWith('## ') && !line.startsWith('### ') && !currentSection && sections.length === 0) {
+            // Check for metadata line patterns
+            const levelMatch = line.match(/\*\*Niveau:\*\*\s*(.+?)(,|$)/);
+            const styleMatch = line.match(/\*\*Taalstijl:\*\*\s*(.+?)(,|$)/);
+
+            if (levelMatch || styleMatch) {
+                if (levelMatch) level = levelMatch[1].trim();
+                if (styleMatch) languageStyle = styleMatch[1].trim();
+                continue; // Skip adding this as content
+            }
+
             // Ignore empty lines at start
             if (!line.trim()) continue;
 
+            // Only treat as intro if it's substantial text, not just a label
             currentSection = { title: "Lesson Intro", content: [line] };
             continue;
         }
@@ -160,7 +175,7 @@ export function parseMarkdownLesson(markdown: string): ParsedLesson {
         });
     }
 
-    return { description, sections };
+    return { description, sections, level, languageStyle };
 }
 
 /**

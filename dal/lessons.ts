@@ -250,3 +250,20 @@ export async function bulkUpsertLessons(moduleId: string, lessons: any[]) {
 
     return { createdCount, updatedCount };
 }
+
+/**
+ * Fetches the IDs of lessons that a user has completed from a given list.
+ */
+export async function getUserCompletedLessonIds(userId: string, lessonIds: string[]) {
+    const progress = await prisma.userProgress.findMany({
+        where: {
+            userId,
+            lessonId: { in: lessonIds },
+        },
+        select: {
+            lessonId: true,
+        },
+    });
+
+    return progress.map((p: { lessonId: string }) => p.lessonId);
+}
