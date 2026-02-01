@@ -66,6 +66,11 @@ export default function AdminClient({
     const [categoryFilter, setCategoryFilter] = useState(searchParams.get("category") || "");
     const [formalityFilter, setFormalityFilter] = useState(searchParams.get("formality") || "");
     const [audioStatusFilter, setAudioStatusFilter] = useState(searchParams.get("audioStatus") || "");
+    const [quizStatusFilter, setQuizStatusFilter] = useState(searchParams.get("quizStatus") || "all");
+    const [quizModuleFilter, setQuizModuleFilter] = useState(searchParams.get("quizModuleId") || "");
+    const [quizPublishedFilter, setQuizPublishedFilter] = useState(searchParams.get("quizPublished") || "");
+    const [quizSortBy, setQuizSortBy] = useState(searchParams.get("quizSortBy") || "createdAt");
+    const [quizSortOrder, setQuizSortOrder] = useState(searchParams.get("quizSortOrder") || "desc");
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     // Modal States
@@ -350,10 +355,16 @@ export default function AdminClient({
                                             onChange={(e) => { setCategoryFilter(e.target.value); updateFilters({ category: e.target.value }); }}
                                         >
                                             <option value="">All Categories</option>
-                                            <option value="Greetings">Greetings</option>
-                                            <option value="Family">Family</option>
-                                            <option value="Daily Life">Daily Life</option>
+                                            <option value="Begroeting">Begroeting</option>
+                                            <option value="Familie">Familie</option>
+                                            <option value="Dagelijks Leven">Dagelijks Leven</option>
                                             <option value="Uitspraak">Uitspraak</option>
+                                            <option value="Eten">Eten</option>
+                                            <option value="Drinken">Drinken</option>
+                                            <option value="School">School</option>
+                                            <option value="Lichaamsdelen">Lichaamsdelen</option>
+                                            <option value="Dieren">Dieren</option>
+                                            <option value="Tijd">Tijd</option>
                                         </select>
                                         <select
                                             className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
@@ -361,6 +372,7 @@ export default function AdminClient({
                                             onChange={(e) => { setFormalityFilter(e.target.value); updateFilters({ formality: e.target.value }); }}
                                         >
                                             <option value="">All Formality</option>
+                                            <option value="NEUTRAL">Neutral</option>
                                             <option value="NGOKO">Ngoko</option>
                                             <option value="KRAMA">Krama</option>
                                             <option value="KRAMA_INGGIL">Krama Inggil</option>
@@ -419,6 +431,53 @@ export default function AdminClient({
                                         </select>
                                     </>
                                 )}
+                                {activeTab === 'quizzes' && (
+                                    <>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={quizModuleFilter}
+                                            onChange={(e) => { setQuizModuleFilter(e.target.value); updateFilters({ quizModuleId: e.target.value }); }}
+                                        >
+                                            <option value="">All Modules</option>
+                                            {allModules.map(m => (
+                                                <option key={m.id} value={m.id}>{m.title}</option>
+                                            ))}
+                                        </select>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={quizPublishedFilter}
+                                            onChange={(e) => { setQuizPublishedFilter(e.target.value); updateFilters({ quizPublished: e.target.value }); }}
+                                        >
+                                            <option value="">All Visibility</option>
+                                            <option value="true">Published</option>
+                                            <option value="false">Draft</option>
+                                        </select>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={quizStatusFilter}
+                                            onChange={(e) => { setQuizStatusFilter(e.target.value); updateFilters({ quizStatus: e.target.value }); }}
+                                        >
+                                            <option value="all">Any Health</option>
+                                            <option value="complete">Healthy Only</option>
+                                            <option value="incomplete">Has Issues</option>
+                                        </select>
+                                        <select
+                                            className="bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-widest text-slate-500"
+                                            value={`${quizSortBy}-${quizSortOrder}`}
+                                            onChange={(e) => {
+                                                const [by, order] = e.target.value.split('-');
+                                                setQuizSortBy(by);
+                                                setQuizSortOrder(order as any);
+                                                updateFilters({ quizSortBy: by, quizSortOrder: order });
+                                            }}
+                                        >
+                                            <option value="createdAt-desc">Newest First</option>
+                                            <option value="createdAt-asc">Oldest First</option>
+                                            <option value="title-asc">Title (A-Z)</option>
+                                            <option value="title-desc">Title (Z-A)</option>
+                                        </select>
+                                    </>
+                                )}
                             </div>
                         </div>
 
@@ -461,7 +520,22 @@ export default function AdminClient({
                                                 </>
                                             ) : activeTab === 'quizzes' ? (
                                                 <>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Quiz Title</th>
+                                                    <th
+                                                        className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 cursor-pointer hover:text-blue-600 transition-colors"
+                                                        onClick={() => {
+                                                            const order = quizSortBy === 'title' && quizSortOrder === 'asc' ? 'desc' : 'asc';
+                                                            setQuizSortBy('title');
+                                                            setQuizSortOrder(order);
+                                                            updateFilters({ quizSortBy: 'title', quizSortOrder: order });
+                                                        }}
+                                                    >
+                                                        <div className="flex items-center gap-1">
+                                                            Quiz Title
+                                                            {quizSortBy === 'title' && (
+                                                                <span className="material-symbols-outlined text-xs">{quizSortOrder === 'asc' ? 'arrow_upward' : 'arrow_downward'}</span>
+                                                            )}
+                                                        </div>
+                                                    </th>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Lesson / Module</th>
                                                     <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Questions</th>
                                                     <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
@@ -636,9 +710,21 @@ export default function AdminClient({
                                                     </td>
                                                     <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{quiz._count?.questions || 0}</td>
                                                     <td className="px-8 py-6">
-                                                        <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${quiz.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
-                                                            {quiz.published ? 'Published' : 'Draft'}
-                                                        </span>
+                                                        <div className="flex items-center gap-2">
+                                                            <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${quiz.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
+                                                                {quiz.published ? 'Published' : 'Draft'}
+                                                            </span>
+                                                            {!quiz.isValid ? (
+                                                                <span
+                                                                    className="material-symbols-outlined text-red-500 cursor-help"
+                                                                    title={quiz.issues?.join('\n')}
+                                                                >
+                                                                    report
+                                                                </span>
+                                                            ) : (
+                                                                <span className="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                                            )}
+                                                        </div>
                                                     </td>
                                                     <td className="px-8 py-6 text-right">
                                                         <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
@@ -904,8 +990,8 @@ export default function AdminClient({
                                             </div>
                                             <div className="flex flex-col gap-2">
                                                 <label className="text-[10px] font-black uppercase tracking-widest text-slate-400">Formality</label>
-                                                <select name="formality" defaultValue={editingVocab?.formality || 'NGOKO'} className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl font-black text-[10px] uppercase tracking-widest">
-                                                    <option value="NGOKO">Ngoko</option><option value="KRAMA">Krama</option><option value="KRAMA_INGGIL">Krama Inggil</option>
+                                                <select name="formality" defaultValue={editingVocab?.formality || 'NEUTRAL'} className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-xl font-black text-[10px] uppercase tracking-widest">
+                                                    <option value="NEUTRAL">Neutral</option><option value="NGOKO">Ngoko</option><option value="KRAMA">Krama</option><option value="KRAMA_INGGIL">Krama Inggil</option>
                                                 </select>
                                             </div>
                                             <div className="flex flex-col gap-2">

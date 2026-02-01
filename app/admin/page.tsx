@@ -26,6 +26,12 @@ export default async function AdminPage({
     const moduleId = (resolvedParams?.moduleId as string) || undefined;
     const lessonLevel = (resolvedParams?.lessonLevel as string) || undefined;
     const lessonStyle = (resolvedParams?.lessonStyle as string) || undefined;
+    const quizStatus = (resolvedParams?.quizStatus as "all" | "complete" | "incomplete") || "all";
+    const quizModuleId = (resolvedParams?.quizModuleId as string) || undefined;
+    const quizPublishedParam = resolvedParams?.quizPublished as string | undefined;
+    const quizPublished = quizPublishedParam === "true" ? true : quizPublishedParam === "false" ? false : undefined;
+    const quizSortBy = (resolvedParams?.quizSortBy as string) || "createdAt";
+    const quizSortOrder = (resolvedParams?.quizSortOrder as "asc" | "desc") || "desc";
 
     // Fetch Data
     const [
@@ -40,8 +46,17 @@ export default async function AdminPage({
         { users, total: totalUsers }
     ] = await Promise.all([
         getAdminModules({ search, level, skip, take: limit }),
-        getVocabulary({ search, category, formality, audioStatus, skip, take: limit }),
-        getQuizzes({ search, skip, take: limit }),
+        getVocabulary({ search, category, level, formality, audioStatus, skip, take: limit }),
+        getQuizzes({
+            search,
+            status: quizStatus,
+            moduleId: quizModuleId,
+            published: quizPublished,
+            sortBy: quizSortBy,
+            sortOrder: quizSortOrder,
+            skip,
+            take: limit
+        }),
         getLessons({ search, moduleId, level: lessonLevel, languageStyle: lessonStyle, skip, take: limit }),
         getAllModulesSimple(),
         getAllQuizzesSimple(),

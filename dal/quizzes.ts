@@ -1,26 +1,61 @@
 import { prisma } from "./index";
+import * as fs from "fs";
+import * as path from "path";
 
 export async function getQuizzes(options?: {
     search?: string;
+    status?: 'all' | 'complete' | 'incomplete';
+    moduleId?: string;
+    published?: boolean;
+    sortBy?: string;
+    sortOrder?: 'asc' | 'desc';
     skip?: number;
     take?: number;
 }) {
-    const { search, skip = 0, take = 10 } = options || {};
+    const {
+        search,
+        status = 'all',
+        moduleId,
+        published,
+        sortBy = 'createdAt',
+        sortOrder = 'desc',
+        skip = 0,
+        take = 10
+    } = options || {};
 
-    const where = search ? {
-        OR: [
+    let where: any = {};
+    if (search) {
+        where.OR = [
             { title: { contains: search, mode: "insensitive" as any } },
             { description: { contains: search, mode: "insensitive" as any } },
-        ]
-    } : {};
+        ];
+    }
 
-    const [quizzes, total] = await Promise.all([
+    if (moduleId) {
+        where.lesson = {
+            moduleId: moduleId
+        };
+    }
+
+    if (published !== undefined) {
+        where.published = published;
+    }
+
+    const orderBy: any = {};
+    if (sortBy === 'title' || sortBy === 'createdAt') {
+        orderBy[sortBy] = sortOrder;
+    } else {
+        orderBy.createdAt = 'desc';
+    }
+
+    const [quizzesData, total] = await Promise.all([
         prisma.quiz.findMany({
             where,
             include: {
                 lesson: {
                     select: {
                         title: true,
+                        slug: true,
                         module: {
                             select: { title: true }
                         }
@@ -33,14 +68,109 @@ export async function getQuizzes(options?: {
                     orderBy: { order: "asc" }
                 }
             },
-            orderBy: { createdAt: "desc" },
-            skip,
-            take,
+            orderBy,
+            // We can't easily paginate in DB if we filter by validation status (which is computed)
+            // But if status is 'all', we can use skip/take.
+            // If status is filtered, we'll fetch more and filter in JS for now or handle it better.
+            // For simplicity in this small app, we fetch all for the current search and filter.
+            // In a larger app, we'd store the 'isValid' status in the DB.
+            skip: status === 'all' ? skip : undefined,
+            take: status === 'all' ? take : undefined,
         }),
         prisma.quiz.count({ where }),
     ]);
 
-    return { quizzes, total };
+    const quizzesWithValidation = quizzesData.map(quiz => {
+        const validation = validateQuiz(quiz);
+        return {
+            ...quiz,
+            isValid: validation.isValid,
+            issues: validation.issues
+        };
+    });
+
+    let finalQuizzes = quizzesWithValidation;
+    let finalTotal = total;
+
+    if (status !== 'all') {
+        finalQuizzes = quizzesWithValidation.filter(q => status === 'complete' ? q.isValid : !q.isValid);
+        finalTotal = finalQuizzes.length;
+        // Manual pagination for filtered results
+        finalQuizzes = finalQuizzes.slice(skip, skip + take);
+    }
+
+    return { quizzes: finalQuizzes, total: finalTotal };
+}
+
+/**
+ * Validates a quiz for completeness and audio file presence.
+ */
+export function validateQuiz(quiz: any) {
+    const issues: string[] = [];
+    const questions = quiz.questions || [];
+
+    if (questions.length === 0) {
+        issues.push("Quiz has no questions.");
+    }
+
+    questions.forEach((q: any, idx: number) => {
+        const qNum = idx + 1;
+        const options = (q.options as any) || {};
+
+        if (!q.questionText || q.questionText.trim() === "") {
+            issues.push(`Q${qNum}: Question text is empty.`);
+        }
+
+        // Audio Checks
+        const audioUrl = options.audioUrl || options.audioPromptUrl;
+        const audioDependentTypes = ["TYPE_HEARD_AUDIO", "MULTI_SELECT_AUDIO_WORDS", "AUDIO_CHOICE"];
+
+        if (audioDependentTypes.includes(q.questionType) && !audioUrl) {
+            issues.push(`Q${qNum}: Missing required audio for type ${q.questionType}.`);
+        }
+
+        if (audioUrl) {
+            const relativePath = audioUrl.startsWith('/') ? audioUrl.substring(1) : audioUrl;
+            const fullPath = path.join(process.cwd(), "public", relativePath);
+            if (!fs.existsSync(fullPath)) {
+                issues.push(`Q${qNum}: Audio file not found: ${audioUrl}`);
+            }
+        }
+
+        // MCQ Checks
+        if (q.questionType === "MULTIPLE_CHOICE" || q.questionType === "AUDIO_CHOICE" || q.questionType === "STORY_MCQ") {
+            const choices = options.choices || [];
+            if (choices.length === 0) {
+                issues.push(`Q${qNum}: No choices provided.`);
+            } else if (!choices.some((c: any) => c.isCorrect)) {
+                issues.push(`Q${qNum}: No correct answer designated.`);
+            }
+        }
+
+        // Fill-in Checks
+        if (q.questionType === "FILL_IN_THE_BLANK" || q.questionType === "TYPE_HEARD_AUDIO") {
+            const answers = options.answers || options.fillInAnswers || [];
+            if (answers.length === 0) {
+                issues.push(`Q${qNum}: No accepted answers provided.`);
+            }
+        }
+
+        // Match Pairs Checks
+        if (q.questionType === "MATCH_PAIRS") {
+            const left = options.matchItemsLeft || [];
+            const right = options.matchItemsRight || [];
+            if (left.length === 0 || right.length === 0) {
+                issues.push(`Q${qNum}: Missing match items.`);
+            } else if (left.length !== right.length) {
+                issues.push(`Q${qNum}: Left and right match items count mismatch.`);
+            }
+        }
+    });
+
+    return {
+        isValid: issues.length === 0,
+        issues
+    };
 }
 
 export async function getQuizById(id: string) {

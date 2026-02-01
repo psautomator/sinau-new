@@ -200,6 +200,7 @@ model UserLessonNote {
 }
 
 enum Formality {
+  NEUTRAL
   NGOKO
   KRAMA
   KRAMA_INGGIL

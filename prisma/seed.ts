@@ -333,6 +333,7 @@ function mapFormality(f: string): Formality {
             if (f === "KramaInggil") return Formality.KRAMA_INGGIL;
             return Formality.KRAMA;
         case "Neutral":
+            return Formality.NEUTRAL;
         default:
             return Formality.NGOKO;
     }
