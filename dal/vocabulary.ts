@@ -152,6 +152,33 @@ export async function deleteVocabulary(id: string) {
 }
 
 /**
+ * Fetch a deterministic "Word of the Day" for a specific user.
+ * Changes every 24h and is unique per user ID.
+ */
+export async function getWordOfTheDay(userId: string) {
+    const total = await prisma.vocabulary.count();
+    if (total === 0) return null;
+
+    // Create a deterministic hash based on date + userId
+    const date = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const seedString = `${date}-${userId}`;
+
+    // Simple hash function to generate a number from a string
+    let hash = 0;
+    for (let i = 0; i < seedString.length; i++) {
+        const char = seedString.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+
+    const index = Math.abs(hash) % total;
+
+    return await prisma.vocabulary.findFirst({
+        skip: index,
+        orderBy: { id: "asc" }
+    });
+}
+/**
  * Fetch words by IDs (for Lesson Flashcards)
  */
 export async function getWordsByIds(ids: string[]) {

@@ -6,7 +6,7 @@ import RightSidebar from "@/components/RightSidebar";
 import { getUserWithStats, getLeaderboard } from "@/dal/user";
 import { getPublishedModules } from "@/dal/modules";
 import { getUserModuleProgress } from "@/dal/lessons";
-import { getVocabulary } from "@/dal/vocabulary";
+import { getWordOfTheDay, getVocabulary } from "@/dal/vocabulary";
 import { MOCK_USER_ID } from "@/lib/mock-auth";
 
 export default async function Home() {
@@ -14,13 +14,11 @@ export default async function Home() {
   const leaderboardData = await getLeaderboard(5);
   const modules = await getPublishedModules();
   const { vocabulary } = await getVocabulary({ take: 10 });
+  const wordOfTheDay = await getWordOfTheDay(MOCK_USER_ID);
 
   // Pick first module as "active" for now
   const activeModule = modules[0] || null;
   const progress = activeModule ? await getUserModuleProgress(MOCK_USER_ID, activeModule.id) : 0;
-
-  // Pick first word as "word of the day"
-  const wordOfTheDay = vocabulary[0] || null;
 
   // Map level mapping or fallback
   const levelNames: Record<number, string> = {
