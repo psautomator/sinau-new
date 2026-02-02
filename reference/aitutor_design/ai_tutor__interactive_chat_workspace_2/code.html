@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AyoSinau AI Tutor - Interactive Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --background-light: #F8FAFC;
+            --surface-light: #FFFFFF;
+            --border-light: #E2E8F0;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            font-size: 20px;
+        }
+        .batik-overlay {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuA0a7-yt1CNamCjCpNu4jxABolhDXrrC_SnCYThv3mao_GS52ulSs3zHWk5fjfOaXJmGaBXhsRGtmz9kwTitv-ERDFJddCGyUOdcRmOLW51engAOLh6xenZLOjB9Wh1d_YpcOPtEQ26Mb_TdNp39fxLYki_3ik05i14XBm_ES4YuZ23RDkb5MnXgMzXHpTlcPBJw61RgYmmhrm6v7SXwmnNjJW1Ly8xtr924pQKGeGulbq5cIZSco5ZNkH2Z3liC-RIu3nzXW7pCMI);
+            opacity: 0.02;
+            pointer-events: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E2E8F0;
+            border-radius: 10px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .chat-bubble-ai {
+            position: relative;
+            border-top-left-radius: 4px;
+        }
+        .chat-bubble-user {
+            position: relative;
+            border-top-right-radius: 4px;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10B981",
+                        "primary-dark": "#059669",
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1E293B",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased h-screen flex overflow-hidden">
+<div class="fixed inset-0 batik-overlay z-0"></div>
+<aside class="w-20 lg:w-64 border-r border-slate-200 dark:border-slate-800 bg-surface-light dark:bg-surface-dark z-20 flex flex-col shrink-0">
+<div class="p-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white shrink-0">
+<span class="material-symbols-outlined">school</span>
+</div>
+<div class="hidden lg:block overflow-hidden">
+<h1 class="font-extrabold text-lg tracking-tight truncate">AyoSinau</h1>
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Javanese</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="hidden lg:block font-semibold text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="hidden lg:block font-semibold text-sm">Modules</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">psychology</span>
+<span class="hidden lg:block font-semibold text-sm flex-1">AI Tutor</span>
+<span class="hidden lg:inline-flex px-1.5 py-0.5 text-[9px] font-black bg-primary text-white rounded-md">BETA</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all group" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="hidden lg:block font-semibold text-sm">Leaderboard</span>
+</a>
+</nav>
+<div class="p-4 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+<div class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center font-bold text-slate-600 text-sm shrink-0">BS</div>
+<div class="hidden lg:block overflow-hidden">
+<p class="text-sm font-bold truncate">Budi Santoso</p>
+<p class="text-[10px] text-slate-400 font-medium">Free Tier</p>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex h-full relative z-10 overflow-hidden">
+<section class="w-80 lg:w-96 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Choose a Scenario</h2>
+<div class="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-xl">
+<button class="flex-1 py-2 text-xs font-bold rounded-lg bg-white dark:bg-slate-700 shadow-sm text-primary">Recommended</button>
+<button class="flex-1 py-2 text-xs font-bold rounded-lg text-slate-500 dark:text-slate-400">Daily Life</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-4">
+<div class="relative p-4 rounded-2xl bg-white dark:bg-slate-800 border-2 border-primary shadow-lg shadow-primary/5 cursor-pointer">
+<div class="absolute -top-2.5 right-4 px-2 py-0.5 bg-primary text-white text-[9px] font-black uppercase rounded shadow-sm">Active</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-2xl">waving_hand</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-sm text-slate-900 dark:text-white">Kennismaken</h3>
+<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 leading-normal">Introduce yourself and learn basic greetings.</p>
+<div class="mt-3 flex items-center gap-3">
+<div class="flex-1 bg-slate-100 dark:bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[45%] rounded-full"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">45%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 hover:border-slate-300 transition-all cursor-pointer group">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-2xl">family_restroom</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-primary transition-colors">Familie &amp; Thuis</h3>
+<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Talk about your family members and home life.</p>
+</div>
+</div>
+</div>
+<div class="p-4 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 hover:border-slate-300 transition-all cursor-pointer group">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-primary transition-colors shrink-0">
+<span class="material-symbols-outlined text-2xl">shopping_basket</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-sm text-slate-900 dark:text-white group-hover:text-primary transition-colors">Bargaining at Pasar</h3>
+<p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1">Practice bargaining at a local traditional market.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="flex-1 flex flex-col bg-background-light dark:bg-slate-900 min-w-0">
+<header class="h-20 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md flex items-center justify-between px-8 shrink-0 z-10">
+<div class="flex items-center gap-4">
+<div class="w-11 h-11 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">smart_toy</span>
+</div>
+<div>
+<h2 class="font-bold text-base leading-tight">Furnie AI</h2>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<p class="text-[11px] font-medium text-slate-500 dark:text-slate-400">Ngoko Learning Mode</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600 transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-600 lg:hidden">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto p-8 space-y-8 custom-scrollbar">
+<div class="flex gap-4 max-w-[85%]">
+<div class="w-8 h-8 rounded-lg bg-primary flex-shrink-0 flex items-center justify-center text-white shadow-md shadow-primary/20 mt-4">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-black uppercase tracking-wider text-slate-400 ml-1">Furnie</p>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-2xl chat-bubble-ai shadow-sm border border-slate-200 dark:border-slate-800">
+<p class="text-[15px] leading-relaxed text-slate-800 dark:text-slate-200">Halo! 👋 Jenengku Furnie. Jenengmu sapa? Senang bisa ketemu kowe!</p>
+</div>
+<div class="flex gap-4 ml-1">
+<button class="text-[10px] font-bold text-primary flex items-center gap-1.5 hover:bg-primary/5 px-2 py-1 rounded-md transition-colors">
+<span class="material-symbols-outlined text-[14px]">translate</span> TRANSLATE
+                            </button>
+<button class="text-[10px] font-bold text-primary flex items-center gap-1.5 hover:bg-primary/5 px-2 py-1 rounded-md transition-colors">
+<span class="material-symbols-outlined text-[14px]">bookmark</span> SAVE WORD
+                            </button>
+</div>
+</div>
+</div>
+<div class="flex gap-4 max-w-[85%] ml-auto flex-row-reverse">
+<div class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-100 flex-shrink-0 flex items-center justify-center text-white dark:text-slate-900 shadow-md mt-4">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="space-y-2 text-right">
+<p class="text-[10px] font-black uppercase tracking-wider text-slate-400 mr-1">Budi</p>
+<div class="bg-primary p-4 rounded-2xl chat-bubble-user shadow-lg shadow-primary/10 text-white">
+<p class="text-[15px] leading-relaxed">Halo Furnie, jenengku Budi.</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex-shrink-0 flex items-center justify-center text-primary mt-2">
+<span class="material-symbols-outlined text-sm">smart_toy</span>
+</div>
+<div class="bg-white dark:bg-slate-800 px-4 py-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-200 dark:border-slate-800 flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce"></span>
+<span class="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce" style="animation-delay: 150ms;"></span>
+<span class="w-1.5 h-1.5 bg-primary/40 rounded-full animate-bounce" style="animation-delay: 300ms;"></span>
+</div>
+</div>
+</div>
+<footer class="p-6 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border-t border-slate-100 dark:border-slate-800">
+<div class="flex gap-2 overflow-x-auto pb-4 no-scrollbar max-w-4xl mx-auto">
+<button class="whitespace-nowrap px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold hover:border-primary hover:text-primary transition-all shadow-sm">Jenengku Budi</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold hover:border-primary hover:text-primary transition-all shadow-sm">Kowe asale saka ngendi?</button>
+<button class="whitespace-nowrap px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold hover:border-primary hover:text-primary transition-all shadow-sm">Pripun kabare?</button>
+</div>
+<div class="max-w-4xl mx-auto relative flex items-center gap-3">
+<div class="relative flex-1 group">
+<input class="w-full pl-6 pr-14 py-4 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-primary dark:focus:border-primary focus:ring-0 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-none transition-all placeholder:text-slate-400 font-medium text-sm" placeholder="Type your message in Javanese..." type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<button class="w-9 h-9 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined text-xl">mic</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center text-slate-400 hover:text-primary hover:bg-primary/5 rounded-full transition-colors">
+<span class="material-symbols-outlined text-xl">sticky_note_2</span>
+</button>
+</div>
+</div>
+<button class="w-14 h-14 bg-primary text-white rounded-2xl shadow-lg shadow-primary/30 flex items-center justify-center hover:bg-primary-dark transition-all transform active:scale-95 shrink-0">
+<span class="material-symbols-outlined text-2xl">send</span>
+</button>
+</div>
+</footer>
+</section>
+<section class="hidden xl:flex w-80 bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 flex-col overflow-hidden shrink-0">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800">
+<h3 class="font-black text-[11px] uppercase tracking-widest text-slate-400 mb-6">Learning Insights</h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-orange-50 dark:bg-orange-950/20 p-4 rounded-2xl border border-orange-100 dark:border-orange-900/30">
+<p class="text-[10px] font-bold text-orange-600/80 uppercase">Session XP</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-orange-500 text-lg" style="font-variation-settings: 'FILL' 1">bolt</span>
+<span class="text-xl font-extrabold text-orange-600">550</span>
+</div>
+</div>
+<div class="bg-emerald-50 dark:bg-emerald-950/20 p-4 rounded-2xl border border-emerald-100 dark:border-emerald-900/30">
+<p class="text-[10px] font-bold text-emerald-600/80 uppercase">Level</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-emerald-500 text-lg" style="font-variation-settings: 'FILL' 1">stars</span>
+<span class="text-xl font-extrabold text-emerald-600">LVL 7</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-6 custom-scrollbar space-y-8">
+<div>
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-bold text-sm text-slate-800 dark:text-slate-200">Mastered Words</h4>
+<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-[10px] font-bold text-slate-500">Today</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-2.5 py-1.5 bg-white dark:bg-slate-800 text-primary border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-semibold shadow-sm">Jenengmu</span>
+<span class="px-2.5 py-1.5 bg-white dark:bg-slate-800 text-primary border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-semibold shadow-sm">Ketemu</span>
+<span class="px-2.5 py-1.5 bg-white dark:bg-slate-800 text-primary border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-semibold shadow-sm">Sapa</span>
+<span class="px-2.5 py-1.5 bg-white dark:bg-slate-800 text-primary border border-slate-200 dark:border-slate-700 rounded-lg text-xs font-semibold shadow-sm">Senang</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 mb-4">Session Goals</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mt-0.5 shrink-0">
+<span class="material-symbols-outlined text-primary text-base font-bold">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-slate-800 dark:text-slate-200">Greet Furnie</p>
+<p class="text-[10px] text-slate-500 mt-0.5">Completed 1/1</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-full border-2 border-slate-200 dark:border-slate-700 flex items-center justify-center mt-0.5 shrink-0"></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-slate-400">Ask about origin</p>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-1 rounded-full mt-2">
+<div class="bg-slate-300 dark:bg-slate-600 h-full w-[30%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-3 opacity-50">
+<div class="w-6 h-6 rounded-full border-2 border-slate-200 dark:border-slate-700 mt-0.5 shrink-0"></div>
+<div class="flex-1 min-w-0">
+<p class="text-xs font-bold text-slate-400">Say goodbye in Krama</p>
+<p class="text-[10px] text-slate-400 mt-0.5">Locked</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-slate-50/50 dark:bg-slate-800/30 border-t border-slate-100 dark:border-slate-800">
+<button class="w-full py-3.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl text-[10px] font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary transition-all shadow-sm">
+                    View Full History
+                </button>
+</div>
+</section>
+</main>
+<div class="fixed bottom-6 right-6 z-50">
+<button class="w-12 h-12 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full shadow-2xl flex items-center justify-center text-slate-500 dark:text-slate-400 hover:scale-105 transition-all" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+
+</body></html>

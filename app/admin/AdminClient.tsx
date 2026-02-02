@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
     deleteModuleAction,
@@ -27,6 +28,8 @@ import QuizQuestionEditor from "@/components/admin/QuizQuestionEditor";
 import QuizWorkspace from "@/components/admin/QuizWorkspace";
 import LessonArchitect from "@/components/admin/LessonArchitect";
 import VocabularyFullEditor from "@/components/admin/VocabularyFullEditor";
+import AITutorScenarioEditor from "@/components/admin/AITutorScenarioEditor";
+import { saveScenario } from "@/app/ai-tutor/actions";
 
 interface AdminClientProps {
     initialModules: any[];
@@ -46,6 +49,7 @@ interface AdminClientProps {
     allVocabulary: any[];
     initialUsers: any[];
     totalUsersCount: number;
+    initialScenarios: any[];
 }
 
 export default function AdminClient({
@@ -65,7 +69,8 @@ export default function AdminClient({
     allLessons,
     allVocabulary,
     initialUsers,
-    totalUsersCount
+    totalUsersCount,
+    initialScenarios
 }: AdminClientProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -100,6 +105,9 @@ export default function AdminClient({
 
     const [isQuizModalOpen, setIsQuizModalOpen] = useState(false);
     const [editingQuiz, setEditingQuiz] = useState<any>(null);
+
+    const [isScenarioModalOpen, setIsScenarioModalOpen] = useState(false);
+    const [editingScenario, setEditingScenario] = useState<any>(null);
     const [isMatching, setIsMatching] = useState(false);
     const [isImportModalOpen, setIsImportModalOpen] = useState(false);
     const [previewVocab, setPreviewVocab] = useState<any[]>([]);
@@ -178,6 +186,31 @@ export default function AdminClient({
         if (!result.success) alert((result as any).error || "Failed to delete user");
     };
 
+    const handleSaveScenario = async (formData: FormData) => {
+        const data = {
+            id: formData.get("id") as string || undefined,
+            title: formData.get("title") as string,
+            slug: formData.get("slug") as string,
+            description: formData.get("description") as string,
+            initialMessage: formData.get("initialMessage") as string,
+            initialSuggestions: (formData.get("initialSuggestions") as string).split(',').map(s => s.trim()).filter(Boolean),
+            category: formData.get("category") as string,
+            icon: formData.get("icon") as string,
+            moduleId: formData.get("moduleId") as string || null,
+            order: parseInt(formData.get("order") as string || "0"),
+            published: formData.get("published") === "true",
+        };
+
+        try {
+            await saveScenario(data);
+            setIsScenarioModalOpen(false);
+            router.refresh();
+        } catch (error) {
+            console.error(error);
+            alert("Failed to save scenario.");
+        }
+    };
+
     const handleBulkMatchAudio = async () => {
         if (!confirm("This will attempt to match vocabulary words with audio files in public/audio/uploads based on their names. Continue?")) return;
 
@@ -209,37 +242,43 @@ export default function AdminClient({
             )}
 
             {/* Sidebar */}
-            <aside className={`fixed md:static inset-y-0 left-0 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 h-full w-72 flex-shrink-0 z-[40] transition-transform duration-300 ease-in-out md:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} flex flex-col`}>
-                <div className="flex flex-col h-full p-6">
-                    <div className="mb-10 px-2 flex items-center justify-between">
+            <aside className={`fixed md:static inset-y-0 left-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 h-full w-72 flex-shrink-0 z-[40] transition-transform duration-300 ease-in-out md:translate-x-0 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} flex flex-col`}>
+                <div className="flex flex-col h-full">
+                    {/* Sidebar Header */}
+                    <div className="p-8 pb-10 flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                                <span className="material-symbols-outlined text-2xl">auto_stories</span>
+                            <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
+                                <span className="material-symbols-outlined text-2xl">grid_view</span>
                             </div>
                             <div>
-                                <h1 className="text-slate-900 dark:text-white text-xl font-black tracking-tight leading-tight">AyoSinau</h1>
-                                <p className="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest">Control Panel</p>
+                                <h1 className="text-slate-900 dark:text-white text-xl font-black tracking-tight leading-none">AyoSinau</h1>
+                                <p className="text-emerald-600 dark:text-emerald-500 text-[10px] font-bold uppercase tracking-widest mt-1">Content Admin</p>
                             </div>
                         </div>
-                        {/* mobile close */}
                         <button onClick={() => setIsSidebarOpen(false)} className="md:hidden text-slate-400 hover:text-slate-900 dark:hover:text-white">
                             <span className="material-symbols-outlined">close</span>
                         </button>
                     </div>
 
-                    <nav className="flex-1 flex flex-col gap-2">
+                    {/* Sidebar Navigation */}
+                    <nav className="flex-1 px-6 flex flex-col gap-1.5 overflow-y-auto custom-scrollbar">
                         {[
                             { id: 'dashboard', label: 'Dashboard', icon: 'dashboard' },
-                            { id: 'modules', label: 'Modules', icon: 'book' },
-                            { id: 'lessons', label: 'Lessons', icon: 'menu_book' },
-                            { id: 'vocabulary', label: 'Vocabulary', icon: 'list' },
-                            { id: 'quizzes', label: 'Quizzes', icon: 'quiz' },
-                            { id: 'users', label: 'Users', icon: 'group' },
-                            { id: 'queue', label: 'Queue', icon: 'reorder' },
+                            { id: 'modules', label: 'Course Modules', icon: 'layers' },
+                            { id: 'lessons', label: 'Lesson Editor', icon: 'description' },
+                            { id: 'vocabulary', label: 'Vocabulary Bank', icon: 'translate' },
+                            { id: 'quizzes', label: 'Quiz Management', icon: 'quiz' },
+                            { id: 'scenarios', label: 'AI Tutor Config', icon: 'smart_toy' },
+                            { id: 'users', label: 'Student Management', icon: 'group' },
+                            { id: 'exit', label: 'Exit Admin', icon: 'logout', action: 'home' },
                         ].map((item) => (
                             <button
                                 key={item.id}
                                 onClick={() => {
+                                    if (item.action === 'home') {
+                                        router.push('/');
+                                        return;
+                                    }
                                     setActiveTab(item.id);
                                     setIsSidebarOpen(false);
                                     const params = new URLSearchParams(searchParams.toString());
@@ -247,57 +286,85 @@ export default function AdminClient({
                                     params.set("page", "1");
                                     router.push(`/admin?${params.toString()}`);
                                 }}
-                                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeTab === item.id
-                                    ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/20'
-                                    : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700'
+                                className={`flex items-center gap-3 px-4 py-3.5 rounded-2xl transition-all duration-200 group ${activeTab === item.id
+                                    ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                                    : 'text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800'
                                     }`}
                             >
-                                <span className={`material-symbols-outlined ${activeTab === item.id ? 'fill-1' : ''}`}>{item.icon}</span>
-                                <span className="text-sm font-bold">{item.label}</span>
+                                <span className={`material-symbols-outlined text-[22px] transition-transform group-hover:scale-110 ${activeTab === item.id ? 'fill-1' : ''}`}>{item.icon}</span>
+                                <span className={`text-[13px] font-bold ${activeTab === item.id ? 'font-black' : ''}`}>{item.label}</span>
+                                {activeTab === item.id && (
+                                    <div className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-sm" />
+                                )}
                             </button>
                         ))}
                     </nav>
 
-                    <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-700">
-                        <Link href="/" className="flex items-center gap-3 px-4 py-3 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-xl transition-colors">
-                            <span className="material-symbols-outlined text-[20px]">logout</span>
-                            <span className="text-sm font-bold">Exit Admin</span>
-                        </Link>
+                    {/* Sidebar Footer / Content Pipeline */}
+                    <div className="p-6 mt-auto border-t border-slate-100 dark:border-slate-800 space-y-6">
+                        <div className="bg-slate-50 dark:bg-slate-800/50 p-5 rounded-[2rem] border border-slate-100 dark:border-slate-700/50">
+                            <div className="flex justify-between items-center mb-3">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Content Pipeline</span>
+                                <span className="text-[10px] font-black text-blue-600">78%</span>
+                            </div>
+                            <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div className="h-full bg-blue-500 rounded-full w-[78%] shadow-sm" />
+                            </div>
+                            <p className="text-[9px] font-bold text-slate-500 mt-3 flex items-center gap-1.5">
+                                <span className="w-1 h-1 rounded-full bg-blue-500 animate-pulse" />
+                                78% Q3 Modules Ready
+                            </p>
+                        </div>
+
+                        <button className="w-full flex items-center justify-center gap-3 py-4 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 text-white rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] shadow-xl shadow-slate-900/10 transition-all active:scale-95 group">
+                            <span className="material-symbols-outlined text-[18px] group-hover:rotate-12 transition-transform">publish</span>
+                            Mass Publish
+                        </button>
                     </div>
                 </div>
             </aside>
 
             {/* Main Section */}
             <div className="flex-1 flex flex-col h-full overflow-hidden relative">
-                <header className="px-8 pt-8 pb-4 flex flex-col gap-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 z-10">
-                    <div className="flex justify-between items-end flex-wrap gap-4">
-                        <div className="flex items-center gap-4">
-                            <button
-                                onClick={() => setIsSidebarOpen(true)}
-                                className="md:hidden p-2 bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-300"
-                            >
-                                <span className="material-symbols-outlined">menu</span>
-                            </button>
-                            <div>
-                                <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">
-                                    <span>Administration</span>
-                                    <span className="text-slate-300">/</span>
-                                    <span className="text-blue-600">{activeTab}</span>
-                                </div>
-                                <h1 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white tracking-tighter capitalize">{activeTab}</h1>
-                            </div>
+                <header className="px-8 py-5 flex items-center justify-between bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 z-10">
+                    <div className="flex items-center gap-6">
+                        <button
+                            onClick={() => setIsSidebarOpen(true)}
+                            className="md:hidden p-3 bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-600 dark:text-slate-300"
+                        >
+                            <span className="material-symbols-outlined">menu</span>
+                        </button>
+                        <div className="flex items-center gap-2 text-[11px] font-bold tracking-tight text-slate-400">
+                            <span>Admin</span>
+                            <span className="material-symbols-outlined text-[14px]">chevron_right</span>
+                            <span className="text-slate-900 dark:text-white font-black capitalize">
+                                {activeTab === 'dashboard' ? 'Content Management Dashboard' : `${activeTab} Management`}
+                            </span>
                         </div>
-                        <div className="flex gap-4">
-                            <Link
-                                href="/admin/bulk-import"
-                                className="bg-slate-50 dark:bg-slate-800/50 px-6 py-3.5 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 transition-all hover:bg-slate-100 dark:hover:bg-slate-700 hover:-translate-y-0.5 active:scale-95"
-                            >
-                                <span className="material-symbols-outlined text-emerald-600 text-[20px]">upload_file</span>
-                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-700 dark:text-slate-300">Bulk Import</span>
-                            </Link>
-                            <div className="bg-slate-50 dark:bg-slate-800/50 px-5 py-3 rounded-2xl border border-slate-100 dark:border-slate-700 flex flex-col items-center min-w-[100px]">
-                                <span className="text-[10px] text-slate-400 uppercase font-black tracking-widest leading-none mb-1">Total Items</span>
-                                <span className="text-xl font-black">{totalCount}</span>
+                    </div>
+
+                    <div className="flex items-center gap-8">
+                        {/* Notifications */}
+                        <div className="relative group">
+                            <button className="p-3 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-2xl transition-all">
+                                <span className="material-symbols-outlined text-[24px]">notifications</span>
+                                <div className="absolute top-3 right-3 w-2.5 h-2.5 bg-blue-500 rounded-full border-2 border-white dark:border-slate-900" />
+                            </button>
+                        </div>
+
+                        {/* Profile Section */}
+                        <div className="flex items-center gap-4 bg-slate-50 dark:bg-slate-800/50 pl-6 pr-2 py-2 rounded-3xl border border-slate-100 dark:border-slate-700">
+                            <div className="text-right">
+                                <p className="text-sm font-black text-slate-900 dark:text-white leading-tight">Budi Santoso</p>
+                                <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-widest">Head of Education</p>
+                            </div>
+                            <div className="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-white dark:border-slate-600 overflow-hidden relative shadow-sm">
+                                <Image
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-av2hlIVBxc2iq2Re3gsL1jApS0FF4DXF2KTIFjPdQvqYCmAKWX7k9VZhOOdj3WwICYLTWWDfOTeA-uo7J5cDrqx9NXN4bzFFXns3CCV1uzZRNqyMYiA4KngO_5bgFbKgro_nljo3vqRIL3zNgmtqhTnHbOTqlwgsPma2WIOeJCRKRqXGw-PEj8aRSeesm6yJZ7lTDD3Y4ViwclfWYadM8UVzqi0Ranbo-WJVJfJRW6O0xSAVskJiswmA4tlsXDVPUDFXJWaA5-A"
+                                    alt="Admin Profile"
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                         </div>
                     </div>
@@ -328,6 +395,7 @@ export default function AdminClient({
                                         if (activeTab === 'modules') { setEditingModule(null); setIsModuleModalOpen(true); }
                                         else if (activeTab === 'lessons') { setEditingLesson(null); setIsLessonModalOpen(true); }
                                         else if (activeTab === 'quizzes') { setEditingQuiz(null); setIsQuizModalOpen(true); }
+                                        else if (activeTab === 'scenarios') { setEditingScenario(null); setIsScenarioModalOpen(true); }
                                         else { setEditingVocab(null); setIsFullEditorOpen(true); }
                                     }}
                                     className="w-full md:w-auto flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 rounded-2xl text-sm font-black uppercase tracking-widest shadow-xl shadow-blue-600/20 transition-all hover:-translate-y-1 active:scale-95"
@@ -511,304 +579,525 @@ export default function AdminClient({
                         </div>
 
                         {/* Data Display */}
-                        <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] shadow-sm border border-slate-200/50 dark:border-slate-700 overflow-hidden">
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left border-separate border-spacing-0">
-                                    <thead>
-                                        <tr className="bg-slate-50/50 dark:bg-slate-800/80 text-[10px] uppercase font-black tracking-[0.15em] text-slate-400">
-                                            {activeTab === 'dashboard' ? (
-                                                <>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Statistic</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Value</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
-                                                </>
-                                            ) : activeTab === 'modules' ? (
-                                                <>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Module Name</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Proficiency</th>
-                                                    <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Lessons</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
-                                                    <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
-                                                </>
-                                            ) : activeTab === 'lessons' ? (
-                                                <>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Lesson Title</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Module</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Level</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Style</th>
-                                                    <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Order</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
-                                                    <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
-                                                </>
-                                            ) : activeTab === 'vocabulary' ? (
-                                                <>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Javanese Word</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Translation</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Category</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Level</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Formality</th>
-                                                    <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
-                                                </>
-                                            ) : activeTab === 'quizzes' ? (
-                                                <>
-                                                    <th
-                                                        className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 cursor-pointer hover:text-blue-600 transition-colors"
-                                                        onClick={() => {
-                                                            const order = quizSortBy === 'title' && quizSortOrder === 'asc' ? 'desc' : 'asc';
-                                                            setQuizSortBy('title');
-                                                            setQuizSortOrder(order);
-                                                            updateFilters({ quizSortBy: 'title', quizSortOrder: order });
-                                                        }}
-                                                    >
-                                                        <div className="flex items-center gap-1">
-                                                            Quiz Title
-                                                            {quizSortBy === 'title' && (
-                                                                <span className="material-symbols-outlined text-xs">{quizSortOrder === 'asc' ? 'arrow_upward' : 'arrow_downward'}</span>
-                                                            )}
+                        {activeTab === 'dashboard' ? (
+                            <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+                                {/* Stats Grid */}
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    {[
+                                        { label: 'Total Students', value: (totalUsersCount || 0).toLocaleString(), icon: 'groups', color: 'bg-slate-100', text: 'text-slate-600', badge: 'Active', badgeColor: 'bg-emerald-50 text-emerald-600' },
+                                        { label: 'Total Vocabulary (Items)', value: (initialStats?.vocabularyCount || 0).toLocaleString(), icon: 'translate', color: 'bg-blue-50', text: 'text-blue-600', badge: '+42 New', badgeColor: 'bg-blue-50 text-blue-600' },
+                                        { label: 'Total Lessons', value: (initialStats?.lessonsCount || 0).toLocaleString(), icon: 'menu_book', color: 'bg-emerald-50', text: 'text-emerald-600', badge: '8 Stages', badgeColor: 'bg-emerald-50 text-emerald-600' },
+                                        { label: 'Active AI Sessions', value: (initialStats?.scenariosCount || 0).toLocaleString(), icon: 'psychology', color: 'bg-slate-100', text: 'text-slate-600', badge: 'Live', badgeColor: 'bg-emerald-50 text-emerald-600' },
+                                    ].map((stat, i) => (
+                                        <div key={i} className="bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 shadow-sm relative overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1">
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className={`p-4 ${stat.color} ${stat.text} rounded-2xl`}>
+                                                    <span className="material-symbols-outlined text-2xl">{stat.icon}</span>
+                                                </div>
+                                                <span className={`px-3 py-1 ${stat.badgeColor} text-[10px] font-black uppercase tracking-widest rounded-lg`}>{stat.badge}</span>
+                                            </div>
+                                            <div>
+                                                <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1">{stat.label}</p>
+                                                <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{stat.value}</p>
+                                            </div>
+                                            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-slate-50 dark:bg-slate-900/50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500" />
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Charts & Queue Section */}
+                                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                                    {/* Student Engagement Chart */}
+                                    <div className="lg:col-span-2 bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm">
+                                        <div className="flex justify-between items-center mb-10">
+                                            <div>
+                                                <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Student Engagement</h3>
+                                                <p className="text-sm font-bold text-slate-400 mt-1">Daily active learners over the last 30 days</p>
+                                            </div>
+                                            <div className="flex bg-slate-50 dark:bg-slate-900 p-1.5 rounded-2xl gap-2">
+                                                <button className="px-4 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-sm">Weekly</button>
+                                                <button className="px-4 py-2 text-slate-400 rounded-xl text-[10px] font-black uppercase tracking-widest">Monthly</button>
+                                            </div>
+                                        </div>
+
+                                        {/* Simplified SVG Area Chart */}
+                                        <div className="h-[240px] w-full relative group">
+                                            <svg className="w-full h-full overflow-visible" viewBox="0 0 800 200" preserveAspectRatio="none">
+                                                <defs>
+                                                    <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                                        <stop offset="0%" stopColor="#10b981" stopOpacity="0.2" />
+                                                        <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
+                                                    </linearGradient>
+                                                </defs>
+                                                <path
+                                                    d="M0,150 Q100,145 200,100 T400,110 T600,60 T800,40"
+                                                    fill="none"
+                                                    stroke="#10b981"
+                                                    strokeWidth="3"
+                                                    strokeLinecap="round"
+                                                    className="animate-in slide-in-from-left duration-1000"
+                                                />
+                                                <path
+                                                    d="M0,150 Q100,145 200,100 T400,110 T600,60 T800,40 L800,200 L0,200 Z"
+                                                    fill="url(#chartGradient)"
+                                                />
+                                                {/* Dots for key points */}
+                                                {[0, 200, 400, 600, 800].map((x, i) => (
+                                                    <circle key={i} cx={x} cy={i === 0 ? 150 : i === 1 ? 100 : i === 2 ? 110 : i === 3 ? 60 : 40} r="5" fill="#10b981" className="cursor-pointer hover:r-8 transition-all" />
+                                                ))}
+                                            </svg>
+
+                                            {/* X-Axis Labels */}
+                                            <div className="flex justify-between mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-300">
+                                                <span>Nov 01</span>
+                                                <span>Nov 10</span>
+                                                <span>Nov 20</span>
+                                                <span>Nov 30</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Publication Queue */}
+                                    <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+                                        <div className="flex justify-between items-center mb-8">
+                                            <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Publication Queue</h3>
+                                            <span className="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg">3 Pending</span>
+                                        </div>
+
+                                        <div className="space-y-4 flex-1">
+                                            {[
+                                                { title: 'Intermediate Ngoko', type: 'Lesson Set • Admin Update', time: '12m ago' },
+                                                { title: 'Wayang Terminology', type: 'Vocab Pack • Content Team', time: '1h ago' },
+                                                { title: 'Politeness Levels Quiz', type: 'Interactive • AI Generated', time: '3h ago' },
+                                            ].map((task, i) => (
+                                                <div key={i} className="p-5 rounded-3xl border border-slate-100 dark:border-slate-700/50 hover:border-blue-500/20 hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-all group">
+                                                    <div className="flex justify-between items-start mb-4">
+                                                        <div>
+                                                            <h4 className="text-sm font-black text-slate-900 dark:text-white tracking-tight">{task.title}</h4>
+                                                            <p className="text-[10px] font-bold text-emerald-500 uppercase tracking-tighter mt-1">{task.type}</p>
                                                         </div>
-                                                    </th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Lesson / Module</th>
-                                                    <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Questions</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
-                                                    <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
-                                                </>
-                                            ) : activeTab === 'users' ? (
-                                                <>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">User</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Email</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Role / Level</th>
-                                                    <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Queue Task</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Description</th>
-                                                    <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Priority</th>
-                                                </>
-                                            )}
-                                        </tr>
-                                    </thead>
-                                    <tbody className="divide-y divide-slate-100 dark:divide-slate-700/50">
-                                        {activeTab === 'dashboard' ? (
-                                            [
-                                                { label: 'Total Modules', value: initialStats.modulesCount, status: 'Healthy' },
-                                                { label: 'Total Lessons', value: initialStats.lessonsCount, status: 'Active' },
-                                                { label: 'Total Vocabulary', value: initialStats.vocabularyCount, status: 'Growing' },
-                                                { label: 'Total Quizzes', value: initialStats.quizzesCount, status: 'Testing' },
-                                                { label: 'Total Users', value: totalUsersCount, status: 'Healthy' },
-                                            ].map((stat, i) => (
-                                                <tr key={i} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
-                                                    <td className="px-8 py-6 text-sm font-bold text-slate-900 dark:text-white uppercase tracking-widest">{stat.label}</td>
-                                                    <td className="px-8 py-6 text-2xl font-black text-blue-600">{stat.value}</td>
-                                                    <td className="px-8 py-6">
-                                                        <span className="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{stat.status}</span>
-                                                    </td>
+                                                        <span className="text-[10px] font-bold text-slate-400 whitespace-nowrap">{task.time}</span>
+                                                    </div>
+                                                    <div className="grid grid-cols-2 gap-3">
+                                                        <button className="py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">Approve</button>
+                                                        <button className="py-2 bg-slate-50 dark:bg-slate-700 text-slate-500 hover:bg-red-50 hover:text-red-500 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">Reject</button>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <button className="w-full mt-6 py-4 flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-blue-600 transition-colors">
+                                            <span className="material-symbols-outlined text-[18px]">history</span>
+                                            View Publication History
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Content Asset Health */}
+                                <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm overflow-hidden">
+                                    <div className="p-8 border-b border-slate-50 dark:border-slate-700 flex justify-between items-center">
+                                        <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Content Asset Health</h3>
+                                        <button className="text-[10px] font-black uppercase tracking-widest text-blue-600 flex items-center gap-1 hover:underline">
+                                            Full Audit
+                                            <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+                                        </button>
+                                    </div>
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-left">
+                                            <thead>
+                                                <tr className="bg-slate-50 dark:bg-slate-900/50 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                                    <th className="px-8 py-5">Component Type</th>
+                                                    <th className="px-8 py-5">Coverage</th>
+                                                    <th className="px-8 py-5">Success Rate</th>
+                                                    <th className="px-8 py-5">Status</th>
                                                 </tr>
-                                            ))
-                                        ) : activeTab === 'modules' ? (
-                                            initialModules.map((module) => (
-                                                <tr key={module.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
-                                                    <td className="px-8 py-6">
-                                                        <p className="text-base font-black text-slate-900 dark:text-white truncate tracking-tight">{module.title}</p>
-                                                        <p className="text-xs text-slate-500 line-clamp-1">{module.description}</p>
-                                                    </td>
-                                                    <td className="px-8 py-6">
-                                                        <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{module.level}</span>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{module._count?.lessons || 0}</td>
-                                                    <td className="px-8 py-6">
-                                                        <button
-                                                            onClick={() => handleToggleModulePublish(module.id)}
-                                                            className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${module.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}
+                                            </thead>
+                                            <tbody className="divide-y divide-slate-50 dark:divide-slate-700">
+                                                {[
+                                                    { name: 'Krama Alus Modules', sub: 'Formal Polite Dialect', coverage: '100%', rate: '98.2%', status: 'Optimized', statusColor: 'text-emerald-500 bg-emerald-50' },
+                                                    { name: 'Ngoko Lessons', sub: 'Casual Everyday Javanese', coverage: '85%', rate: '94.5%', status: 'Stable', statusColor: 'text-blue-500 bg-blue-50' },
+                                                    { name: 'Batik Vocabulary Pack', sub: 'Thematic Cultural Lexicon', coverage: '42%', rate: 'N/A', status: 'Draft', statusColor: 'text-slate-400 bg-slate-100' },
+                                                ].map((row, i) => (
+                                                    <tr key={i} className="group hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                                                        <td className="px-8 py-6">
+                                                            <p className="font-black text-slate-900 dark:text-white text-sm">{row.name}</p>
+                                                            <p className="text-[10px] font-bold text-slate-400 mt-1">{row.sub}</p>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex items-center gap-4">
+                                                                <div className="h-1.5 w-32 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                                                                    <div
+                                                                        className="h-full bg-emerald-500 rounded-full"
+                                                                        style={{ width: row.coverage }}
+                                                                    />
+                                                                </div>
+                                                                <span className="text-[11px] font-black text-slate-600 dark:text-slate-400">{row.coverage}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex items-center gap-2 text-blue-600">
+                                                                {row.rate !== 'N/A' && <span className="material-symbols-outlined text-[18px]">check_circle</span>}
+                                                                <span className="text-[11px] font-black">{row.rate}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <span className={`px-4 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest ${row.statusColor}`}>
+                                                                {row.status}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div className="bg-white dark:bg-slate-800 rounded-[2.5rem] shadow-sm border border-slate-200/50 dark:border-slate-700 overflow-hidden">
+                                <div className="overflow-x-auto">
+                                    <table className="w-full text-left border-separate border-spacing-0">
+                                        <thead>
+                                            <tr className="bg-slate-50/50 dark:bg-slate-800/80 text-[10px] uppercase font-black tracking-[0.15em] text-slate-400">
+                                                {activeTab === 'modules' ? (
+                                                    <>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Module Name</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Proficiency</th>
+                                                        <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Lessons</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
+                                                        <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
+                                                    </>
+                                                ) : activeTab === 'lessons' ? (
+                                                    <>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Lesson Title</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Module</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Level</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Style</th>
+                                                        <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Order</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
+                                                        <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
+                                                    </>
+                                                ) : activeTab === 'vocabulary' ? (
+                                                    <>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Javanese Word</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Translation</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Category</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Level</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Formality</th>
+                                                        <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
+                                                    </>
+                                                ) : activeTab === 'quizzes' ? (
+                                                    <>
+                                                        <th
+                                                            className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 cursor-pointer hover:text-blue-600 transition-colors"
+                                                            onClick={() => {
+                                                                const order = quizSortBy === 'title' && quizSortOrder === 'asc' ? 'desc' : 'asc';
+                                                                setQuizSortBy('title');
+                                                                setQuizSortOrder(order);
+                                                                updateFilters({ quizSortBy: 'title', quizSortOrder: order });
+                                                            }}
                                                         >
-                                                            {module.published ? 'Published' : 'Draft'}
-                                                        </button>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-right">
-                                                        <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
+                                                            <div className="flex items-center gap-1">
+                                                                Quiz Title
+                                                                {quizSortBy === 'title' && (
+                                                                    <span className="material-symbols-outlined text-xs">{quizSortOrder === 'asc' ? 'arrow_upward' : 'arrow_downward'}</span>
+                                                                )}
+                                                            </div>
+                                                        </th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Lesson / Module</th>
+                                                        <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Questions</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Status</th>
+                                                        <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
+                                                    </>
+                                                ) : activeTab === 'users' ? (
+                                                    <>
+                                                        <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
+                                                    </>
+                                                ) : activeTab === 'scenarios' ? (
+                                                    <>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Scenario Name</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Category</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Module</th>
+                                                        <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Order</th>
+                                                        <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Queue Task</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Description</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Priority</th>
+                                                    </>
+                                                )}
+                                            </tr>
+                                        </thead>
+                                        <tbody className="divide-y divide-slate-100 dark:divide-slate-700/50">
+                                            {activeTab === 'modules' ? (
+                                                initialModules.map((module) => (
+                                                    <tr key={module.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
+                                                        <td className="px-8 py-6">
+                                                            <p className="text-base font-black text-slate-900 dark:text-white truncate tracking-tight">{module.title}</p>
+                                                            <p className="text-xs text-slate-500 line-clamp-1">{module.description}</p>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{module.level}</span>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{module._count?.lessons || 0}</td>
+                                                        <td className="px-8 py-6">
                                                             <button
-                                                                onClick={() => { setEditingModule(module); setIsModuleModalOpen(true); }}
-                                                                className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl"
+                                                                onClick={() => handleToggleModulePublish(module.id)}
+                                                                className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${module.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}
                                                             >
-                                                                <span className="material-symbols-outlined">edit</span>
+                                                                {module.published ? 'Published' : 'Draft'}
                                                             </button>
-                                                            <button
-                                                                onClick={() => handleDeleteModule(module.id)}
-                                                                className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl"
-                                                            >
-                                                                <span className="material-symbols-outlined">delete</span>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        ) : activeTab === 'lessons' ? (
-                                            initialLessons.map((lesson) => (
-                                                <tr key={lesson.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
-                                                    <td className="px-8 py-6">
-                                                        <p className="text-base font-black text-slate-900 dark:text-white truncate tracking-tight">{lesson.title}</p>
-                                                        <p className="text-xs text-slate-500 line-clamp-1">{lesson.description}</p>
-                                                    </td>
-                                                    <td className="px-8 py-6">
-                                                        <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-[9px] font-black text-slate-500 uppercase tracking-tighter truncate max-w-[100px] block">{lesson.module?.title}</span>
-                                                    </td>
-                                                    <td className="px-8 py-6">
-                                                        <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">{lesson.level || 'A1'}</span>
-                                                    </td>
-                                                    <td className="px-8 py-6">
-                                                        <span className="px-3 py-1 bg-amber-50 dark:bg-amber-900/20 rounded-lg text-[10px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest">{lesson.languageStyle || 'Ngoko'}</span>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{lesson.order}</td>
-                                                    <td className="px-8 py-6">
-                                                        <button
-                                                            onClick={() => handleToggleLessonPublish(lesson.id)}
-                                                            className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${lesson.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}
-                                                        >
-                                                            {lesson.published ? 'Published' : 'Draft'}
-                                                        </button>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-right">
-                                                        <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
-                                                            <button
-                                                                onClick={() => window.open(`/lessons/${lesson.slug}?preview=true`, '_blank')}
-                                                                className="p-2 text-slate-400 hover:text-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-xl"
-                                                                title="Preview Lesson"
-                                                            >
-                                                                <span className="material-symbols-outlined">visibility</span>
-                                                            </button>
-                                                            <button
-                                                                onClick={() => { setBlockEditingLesson(lesson); setIsBlockEditorOpen(true); }}
-                                                                className="p-2 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-xl"
-                                                                title="Designer Mode (Blocks)"
-                                                            >
-                                                                <span className="material-symbols-outlined leading-none">architecture</span>
-                                                            </button>
-                                                            <button onClick={() => { setEditingLesson(lesson); setIsLessonModalOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
-                                                                <span className="material-symbols-outlined">edit</span>
-                                                            </button>
-                                                            <button onClick={() => handleDeleteLesson(lesson.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
-                                                                <span className="material-symbols-outlined">delete</span>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        ) : activeTab === 'vocabulary' ? (
-                                            initialVocabulary.map((vocab) => (
-                                                <tr key={vocab.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 cursor-pointer transition-colors" onClick={() => { setEditingVocab(vocab); setIsQuickEditOpen(true); }}>
-                                                    <td className="px-8 py-6">
-                                                        <div className="flex items-center gap-3">
-                                                            <span className="text-base font-black text-slate-900 dark:text-white tracking-tight">{vocab.word}</span>
-                                                            {vocab.audioUrl ? (
-                                                                vocab.audioFileExists ? (
-                                                                    <span className="material-symbols-outlined text-blue-500 text-sm fill-1" title="Has Audio (Verified)">volume_up</span>
-                                                                ) : (
-                                                                    <span className="material-symbols-outlined text-red-500 text-sm animate-pulse" title="Audio Path set, but FILE MISSING in public/uploads">warning</span>
-                                                                )
-                                                            ) : (
-                                                                <span className="material-symbols-outlined text-slate-300 text-sm" title="No Audio Path set">volume_off</span>
-                                                            )}
-                                                        </div>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-sm font-medium text-slate-600">{vocab.translation}</td>
-                                                    <td className="px-8 py-6"><span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{vocab.category || "General"}</span></td>
-                                                    <td className="px-8 py-6"><span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{vocab.level || "A1"}</span></td>
-                                                    <td className="px-8 py-6 text-[10px] font-black uppercase text-slate-400">{vocab.formality}</td>
-                                                    <td className="px-8 py-6 text-right" onClick={(e) => e.stopPropagation()}>
-                                                        <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
-                                                            {vocab.audioUrl && (
+                                                        </td>
+                                                        <td className="px-8 py-6 text-right">
+                                                            <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
                                                                 <button
-                                                                    onClick={(e) => { e.stopPropagation(); playAudio(vocab.audioUrl); }}
+                                                                    onClick={() => { setEditingModule(module); setIsModuleModalOpen(true); }}
                                                                     className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl"
                                                                 >
-                                                                    <span className="material-symbols-outlined">volume_up</span>
+                                                                    <span className="material-symbols-outlined">edit</span>
                                                                 </button>
-                                                            )}
-                                                            <button onClick={() => { setEditingVocab(vocab); setIsFullEditorOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
-                                                                <span className="material-symbols-outlined">edit</span>
-                                                            </button>
-                                                            <button onClick={() => handleDeleteVocabulary(vocab.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
-                                                                <span className="material-symbols-outlined">delete</span>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        ) : activeTab === 'quizzes' ? (
-                                            initialQuizzes.map((quiz) => (
-                                                <tr key={quiz.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
-                                                    <td className="px-8 py-6">
-                                                        <p className="text-base font-black text-slate-900 dark:text-white truncate tracking-tight">{quiz.title}</p>
-                                                        <p className="text-xs text-slate-500 line-clamp-1">{quiz.description}</p>
-                                                    </td>
-                                                    <td className="px-8 py-6">
-                                                        <div className="text-xs font-bold text-slate-700 dark:text-slate-300">{quiz.lesson?.title}</div>
-                                                        <div className="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">{quiz.lesson?.module?.title}</div>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{quiz._count?.questions || 0}</td>
-                                                    <td className="px-8 py-6">
-                                                        <div className="flex items-center gap-2">
-                                                            <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${quiz.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
-                                                                {quiz.published ? 'Published' : 'Draft'}
-                                                            </span>
-                                                            {!quiz.isValid ? (
-                                                                <span
-                                                                    className="material-symbols-outlined text-red-500 cursor-help"
-                                                                    title={quiz.issues?.join('\n')}
+                                                                <button
+                                                                    onClick={() => handleDeleteModule(module.id)}
+                                                                    className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl"
                                                                 >
-                                                                    report
+                                                                    <span className="material-symbols-outlined">delete</span>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : activeTab === 'lessons' ? (
+                                                initialLessons.map((lesson) => (
+                                                    <tr key={lesson.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
+                                                        <td className="px-8 py-6">
+                                                            <p className="text-base font-black text-slate-900 dark:text-white truncate tracking-tight">{lesson.title}</p>
+                                                            <p className="text-xs text-slate-500 line-clamp-1">{lesson.description}</p>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <span className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-[9px] font-black text-slate-500 uppercase tracking-tighter truncate max-w-[100px] block">{lesson.module?.title}</span>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-[10px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest">{lesson.level || 'A1'}</span>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <span className="px-3 py-1 bg-amber-50 dark:bg-amber-900/20 rounded-lg text-[10px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-widest">{lesson.languageStyle || 'Ngoko'}</span>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{lesson.order}</td>
+                                                        <td className="px-8 py-6">
+                                                            <button
+                                                                onClick={() => handleToggleLessonPublish(lesson.id)}
+                                                                className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${lesson.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}
+                                                            >
+                                                                {lesson.published ? 'Published' : 'Draft'}
+                                                            </button>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-right">
+                                                            <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
+                                                                <button
+                                                                    onClick={() => window.open(`/lessons/${lesson.slug}?preview=true`, '_blank')}
+                                                                    className="p-2 text-slate-400 hover:text-purple-600 hover:bg-purple-50 dark:hover:bg-purple-900/20 rounded-xl"
+                                                                    title="Preview Lesson"
+                                                                >
+                                                                    <span className="material-symbols-outlined">visibility</span>
+                                                                </button>
+                                                                <button
+                                                                    onClick={() => { setBlockEditingLesson(lesson); setIsBlockEditorOpen(true); }}
+                                                                    className="p-2 text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-xl"
+                                                                    title="Designer Mode (Blocks)"
+                                                                >
+                                                                    <span className="material-symbols-outlined leading-none">architecture</span>
+                                                                </button>
+                                                                <button onClick={() => { setEditingLesson(lesson); setIsLessonModalOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
+                                                                    <span className="material-symbols-outlined">edit</span>
+                                                                </button>
+                                                                <button onClick={() => handleDeleteLesson(lesson.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
+                                                                    <span className="material-symbols-outlined">delete</span>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : activeTab === 'vocabulary' ? (
+                                                initialVocabulary.map((vocab) => (
+                                                    <tr key={vocab.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 cursor-pointer transition-colors" onClick={() => { setEditingVocab(vocab); setIsQuickEditOpen(true); }}>
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex items-center gap-3">
+                                                                <span className="text-base font-black text-slate-900 dark:text-white tracking-tight">{vocab.word}</span>
+                                                                {vocab.audioUrl ? (
+                                                                    vocab.audioFileExists ? (
+                                                                        <span className="material-symbols-outlined text-blue-500 text-sm fill-1" title="Has Audio (Verified)">volume_up</span>
+                                                                    ) : (
+                                                                        <span className="material-symbols-outlined text-red-500 text-sm animate-pulse" title="Audio Path set, but FILE MISSING in public/uploads">warning</span>
+                                                                    )
+                                                                ) : (
+                                                                    <span className="material-symbols-outlined text-slate-300 text-sm" title="No Audio Path set">volume_off</span>
+                                                                )}
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-sm font-medium text-slate-600">{vocab.translation}</td>
+                                                        <td className="px-8 py-6"><span className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{vocab.category || "General"}</span></td>
+                                                        <td className="px-8 py-6"><span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 text-[10px] font-black uppercase tracking-widest rounded-lg">{vocab.level || "A1"}</span></td>
+                                                        <td className="px-8 py-6 text-[10px] font-black uppercase text-slate-400">{vocab.formality}</td>
+                                                        <td className="px-8 py-6 text-right" onClick={(e) => e.stopPropagation()}>
+                                                            <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
+                                                                {vocab.audioUrl && (
+                                                                    <button
+                                                                        onClick={(e) => { e.stopPropagation(); playAudio(vocab.audioUrl); }}
+                                                                        className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl"
+                                                                    >
+                                                                        <span className="material-symbols-outlined">volume_up</span>
+                                                                    </button>
+                                                                )}
+                                                                <button onClick={() => { setEditingVocab(vocab); setIsFullEditorOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
+                                                                    <span className="material-symbols-outlined">edit</span>
+                                                                </button>
+                                                                <button onClick={() => handleDeleteVocabulary(vocab.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
+                                                                    <span className="material-symbols-outlined">delete</span>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : activeTab === 'quizzes' ? (
+                                                initialQuizzes.map((quiz) => (
+                                                    <tr key={quiz.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
+                                                        <td className="px-8 py-6">
+                                                            <p className="text-base font-black text-slate-900 dark:text-white truncate tracking-tight">{quiz.title}</p>
+                                                            <p className="text-xs text-slate-500 line-clamp-1">{quiz.description}</p>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <div className="text-xs font-bold text-slate-700 dark:text-slate-300">{quiz.lesson?.title}</div>
+                                                            <div className="text-[10px] text-slate-500 uppercase font-bold tracking-tighter">{quiz.lesson?.module?.title}</div>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-center text-sm font-bold text-slate-500">{quiz._count?.questions || 0}</td>
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex items-center gap-2">
+                                                                <span className={`px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border transition-all ${quiz.published ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-slate-100 text-slate-500 border-slate-200'}`}>
+                                                                    {quiz.published ? 'Published' : 'Draft'}
                                                                 </span>
-                                                            ) : (
-                                                                <span className="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
-                                                            )}
-                                                        </div>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-right">
-                                                        <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
-                                                            <button onClick={() => { setEditingQuiz(quiz); setIsQuizModalOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
-                                                                <span className="material-symbols-outlined">edit</span>
-                                                            </button>
-                                                            <button onClick={() => handleDeleteQuiz(quiz.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
-                                                                <span className="material-symbols-outlined">delete</span>
-                                                            </button>
-                                                        </div>
-                                                    </td>
+                                                                {!quiz.isValid ? (
+                                                                    <span
+                                                                        className="material-symbols-outlined text-red-500 cursor-help"
+                                                                        title={quiz.issues?.join('\n')}
+                                                                    >
+                                                                        report
+                                                                    </span>
+                                                                ) : (
+                                                                    <span className="material-symbols-outlined text-emerald-500 text-sm">check_circle</span>
+                                                                )}
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-right">
+                                                            <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
+                                                                <button onClick={() => { setEditingQuiz(quiz); setIsQuizModalOpen(true); }} className="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl">
+                                                                    <span className="material-symbols-outlined">edit</span>
+                                                                </button>
+                                                                <button onClick={() => handleDeleteQuiz(quiz.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
+                                                                    <span className="material-symbols-outlined">delete</span>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : activeTab === 'users' ? (
+                                                initialUsers.map((user) => (
+                                                    <tr key={user.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex items-center gap-3">
+                                                                <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center font-black text-slate-600 dark:text-slate-300">{user.name?.charAt(0) || user.email?.charAt(0)}</div>
+                                                                <span className="text-base font-black text-slate-900 dark:text-white tracking-tight">{user.name || "Unknown"}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-sm font-medium text-slate-600">{user.email}</td>
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex flex-col">
+                                                                <span className="text-[10px] font-black uppercase tracking-widest text-blue-600">{user.role}</span>
+                                                                <span className="text-[10px] font-bold text-slate-400">Level {user.stats?.level || 1}</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-right">
+                                                            <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
+                                                                <button onClick={() => handleDeleteUser(user.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
+                                                                    <span className="material-symbols-outlined">delete</span>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : activeTab === 'scenarios' ? (
+                                                initialScenarios.map((scenario) => (
+                                                    <tr key={scenario.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors border-b border-slate-100 dark:border-slate-800 last:border-0">
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex items-center gap-4">
+                                                                <div className="size-12 rounded-2xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center relative">
+                                                                    <span className="material-symbols-outlined text-blue-600 text-2xl">{scenario.icon}</span>
+                                                                    {scenario.published === false && (
+                                                                        <div className="absolute -top-1 -right-1 size-4 bg-amber-500 rounded-full border-2 border-white dark:border-slate-800" title="Draft"></div>
+                                                                    )}
+                                                                </div>
+                                                                <div>
+                                                                    <div className="flex items-center gap-2">
+                                                                        <p className="text-base font-black text-slate-900 dark:text-white truncate tracking-tight">{scenario.title}</p>
+                                                                        {scenario.published === false && (
+                                                                            <span className="text-[80%] font-black uppercase tracking-widest text-amber-500 px-1.5 py-0.5 bg-amber-50 dark:bg-amber-900/20 rounded-md">Draft</span>
+                                                                        )}
+                                                                    </div>
+                                                                    <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{scenario.description}</p>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <span className="px-3 py-1 bg-slate-100 dark:bg-slate-700 rounded-lg text-[10px] font-black text-slate-500 uppercase tracking-widest">{scenario.category}</span>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex flex-col">
+                                                                <span className="text-xs font-bold text-slate-600 dark:text-slate-400">
+                                                                    {allModules.find(m => m.id === scenario.moduleId)?.title || 'General Context'}
+                                                                </span>
+                                                                <span className="text-[10px] font-medium text-slate-400">Linked Module</span>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-center">
+                                                            <span className="inline-flex size-8 items-center justify-center rounded-lg bg-slate-50 dark:bg-slate-800 text-xs font-black text-slate-500 border border-slate-200 dark:border-slate-700">
+                                                                {scenario.order}
+                                                            </span>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-right">
+                                                            <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-all">
+                                                                <button
+                                                                    onClick={() => { setEditingScenario(scenario); setIsScenarioModalOpen(true); }}
+                                                                    className="p-2.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl transition-all"
+                                                                    title="Edit Scenario"
+                                                                >
+                                                                    <span className="material-symbols-outlined text-[20px]">edit</span>
+                                                                </button>
+                                                                <button
+                                                                    onClick={async () => {
+                                                                        if (!confirm("Are you sure? This action cannot be undone.")) return;
+                                                                        const { deleteScenario } = await import('../ai-tutor/actions');
+                                                                        await deleteScenario(scenario.id);
+                                                                        router.refresh();
+                                                                    }}
+                                                                    className="p-2.5 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl transition-all"
+                                                                    title="Delete Scenario"
+                                                                >
+                                                                    <span className="material-symbols-outlined text-[20px]">delete</span>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
+                                            ) : (
+                                                <tr className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
+                                                    <td className="px-8 py-6 text-sm font-black text-slate-400 uppercase tracking-widest" colSpan={3}>Queue is empty. No pending tasks.</td>
                                                 </tr>
-                                            ))
-                                        ) : activeTab === 'users' ? (
-                                            initialUsers.map((user) => (
-                                                <tr key={user.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
-                                                    <td className="px-8 py-6">
-                                                        <div className="flex items-center gap-3">
-                                                            <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center font-black text-slate-600 dark:text-slate-300">{user.name?.charAt(0) || user.email?.charAt(0)}</div>
-                                                            <span className="text-base font-black text-slate-900 dark:text-white tracking-tight">{user.name || "Unknown"}</span>
-                                                        </div>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-sm font-medium text-slate-600">{user.email}</td>
-                                                    <td className="px-8 py-6">
-                                                        <div className="flex flex-col">
-                                                            <span className="text-[10px] font-black uppercase tracking-widest text-blue-600">{user.role}</span>
-                                                            <span className="text-[10px] font-bold text-slate-400">Level {user.stats?.level || 1}</span>
-                                                        </div>
-                                                    </td>
-                                                    <td className="px-8 py-6 text-right">
-                                                        <div className="flex justify-end gap-3 opacity-0 group-hover:opacity-100 transition-all">
-                                                            <button onClick={() => handleDeleteUser(user.id)} className="p-2 text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-xl">
-                                                                <span className="material-symbols-outlined">delete</span>
-                                                            </button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        ) : (
-                                            <tr className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
-                                                <td className="px-8 py-6 text-sm font-black text-slate-400 uppercase tracking-widest" colSpan={3}>Queue is empty. No pending tasks.</td>
-                                            </tr>
-                                        )}
-                                    </tbody>
-                                </table>
+                                            )}
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
                         {/* Pagination Controls */}
                         {totalPages > 1 && (
@@ -1584,6 +1873,14 @@ export default function AdminClient({
                             alert(result.error);
                         }
                     }}
+                />
+            )}
+            {isScenarioModalOpen && (
+                <AITutorScenarioEditor
+                    scenario={editingScenario}
+                    allModules={allModules}
+                    onClose={() => setIsScenarioModalOpen(false)}
+                    onSave={handleSaveScenario}
                 />
             )}
         </div>
