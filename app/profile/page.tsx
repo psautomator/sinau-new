@@ -1,41 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import { useToast } from "@/components/ToastProvider";
+import { useTheme, ACCENT_COLORS } from "@/components/ThemeProvider";
 
 export default function ProfilePage() {
     const { showToast } = useToast();
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const { theme, accentColor, mounted, setTheme, setAccentColor, toggleTheme } = useTheme();
+    const isDarkMode = theme === "dark";
     const [name, setName] = useState("Budi Santoso");
     const [email, setEmail] = useState("budi.santoso@example.com");
 
-    // Initialize theme state from document class
-    useEffect(() => {
-        setIsDarkMode(document.documentElement.classList.contains("dark"));
-    }, []);
-
-    const toggleTheme = () => {
-        const newMode = !isDarkMode;
-        setIsDarkMode(newMode);
-        if (newMode) {
-            document.documentElement.classList.add("dark");
-            localStorage.setItem("theme", "dark");
-            showToast("Dark mode enabled", "info");
-        } else {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-            showToast("Light mode enabled", "info");
-        }
-    };
+    // Don't render parts that depend on localStorage until mounted
+    const safeIsActive = (colorName: string) => mounted && accentColor.name === colorName;
+    const safeIsDarkMode = mounted ? isDarkMode : false;
 
     const handleSaveProfile = (e: React.FormEvent) => {
         e.preventDefault();
         showToast("Profile settings saved successfully!", "success");
-    };
-
-    const handleThemeChange = (color: string) => {
-        showToast(`Theme color changed to ${color}`, "success");
     };
 
     return (
@@ -181,7 +164,7 @@ export default function ProfilePage() {
                                                 Dark Mode
                                             </span>
                                             <span className="text-xs text-text-secondary-light dark:text-text-secondary-dark">
-                                                {isDarkMode ? "Currently Dark" : "Currently Light"}
+                                                {safeIsDarkMode ? "Currently Dark" : "Currently Light"}
                                             </span>
                                         </div>
                                         <div className="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
@@ -190,7 +173,7 @@ export default function ProfilePage() {
                                                 id="toggle"
                                                 name="toggle"
                                                 type="checkbox"
-                                                checked={isDarkMode}
+                                                checked={safeIsDarkMode}
                                                 onChange={toggleTheme}
                                             />
                                             <label
@@ -205,24 +188,22 @@ export default function ProfilePage() {
                                             Accent Color
                                         </span>
                                         <div className="flex flex-wrap gap-3">
-                                            {["Purple", "Green", "Blue", "Orange", "Pink"].map((color) => {
-                                                const colors: Record<string, string> = {
-                                                    Purple: "bg-purple-500",
-                                                    Green: "bg-[#2bee79]",
-                                                    Blue: "bg-sky-500",
-                                                    Orange: "bg-orange-500",
-                                                    Pink: "bg-pink-500"
-                                                };
+                                            {ACCENT_COLORS.map((color) => {
+                                                const isActive = safeIsActive(color.name);
                                                 return (
                                                     <button
-                                                        key={color}
-                                                        onClick={() => handleThemeChange(color)}
-                                                        aria-label={`Select ${color} Theme`}
-                                                        className={`group relative h-8 w-8 rounded-full ${colors[color]} hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-surface-dark ${color === "Green" ? "ring-2 ring-offset-2 ring-[#2bee79]" : ""
+                                                        key={color.name}
+                                                        onClick={() => {
+                                                            setAccentColor(color);
+                                                            showToast(`Thema kleur aangepast naar ${color.name}`, "success");
+                                                        }}
+                                                        aria-label={`Select ${color.name} Theme`}
+                                                        className={`group relative h-8 w-8 rounded-full hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-surface-dark ${isActive ? "ring-2 ring-offset-2 ring-primary shadow-lg shadow-primary/20" : ""
                                                             }`}
+                                                        style={{ backgroundColor: color.primary }}
                                                     >
-                                                        {color === "Green" && (
-                                                            <span className="material-symbols-outlined absolute inset-0 flex items-center justify-center text-sm text-black font-bold">
+                                                        {isActive && (
+                                                            <span className="material-symbols-outlined absolute inset-0 flex items-center justify-center text-sm text-black mix-blend-overlay font-bold">
                                                                 check
                                                             </span>
                                                         )}

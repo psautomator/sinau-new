@@ -22,6 +22,8 @@ type LessonContent = {
     }[];
 };
 
+import LessonHero from "@/components/lesson/LessonHero";
+
 export default async function LessonPage({ params, searchParams }: { params: Promise<{ slug: string }>, searchParams: Promise<{ preview?: string }> }) {
     const { slug } = await params;
     const { preview } = await searchParams;
@@ -89,45 +91,74 @@ export default async function LessonPage({ params, searchParams }: { params: Pro
     const nextLesson = await getNextLesson(lesson.moduleId!, lesson.order);
     const nextLessonSlug = nextLesson?.slug || null;
 
+    // Calculate progress for demo
+    const progress = 65;
+
     return (
         <>
             <Sidebar />
-            <main className="flex-1 overflow-y-auto h-full p-4 md:p-8 bg-background-light dark:bg-background-dark relative">
-                <LessonHeader title={lesson.title} moduleTitle={lesson.module.title} />
+            <main className="flex-1 overflow-y-auto h-full bg-background-light dark:bg-background-dark relative scroll-smooth batik-pattern">
+                <LessonHeader progress={progress} />
 
-                {/* Modular Layout: All sections rendered in order */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full max-w-5xl mx-auto">
-                    {/* Left Column: Lesson Content (Span 8) */}
-                    <div className="lg:col-span-8 flex flex-col gap-10">
-                        {sections.map((section, idx) => (
-                            <LessonSection
-                                key={`section-${idx}`}
-                                section={section as any}
-                                words={words}
-                                quizId={lesson.quiz?.id}
+                <div className="max-w-5xl mx-auto px-8 py-10">
+                    <LessonHero
+                        title={lesson.title}
+                        moduleTitle={lesson.module.title}
+                        description={(lesson as any).description || "Beheers de fundamenten van de Surinaams-Javaanse taal in deze interactieve les."}
+                        level={lesson.level}
+                        languageStyle={lesson.languageStyle}
+                    />
+
+                    {/* Modular Layout: All sections rendered in order */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full">
+                        {/* Left Column: Lesson Content (Span 8) */}
+                        <div className="lg:col-span-8 flex flex-col gap-10">
+                            {sections.map((section, idx) => (
+                                <LessonSection
+                                    key={`section-${idx}`}
+                                    section={section as any}
+                                    words={words}
+                                    quizId={lesson.quiz?.id}
+                                    lessonId={lesson.id}
+                                />
+                            ))}
+
+                            {/* Notes Section - Persistent at bottom */}
+                            <LessonNotes
+                                userId={MOCK_USER_ID}
                                 lessonId={lesson.id}
+                                initialNote={initialNote}
                             />
-                        ))}
+                        </div>
 
-                        {/* Notes Section - Persistent at bottom */}
-                        <LessonNotes
-                            userId={MOCK_USER_ID}
-                            lessonId={lesson.id}
-                            initialNote={initialNote}
-                        />
+                        {/* Right Column: Sidebar (Span 4) */}
+                        <div className="flex flex-col gap-8 lg:col-span-4">
+                            {culturalContent && <CulturalNote content={culturalContent} />}
+
+                            {/* Lesson Stats Card (Matches Reference) */}
+                            <div className="bg-white dark:bg-surface-dark border border-gray-200/60 dark:border-gray-800/60 p-8 rounded-[2rem] shadow-sm text-center">
+                                <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400">
+                                    <span className="material-symbols-outlined text-3xl">bolt</span>
+                                </div>
+                                <h4 className="font-black text-lg mb-1">Les Streak</h4>
+                                <p className="text-xs text-gray-500 mb-6 font-medium">Voltooi deze les om je 5-daagse streak te bereiken!</p>
+                                <div className="flex justify-between gap-1 px-1">
+                                    {['M', 'D', 'W', 'D', 'V', 'Z', 'Z'].map((day, i) => (
+                                        <div key={i} className={`w-8 h-8 rounded-lg flex items-center justify-center text-[10px] font-black ${i < 4 ? 'bg-primary text-white' : i === 4 ? 'bg-white dark:bg-surface-dark border-2 border-primary text-primary' : 'bg-gray-100 dark:bg-gray-800 text-gray-400'}`}>
+                                            {day}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    {/* Right Column: Sidebar (Span 4) */}
-                    <div className="flex flex-col gap-6 lg:col-span-4">
-                        {culturalContent && <CulturalNote content={culturalContent} />}
-                    </div>
+                    <LessonFooter
+                        lessonId={lesson.id}
+                        nextLessonSlug={nextLessonSlug}
+                        quizId={lesson.quiz?.id}
+                    />
                 </div>
-
-                <LessonFooter
-                    lessonId={lesson.id}
-                    nextLessonSlug={nextLessonSlug}
-                    quizId={lesson.quiz?.id}
-                />
 
                 <ScrollProgressTracker lessonId={lesson.id} />
             </main>

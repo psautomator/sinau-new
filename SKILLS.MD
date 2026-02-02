@@ -69,6 +69,11 @@ This document outlines specialized skills and workflows available to AI agents w
 - Supports various file naming patterns
 - Handles diacritics and special characters
 
+### 1.4 Dynamic UI & Themes
+**Capability**: Manage global theme state and custom accent colors.
+- Use `useTheme()` hook for dark mode and primary color access.
+- Changes persist in `localStorage`.
+
 ---
 
 ## 2. Database & Schema Skills

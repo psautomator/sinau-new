@@ -157,10 +157,8 @@ If existing docs mention paths like `src/lib/...`, align them to the actual repo
 - Tailwind:
   - Mobile-first
   - Responsive by default
-- Accessibility:
-  - Keyboard navigation
-  - Focus states
-  - Semantic HTML
+- **Accessibility**: Keyboard navigation (Space to flip, 1-4 to rate in Flashcards), focus states, and semantic HTML
+- **Customization**: Global `ThemeProvider` for persistent accent colors and dark mode.
 - Do not introduce new UI libraries without approval
 
 ---
@@ -229,13 +227,13 @@ Lessons use a **modular, block-based content structure** stored as JSON in the d
   sections: [
     {
       id: string,
-      type: 'MARKDOWN' | 'FLASHCARD_SET' | 'QUIZ_LINK',
+      type: 'MARKDOWN' | 'FLASHCARD_SET' | 'QUIZ_LINK' | 'CULTURAL_INSIGHT',
       order: number,
       content: {
-        // Type-specific content
         // MARKDOWN: { title?: string, markdownText: string }
         // FLASHCARD_SET: { title: string, wordIds: string[] }
         // QUIZ_LINK: { title: string, quizId?: string }
+        // CULTURAL_INSIGHT: { title: string, content: string }
       }
     }
   ]

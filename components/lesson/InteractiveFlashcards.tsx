@@ -107,32 +107,37 @@ export default function InteractiveFlashcards({ words, lessonId, title = "Flashc
                         onClick={handleFlip}
                     >
                         {/* Front (Word) */}
-                        <div className="absolute inset-0 backface-hidden bg-white dark:bg-surface-dark rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col items-center justify-center p-8 group hover:shadow-2xl transition-shadow">
-                            <span className="material-symbols-outlined text-4xl text-primary mb-6 opacity-80">translate</span>
-                            <h3 className="text-4xl font-black text-slate-900 dark:text-white mb-4 text-center">
+                        <div className="absolute inset-0 backface-hidden bg-white dark:bg-surface-dark rounded-[2.5rem] shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col items-center justify-center p-12 group hover:shadow-2xl transition-all duration-500">
+                            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-6">Javaans</span>
+                            <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-8 text-center tracking-tight">
                                 {currentCard.word}
                             </h3>
-                            <p className="text-sm text-gray-400 font-bold uppercase tracking-widest mt-4">Tap to reveal</p>
 
-                            {/* Decorative bubbles */}
-                            <div className="absolute top-6 right-6 w-12 h-12 bg-primary/5 rounded-full blur-xl"></div>
-                            <div className="absolute bottom-6 left-6 w-16 h-16 bg-blue-500/5 rounded-full blur-xl"></div>
+                            <div className="w-14 h-14 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center text-gray-400 group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+                                <span className="material-symbols-outlined text-2xl">volume_up</span>
+                            </div>
+
+                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-8">Tik om te onthullen</p>
+
+                            {/* Decorative elements */}
+                            <div className="absolute top-8 right-8 w-16 h-16 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
                         </div>
 
                         {/* Back (Translation) */}
-                        <div className="absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 dark:bg-black rounded-3xl shadow-xl border border-slate-700 flex flex-col items-center justify-center p-8 text-white">
-                            <h3 className="text-3xl font-bold text-center mb-2">{currentCard.translation}</h3>
+                        <div className="absolute inset-0 backface-hidden rotate-y-180 bg-primary rounded-[2.5rem] shadow-xl border-4 border-white dark:border-surface-dark flex flex-col items-center justify-center p-12 text-white">
+                            <span className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-6">Nederlands</span>
+                            <h3 className="text-3xl md:text-4xl font-black text-center mb-4 tracking-tight">{currentCard.translation}</h3>
                             {currentCard.exampleJavanese && (
-                                <p className="mt-4 text-center text-gray-400 italic">"{currentCard.exampleJavanese}"</p>
+                                <p className="mt-4 text-center text-white/80 font-medium italic max-w-xs">"{currentCard.exampleJavanese}"</p>
                             )}
 
                             {currentCard.audioUrl && (
                                 <button
                                     onClick={(e) => { e.stopPropagation(); playAudio(currentCard.audioUrl); }}
-                                    className="mt-8 flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors backdrop-blur-sm"
+                                    className="mt-10 flex items-center gap-3 px-6 py-3 bg-white/20 hover:bg-white/30 rounded-full transition-all backdrop-blur-md font-bold text-sm border border-white/10"
                                 >
                                     <span className="material-symbols-outlined text-xl">volume_up</span>
-                                    <span className="text-sm font-bold">Listen</span>
+                                    <span>Luister</span>
                                 </button>
                             )}
                         </div>

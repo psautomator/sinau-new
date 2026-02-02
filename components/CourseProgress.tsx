@@ -9,11 +9,13 @@ interface Module {
 interface CourseProgressProps {
     activeModule?: Module | null;
     progress?: number;
+    resumeLessonSlug?: string | null;
 }
 
 export default function CourseProgress({
     activeModule,
-    progress = 0
+    progress = 0,
+    resumeLessonSlug
 }: CourseProgressProps) {
     if (!activeModule) {
         return (
@@ -89,8 +91,8 @@ export default function CourseProgress({
                             ></div>
                         </div>
                         <div className="pt-2 flex gap-3">
-                            <Link href={`/lessons/${activeModule.id}`} className="flex-1 bg-primary hover:bg-primary-dark text-text-main-light font-bold py-3 px-6 rounded-xl transition-all shadow-[0_4px_0_0_rgba(16,34,23,0.1)] active:shadow-none active:translate-y-[2px] flex items-center justify-center gap-2">
-                                <span>Resume</span>
+                            <Link href={resumeLessonSlug ? `/lessons/${resumeLessonSlug}` : `/lessons/${activeModule.id}`} className="flex-1 bg-primary hover:bg-primary-dark text-text-main-light font-bold py-3 px-6 rounded-xl transition-all shadow-[0_4px_0_0_rgba(16,34,23,0.1)] active:shadow-none active:translate-y-[2px] flex items-center justify-center gap-2">
+                                <span>{progress > 0 ? 'Resume' : 'Start'}</span>
                                 <span className="material-symbols-outlined text-sm">
                                     play_arrow
                                 </span>

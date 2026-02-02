@@ -5,22 +5,27 @@ import CourseProgress from "@/components/CourseProgress";
 import RightSidebar from "@/components/RightSidebar";
 import { getUserWithStats, getLeaderboard } from "@/dal/user";
 import { getPublishedModules } from "@/dal/modules";
-import { getUserModuleProgress } from "@/dal/lessons";
-import { getWordOfTheDay, getVocabulary } from "@/dal/vocabulary";
+import { getUserModuleProgress, getActiveModule, getResumeLesson } from "@/dal/lessons";
+import { getWordOfTheDay } from "@/dal/vocabulary";
 import { MOCK_USER_ID } from "@/lib/mock-auth";
 
 export default async function Home() {
-  const user = await getUserWithStats(MOCK_USER_ID);
-  const leaderboardData = await getLeaderboard(5);
-  const modules = await getPublishedModules();
-  const { vocabulary } = await getVocabulary({ take: 10 });
+  // Fetch user and system data
+  const [user, leaderboardData, modules] = await Promise.all([
+    getUserWithStats(MOCK_USER_ID),
+    getLeaderboard(5),
+    getPublishedModules()
+  ]);
+
+  // Fetch contextual card data
   const wordOfTheDay = await getWordOfTheDay(MOCK_USER_ID);
 
-  // Pick first module as "active" for now
-  const activeModule = modules[0] || null;
+  // Find active module and resume lesson
+  const activeModule = await getActiveModule(MOCK_USER_ID);
   const progress = activeModule ? await getUserModuleProgress(MOCK_USER_ID, activeModule.id) : 0;
+  const resumeLesson = activeModule ? await getResumeLesson(MOCK_USER_ID, activeModule.id) : null;
 
-  // Map level mapping or fallback
+  // Level naming logic
   const levelNames: Record<number, string> = {
     1: "Beginner I",
     2: "Beginner II",
@@ -50,12 +55,13 @@ export default async function Home() {
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             <CourseProgress
-              activeModule={activeModule}
+              activeModule={activeModule as any}
               progress={progress}
+              resumeLessonSlug={resumeLesson?.slug}
             />
             <RightSidebar
-              wordOfTheDay={wordOfTheDay}
-              leaderboard={leaderboardData}
+              wordOfTheDay={wordOfTheDay as any}
+              leaderboard={leaderboardData as any}
             />
           </div>
         </div>

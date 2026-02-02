@@ -35,22 +35,31 @@ export default function LessonSection({ section, words = [], quizId, lessonId }:
                 : (section.content?.markdownText || "");
             const title = typeof section.content === 'object' ? section.content?.title : null;
 
+            const cleanMarkdown = markdownText
+                .split('\n')
+                .filter((line: string) => !line.match(/\*\*Niveau:\*\*/i) && !line.match(/\*\*Taalstijl:\*\*/i) && !line.startsWith('# '))
+                .join('\n')
+                .trim();
+
             return (
-                <div className="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
+                <div className="bg-white dark:bg-surface-dark border border-gray-200/60 dark:border-gray-800/60 rounded-[2rem] p-8 shadow-sm hover:shadow-md transition-shadow">
                     {title && (
-                        <h3 className="text-xl font-bold text-text-main-light dark:text-text-main-dark mb-4 drop-shadow-sm">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                            <span className="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
+                                <span className="material-symbols-outlined">info</span>
+                            </span>
                             {title}
                         </h3>
                     )}
-                    <MarkdownRenderer content={markdownText} />
+                    <MarkdownRenderer content={cleanMarkdown} />
                 </div>
             );
         }
         case "FLASHCARD_SET":
             return (
-                <div className="space-y-6">
+                <div className="space-y-8">
                     {section.content?.markdownText && (
-                        <div className="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
+                        <div className="bg-white dark:bg-surface-dark border border-gray-200/60 dark:border-gray-800/60 rounded-[2rem] p-8 shadow-sm">
                             <MarkdownRenderer content={section.content.markdownText} />
                         </div>
                     )}
@@ -63,27 +72,33 @@ export default function LessonSection({ section, words = [], quizId, lessonId }:
             );
         case "QUIZ_LINK":
             return (
-                <div className="space-y-6">
+                <div className="space-y-8">
                     {section.content?.markdownText && (
-                        <div className="bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 rounded-2xl p-6 shadow-sm">
+                        <div className="bg-white dark:bg-surface-dark border border-gray-200/60 dark:border-gray-800/60 rounded-[2rem] p-8 shadow-sm">
                             <MarkdownRenderer content={section.content.markdownText} />
                         </div>
                     )}
-                    <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 flex flex-col items-center gap-6 text-center">
-                        <span className="material-symbols-outlined text-primary text-5xl">
-                            quiz
-                        </span>
-                        <div>
-                            <h3 className="text-2xl font-bold text-text-main-light dark:text-text-main-dark mb-2">
+                    <div className="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-[2rem] p-10 flex flex-col items-center gap-6 text-center relative overflow-hidden group">
+                        <div className="absolute -right-8 -bottom-8 opacity-10 group-hover:rotate-12 transition-transform duration-500">
+                            <span className="material-symbols-outlined text-9xl text-primary">quiz</span>
+                        </div>
+
+                        <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary shadow-inner">
+                            <span className="material-symbols-outlined text-5xl">quiz</span>
+                        </div>
+
+                        <div className="relative z-10">
+                            <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">
                                 Klaar voor de test?
                             </h3>
-                            <p className="text-text-secondary-light dark:text-text-secondary-dark max-w-md">
+                            <p className="text-gray-500 dark:text-gray-400 max-w-md font-medium leading-relaxed">
                                 Test je kennis over deze les met een korte quiz en verdien extra XP!
                             </p>
                         </div>
+
                         <Link
                             href={(section.content?.quizId || quizId) ? `/quiz/${section.content?.quizId || quizId}` : "#"}
-                            className="inline-flex items-center justify-center rounded-xl font-bold px-8 h-14 bg-primary text-black hover:bg-primary-dark transition-all shadow-md shadow-primary/20 active:scale-95"
+                            className="relative z-10 inline-flex items-center justify-center rounded-2xl font-bold px-10 h-14 bg-primary text-white hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98]"
                         >
                             Start Quiz
                         </Link>

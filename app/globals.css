@@ -61,12 +61,13 @@ body {
     perspective: 1000px;
   }
 
-  .transform-style-3d {
+  .preserve-3d {
     transform-style: preserve-3d;
   }
 
   .backface-hidden {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 
   .rotate-y-180 {
@@ -74,10 +75,6 @@ body {
   }
 
   .batik-pattern {
-    background-image: radial-gradient(#34D399 0.5px, transparent 0.5px),
-      radial-gradient(#34D399 0.5px, transparent 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    opacity: 0.05;
+    background-image: var(--background-image-batik-pattern);
   }
 }

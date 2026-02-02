@@ -67,6 +67,56 @@ export async function getUserModuleProgress(userId: string, moduleId: string) {
 }
 
 /**
+ * Finds the first uncompleted lesson in a module for a user.
+ */
+export async function getResumeLesson(userId: string, moduleId: string) {
+    const module = await prisma.module.findUnique({
+        where: { id: moduleId },
+        include: {
+            lessons: {
+                orderBy: { order: "asc" },
+                select: { id: true, slug: true }
+            }
+        }
+    });
+
+    if (!module || module.lessons.length === 0) return null;
+
+    const completedLessonIds = await getUserCompletedLessonIds(userId, module.lessons.map(l => l.id));
+    const nextLesson = module.lessons.find(l => !completedLessonIds.includes(l.id));
+
+    return nextLesson || module.lessons[0]; // Return first if all completed or none found
+}
+
+/**
+ * Finds the "active" module for a user (most recent progress or first uncompleted).
+ */
+export async function getActiveModule(userId: string) {
+    // 1. Try to find the last completed lesson
+    const lastProgress = await prisma.userProgress.findFirst({
+        where: { userId },
+        orderBy: { completedAt: "desc" },
+        include: {
+            lesson: {
+                select: { moduleId: true }
+            }
+        }
+    });
+
+    if (lastProgress?.lesson?.moduleId) {
+        return await prisma.module.findUnique({
+            where: { id: lastProgress.lesson.moduleId }
+        });
+    }
+
+    // 2. Fallback: First published module
+    return await prisma.module.findFirst({
+        where: { published: true },
+        orderBy: { order: "asc" }
+    });
+}
+
+/**
  * Fetches lessons for admin panel with search/filter.
  */
 export async function getLessons({

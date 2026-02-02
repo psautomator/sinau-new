@@ -1,34 +1,27 @@
-export default function LessonHeader({ title, moduleTitle, progress = 0 }: { title: string; moduleTitle: string; progress?: number }) {
+export default function LessonHeader({ progress = 0 }: { progress?: number }) {
     return (
-        <section className="w-full max-w-4xl mx-auto animate-fade-in-up">
-            <div className="flex flex-col gap-2 mb-8">
-                <div className="flex gap-6 justify-between items-end">
-                    <h1 className="text-text-main-light dark:text-text-main-dark text-3xl md:text-4xl font-black leading-tight tracking-tight">
-                        {title}
-                    </h1>
-                    <div className="text-right hidden sm:block">
-                        <p className="text-text-secondary-light dark:text-primary text-sm font-semibold tracking-wide uppercase">
-                            Module: {moduleTitle}
-                        </p>
+        <header className="sticky top-0 z-40 bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800 px-4 md:px-8 py-4 shadow-sm">
+            <div className="max-w-5xl mx-auto flex items-center justify-between gap-8">
+                <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                        <span className="text-[10px] font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Les Voortgang</span>
+                        <span className="text-[10px] font-bold text-primary">{progress}%</span>
+                    </div>
+                    <div className="h-2 w-full bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                        <div
+                            className="h-full bg-primary relative transition-all duration-700 ease-out"
+                            style={{ width: `${progress}%` }}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 animate-pulse"></div>
+                        </div>
                     </div>
                 </div>
-                {/* Progress Component */}
-                <div className="flex flex-col gap-2 mt-4 bg-surface-light dark:bg-surface-dark p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
-                    <div className="flex justify-between items-center text-sm font-medium">
-                        <span className="text-gray-600 dark:text-gray-300 flex items-center gap-2">
-                            <span className="material-symbols-outlined text-lg">timeline</span>
-                            Lesson Progress
-                        </span>
-                        <span className="text-primary-dark dark:text-primary font-bold">{progress}%</span>
-                    </div>
-                    <div className="h-3 w-full bg-gray-100 dark:bg-[#1f3528] rounded-full overflow-hidden">
-                        <div
-                            className="h-full bg-primary rounded-full transition-all duration-500 ease-out"
-                            style={{ width: `${progress}%` }}
-                        ></div>
-                    </div>
+                <div className="hidden sm:block">
+                    <button className="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full font-bold text-xs flex items-center gap-2 transition-all shadow-lg shadow-primary/20 active:scale-95">
+                        Doorgaan <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
                 </div>
             </div>
-        </section>
+        </header>
     );
 }
