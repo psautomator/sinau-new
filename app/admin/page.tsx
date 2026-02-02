@@ -4,6 +4,7 @@ import { getQuizzes, getAllQuizzesSimple } from "@/dal/quizzes";
 import { getLessons, getAllLessonsSimple } from "@/dal/lessons";
 import { getUsers } from "@/dal/user";
 import { getScenarios } from "../ai-tutor/actions";
+import { getFeedbackReports } from "@/dal/feedback";
 import AdminClient from "./AdminClient";
 
 export default async function AdminPage({
@@ -45,7 +46,8 @@ export default async function AdminPage({
         allLessons,
         allVocabulary,
         { users, total: totalUsers },
-        scenarios
+        scenarios,
+        feedbackReports
     ] = await Promise.all([
         getAdminModules({ search, level, skip, take: limit }),
         getVocabulary({ search, category, level, formality, audioStatus, skip, take: limit }),
@@ -65,7 +67,8 @@ export default async function AdminPage({
         getAllLessonsSimple(),
         getAllVocabularySimple(),
         getUsers({ search, skip, take: limit }),
-        getScenarios()
+        getScenarios(),
+        getFeedbackReports()
     ]);
 
     const stats = {
@@ -75,7 +78,8 @@ export default async function AdminPage({
         lessonsCount: totalLessons,
         usersCount: totalUsers,
         scenariosCount: scenarios.length,
-        queueCount: 0
+        queueCount: feedbackReports.length,
+        newFeedbackCount: feedbackReports.filter(f => f.status === 'NEW').length
     };
 
     return (
@@ -98,6 +102,7 @@ export default async function AdminPage({
             initialUsers={users as any}
             totalUsersCount={totalUsers}
             initialScenarios={scenarios as any}
+            initialFeedback={feedbackReports as any}
         />
     );
 }

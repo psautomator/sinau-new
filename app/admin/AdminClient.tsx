@@ -50,6 +50,7 @@ interface AdminClientProps {
     initialUsers: any[];
     totalUsersCount: number;
     initialScenarios: any[];
+    initialFeedback: any[];
 }
 
 export default function AdminClient({
@@ -70,7 +71,8 @@ export default function AdminClient({
     allVocabulary,
     initialUsers,
     totalUsersCount,
-    initialScenarios
+    initialScenarios,
+    initialFeedback
 }: AdminClientProps) {
     const router = useRouter();
     const searchParams = useSearchParams();
@@ -117,7 +119,7 @@ export default function AdminClient({
         audio.play().catch((err) => console.error("Playback failed:", err));
     };
 
-    const totalCount = activeTab === 'modules' ? totalModulesCount : (activeTab === 'vocabulary' ? totalVocabularyCount : (activeTab === 'quizzes' ? totalQuizzesCount : (activeTab === 'users' ? totalUsersCount : totalLessonsCount)));
+    const totalCount = activeTab === 'reports' ? initialFeedback.length : (activeTab === 'scenarios' ? initialScenarios.length : (activeTab === 'modules' ? totalModulesCount : (activeTab === 'vocabulary' ? totalVocabularyCount : (activeTab === 'quizzes' ? totalQuizzesCount : (activeTab === 'users' ? totalUsersCount : totalLessonsCount)))));
     const totalPages = Math.ceil(totalCount / pageSize);
 
     // Filter Logic
@@ -269,6 +271,7 @@ export default function AdminClient({
                             { id: 'vocabulary', label: 'Vocabulary Bank', icon: 'translate' },
                             { id: 'quizzes', label: 'Quiz Management', icon: 'quiz' },
                             { id: 'scenarios', label: 'AI Tutor Config', icon: 'smart_toy' },
+                            { id: 'reports', label: 'Feedback Reports', icon: 'report', badge: initialFeedback.filter(f => f.status === 'NEW').length || undefined },
                             { id: 'users', label: 'Student Management', icon: 'group' },
                             { id: 'exit', label: 'Exit Admin', icon: 'logout', action: 'home' },
                         ].map((item) => (
@@ -293,7 +296,10 @@ export default function AdminClient({
                             >
                                 <span className={`material-symbols-outlined text-[22px] transition-transform group-hover:scale-110 ${activeTab === item.id ? 'fill-1' : ''}`}>{item.icon}</span>
                                 <span className={`text-[13px] font-bold ${activeTab === item.id ? 'font-black' : ''}`}>{item.label}</span>
-                                {activeTab === item.id && (
+                                {item.badge && (
+                                    <span className="ml-auto flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-black text-white shadow-lg shadow-red-500/20">{item.badge}</span>
+                                )}
+                                {activeTab === item.id && !item.badge && (
                                     <div className="ml-auto w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-sm" />
                                 )}
                             </button>
@@ -584,12 +590,12 @@ export default function AdminClient({
                                 {/* Stats Grid */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                     {[
-                                        { label: 'Total Students', value: (totalUsersCount || 0).toLocaleString(), icon: 'groups', color: 'bg-slate-100', text: 'text-slate-600', badge: 'Active', badgeColor: 'bg-emerald-50 text-emerald-600' },
-                                        { label: 'Total Vocabulary (Items)', value: (initialStats?.vocabularyCount || 0).toLocaleString(), icon: 'translate', color: 'bg-blue-50', text: 'text-blue-600', badge: '+42 New', badgeColor: 'bg-blue-50 text-blue-600' },
-                                        { label: 'Total Lessons', value: (initialStats?.lessonsCount || 0).toLocaleString(), icon: 'menu_book', color: 'bg-emerald-50', text: 'text-emerald-600', badge: '8 Stages', badgeColor: 'bg-emerald-50 text-emerald-600' },
-                                        { label: 'Active AI Sessions', value: (initialStats?.scenariosCount || 0).toLocaleString(), icon: 'psychology', color: 'bg-slate-100', text: 'text-slate-600', badge: 'Live', badgeColor: 'bg-emerald-50 text-emerald-600' },
+                                        { label: 'Total Students', value: (totalUsersCount || 0).toLocaleString(), icon: 'groups', color: 'bg-slate-100', text: 'text-slate-600', badge: 'Active', badgeColor: 'bg-emerald-50 text-emerald-600', action: () => setActiveTab('users') },
+                                        { label: 'Total Vocabulary', value: (initialStats?.vocabularyCount || 0).toLocaleString(), icon: 'translate', color: 'bg-blue-50', text: 'text-blue-600', badge: '+42 New', badgeColor: 'bg-blue-50 text-blue-600', action: () => setActiveTab('vocabulary') },
+                                        { label: 'Total Lessons', value: (initialStats?.lessonsCount || 0).toLocaleString(), icon: 'menu_book', color: 'bg-emerald-50', text: 'text-emerald-600', badge: '8 Stages', badgeColor: 'bg-emerald-50 text-emerald-600', action: () => setActiveTab('lessons') },
+                                        { label: 'Feedback Reports', value: (initialStats?.queueCount || 0).toLocaleString(), icon: 'report', color: 'bg-amber-50', text: 'text-amber-600', badge: `${initialStats?.newFeedbackCount || 0} New`, badgeColor: 'bg-amber-50 text-amber-600', action: () => setActiveTab('reports') },
                                     ].map((stat, i) => (
-                                        <div key={i} className="bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 shadow-sm relative overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1">
+                                        <div key={i} onClick={stat.action} className="bg-white dark:bg-slate-800 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-700 shadow-sm relative overflow-hidden group hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer">
                                             <div className="flex justify-between items-start mb-6">
                                                 <div className={`p-4 ${stat.color} ${stat.text} rounded-2xl`}>
                                                     <span className="material-symbols-outlined text-2xl">{stat.icon}</span>
@@ -810,6 +816,9 @@ export default function AdminClient({
                                                     </>
                                                 ) : activeTab === 'users' ? (
                                                     <>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-left">Student Information</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-left">Email Address</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-left">Role & Level</th>
                                                         <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
                                                     </>
                                                 ) : activeTab === 'scenarios' ? (
@@ -818,6 +827,14 @@ export default function AdminClient({
                                                         <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Category</th>
                                                         <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400">Module</th>
                                                         <th className="px-8 py-5 text-center text-[10px] font-black uppercase tracking-widest text-slate-400">Order</th>
+                                                        <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
+                                                    </>
+                                                ) : activeTab === 'reports' ? (
+                                                    <>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-left">Report Content</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-left">Student</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-left">Context</th>
+                                                        <th className="px-8 py-5 text-[10px] font-black uppercase tracking-widest text-slate-400 text-left">Status</th>
                                                         <th className="px-8 py-5 text-right text-[10px] font-black uppercase tracking-widest text-slate-400">Actions</th>
                                                     </>
                                                 ) : (
@@ -1088,9 +1105,131 @@ export default function AdminClient({
                                                         </td>
                                                     </tr>
                                                 ))
+                                            ) : activeTab === 'reports' ? (
+                                                initialFeedback.map((report) => (
+                                                    <tr key={report.id} className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors border-b border-slate-100 dark:border-slate-800 last:border-0 font-sans">
+                                                        <td className="px-8 py-6">
+                                                            <div className="space-y-1.5">
+                                                                <div className="flex items-center gap-2">
+                                                                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-tighter ${report.feedbackType === 'BUG' ? 'bg-red-100 text-red-600' :
+                                                                        report.feedbackType === 'TYPO' ? 'bg-blue-100 text-blue-600' :
+                                                                            report.feedbackType === 'CONTENT_ISSUE' ? 'bg-amber-100 text-amber-600' :
+                                                                                'bg-slate-100 text-slate-600'
+                                                                        }`}>
+                                                                        {report.feedbackType}
+                                                                    </span>
+                                                                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-black uppercase tracking-tighter ${report.priority === 'HIGH' ? 'bg-red-500 text-white' :
+                                                                        report.priority === 'MEDIUM' ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'
+                                                                        }`}>
+                                                                        {report.priority}
+                                                                    </span>
+                                                                </div>
+                                                                <div className="text-sm font-bold text-slate-900 dark:text-white leading-snug max-w-md">
+                                                                    {report.message}
+                                                                </div>
+                                                                <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                                                                    {new Date(report.createdAt).toLocaleString()}
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            {report.user ? (
+                                                                <div className="flex items-center gap-2">
+                                                                    <div className="w-8 h-8 rounded-xl bg-slate-200 bg-cover bg-center border border-white dark:border-slate-700 shadow-sm" style={{ backgroundImage: `url(${report.user.photoURL || 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + report.user.email})` }} />
+                                                                    <div className="text-[11px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-tight truncate max-w-[100px]">{report.user.name || 'Student'}</div>
+                                                                </div>
+                                                            ) : (
+                                                                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Anonymous</span>
+                                                            )}
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <div className="flex flex-col gap-1.5">
+                                                                {report.lessonId && (
+                                                                    <div className="flex items-center gap-2 px-2.5 py-1 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-[9px] font-black text-blue-600 dark:text-blue-400 uppercase tracking-tight border border-blue-100/50 dark:border-blue-900/30">
+                                                                        <span className="material-symbols-outlined text-[14px]">menu_book</span>
+                                                                        <span className="truncate max-w-[120px]">{report.lesson?.title}</span>
+                                                                    </div>
+                                                                )}
+                                                                {report.vocabId && (
+                                                                    <div className="flex items-center gap-2 px-2.5 py-1 bg-amber-50 dark:bg-amber-900/20 rounded-lg text-[9px] font-black text-amber-600 dark:text-amber-400 uppercase tracking-tight border border-amber-100/50 dark:border-amber-900/30">
+                                                                        <span className="material-symbols-outlined text-[14px]">translate</span>
+                                                                        <span>{report.vocab?.word}</span>
+                                                                    </div>
+                                                                )}
+                                                                {!report.lessonId && !report.vocabId && (
+                                                                    <div className="text-[9px] font-black text-slate-400 uppercase tracking-widest italic flex items-center gap-1.5 opacity-60">
+                                                                        <span className="material-symbols-outlined text-[14px]">web</span>
+                                                                        General UI
+                                                                    </div>
+                                                                )}
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-8 py-6">
+                                                            <span className={`px-3 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest border transition-all ${report.status === 'NEW' ? 'bg-indigo-600 text-white border-indigo-700 shadow-md shadow-indigo-600/20' :
+                                                                report.status === 'IN_PROGRESS' ? 'bg-amber-400 text-white border-amber-500' :
+                                                                    report.status === 'RESOLVED' ? 'bg-emerald-500 text-white border-emerald-600' : 'bg-slate-200 text-slate-500 border-slate-300'
+                                                                }`}>
+                                                                {report.status}
+                                                            </span>
+                                                        </td>
+                                                        <td className="px-8 py-6 text-right">
+                                                            <div className="flex items-center justify-end gap-2">
+                                                                {report.status !== 'RESOLVED' && (
+                                                                    <button
+                                                                        onClick={async () => {
+                                                                            const { updateFeedbackStatusAction } = await import('@/app/actions/feedback');
+                                                                            await updateFeedbackStatusAction(report.id, 'RESOLVED');
+                                                                            router.refresh();
+                                                                        }}
+                                                                        className="p-2.5 text-slate-400 hover:text-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 rounded-xl transition-all"
+                                                                        title="Resolve Report"
+                                                                    >
+                                                                        <span className="material-symbols-outlined text-[20px]">check_circle</span>
+                                                                    </button>
+                                                                )}
+                                                                {report.status === 'NEW' && (
+                                                                    <button
+                                                                        onClick={async () => {
+                                                                            const { updateFeedbackStatusAction } = await import('@/app/actions/feedback');
+                                                                            await updateFeedbackStatusAction(report.id, 'IN_PROGRESS');
+                                                                            router.refresh();
+                                                                        }}
+                                                                        className="p-2.5 text-slate-400 hover:text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 rounded-xl transition-all"
+                                                                        title="Mark In Progress"
+                                                                    >
+                                                                        <span className="material-symbols-outlined text-[20px]">hourglass_empty</span>
+                                                                    </button>
+                                                                )}
+                                                                <button
+                                                                    onClick={() => {
+                                                                        if (report.lessonId) {
+                                                                            const lesson = allLessons.find(l => l.id === report.lessonId);
+                                                                            if (lesson) {
+                                                                                setBlockEditingLesson(lesson);
+                                                                                setIsBlockEditorOpen(true);
+                                                                            }
+                                                                        } else if (report.vocabId) {
+                                                                            const vocab = allVocabulary.find(v => v.id === report.vocabId);
+                                                                            if (vocab) {
+                                                                                setEditingVocab(vocab);
+                                                                                setIsFullEditorOpen(true);
+                                                                            }
+                                                                        } else if (report.pageUrl) {
+                                                                            window.open(report.pageUrl, '_blank');
+                                                                        }
+                                                                    }}
+                                                                    className="p-2.5 text-slate-400 hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded-xl transition-all"
+                                                                    title="Go to Context"
+                                                                >
+                                                                    <span className="material-symbols-outlined text-[20px]">open_in_new</span>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ))
                                             ) : (
                                                 <tr className="group hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-colors">
-                                                    <td className="px-8 py-6 text-sm font-black text-slate-400 uppercase tracking-widest" colSpan={3}>Queue is empty. No pending tasks.</td>
+                                                    <td className="px-8 py-6 text-sm font-black text-slate-400 uppercase tracking-widest" colSpan={3}>No results found for {activeTab}.</td>
                                                 </tr>
                                             )}
                                         </tbody>
