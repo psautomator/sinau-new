@@ -76,6 +76,7 @@ model Lesson {
   progress    UserProgress[]
   notes       UserLessonNote[]
   quiz        Quiz?
+  feedback    Feedback[]
 }
 
 model Quiz {
@@ -121,6 +122,7 @@ model Vocabulary {
   moduleId        String?
   module          Module?                    @relation(fields: [moduleId], references: [id])
   srsItems        UserWordSpacedRepetition[]
+  feedback        Feedback[]
 }
 
 model UserWordSpacedRepetition {
@@ -160,8 +162,14 @@ model Feedback {
   id           String   @id @default(cuid())
   userId       String?
   message      String
-  feedbackType String?
-  status       String   @default("NEW")
+  feedbackType String?   // e.g., "BUG", "TYPO", "SUGGESTION", "CONTENT_ISSUE"
+  pageUrl      String?   // URL where feedback was submitted
+  lessonId     String?
+  lesson       Lesson?   @relation(fields: [lessonId], references: [id])
+  vocabId      String?
+  vocab        Vocabulary? @relation(fields: [vocabId], references: [id])
+  status       String   @default("NEW") // NEW, IN_PROGRESS, RESOLVED, DISMISSED
+  priority     String?   @default("MEDIUM") // LOW, MEDIUM, HIGH
   createdAt    DateTime @default(now())
   user         User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
 }

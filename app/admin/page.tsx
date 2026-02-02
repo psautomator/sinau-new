@@ -3,6 +3,7 @@ import { getVocabulary, getAllVocabularySimple } from "@/dal/vocabulary";
 import { getQuizzes, getAllQuizzesSimple } from "@/dal/quizzes";
 import { getLessons, getAllLessonsSimple } from "@/dal/lessons";
 import { getUsers } from "@/dal/user";
+import { getFeedbackReports } from "@/dal/feedback";
 import AdminClient from "./AdminClient";
 
 export default async function AdminPage({
@@ -43,7 +44,8 @@ export default async function AdminPage({
         allQuizzes,
         allLessons,
         allVocabulary,
-        { users, total: totalUsers }
+        { users, total: totalUsers },
+        feedbackReports
     ] = await Promise.all([
         getAdminModules({ search, level, skip, take: limit }),
         getVocabulary({ search, category, level, formality, audioStatus, skip, take: limit }),
@@ -62,7 +64,8 @@ export default async function AdminPage({
         getAllQuizzesSimple(),
         getAllLessonsSimple(),
         getAllVocabularySimple(),
-        getUsers({ search, skip, take: limit })
+        getUsers({ search, skip, take: limit }),
+        getFeedbackReports()
     ]);
 
     const stats = {
@@ -70,7 +73,7 @@ export default async function AdminPage({
         vocabulary: { total: totalVocabulary, active: totalVocabulary },
         quizzes: { total: totalQuizzes, active: totalQuizzes },
         lessons: { total: totalLessons, active: totalLessons },
-        queue: { total: 0, active: 0 },
+        queue: { total: feedbackReports.length, active: feedbackReports.filter(f => f.status === 'NEW').length },
         users: { total: totalUsers, active: totalUsers }
     };
 
@@ -93,6 +96,7 @@ export default async function AdminPage({
             allVocabulary={allVocabulary as any}
             initialUsers={users as any}
             totalUsersCount={totalUsers}
+            initialFeedback={feedbackReports as any}
         />
     );
 }

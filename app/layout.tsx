@@ -4,6 +4,7 @@ import "./globals.css";
 import { ToastProvider } from "@/components/ToastProvider";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
+import FeedbackButton from "@/components/FeedbackButton";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
             <div className="flex h-screen w-full overflow-hidden">
               {children}
             </div>
+            <FeedbackButton />
           </ToastProvider>
         </ThemeProvider>
       </body>
