@@ -3,7 +3,7 @@ import { getVocabulary, getAllVocabularySimple } from "@/dal/vocabulary";
 import { getQuizzes, getAllQuizzesSimple } from "@/dal/quizzes";
 import { getLessons, getAllLessonsSimple } from "@/dal/lessons";
 import { getUsers } from "@/dal/user";
-import { getFeedbackReports } from "@/dal/feedback";
+import { getScenarios } from "../ai-tutor/actions";
 import AdminClient from "./AdminClient";
 
 export default async function AdminPage({
@@ -45,7 +45,7 @@ export default async function AdminPage({
         allLessons,
         allVocabulary,
         { users, total: totalUsers },
-        feedbackReports
+        scenarios
     ] = await Promise.all([
         getAdminModules({ search, level, skip, take: limit }),
         getVocabulary({ search, category, level, formality, audioStatus, skip, take: limit }),
@@ -65,16 +65,17 @@ export default async function AdminPage({
         getAllLessonsSimple(),
         getAllVocabularySimple(),
         getUsers({ search, skip, take: limit }),
-        getFeedbackReports()
+        getScenarios()
     ]);
 
     const stats = {
-        modules: { total: totalModules, active: totalModules },
-        vocabulary: { total: totalVocabulary, active: totalVocabulary },
-        quizzes: { total: totalQuizzes, active: totalQuizzes },
-        lessons: { total: totalLessons, active: totalLessons },
-        queue: { total: feedbackReports.length, active: feedbackReports.filter(f => f.status === 'NEW').length },
-        users: { total: totalUsers, active: totalUsers }
+        modulesCount: totalModules,
+        vocabularyCount: totalVocabulary,
+        quizzesCount: totalQuizzes,
+        lessonsCount: totalLessons,
+        usersCount: totalUsers,
+        scenariosCount: scenarios.length,
+        queueCount: 0
     };
 
     return (
@@ -96,7 +97,7 @@ export default async function AdminPage({
             allVocabulary={allVocabulary as any}
             initialUsers={users as any}
             totalUsersCount={totalUsers}
-            initialFeedback={feedbackReports as any}
+            initialScenarios={scenarios as any}
         />
     );
 }

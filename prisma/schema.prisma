@@ -213,3 +213,19 @@ enum Formality {
   KRAMA
   KRAMA_INGGIL
 }
+
+model AITutorScenario {
+  id                 String   @id @default(cuid())
+  slug               String   @unique
+  title              String
+  description        String
+  initialMessage     String
+  initialSuggestions String[] // Array of strings for suggestions
+  category           String   @default("Daily Life")
+  icon               String   @default("chat")
+  moduleId           String?  // Optional link to specific vocabulary module
+  order              Int      @default(0)
+  published          Boolean  @default(true)
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
