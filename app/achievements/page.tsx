@@ -2,236 +2,134 @@ import Sidebar from "@/components/Sidebar";
 
 export default function AchievementsPage() {
     return (
-        <>
+        <div className="flex h-screen w-full bg-slate-50 dark:bg-slate-950 overflow-hidden">
             <Sidebar />
-            <main className="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark relative">
-                <div className="w-full max-w-[1200px] mx-auto px-6 py-8 md:px-10 lg:py-10 flex flex-col gap-8">
-                    {/* Header Section */}
-                    <header className="flex flex-col gap-6">
-                        <div className="flex flex-col gap-2">
-                            <h1 className="text-text-main-light dark:text-text-main-dark text-4xl font-black leading-tight tracking-tight">
-                                Achievements
-                            </h1>
-                            <p className="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal max-w-2xl">
-                                Track your learning journey, earn badges, and showcase your mastery of the Javanese language.
-                            </p>
-                        </div>
 
-                        {/* Stats & Progress Dashboard */}
-                        <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-sm border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
-                            {/* Stats Columns */}
-                            <div className="flex gap-8 w-full md:w-auto">
-                                <div className="flex flex-col gap-1">
-                                    <span className="text-text-secondary-light dark:text-text-secondary-dark text-sm uppercase tracking-wider font-semibold">
-                                        Total XP
-                                    </span>
-                                    <div className="flex items-baseline gap-2">
-                                        <span className="text-3xl font-black text-text-main-light dark:text-text-main-dark">
-                                            1,250
-                                        </span>
-                                        <span className="material-symbols-outlined text-primary" style={{ fontSize: "20px" }}>
-                                            bolt
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="w-px bg-gray-200 dark:bg-gray-800"></div>
-                                <div className="flex flex-col gap-1">
-                                    <span className="text-text-secondary-light dark:text-text-secondary-dark text-sm uppercase tracking-wider font-semibold">
-                                        Current Level
-                                    </span>
-                                    <div className="flex items-baseline gap-2">
-                                        <span className="text-3xl font-black text-text-main-light dark:text-text-main-dark">
-                                            5
-                                        </span>
-                                        <span className="text-base font-medium text-text-main-light dark:text-gray-300">
-                                            Sastrawan
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+            <main className="flex-1 overflow-y-auto h-full p-4 md:p-12 relative overflow-x-hidden">
+                {/* Deep Batik Decoration Background */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-96 h-96 bg-batik-pattern opacity-[0.03] dark:opacity-[0.07] pointer-events-none rounded-bl-[10rem] mask-image-gradient" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-                            {/* Progress Bar Section */}
-                            <div className="flex flex-col gap-3 w-full md:max-w-md">
-                                <div className="flex justify-between items-end">
-                                    <span className="text-sm font-semibold text-text-main-light dark:text-text-main-dark">
-                                        Level Progress
-                                    </span>
-                                    <span className="text-sm font-bold text-primary">80%</span>
-                                </div>
-                                <div className="h-3 w-full bg-gray-100 dark:bg-gray-900 rounded-full overflow-hidden">
-                                    <div className="h-full bg-primary rounded-full" style={{ width: "80%" }}></div>
-                                </div>
-                                <div className="flex justify-between text-xs text-text-secondary-light dark:text-text-secondary-dark">
-                                    <span>Level 5</span>
-                                    <span>250 XP to Level 6</span>
-                                </div>
+                <div className="max-w-[1100px] mx-auto flex flex-col gap-8 relative z-10 font-sans">
+                    <header className="flex flex-col gap-2 relative z-10 px-2">
+                        <div className="flex items-center gap-3">
+                            <div className="size-10 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/25">
+                                <span className="material-symbols-outlined text-2xl">emoji_events</span>
                             </div>
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/70">Milestones & Badges</span>
                         </div>
+                        <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight mt-1">
+                            Your <span className="text-primary">Achievements</span>
+                        </h2>
+                        <p className="text-slate-500 dark:text-slate-400 font-bold text-sm md:text-base max-w-2xl">
+                            Track your learning journey, earn badges, and showcase your mastery of the Javanese language to the community.
+                        </p>
                     </header>
 
-                    {/* Filters & Controls */}
-                    <section className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center sticky top-0 z-10 bg-background-light dark:bg-background-dark py-4 -my-4 mb-2">
-                        <div className="flex gap-2">
-                            <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-text-main-light dark:bg-white text-white dark:text-black font-medium text-sm transition-transform hover:scale-105 active:scale-95 shadow-md">
-                                <span className="material-symbols-outlined text-[18px]">check_circle</span>
-                                All
-                            </button>
-                            <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 text-text-main-light dark:text-gray-300 font-medium text-sm transition-all hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <span className="material-symbols-outlined text-[18px]">lock_open</span>
-                                Unlocked
-                            </button>
-                            <button className="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 text-text-main-light dark:text-gray-300 font-medium text-sm transition-all hover:bg-gray-50 dark:hover:bg-gray-800">
-                                <span className="material-symbols-outlined text-[18px]">lock</span>
-                                Locked
-                            </button>
+                    {/* Stats & Progress Section - High Fidelity */}
+                    <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-10 border border-slate-200/50 dark:border-slate-800/50 shadow-sm flex flex-col lg:flex-row gap-10 items-center justify-between">
+                        <div className="flex gap-10 w-full lg:w-auto">
+                            <div className="flex flex-col gap-1">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Total XP Gained</span>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter">1,250</span>
+                                    <div className="size-8 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                                        <span className="material-symbols-outlined text-xl">bolt</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="w-px bg-slate-200 dark:bg-slate-800 h-12 self-center"></div>
+                            <div className="flex flex-col gap-1">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Current Rank</span>
+                                <div className="flex items-center gap-3">
+                                    <span className="text-4xl font-black text-slate-900 dark:text-white tracking-tighter">5</span>
+                                    <span className="text-sm font-black text-primary uppercase tracking-widest mt-2 px-3 py-1 bg-primary/10 rounded-lg">Sastrawan</span>
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                            <span className="material-symbols-outlined text-[20px]">info</span>
-                            <span>Tap badge for details</span>
+
+                        <div className="flex flex-col gap-3 w-full lg:max-w-md">
+                            <div className="flex justify-between items-end px-1">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Tier Progress</span>
+                                <span className="text-sm font-black text-primary tracking-tighter">80%</span>
+                            </div>
+                            <div className="h-4 w-full bg-slate-100 dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 p-0.5">
+                                <div className="h-full bg-primary rounded-xl transition-all duration-1000 shadow-sm" style={{ width: "80%" }}></div>
+                            </div>
+                            <div className="flex justify-between text-[10px] font-bold text-slate-400 px-1">
+                                <span>LEVEL 5</span>
+                                <span>250 XP TO LEVEL 6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Filters */}
+                    <section className="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center py-2">
+                        <div className="flex gap-3">
+                            {['All', 'Unlocked', 'Locked'].map((filter, i) => (
+                                <button key={filter} className={`px-6 h-11 rounded-2xl font-black text-xs uppercase tracking-widest transition-all ${i === 0 ? 'bg-primary text-white shadow-lg shadow-primary/25' : 'bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:bg-slate-50'}`}>
+                                    {filter}
+                                </button>
+                            ))}
+                        </div>
+                        <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400">
+                            <span className="material-symbols-outlined text-base">info</span>
+                            Tap badge for details
                         </div>
                     </section>
 
-                    {/* Badges Grid */}
-                    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-12">
-                        {/* Badge 1: Early Bird (Unlocked) */}
-                        <div className="group badge-card bg-surface-light dark:bg-surface-dark rounded-xl p-6 border-2 border-primary/20 dark:border-primary/20 hover:border-primary dark:hover:border-primary cursor-pointer relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                            <div className="absolute top-0 right-0 p-3">
-                                <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-md">
-                                    EARNED
-                                </span>
-                            </div>
-                            <div className="flex flex-col items-center text-center gap-4">
-                                <div className="size-24 rounded-full bg-gradient-to-br from-[#e0f7ea] to-[#b9f6ca] dark:from-[#1a3826] dark:to-[#0f291a] flex items-center justify-center shadow-inner">
-                                    <span className="material-symbols-outlined text-5xl text-primary drop-shadow-sm">
-                                        wb_twilight
-                                    </span>
+                    {/* Badges Grid - High Fidelity */}
+                    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12">
+                        {/* Earned Badge */}
+                        {[
+                            { title: "Early Bird", desc: "7-day learning streak", icon: "wb_twilight", date: "Oct 24, 2023" },
+                            { title: "Word Smith", desc: "Learned 50 words", icon: "school", date: "Nov 01, 2023" },
+                            { title: "Sastrawan", desc: "Reached Level 5", icon: "history_edu", date: "Nov 12, 2023" }
+                        ].map((badge) => (
+                            <div key={badge.title} className="group bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden">
+                                <div className="absolute top-6 right-6">
+                                    <span className="bg-emerald-500 text-white text-[8px] font-black px-2 py-1 rounded-md uppercase tracking-widest shadow-sm">EARNED</span>
                                 </div>
-                                <div className="flex flex-col gap-1">
-                                    <h3 className="text-lg font-bold text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors">
-                                        Early Bird
-                                    </h3>
-                                    <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                        7-day learning streak
-                                    </p>
-                                </div>
-                                <div className="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
-                                    Earned Oct 24, 2023
+                                <div className="flex flex-col items-center text-center gap-6">
+                                    <div className="size-24 rounded-[2rem] bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-700 border-4 border-white dark:border-slate-800">
+                                        <span className="material-symbols-outlined text-5xl text-primary drop-shadow-md">{badge.icon}</span>
+                                    </div>
+                                    <div className="flex flex-col gap-1">
+                                        <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">{badge.title}</h3>
+                                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">{badge.desc}</p>
+                                    </div>
+                                    <div className="text-[10px] font-black text-slate-300 dark:text-slate-600 uppercase tracking-widest">
+                                        {badge.date}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        ))}
 
-                        {/* Badge 2: Word Smith (Unlocked) */}
-                        <div className="group badge-card bg-surface-light dark:bg-surface-dark rounded-xl p-6 border-2 border-primary/20 dark:border-primary/20 hover:border-primary dark:hover:border-primary cursor-pointer relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                            <div className="absolute top-0 right-0 p-3">
-                                <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-md">
-                                    EARNED
-                                </span>
+                        {/* Locked Badge */}
+                        <div className="bg-slate-50/50 dark:bg-slate-950/30 p-8 rounded-[2.5rem] border-2 border-dashed border-slate-200 dark:border-slate-800 relative group opacity-60">
+                            <div className="absolute top-6 right-6">
+                                <span className="material-symbols-outlined text-slate-400">lock</span>
                             </div>
-                            <div className="flex flex-col items-center text-center gap-4">
-                                <div className="size-24 rounded-full bg-gradient-to-br from-[#e0f7ea] to-[#b9f6ca] dark:from-[#1a3826] dark:to-[#0f291a] flex items-center justify-center shadow-inner">
-                                    <span className="material-symbols-outlined text-5xl text-primary drop-shadow-sm">
-                                        school
-                                    </span>
+                            <div className="flex flex-col items-center text-center gap-6 grayscale">
+                                <div className="size-24 rounded-[2rem] bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+                                    <span className="material-symbols-outlined text-5xl text-slate-400">language</span>
                                 </div>
                                 <div className="flex flex-col gap-1">
-                                    <h3 className="text-lg font-bold text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors">
-                                        Word Smith
-                                    </h3>
-                                    <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                        Learned 50 words
-                                    </p>
+                                    <h3 className="text-xl font-black text-slate-400 tracking-tight text-slate-400">Polyglot</h3>
+                                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Learn 500 words</p>
                                 </div>
-                                <div className="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
-                                    Earned Nov 01, 2023
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Badge 3: Sastrawan (Unlocked) */}
-                        <div className="group badge-card bg-surface-light dark:bg-surface-dark rounded-xl p-6 border-2 border-primary/20 dark:border-primary/20 hover:border-primary dark:hover:border-primary cursor-pointer relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                            <div className="absolute top-0 right-0 p-3">
-                                <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold px-2 py-1 rounded-md">
-                                    EARNED
-                                </span>
-                            </div>
-                            <div className="flex flex-col items-center text-center gap-4">
-                                <div className="size-24 rounded-full bg-gradient-to-br from-[#e0f7ea] to-[#b9f6ca] dark:from-[#1a3826] dark:to-[#0f291a] flex items-center justify-center shadow-inner">
-                                    <span className="material-symbols-outlined text-5xl text-primary drop-shadow-sm">
-                                        history_edu
-                                    </span>
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                    <h3 className="text-lg font-bold text-text-main-light dark:text-text-main-dark group-hover:text-primary transition-colors">
-                                        Sastrawan
-                                    </h3>
-                                    <p className="text-sm text-text-secondary-light dark:text-text-secondary-dark">
-                                        Reached Level 5
-                                    </p>
-                                </div>
-                                <div className="mt-2 text-xs font-medium text-gray-400 dark:text-gray-500">
-                                    Earned Nov 12, 2023
+                                <div className="w-full space-y-2">
+                                    <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                                        <div className="h-full bg-slate-400 w-1/4"></div>
+                                    </div>
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">125 / 500</p>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Badge 4: Polyglot (Locked) */}
-                        <div className="group badge-card bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-not-allowed relative">
-                            <div className="absolute top-0 right-0 p-3">
-                                <span className="material-symbols-outlined text-gray-400 dark:text-gray-600">
-                                    lock
-                                </span>
-                            </div>
-                            <div className="flex flex-col items-center text-center gap-4 opacity-70 grayscale">
-                                <div className="size-24 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                                    <span className="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-600">
-                                        language
-                                    </span>
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                    <h3 className="text-lg font-bold text-gray-500 dark:text-gray-400">
-                                        Polyglot
-                                    </h3>
-                                    <p className="text-sm text-gray-400 dark:text-gray-500">
-                                        Learn 500 words
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="mt-4 w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
-                                <div className="bg-gray-400 dark:bg-gray-600 h-full w-1/4"></div>
-                            </div>
-                            <p className="text-center text-xs text-gray-400 mt-2">125 / 500</p>
-                        </div>
-
-                        {/* Badge 5: Devotee (Locked) */}
-                        <div className="group badge-card bg-gray-50 dark:bg-gray-900 rounded-xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-700 cursor-not-allowed relative">
-                            <div className="absolute top-0 right-0 p-3">
-                                <span className="material-symbols-outlined text-gray-400 dark:text-gray-600">
-                                    lock
-                                </span>
-                            </div>
-                            <div className="flex flex-col items-center text-center gap-4 opacity-70 grayscale">
-                                <div className="size-24 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                                    <span className="material-symbols-outlined text-5xl text-gray-400 dark:text-gray-600">
-                                        local_fire_department
-                                    </span>
-                                </div>
-                                <div className="flex flex-col gap-1">
-                                    <h3 className="text-lg font-bold text-gray-500 dark:text-gray-400">
-                                        Devotee
-                                    </h3>
-                                    <p className="text-sm text-gray-400 dark:text-gray-500">
-                                        30-day streak
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="mt-4 w-full bg-gray-200 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
-                                <div className="bg-gray-400 dark:bg-gray-600 h-full w-[45%]"></div>
-                            </div>
-                            <p className="text-center text-xs text-gray-400 mt-2">14 / 30 Days</p>
                         </div>
                     </section>
                 </div>
             </main>
-        </>
+        </div>
     );
 }

@@ -2,9 +2,14 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+:root {
+  --primary: #2bee79;
+  --primary-dark: #23c263;
+}
+
 @theme inline {
-  --color-primary: #2bee79;
-  --color-primary-dark: #23c263;
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
   --color-background-light: #f6f8f7;
   --color-background-dark: #0f172a;
   /* Slate 900 - Neutral Dark */
@@ -20,7 +25,7 @@
 
   --font-plus-jakarta: "Plus Jakarta Sans", sans-serif;
 
-  --background-image-batik-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234c9a6b' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  --batik-mask-url: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-rule='nonzero'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Custom Utilities that might not map directly to simple theme values if needed, 
@@ -75,6 +80,11 @@ body {
   }
 
   .batik-pattern {
-    background-image: var(--background-image-batik-pattern);
+    background-color: var(--primary);
+    mask-image: var(--batik-mask-url);
+    -webkit-mask-image: var(--batik-mask-url);
+    mask-repeat: repeat;
+    -webkit-mask-repeat: repeat;
+    opacity: 0.05;
   }
 }
