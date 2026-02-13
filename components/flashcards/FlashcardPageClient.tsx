@@ -96,7 +96,7 @@ export default function FlashcardPageClient({
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-full w-full py-10">
+        <div className="flex flex-col w-full">
             <AnimatePresence mode="wait">
                 {view === "selector" ? (
                     <motion.div

@@ -39,9 +39,11 @@ export default async function Home() {
   return (
     <>
       <Sidebar />
-      <main className="flex-1 overflow-y-auto h-full p-4 md:p-8 bg-background-light dark:bg-background-dark relative">
-        {/* Background Batik Decoration */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-batik-pattern opacity-30 pointer-events-none rounded-bl-full mask-image-gradient"></div>
+      <main className="flex-1 overflow-y-auto h-full p-4 md:p-12 bg-slate-50 dark:bg-slate-950 relative overflow-x-hidden">
+        {/* Deep Batik Decoration Background */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-batik-pattern opacity-[0.03] dark:opacity-[0.07] pointer-events-none rounded-bl-[10rem] mask-image-gradient" />
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
         <div className="max-w-[1100px] mx-auto flex flex-col gap-8">
           <DashboardHeader name={user?.name || "Budi"} />

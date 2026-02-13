@@ -4,8 +4,16 @@ import Link from "next/link";
 import { prisma } from "@/dal";
 import { MOCK_USER_ID } from "@/lib/mock-auth";
 
-export default async function QuizIndexPage() {
-    const { quizzes } = await getQuizzes({ published: true, take: 100 });
+export default async function QuizIndexPage({
+    searchParams
+}: {
+    searchParams: Promise<{ page?: string }>
+}) {
+    const { page } = await searchParams;
+    const currentPage = parseInt(page || "1", 10);
+    const ITEMS_PER_PAGE = 12;
+
+    const { quizzes } = await getQuizzes({ published: true, take: 500 }); // Fetch all for manual dedupe + sort
 
     // Get user progress to see which modules are started
     const userProgress = await prisma.userProgress.findMany({
@@ -44,6 +52,14 @@ export default async function QuizIndexPage() {
         // Final tie-breaker: title
         return a.title.localeCompare(b.title);
     });
+
+    // 3. Paginate
+    const totalItems = sortedQuizzes.length;
+    const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+    const paginatedQuizzes = sortedQuizzes.slice(
+        (currentPage - 1) * ITEMS_PER_PAGE,
+        currentPage * ITEMS_PER_PAGE
+    );
 
     return (
         <>
@@ -84,12 +100,12 @@ export default async function QuizIndexPage() {
                                 Beschikbare Quizzes
                             </h2>
                             <span className="text-sm font-bold text-slate-400 bg-white dark:bg-slate-900 px-4 py-1.5 rounded-full shadow-sm border border-slate-100 dark:border-gray-800">
-                                {quizzes.length} Quizzes gevonden
+                                {totalItems} Quizzes gevonden
                             </span>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {sortedQuizzes.map((quiz) => {
+                            {paginatedQuizzes.map((quiz) => {
                                 const isLocked = !startedModuleIds.has(quiz.lesson?.moduleId);
                                 const CardContent = (
                                     <div className={`h-full bg-white dark:bg-surface-dark border border-slate-200/60 dark:border-gray-800/60 rounded-[2rem] p-6 shadow-sm flex flex-col relative transition-all duration-300 ${isLocked ? 'opacity-70 grayscale' : 'hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1'}`}>
@@ -136,6 +152,38 @@ export default async function QuizIndexPage() {
                                 );
                             })}
                         </div>
+
+                        {/* Pagination UI */}
+                        {totalPages > 1 && (
+                            <div className="flex items-center justify-center gap-2 mt-12 pb-8">
+                                <Link
+                                    href={`/quiz?page=${Math.max(1, currentPage - 1)}`}
+                                    className={`size-12 rounded-2xl flex items-center justify-center border transition-all ${currentPage === 1 ? 'opacity-30 cursor-not-allowed border-slate-200' : 'border-slate-200 bg-white hover:border-primary hover:text-primary'}`}
+                                >
+                                    <span className="material-symbols-outlined">chevron_left</span>
+                                </Link>
+
+                                {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                                    <Link
+                                        key={p}
+                                        href={`/quiz?page=${p}`}
+                                        className={`size-12 rounded-2xl flex items-center justify-center font-black text-sm transition-all border ${currentPage === p
+                                            ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20'
+                                            : 'bg-white border-slate-200 text-slate-500 hover:border-primary hover:text-primary'
+                                            }`}
+                                    >
+                                        {p}
+                                    </Link>
+                                ))}
+
+                                <Link
+                                    href={`/quiz?page=${Math.min(totalPages, currentPage + 1)}`}
+                                    className={`size-12 rounded-2xl flex items-center justify-center border transition-all ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed border-slate-200' : 'border-slate-200 bg-white hover:border-primary hover:text-primary'}`}
+                                >
+                                    <span className="material-symbols-outlined">chevron_right</span>
+                                </Link>
+                            </div>
+                        )}
                     </div>
                 </div>
             </main>

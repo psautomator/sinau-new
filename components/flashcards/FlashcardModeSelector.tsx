@@ -52,13 +52,19 @@ export default function FlashcardModeSelector({ onSelectMode, levels, modules }:
     };
 
     return (
-        <div className="w-full max-w-5xl mx-auto space-y-10 py-12 px-6">
-            <header className="text-center space-y-2">
-                <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                    Flashcard <span className="text-primary italic">Modes</span>
+        <div className="w-full space-y-10">
+            <header className="flex flex-col gap-2 relative z-10 px-2">
+                <div className="flex items-center gap-3">
+                    <div className="size-10 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/25">
+                        <span className="material-symbols-outlined text-2xl">style</span>
+                    </div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/70">Study Modes</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight mt-1">
+                    Flashcard <span className="text-primary">Selection</span>
                 </h2>
-                <p className="text-slate-500 dark:text-slate-400 text-lg">
-                    Hoe wil je vandaag gaan leren?
+                <p className="text-slate-500 dark:text-slate-400 font-bold text-sm md:text-base">
+                    Hoe wil je vandaag gaan leren? Kies een modus om je Javanese woorden te oefenen.
                 </p>
             </header>
 
@@ -123,8 +129,8 @@ export default function FlashcardModeSelector({ onSelectMode, levels, modules }:
                                         key={lvl}
                                         onClick={() => setSubSelection({ level: lvl })}
                                         className={`p-4 rounded-2xl border-2 transition-all font-bold ${subSelection.level === lvl
-                                                ? "border-primary bg-primary/5 text-primary"
-                                                : "border-slate-100 dark:border-slate-800 hover:border-slate-200"
+                                            ? "border-primary bg-primary/5 text-primary"
+                                            : "border-slate-100 dark:border-slate-800 hover:border-slate-200"
                                             }`}
                                     >
                                         {lvl}
@@ -138,8 +144,8 @@ export default function FlashcardModeSelector({ onSelectMode, levels, modules }:
                                         key={mod.id}
                                         onClick={() => setSubSelection({ moduleId: mod.id })}
                                         className={`w-full p-4 rounded-2xl border-2 transition-all font-bold text-left flex items-center gap-4 ${subSelection.moduleId === mod.id
-                                                ? "border-primary bg-primary/5 text-primary"
-                                                : "border-slate-100 dark:border-slate-800 hover:border-slate-200"
+                                            ? "border-primary bg-primary/5 text-primary"
+                                            : "border-slate-100 dark:border-slate-800 hover:border-slate-200"
                                             }`}
                                     >
                                         <span className="material-symbols-outlined">{mod.icon || "layers"}</span>

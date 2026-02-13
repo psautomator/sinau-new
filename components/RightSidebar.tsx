@@ -92,48 +92,62 @@ export default function RightSidebar({
                 </div>
             )}
 
-            {/* Mini Leaderboard */}
-            <div className="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 p-6">
-                <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-bold text-text-main-light dark:text-text-main-dark">
-                        Top Studenten
-                    </h3>
+            {/* Mini Leaderboard - Premium Style */}
+            <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-sm border border-slate-200/50 dark:border-slate-800/50 p-8">
+                <div className="flex items-center justify-between mb-8 px-2">
+                    <div className="flex items-center gap-3">
+                        <div className="size-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                            <span className="material-symbols-outlined">leaderboard</span>
+                        </div>
+                        <h3 className="font-black text-lg text-slate-900 dark:text-white tracking-tight">
+                            Leaderboard
+                        </h3>
+                    </div>
                     <Link
                         href="/leaderboard"
-                        className="text-xs font-bold text-primary-dark dark:text-primary hover:underline"
+                        className="text-[10px] font-black uppercase tracking-widest text-primary hover:underline"
                     >
-                        Bekijk Alles
+                        Volledig
                     </Link>
                 </div>
-                <div className="flex flex-col gap-4">
-                    {leaderboard.length > 0 ? leaderboard.map((entry, index) => (
-                        <div key={entry.user.email} className="flex items-center gap-3">
-                            <div className={`flex items-center justify-center w-6 font-bold ${index === 0 ? "text-yellow-500" :
-                                index === 1 ? "text-gray-400" :
-                                    index === 2 ? "text-orange-700" : "text-gray-500"
-                                }`}>
-                                {index + 1}
+
+                <div className="flex flex-col gap-5">
+                    {leaderboard.length > 0 ? leaderboard.map((entry, index) => {
+                        const isTopThree = index < 3;
+                        const rankColors = [
+                            "text-yellow-500 bg-yellow-500/10",
+                            "text-slate-400 bg-slate-400/10",
+                            "text-orange-700 bg-orange-700/10"
+                        ];
+
+                        return (
+                            <div key={entry.user.email} className="group flex items-center gap-4 p-2 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-300">
+                                <div className={`flex items-center justify-center size-8 rounded-lg font-black text-xs ${isTopThree ? rankColors[index] : "text-slate-400 bg-slate-100 dark:bg-slate-800"}`}>
+                                    {index + 1}
+                                </div>
+                                <div
+                                    className="size-12 rounded-2xl bg-slate-200 bg-cover bg-center border-2 border-white dark:border-slate-800 shadow-sm transition-transform group-hover:scale-105"
+                                    style={{
+                                        backgroundImage: `url('https://ui-avatars.com/api/?name=${encodeURIComponent(entry.user.name || entry.user.email)}&background=random')`,
+                                    }}
+                                ></div>
+                                <div className="flex-1 min-w-0">
+                                    <p className="text-sm font-black text-slate-900 dark:text-white truncate tracking-tight">
+                                        {entry.user.name || entry.user.email.split('@')[0]}
+                                    </p>
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{entry.xp.toLocaleString()} XP</p>
+                                </div>
+                                {index === 0 && (
+                                    <div className="size-8 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500">
+                                        <span className="material-symbols-outlined text-lg">emoji_events</span>
+                                    </div>
+                                )}
                             </div>
-                            <div
-                                className="size-10 rounded-full bg-gray-200 bg-cover bg-center"
-                                style={{
-                                    backgroundImage: `url('https://ui-avatars.com/api/?name=${encodeURIComponent(entry.user.name || entry.user.email)}&background=random')`,
-                                }}
-                            ></div>
-                            <div className="flex-1 min-w-0">
-                                <p className="text-sm font-bold text-text-main-light dark:text-text-main-dark truncate">
-                                    {entry.user.name || entry.user.email.split('@')[0]}
-                                </p>
-                                <p className="text-xs text-gray-400">{entry.xp.toLocaleString()} XP</p>
-                            </div>
-                            {index === 0 && (
-                                <span className="material-symbols-outlined text-yellow-500 text-lg">
-                                    emoji_events
-                                </span>
-                            )}
+                        );
+                    }) : (
+                        <div className="py-8 text-center bg-slate-50 dark:bg-slate-800/30 rounded-[2rem] border-2 border-dashed border-slate-100 dark:border-slate-800">
+                            <p className="text-xs font-bold text-slate-400 italic">Geen data beschikbaar.</p>
                         </div>
-                    )) : (
-                        <p className="text-xs text-gray-500 italic text-center py-4">Nog geen data beschikbaar.</p>
                     )}
                 </div>
             </div>
