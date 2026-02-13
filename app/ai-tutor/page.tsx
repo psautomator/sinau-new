@@ -63,12 +63,28 @@ export default function AITutorPage() {
         }
         loadInitialData();
     }, []);
+    // Focus Input without scrolling
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        // Prevent automatic scrolling on focus
+        inputRef.current?.focus({ preventScroll: true });
+    }, []);
+
     const [inputValue, setInputValue] = useState("");
     const [isTyping, setIsTyping] = useState(false);
-    const chatEndRef = useRef<HTMLDivElement>(null);
+
+    // Use container ref instead of element ref for scrolling
+    const chatContainerRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = () => {
-        chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+        const container = chatContainerRef.current;
+        if (container) {
+            container.scrollTo({
+                top: container.scrollHeight,
+                behavior: "smooth"
+            });
+        }
     };
 
     useEffect(() => {
@@ -89,6 +105,9 @@ export default function AITutorPage() {
         setMessages(newDisplayMessages);
         setInputValue("");
         setIsTyping(true);
+
+        // Re-focus input after sending
+        inputRef.current?.focus({ preventScroll: true });
 
         // Convert DisplayMessage to ChatMessage for the API
         const history: ChatMessage[] = newDisplayMessages.map(m => ({
@@ -154,6 +173,8 @@ export default function AITutorPage() {
         }
     };
 
+    // ... handleTranslate and handleSaveWord remain the same ...
+
     const handleTranslate = async (messageId: string, text: string) => {
         try {
             const translation = await translateMessage(text);
@@ -185,15 +206,16 @@ export default function AITutorPage() {
     return (
         <>
             <Sidebar />
-            <main className="flex-1 flex overflow-hidden bg-slate-50 dark:bg-slate-950 relative">
+            {/* Main Content Area */}
+            <main className="flex-1 flex flex-col min-w-0 min-h-0 overflow-hidden bg-slate-50 dark:bg-slate-950 relative">
                 {/* Background Decoration */}
                 <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none batik-pattern z-0" />
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-                <div className="flex-1 grid grid-cols-1 xl:grid-cols-[360px_1fr] 2xl:grid-cols-[360px_1fr_320px] relative z-10 h-full min-w-0 overflow-hidden">
+                <div className="flex-1 grid grid-cols-1 xl:grid-cols-[360px_1fr] 2xl:grid-cols-[360px_1fr_320px] relative z-10 overflow-hidden min-w-0 min-h-0 w-full">
                     {/* Column 1: Scenarios (Left) */}
-                    <aside className="flex flex-col border-r border-slate-200/50 dark:border-slate-800/50 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl hidden xl:flex overflow-hidden">
+                    <aside className="flex flex-col border-r border-slate-200/50 dark:border-slate-800/50 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl hidden xl:flex overflow-hidden relative">
                         <div className="p-8 pb-4">
                             <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">
                                 Learning <span className="text-primary">Paths</span>
@@ -255,7 +277,7 @@ export default function AITutorPage() {
                     </aside>
 
                     {/* Column 2: Chat Workspace (Center) */}
-                    <section className="flex-1 flex flex-col relative h-full min-w-0">
+                    <section className="flex-1 flex flex-col relative h-full min-w-0 min-h-0">
                         {/* Chat Header */}
                         <div className="h-24 border-b border-slate-200/50 dark:border-slate-800/50 flex items-center justify-between px-10 bg-white/40 dark:bg-slate-950/40 backdrop-blur-md z-10 shrink-0">
                             <div className="flex items-center gap-5">
@@ -284,7 +306,7 @@ export default function AITutorPage() {
                         </div>
 
                         {/* Chat Area */}
-                        <div className="flex-1 overflow-y-auto px-6 md:px-12 py-10 space-y-8 custom-scrollbar">
+                        <div ref={chatContainerRef} className="flex-1 overflow-y-auto px-6 md:px-12 py-10 space-y-8 custom-scrollbar">
                             {messages.map((msg) => (
                                 <div key={msg.id} className={`flex gap-5 ${msg.sender === 'user' ? 'flex-row-reverse ml-auto max-w-[85%]' : 'max-w-[85%]'}`}>
                                     <div className={`size-12 rounded-2xl shrink-0 flex items-center justify-center border-2 transition-all ${msg.sender === 'ai'
@@ -344,7 +366,6 @@ export default function AITutorPage() {
                                     </div>
                                 </div>
                             )}
-                            <div ref={chatEndRef} />
                         </div>
 
                         {/* Input Area */}
@@ -372,11 +393,11 @@ export default function AITutorPage() {
                             >
                                 <div className="flex-1">
                                     <input
+                                        ref={inputRef}
                                         className="w-full bg-transparent border-none py-4 text-slate-900 dark:text-white placeholder:text-slate-400 placeholder:font-black placeholder:uppercase placeholder:text-[10px] placeholder:tracking-widest outline-none"
                                         placeholder="Speak your mind in Ngoko..."
                                         value={inputValue}
                                         onChange={(e) => setInputValue(e.target.value)}
-                                        autoFocus
                                     />
                                 </div>
                                 <button

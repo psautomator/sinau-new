@@ -308,19 +308,7 @@ export default function AdminClient({
 
                     {/* Sidebar Footer / Content Pipeline */}
                     <div className="p-6 mt-auto border-t border-slate-100 dark:border-slate-800 space-y-6">
-                        <div className="bg-slate-50 dark:bg-slate-800/50 p-5 rounded-[2rem] border border-slate-100 dark:border-slate-700/50">
-                            <div className="flex justify-between items-center mb-3">
-                                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Content Pipeline</span>
-                                <span className="text-[10px] font-black text-blue-600">78%</span>
-                            </div>
-                            <div className="h-1.5 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                                <div className="h-full bg-blue-500 rounded-full w-[78%] shadow-sm" />
-                            </div>
-                            <p className="text-[9px] font-bold text-slate-500 mt-3 flex items-center gap-1.5">
-                                <span className="w-1 h-1 rounded-full bg-blue-500 animate-pulse" />
-                                78% Q3 Modules Ready
-                            </p>
-                        </div>
+                        {/* Content Pipeline Widget Removed - Static Data */}
 
                         <button className="w-full flex items-center justify-center gap-3 py-4 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 text-white rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] shadow-xl shadow-slate-900/10 transition-all active:scale-95 group">
                             <span className="material-symbols-outlined text-[18px] group-hover:rotate-12 transition-transform">publish</span>
@@ -590,7 +578,7 @@ export default function AdminClient({
                                 {/* Stats Grid */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                                     {[
-                                        { label: 'Total Students', value: (totalUsersCount || 0).toLocaleString(), icon: 'groups', color: 'bg-slate-100', text: 'text-slate-600', badge: 'Active', badgeColor: 'bg-emerald-50 text-emerald-600', action: () => setActiveTab('users') },
+                                        { label: 'Total Students', value: (totalUsersCount || 0).toLocaleString(), icon: 'groups', color: 'bg-slate-100', text: 'text-slate-600', badge: `${initialStats.activeUsers24h} Active (24h)`, badgeColor: 'bg-emerald-50 text-emerald-600', action: () => setActiveTab('users') },
                                         { label: 'Total Vocabulary', value: (initialStats?.vocabularyCount || 0).toLocaleString(), icon: 'translate', color: 'bg-blue-50', text: 'text-blue-600', badge: '+42 New', badgeColor: 'bg-blue-50 text-blue-600', action: () => setActiveTab('vocabulary') },
                                         { label: 'Total Lessons', value: (initialStats?.lessonsCount || 0).toLocaleString(), icon: 'menu_book', color: 'bg-emerald-50', text: 'text-emerald-600', badge: '8 Stages', badgeColor: 'bg-emerald-50 text-emerald-600', action: () => setActiveTab('lessons') },
                                         { label: 'Feedback Reports', value: (initialStats?.queueCount || 0).toLocaleString(), icon: 'report', color: 'bg-amber-50', text: 'text-amber-600', badge: `${initialStats?.newFeedbackCount || 0} New`, badgeColor: 'bg-amber-50 text-amber-600', action: () => setActiveTab('reports') },
@@ -613,89 +601,109 @@ export default function AdminClient({
 
                                 {/* Charts & Queue Section */}
                                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                                    {/* Student Engagement Chart */}
-                                    <div className="lg:col-span-2 bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm">
-                                        <div className="flex justify-between items-center mb-10">
-                                            <div>
-                                                <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Student Engagement</h3>
-                                                <p className="text-sm font-bold text-slate-400 mt-1">Daily active learners over the last 30 days</p>
+                                    {/* Recent Activity & Publication Queue */}
+                                    <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        {/* Recent Activity */}
+                                        <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+                                            <div className="flex justify-between items-center mb-8">
+                                                <div>
+                                                    <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Recent Activity</h3>
+                                                    <p className="text-[10px] font-bold text-slate-400 mt-1 uppercase tracking-widest">New Students</p>
+                                                </div>
                                             </div>
-                                            <div className="flex bg-slate-50 dark:bg-slate-900 p-1.5 rounded-2xl gap-2">
-                                                <button className="px-4 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-xl text-[10px] font-black uppercase tracking-widest shadow-sm">Weekly</button>
-                                                <button className="px-4 py-2 text-slate-400 rounded-xl text-[10px] font-black uppercase tracking-widest">Monthly</button>
+
+                                            <div className="space-y-4 flex-1">
+                                                {initialStats.recentUsers?.map((user: any) => (
+                                                    <div key={user.id} className="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl group hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-100 transition-all">
+                                                        <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 font-bold shrink-0">
+                                                            {(user.name || user.email).charAt(0).toUpperCase()}
+                                                        </div>
+                                                        <div className="min-w-0">
+                                                            <p className="text-sm font-bold text-slate-900 dark:text-white truncate">{user.name || "No Name"}</p>
+                                                            <p className="text-[10px] text-slate-400 truncate">{user.email}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {(!initialStats.recentUsers || initialStats.recentUsers.length === 0) && (
+                                                    <p className="text-center text-slate-400 py-8 text-sm">No recent activity.</p>
+                                                )}
                                             </div>
                                         </div>
 
-                                        {/* Simplified SVG Area Chart */}
-                                        <div className="h-[240px] w-full relative group">
-                                            <svg className="w-full h-full overflow-visible" viewBox="0 0 800 200" preserveAspectRatio="none">
-                                                <defs>
-                                                    <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
-                                                        <stop offset="0%" stopColor="#10b981" stopOpacity="0.2" />
-                                                        <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
-                                                    </linearGradient>
-                                                </defs>
-                                                <path
-                                                    d="M0,150 Q100,145 200,100 T400,110 T600,60 T800,40"
-                                                    fill="none"
-                                                    stroke="#10b981"
-                                                    strokeWidth="3"
-                                                    strokeLinecap="round"
-                                                    className="animate-in slide-in-from-left duration-1000"
-                                                />
-                                                <path
-                                                    d="M0,150 Q100,145 200,100 T400,110 T600,60 T800,40 L800,200 L0,200 Z"
-                                                    fill="url(#chartGradient)"
-                                                />
-                                                {/* Dots for key points */}
-                                                {[0, 200, 400, 600, 800].map((x, i) => (
-                                                    <circle key={i} cx={x} cy={i === 0 ? 150 : i === 1 ? 100 : i === 2 ? 110 : i === 3 ? 60 : 40} r="5" fill="#10b981" className="cursor-pointer hover:r-8 transition-all" />
-                                                ))}
-                                            </svg>
+                                        {/* Publication Queue */}
+                                        <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
+                                            <div className="flex justify-between items-center mb-8">
+                                                <div>
+                                                    <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Publication Queue</h3>
+                                                    <p className="text-[10px] font-bold text-amber-500 mt-1 uppercase tracking-widest">Awaiting Drafts</p>
+                                                </div>
+                                                <span className="px-3 py-1 bg-amber-50 text-amber-600 text-[10px] font-black uppercase tracking-widest rounded-lg">
+                                                    {initialStats.publicationQueue?.length || 0} Drafts
+                                                </span>
+                                            </div>
 
-                                            {/* X-Axis Labels */}
-                                            <div className="flex justify-between mt-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-300">
-                                                <span>Nov 01</span>
-                                                <span>Nov 10</span>
-                                                <span>Nov 20</span>
-                                                <span>Nov 30</span>
+                                            <div className="space-y-3 flex-1">
+                                                {initialStats.publicationQueue?.map((item: any) => (
+                                                    <div key={item.id} className="p-4 rounded-2xl border border-slate-100 dark:border-slate-700/50 hover:border-emerald-500/20 hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-all group flex items-center justify-between gap-3">
+                                                        <div className="min-w-0">
+                                                            <h4 className="text-sm font-black text-slate-900 dark:text-white tracking-tight truncate">{item.title}</h4>
+                                                            <p className="text-[9px] font-bold text-emerald-500 uppercase tracking-tighter mt-0.5">{item.type}</p>
+                                                        </div>
+                                                        <button
+                                                            onClick={() => {
+                                                                if (item.type === 'Module') setActiveTab('modules');
+                                                                else if (item.type === 'Lesson') setActiveTab('lessons');
+                                                                else if (item.type === 'Quiz') setActiveTab('quizzes');
+                                                            }}
+                                                            className="p-2 bg-emerald-500 text-white rounded-lg opacity-0 group-hover:opacity-100 transition-all"
+                                                        >
+                                                            <span className="material-symbols-outlined text-[18px]">edit</span>
+                                                        </button>
+                                                    </div>
+                                                ))}
+                                                {(!initialStats.publicationQueue || initialStats.publicationQueue.length === 0) && (
+                                                    <div className="flex flex-col items-center justify-center py-8 text-slate-400">
+                                                        <span className="material-symbols-outlined text-4xl mb-2 opacity-20">check_circle</span>
+                                                        <p className="text-sm">Queue is empty!</p>
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
 
-                                    {/* Publication Queue */}
+                                    {/* Recent Feedback */}
                                     <div className="bg-white dark:bg-slate-800 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 shadow-sm flex flex-col">
                                         <div className="flex justify-between items-center mb-8">
-                                            <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Publication Queue</h3>
-                                            <span className="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg">3 Pending</span>
+                                            <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">Recent Feedback</h3>
+                                            <button
+                                                onClick={() => setActiveTab('reports')}
+                                                className="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-black uppercase tracking-widest rounded-lg hover:bg-blue-100 transition-colors"
+                                            >
+                                                View All
+                                            </button>
                                         </div>
 
                                         <div className="space-y-4 flex-1">
-                                            {[
-                                                { title: 'Intermediate Ngoko', type: 'Lesson Set • Admin Update', time: '12m ago' },
-                                                { title: 'Wayang Terminology', type: 'Vocab Pack • Content Team', time: '1h ago' },
-                                                { title: 'Politeness Levels Quiz', type: 'Interactive • AI Generated', time: '3h ago' },
-                                            ].map((task, i) => (
+                                            {initialStats.recentFeedback?.map((item: any, i: number) => (
                                                 <div key={i} className="p-5 rounded-3xl border border-slate-100 dark:border-slate-700/50 hover:border-blue-500/20 hover:bg-slate-50 dark:hover:bg-slate-700/20 transition-all group">
-                                                    <div className="flex justify-between items-start mb-4">
+                                                    <div className="flex justify-between items-start mb-2">
                                                         <div>
-                                                            <h4 className="text-sm font-black text-slate-900 dark:text-white tracking-tight">{task.title}</h4>
-                                                            <p className="text-[10px] font-bold text-emerald-500 uppercase tracking-tighter mt-1">{task.type}</p>
+                                                            <h4 className="text-xs font-black text-slate-900 dark:text-white tracking-tight line-clamp-1">{item.user?.email || "Anonymous"}</h4>
+                                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter mt-1">{new Date(item.createdAt).toLocaleDateString()}</p>
                                                         </div>
-                                                        <span className="text-[10px] font-bold text-slate-400 whitespace-nowrap">{task.time}</span>
+                                                        <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-lg ${item.status === 'NEW' ? 'bg-emerald-50 text-emerald-600' : 'bg-slate-100 text-slate-500'}`}>
+                                                            {item.status}
+                                                        </span>
                                                     </div>
-                                                    <div className="grid grid-cols-2 gap-3">
-                                                        <button className="py-2 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">Approve</button>
-                                                        <button className="py-2 bg-slate-50 dark:bg-slate-700 text-slate-500 hover:bg-red-50 hover:text-red-500 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all">Reject</button>
-                                                    </div>
+                                                    <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
+                                                        {item.message}
+                                                    </p>
                                                 </div>
                                             ))}
+                                            {(!initialStats.recentFeedback || initialStats.recentFeedback.length === 0) && (
+                                                <p className="text-center text-slate-400 py-8 text-sm">No feedback items to prevent.</p>
+                                            )}
                                         </div>
-
-                                        <button className="w-full mt-6 py-4 flex items-center justify-center gap-2 text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-blue-600 transition-colors">
-                                            <span className="material-symbols-outlined text-[18px]">history</span>
-                                            View Publication History
-                                        </button>
                                     </div>
                                 </div>
 
@@ -712,47 +720,54 @@ export default function AdminClient({
                                         <table className="w-full text-left">
                                             <thead>
                                                 <tr className="bg-slate-50 dark:bg-slate-900/50 text-[10px] font-black uppercase tracking-widest text-slate-400">
-                                                    <th className="px-8 py-5">Component Type</th>
-                                                    <th className="px-8 py-5">Coverage</th>
-                                                    <th className="px-8 py-5">Success Rate</th>
+                                                    <th className="px-8 py-5">Metric</th>
+                                                    <th className="px-8 py-5">Count</th>
                                                     <th className="px-8 py-5">Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody className="divide-y divide-slate-50 dark:divide-slate-700">
-                                                {[
-                                                    { name: 'Krama Alus Modules', sub: 'Formal Polite Dialect', coverage: '100%', rate: '98.2%', status: 'Optimized', statusColor: 'text-emerald-500 bg-emerald-50' },
-                                                    { name: 'Ngoko Lessons', sub: 'Casual Everyday Javanese', coverage: '85%', rate: '94.5%', status: 'Stable', statusColor: 'text-blue-500 bg-blue-50' },
-                                                    { name: 'Batik Vocabulary Pack', sub: 'Thematic Cultural Lexicon', coverage: '42%', rate: 'N/A', status: 'Draft', statusColor: 'text-slate-400 bg-slate-100' },
-                                                ].map((row, i) => (
-                                                    <tr key={i} className="group hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
-                                                        <td className="px-8 py-6">
-                                                            <p className="font-black text-slate-900 dark:text-white text-sm">{row.name}</p>
-                                                            <p className="text-[10px] font-bold text-slate-400 mt-1">{row.sub}</p>
-                                                        </td>
-                                                        <td className="px-8 py-6">
-                                                            <div className="flex items-center gap-4">
-                                                                <div className="h-1.5 w-32 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
-                                                                    <div
-                                                                        className="h-full bg-emerald-500 rounded-full"
-                                                                        style={{ width: row.coverage }}
-                                                                    />
-                                                                </div>
-                                                                <span className="text-[11px] font-black text-slate-600 dark:text-slate-400">{row.coverage}</span>
-                                                            </div>
-                                                        </td>
-                                                        <td className="px-8 py-6">
-                                                            <div className="flex items-center gap-2 text-blue-600">
-                                                                {row.rate !== 'N/A' && <span className="material-symbols-outlined text-[18px]">check_circle</span>}
-                                                                <span className="text-[11px] font-black">{row.rate}</span>
-                                                            </div>
-                                                        </td>
-                                                        <td className="px-8 py-6">
-                                                            <span className={`px-4 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest ${row.statusColor}`}>
-                                                                {row.status}
-                                                            </span>
-                                                        </td>
-                                                    </tr>
-                                                ))}
+                                                <tr className="group hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                                                    <td className="px-8 py-6">
+                                                        <p className="font-black text-slate-900 dark:text-white text-sm">Empty Modules</p>
+                                                        <p className="text-[10px] font-bold text-slate-400 mt-1">Modules with 0 lessons</p>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className="text-sm font-bold text-slate-600 dark:text-slate-400">{initialStats.contentHealth?.emptyModulesCount || 0}</span>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className={`px-4 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest ${initialStats.contentHealth?.emptyModulesCount > 0 ? 'bg-red-50 text-red-500' : 'bg-emerald-50 text-emerald-500'}`}>
+                                                            {initialStats.contentHealth?.emptyModulesCount > 0 ? 'Needs Attention' : 'Healthy'}
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr className="group hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                                                    <td className="px-8 py-6">
+                                                        <p className="font-black text-slate-900 dark:text-white text-sm">Unpublished Modules</p>
+                                                        <p className="text-[10px] font-bold text-slate-400 mt-1">Draft content</p>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className="text-sm font-bold text-slate-600 dark:text-slate-400">{initialStats.contentHealth?.unpublishedModulesCount || 0}</span>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className="px-4 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest bg-blue-50 text-blue-500">
+                                                            Drafts
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr className="group hover:bg-slate-50/50 dark:hover:bg-slate-800/50 transition-colors">
+                                                    <td className="px-8 py-6">
+                                                        <p className="font-black text-slate-900 dark:text-white text-sm">Unpublished Lessons</p>
+                                                        <p className="text-[10px] font-bold text-slate-400 mt-1">Work in progress</p>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className="text-sm font-bold text-slate-600 dark:text-slate-400">{initialStats.contentHealth?.unpublishedLessonsCount || 0}</span>
+                                                    </td>
+                                                    <td className="px-8 py-6">
+                                                        <span className="px-4 py-1.5 rounded-xl text-[9px] font-black uppercase tracking-widest bg-amber-50 text-amber-500">
+                                                            WIP
+                                                        </span>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

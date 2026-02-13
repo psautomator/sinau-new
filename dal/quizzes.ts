@@ -56,8 +56,13 @@ export async function getQuizzes(options?: {
                     select: {
                         title: true,
                         slug: true,
+                        order: true,
+                        moduleId: true,
                         module: {
-                            select: { title: true }
+                            select: {
+                                title: true,
+                                order: true
+                            }
                         }
                     }
                 },
@@ -346,4 +351,66 @@ export async function bulkUpsertQuizzes(quizzes: any[]) {
     }
 
     return { createdCount, updatedCount };
+}
+
+/**
+ * Fetches random questions from quizzes in modules that the user has already started.
+ */
+export async function getRandomQuizQuestions(userId: string, count: number = 10) {
+    // 1. Get all modules where user has any progress
+    const userProgress = await prisma.userProgress.findMany({
+        where: { userId },
+        include: {
+            lesson: {
+                select: { moduleId: true }
+            }
+        }
+    });
+
+    const startedModuleIds = Array.from(new Set(userProgress.map(p => p.lesson.moduleId)));
+
+    // 2. Fetch all published quizzes in these modules
+    const quizzes = await prisma.quiz.findMany({
+        where: {
+            published: true,
+            lesson: {
+                moduleId: { in: startedModuleIds }
+            }
+        },
+        include: {
+            questions: true,
+            lesson: {
+                select: {
+                    title: true,
+                    slug: true,
+                    module: {
+                        select: { title: true }
+                    }
+                }
+            }
+        }
+    });
+
+    // 3. Gather all questions
+    const allQuestions = quizzes.flatMap(q => q.questions.map(question => ({
+        ...question,
+        quiz: q // Keep reference to quiz for context if needed
+    })));
+
+    // 4. Shuffle and take the requested count
+    const shuffled = allQuestions.sort(() => Math.random() - 0.5);
+    const selectedQuestions = shuffled.slice(0, count);
+
+    // Return a mock quiz object that wraps these questions
+    return {
+        id: "random-quiz",
+        title: "Willekeurige Quiz",
+        description: "Een mix van vragen uit modules waar je al aan bent begonnen.",
+        questions: selectedQuestions,
+        lesson: {
+            title: "Overzicht",
+            slug: "dashboard", // Default fallback
+            module: { title: "Mix" }
+        }
+    };
 }

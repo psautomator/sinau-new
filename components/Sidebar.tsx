@@ -22,6 +22,7 @@ export default function Sidebar() {
         { href: "/modules", label: "Modules", icon: "menu_book" },
         { href: "/flashcards", label: "Flashcards", icon: "style" },
         { href: "/ai-tutor", label: "AI Tutor", icon: "smart_toy", badge: "Beta" },
+        { href: "/pronunciation", label: "Pronunciation", icon: "record_voice_over" },
         { href: "/achievements", label: "Achievements", icon: "emoji_events" },
         { href: "/leaderboard", label: "Leaderboard", icon: "leaderboard" },
     ];

@@ -24,10 +24,14 @@ export async function streamTutorResponse(
         throw new Error("OpenAI API client is niet geïnitialiseerd. Controleer de OPENAI_API_KEY omgevingsvariabele.");
     }
 
-    // 1. Fetch Scenario Data from DB
-    const scenarioData = await (prisma as any).aITutorScenario.findUnique({
+    // 1. Fetch Scenario Data from DB or Defaults
+    let scenarioData = await (prisma as any).aITutorScenario.findUnique({
         where: { slug: scenario || 'kennismaking' }
     });
+
+    if (!scenarioData) {
+        scenarioData = DEFAULT_SCENARIOS.find(s => s.slug === (scenario || 'kennismaking'));
+    }
 
     const scenarioText = scenarioData ? `De context is: ${scenarioData.title}. ${scenarioData.description}` : "";
     const moduleId = scenarioData?.moduleId || null;
@@ -155,10 +159,75 @@ export async function saveWordToLibrary(java: string, dutch: string) {
     return { success: true, wordId: word.id };
 }
 
+const DEFAULT_SCENARIOS = [
+    {
+        id: 'default-intro',
+        slug: 'kennismaking',
+        title: 'Kennismaking',
+        description: 'Leer jezelf voorstellen en begroet Furnie in het Ngoko.',
+        icon: 'waving_hand',
+        category: 'Recommended',
+        initialMessage: "Halo! Sapa jenengmu? (Hallo! Wat is je naam?) Laten we beginnen met een korte kennismaking in het Ngoko Javaans!",
+        initialSuggestions: ["Jenengku Leerling.", "Dino iki kabare apik!", "Sapa jenengmu?"],
+        order: -10,
+        published: true
+    },
+    {
+        id: 'default-warung',
+        slug: 'warung',
+        title: 'Eten Bestellen',
+        description: 'Oefen met het bestellen van eten en drinken in een Javaanse Warung.',
+        icon: 'restaurant',
+        category: 'Recommended',
+        initialMessage: "Sugeng rawuh! Je bent in een gezellige Warung. Er staat veel lekkers op het menu. Wat wil je bestellen?",
+        initialSuggestions: ["Aku njaluk sega goreng siji.", "Mangan apa sing enak?", "Njaluk ngombe es teh."],
+        order: -9,
+        published: true
+    },
+    {
+        id: 'default-market',
+        slug: 'markt',
+        title: 'Boodschappen doen',
+        description: 'Koop vers fruit en groenten op een drukke Javaanse pasar.',
+        icon: 'shopping_basket',
+        category: 'Explore',
+        initialMessage: "Mampir, mampir! Het is druk op de markt vandaag. Er is vers fruit en groenten. Wat heb je nodig?",
+        initialSuggestions: ["Pira regane jeruk iki?", "Aku tuku gedhang siji sisir.", "Ana apel sing manis?"],
+        order: -8,
+        published: true
+    },
+    {
+        id: 'default-directions',
+        slug: 'wegvragen',
+        title: 'De Weg Vragen',
+        description: 'Vraag de weg naar bekende plekken in de stad.',
+        icon: 'map',
+        category: 'Explore',
+        initialMessage: "Ben je de weg kwijt? Geen zorgen! Vraag het aan iemand op straat. Waar wil je naartoe?",
+        initialSuggestions: ["Ning ngendi omahe Pak Joko?", "Dalan sing neng pasar lewat ngendi?", "Adoh ora seko kene?"],
+        order: -7,
+        published: true
+    }
+];
+
 export async function getScenarios() {
-    return await (prisma as any).aITutorScenario.findMany({
+    const dbScenarios = await (prisma as any).aITutorScenario.findMany({
         orderBy: { order: 'asc' }
     });
+
+    // Merge defaults with DB scenarios, prioritizing DB if slug matches
+    const combined = [...DEFAULT_SCENARIOS];
+
+    dbScenarios.forEach((dbS: any) => {
+        const index = combined.findIndex(s => s.slug === dbS.slug);
+        if (index !== -1) {
+            combined[index] = dbS; // Override default with DB if same slug
+        } else {
+            combined.push(dbS);
+        }
+    });
+
+    return combined.sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
 export async function saveScenario(data: any) {

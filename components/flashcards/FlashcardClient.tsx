@@ -14,6 +14,7 @@ interface Vocabulary {
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { updateSrsAction } from "@/app/actions/srs";
 
 interface FlashcardClientProps {
     words: any[];
@@ -66,8 +67,18 @@ export default function FlashcardClient({ words: initialWords, title = "Daily Mi
 
     const handleFlip = () => setIsFlipped(!isFlipped);
 
-    const handleRate = (rating: "again" | "hard" | "good" | "easy") => {
+    const handleRate = async (rating: "again" | "hard" | "good" | "easy") => {
         const word = queue[currentIndex];
+
+        // Persist to DB
+        const qualityMap = {
+            "again": 0,
+            "hard": 2, // SM-2 standard for hard but incorrect is 1-2, correct hard is 3. 
+            "good": 4,
+            "easy": 5
+        };
+        updateSrsAction(word.id, qualityMap[rating]);
+
         let newQueue = [...queue];
 
         if (rating === "again" || rating === "hard") {
