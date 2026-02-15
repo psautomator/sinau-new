@@ -269,3 +269,4 @@ export async function getUserProgress(userId: string = MOCK_USER_ID) {
         name: user?.name || "Leerling"
     };
 }
+
