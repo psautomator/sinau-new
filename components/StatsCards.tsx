@@ -10,34 +10,37 @@ export default function StatsCards({
     streak = 5
 }: StatsCardsProps) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4">
-                <div className="size-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
-                    <span className="material-symbols-outlined">military_tech</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="group bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-200/50 dark:border-slate-800/50 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-500 flex items-center gap-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-bl-full translate-x-1/2 -translate-y-1/2 group-hover:bg-blue-500/10 transition-colors" />
+                <div className="size-16 rounded-3xl bg-blue-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-3xl">bolt</span>
                 </div>
                 <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Total XP</p>
-                    <p className="text-2xl font-bold text-text-main-light dark:text-text-main-dark">{xp.toLocaleString()}</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-blue-500 mb-1">Total XP</p>
+                    <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{xp.toLocaleString()}</p>
                 </div>
             </div>
-            <div className="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4">
-                <div className="size-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400">
-                    <span className="material-symbols-outlined">school</span>
+
+            <div className="group bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-200/50 dark:border-slate-800/50 shadow-sm hover:shadow-xl hover:shadow-purple-500/5 hover:-translate-y-1 transition-all duration-500 flex items-center gap-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-purple-500/5 rounded-bl-full translate-x-1/2 -translate-y-1/2 group-hover:bg-purple-500/10 transition-colors" />
+                <div className="size-16 rounded-3xl bg-purple-500 flex items-center justify-center text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-3xl">school</span>
                 </div>
                 <div>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Current Level</p>
-                    <p className="text-2xl font-bold text-text-main-light dark:text-text-main-dark">{level}</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-purple-500 mb-1">Rank Status</p>
+                    <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{level}</p>
                 </div>
             </div>
-            <div className="bg-surface-light dark:bg-surface-dark p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex items-center gap-4 relative overflow-hidden">
-                {/* Subtle flame glow */}
-                <div className="absolute -right-4 -top-4 w-20 h-20 bg-orange-400/10 rounded-full blur-xl"></div>
-                <div className="size-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center text-orange-500 dark:text-orange-400 z-10">
-                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
+
+            <div className="group bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-200/50 dark:border-slate-800/50 shadow-sm hover:shadow-xl hover:shadow-orange-500/5 hover:-translate-y-1 transition-all duration-500 flex items-center gap-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/5 rounded-bl-full translate-x-1/2 -translate-y-1/2 group-hover:bg-orange-500/10 transition-colors" />
+                <div className="size-16 rounded-3xl bg-orange-500 flex items-center justify-center text-white shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform">
+                    <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>local_fire_department</span>
                 </div>
-                <div className="z-10">
-                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Day Streak</p>
-                    <p className="text-2xl font-bold text-text-main-light dark:text-text-main-dark">{streak} Days</p>
+                <div>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-orange-500 mb-1">Day Streak</p>
+                    <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tighter">{streak} Days</p>
                 </div>
             </div>
         </div>

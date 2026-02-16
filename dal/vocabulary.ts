@@ -323,3 +323,129 @@ export async function bulkUpsertVocabulary(words: any[]) {
 
     return { createdCount, updatedCount };
 }
+/**
+ * Updates or creates a Spaced Repetition record for a user and word using the SM-2 algorithm.
+ * quality: 0-5 (0: again/blackout, 1: incorrect/hard, 2: incorrect/easy, 3: correct/hard, 4: correct/good, 5: correct/easy)
+ */
+export async function upsertSpacedRepetition(userId: string, wordId: string, quality: number) {
+    const existing = await prisma.userWordSpacedRepetition.findUnique({
+        where: { userId_wordId: { userId, wordId } }
+    });
+
+    let repetitions = existing?.repetitions ?? 0;
+    let easinessFactor = existing?.easinessFactor ?? 2.5;
+    let interval = existing?.interval ?? 0;
+
+    if (quality >= 3) {
+        // Correct response
+        if (repetitions === 0) {
+            interval = 1;
+        } else if (repetitions === 1) {
+            interval = 6;
+        } else {
+            interval = Math.round(interval * easinessFactor);
+        }
+        repetitions++;
+    } else {
+        // Incorrect response
+        repetitions = 0;
+        interval = 1;
+    }
+
+    // Update Easiness Factor: EF' = EF + (0.1 - (5-q)*(0.08 + (5-q)*0.02))
+    easinessFactor = easinessFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
+    if (easinessFactor < 1.3) easinessFactor = 1.3;
+
+    const nextReviewDate = new Date();
+    nextReviewDate.setDate(nextReviewDate.getDate() + interval);
+
+    return await prisma.userWordSpacedRepetition.upsert({
+        where: { userId_wordId: { userId, wordId } },
+        update: {
+            repetitions,
+            easinessFactor,
+            interval,
+            nextReviewDate,
+            lastReviewedAt: new Date()
+        },
+        create: {
+            userId,
+            wordId,
+            repetitions,
+            easinessFactor,
+            interval,
+            nextReviewDate,
+            lastReviewedAt: new Date()
+        }
+    });
+}
+
+/**
+ * Fetches vocabulary for pronunciation practice based on user progress and SRS.
+ * Includes:
+ * 1. Words due for review (SRS)
+ * 2. Recent words from started modules
+ * 3. Some random words from the next available module
+ */
+export async function getPronunciationVocabulary(userId: string) {
+    // 1. Get words due for review
+    const dueSrs = await prisma.userWordSpacedRepetition.findMany({
+        where: {
+            userId,
+            nextReviewDate: { lte: new Date() }
+        },
+        select: { wordId: true },
+        take: 20
+    });
+
+    const dueWordIds = dueSrs.map(s => s.wordId);
+
+    // 2. Get all modules where user has any progress
+    const userProgress = await prisma.userProgress.findMany({
+        where: { userId },
+        include: {
+            lesson: {
+                select: { moduleId: true }
+            }
+        }
+    });
+
+    const startedModuleIds = Array.from(new Set(userProgress.map(p => p.lesson.moduleId)));
+
+    // 3. Get the next unstarted published module
+    const nextModule = await prisma.module.findFirst({
+        where: {
+            published: true,
+            id: { notIn: startedModuleIds }
+        },
+        orderBy: { order: "asc" },
+        select: { id: true }
+    });
+
+    const targetModuleIds = [...startedModuleIds];
+    if (nextModule) targetModuleIds.push(nextModule.id);
+
+    // 4. Fetch vocabulary from these modules
+    const availableVocab = await prisma.vocabulary.findMany({
+        where: {
+            moduleId: { in: targetModuleIds },
+            word: { not: "" },
+            translation: { not: "" }
+        },
+        take: 200 // Get a pool for randomization
+    });
+
+    // 5. Mix and prioritize
+    // - Always include due SRS words if they belong to these modules (or just always include them)
+    const dueVocab = availableVocab.filter(v => dueWordIds.includes(v.id));
+    const otherVocab = availableVocab.filter(v => !dueWordIds.includes(v.id));
+
+    // Randomize the "others"
+    const shuffledOthers = otherVocab.sort(() => Math.random() - 0.5);
+
+    // Combine: Due words first, then fill up to 50 with shuffled others
+    const finalSelection = [...dueVocab, ...shuffledOthers].slice(0, 50);
+
+    // Final shuffle so it's not always SRS at the start
+    return finalSelection.sort(() => Math.random() - 0.5);
+}

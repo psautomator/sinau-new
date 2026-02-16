@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AudioRecorder from '../shared/AudioRecorder';
 import { evaluatePronunciationAction } from '@/ai/actions';
+import { updateSrsFromPronunciationAction } from '@/app/actions/srs';
 
 export default function VocabularyList({ words = [], title = "Vocabulary List" }: { words?: any[], title?: string }) {
     const [practicingWord, setPracticingWord] = useState<any | null>(null);
@@ -30,6 +31,11 @@ export default function VocabularyList({ words = [], title = "Vocabulary List" }
                 audioDataUri
             });
             setEvaluation(result);
+
+            // Persist for SRS
+            if (practicingWord.id) {
+                await updateSrsFromPronunciationAction(practicingWord.id, result.score);
+            }
         } catch (error) {
             console.error(error);
             alert("Mislukt om de uitspraak te evalueren. Probeer het opnieuw.");

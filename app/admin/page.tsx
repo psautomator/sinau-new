@@ -5,6 +5,7 @@ import { getLessons, getAllLessonsSimple } from "@/dal/lessons";
 import { getUsers } from "@/dal/user";
 import { getScenarios } from "../ai-tutor/actions";
 import { getFeedbackReports } from "@/dal/feedback";
+import { getDashboardStats } from "@/dal/dashboard";
 import AdminClient from "./AdminClient";
 
 export default async function AdminPage({
@@ -47,7 +48,8 @@ export default async function AdminPage({
         allVocabulary,
         { users, total: totalUsers },
         scenarios,
-        feedbackReports
+        feedbackReports,
+        dashboardStats
     ] = await Promise.all([
         getAdminModules({ search, level, skip, take: limit }),
         getVocabulary({ search, category, level, formality, audioStatus, skip, take: limit }),
@@ -68,18 +70,24 @@ export default async function AdminPage({
         getAllVocabularySimple(),
         getUsers({ search, skip, take: limit }),
         getScenarios(),
-        getFeedbackReports()
+        getFeedbackReports(),
+        getDashboardStats()
     ]);
 
-    const stats = {
-        modulesCount: totalModules,
-        vocabularyCount: totalVocabulary,
-        quizzesCount: totalQuizzes,
-        lessonsCount: totalLessons,
-        usersCount: totalUsers,
+    // Use dynamic stats instead of calculating from limited paginated data
+    const stats: any = { // Cast to any to bypass strict type check for now, matching AdminClient props
+        modulesCount: dashboardStats.counts.modules,
+        vocabularyCount: dashboardStats.counts.vocabulary,
+        lessonsCount: dashboardStats.counts.lessons,
+        usersCount: dashboardStats.counts.users,
         scenariosCount: scenarios.length,
-        queueCount: feedbackReports.length,
-        newFeedbackCount: feedbackReports.filter(f => f.status === 'NEW').length
+        queueCount: dashboardStats.counts.feedback,
+        newFeedbackCount: dashboardStats.counts.feedback,
+        activeUsers24h: dashboardStats.counts.activeUsers24h,
+        recentUsers: dashboardStats.recentUsers,
+        recentFeedback: dashboardStats.recentFeedback,
+        publicationQueue: dashboardStats.publicationQueue,
+        contentHealth: dashboardStats.contentHealth
     };
 
     return (

@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { completeLessonAction } from "@/app/actions/progress";
 import { motion, AnimatePresence } from "framer-motion";
+import { updateSrsAction } from "@/app/actions/srs";
 
 interface InteractiveFlashcardsProps {
     words: Array<{
@@ -38,10 +39,29 @@ export default function InteractiveFlashcards({ words, lessonId, title = "Flashc
         }
     };
 
+    const handleRate = async (rating: "again" | "hard" | "good" | "easy") => {
+        const word = words[currentIndex];
+
+        // Persist to DB
+        const qualityMap = {
+            "again": 0,
+            "hard": 2,
+            "good": 4,
+            "easy": 5
+        };
+        updateSrsAction(word.id, qualityMap[rating]);
+
+        // Move to next card
+        handleNext();
+    };
+
     const handleNext = async () => {
         setIsFlipped(false);
         if (currentIndex < words.length - 1) {
-            setCurrentIndex(prev => prev + 1);
+            // Small delay to allow flip animation to finish before changing data
+            setTimeout(() => {
+                setCurrentIndex(prev => prev + 1);
+            }, 300);
         } else {
             setIsCompleted(true);
             if (lessonId && !hasCompletedLesson) {
@@ -147,32 +167,88 @@ export default function InteractiveFlashcards({ words, lessonId, title = "Flashc
 
             {/* Controls */}
             {!isCompleted && (
-                <div className="flex items-center justify-between mt-8 px-2">
-                    <button
-                        onClick={handlePrev}
-                        disabled={currentIndex === 0}
-                        className={`p-4 rounded-xl flex items-center justify-center transition-all ${currentIndex === 0 ? "opacity-30 cursor-not-allowed text-gray-400" : "bg-white dark:bg-surface-dark shadow-md text-slate-700 hover:-translate-y-1 hover:shadow-lg dark:text-white"}`}
-                    >
-                        <span className="material-symbols-outlined">arrow_back</span>
-                    </button>
+                <div className="flex flex-col gap-8 mt-8">
+                    <AnimatePresence mode="wait">
+                        {!isFlipped ? (
+                            <motion.div
+                                key="pre-flip"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                className="flex justify-center"
+                            >
+                                <button
+                                    onClick={handleFlip}
+                                    className="px-10 py-4 rounded-2xl bg-slate-900 dark:bg-white dark:text-slate-900 text-white font-black text-sm tracking-widest uppercase shadow-xl hover:-translate-y-1 transition-all"
+                                >
+                                    Toon Vertaling
+                                </button>
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="post-flip"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                className="grid grid-cols-2 sm:grid-cols-4 gap-3"
+                            >
+                                <button
+                                    onClick={() => handleRate("again")}
+                                    className="flex flex-col items-center gap-1 p-4 rounded-2xl bg-rose-50 dark:bg-rose-900/10 border border-rose-100 dark:border-rose-800 hover:bg-rose-100 transition-colors"
+                                >
+                                    <span className="text-rose-600 font-bold text-xs">Opnieuw</span>
+                                    <span className="text-[8px] font-black text-rose-400 uppercase tracking-tighter">1m</span>
+                                </button>
+                                <button
+                                    onClick={() => handleRate("hard")}
+                                    className="flex flex-col items-center gap-1 p-4 rounded-2xl bg-orange-50 dark:bg-orange-900/10 border border-orange-100 dark:border-orange-800 hover:bg-orange-100 transition-colors"
+                                >
+                                    <span className="text-orange-600 font-bold text-xs">Moeilijk</span>
+                                    <span className="text-[8px] font-black text-orange-400 uppercase tracking-tighter">2d</span>
+                                </button>
+                                <button
+                                    onClick={() => handleRate("good")}
+                                    className="flex flex-col items-center gap-1 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-900/10 border-2 border-emerald-500/30 hover:bg-emerald-100 transition-colors lg:scale-110 shadow-lg shadow-emerald-500/10"
+                                >
+                                    <span className="text-emerald-600 font-bold text-xs">Goed</span>
+                                    <span className="text-[8px] font-black text-emerald-500 uppercase tracking-tighter">4d</span>
+                                </button>
+                                <button
+                                    onClick={() => handleRate("easy")}
+                                    className="flex flex-col items-center gap-1 p-4 rounded-2xl bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800 hover:bg-blue-100 transition-colors"
+                                >
+                                    <span className="text-blue-600 font-bold text-xs">Makkelijk</span>
+                                    <span className="text-[8px] font-black text-blue-400 uppercase tracking-tighter">1w</span>
+                                </button>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
 
-                    <div className="flex gap-2">
-                        {words.map((_, idx) => (
-                            <div
-                                key={idx}
-                                className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-8 bg-primary" : "w-2 bg-gray-200 dark:bg-gray-700"}`}
-                            />
-                        ))}
+                    <div className="flex items-center justify-between px-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+                        <button
+                            onClick={handlePrev}
+                            disabled={currentIndex === 0}
+                            className={`p-3 rounded-xl flex items-center justify-center transition-all ${currentIndex === 0 ? "opacity-30 cursor-not-allowed text-gray-400" : "bg-white dark:bg-surface-dark shadow-sm text-slate-700 hover:bg-gray-50 dark:text-white"}`}
+                        >
+                            <span className="material-symbols-outlined text-xl">arrow_back</span>
+                        </button>
+
+                        <div className="flex gap-1.5">
+                            {words.map((_, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`h-1 rounded-full transition-all duration-300 ${idx === currentIndex ? "w-6 bg-primary" : "w-1.5 bg-gray-200 dark:bg-gray-700"}`}
+                                />
+                            ))}
+                        </div>
+
+                        <button
+                            onClick={handleNext}
+                            className="p-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-400 hover:text-primary transition-all flex items-center justify-center"
+                            title="Overslaan"
+                        >
+                            <span className="material-symbols-outlined text-xl">fast_forward</span>
+                        </button>
                     </div>
-
-                    <button
-                        onClick={handleNext}
-                        className="p-4 rounded-xl bg-primary text-text-main-light shadow-lg hover:-translate-y-1 hover:shadow-primary/30 transition-all flex items-center justify-center"
-                    >
-                        <span className="material-symbols-outlined">
-                            {currentIndex === words.length - 1 ? "check" : "arrow_forward"}
-                        </span>
-                    </button>
                 </div>
             )}
         </div>

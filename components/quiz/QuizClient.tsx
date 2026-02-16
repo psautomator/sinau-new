@@ -30,7 +30,7 @@ function shuffleArray<T>(array: T[]): T[] {
     return newArr;
 }
 
-export default function QuizClient({ quiz }: { quiz: QuizWithQuestions }) {
+export default function QuizClient({ quiz, isRandomMode = false }: { quiz: QuizWithQuestions, isRandomMode?: boolean }) {
     const router = useRouter();
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -186,12 +186,16 @@ export default function QuizClient({ quiz }: { quiz: QuizWithQuestions }) {
             setIsChecked(false);
         } else {
             // Quiz finished
-            try {
-                await completeLessonAction(quiz.lessonId);
-            } catch (err) {
-                console.error("Failed to complete lesson", err);
+            if (!isRandomMode) {
+                try {
+                    await completeLessonAction(quiz.lessonId);
+                } catch (err) {
+                    console.error("Failed to complete lesson", err);
+                }
+                router.push(`/lessons/${quiz.lesson.slug}`);
+            } else {
+                router.push("/dashboard");
             }
-            router.push(`/lessons/${quiz.lesson.slug}`);
         }
     };
 
@@ -218,11 +222,13 @@ export default function QuizClient({ quiz }: { quiz: QuizWithQuestions }) {
                                 <span className="material-symbols-outlined text-[18px]">school</span>
                             </div>
                             <div className="flex flex-col leading-none">
-                                <span className="font-extrabold text-slate-900 dark:text-white">AyoSinau Quiz</span>
+                                <span className="font-extrabold text-slate-900 dark:text-white">
+                                    {isRandomMode ? "Willekeurige Mix" : "AyoSinau Quiz"}
+                                </span>
                                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">{prettyType(currentQuestion.questionType)}</span>
                             </div>
                         </div>
-                        <Link href={`/lessons/${quiz.lesson.slug}`} className="size-9 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-white/70 dark:hover:bg-slate-800/60 transition-all">
+                        <Link href={isRandomMode ? "/dashboard" : `/lessons/${quiz.lesson.slug}`} className="size-9 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-white/70 dark:hover:bg-slate-800/60 transition-all">
                             <span className="material-symbols-outlined">close</span>
                         </Link>
                     </div>

@@ -24,128 +24,143 @@ export default async function LeaderboardPage() {
     const list = leaderboardData.length > 3 ? leaderboardData.slice(3) : [];
 
     return (
-        <div className="flex h-screen w-full bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark font-sans overflow-hidden">
+        <div className="flex h-screen w-full bg-slate-50 dark:bg-slate-950 overflow-hidden">
             <Sidebar />
 
-            <main className="flex-1 flex flex-col h-full overflow-hidden relative">
-                {/* Header */}
-                <header className="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 px-4 md:px-8 py-4">
-                    <div className="flex items-center justify-between max-w-2xl mx-auto w-full">
-                        <div>
-                            <h1 className="text-2xl font-bold tracking-tight">Weekly Leaderboard</h1>
-                            <p className="text-sm text-text-secondary-light dark:text-gray-400">Real-time rankings from the community</p>
-                        </div>
-                        <div className="flex items-center gap-2 px-3 py-1.5 bg-yellow-100 dark:bg-yellow-900/20 rounded-lg text-yellow-700 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800/30">
-                            <span className="material-symbols-outlined text-[20px]">emoji_events</span>
-                            <span className="text-sm font-bold">Community Rankings</span>
-                        </div>
-                    </div>
-                </header>
+            <main className="flex-1 overflow-y-auto h-full p-4 md:p-12 relative overflow-x-hidden">
+                {/* Deep Batik Decoration Background */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                <div className="absolute top-0 right-0 w-96 h-96 bg-batik-pattern opacity-[0.03] dark:opacity-[0.07] pointer-events-none rounded-bl-[10rem] mask-image-gradient" />
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-                <div className="flex-1 overflow-y-auto px-4 md:px-8 py-8">
-                    <div className="max-w-2xl mx-auto space-y-8 pb-12">
+                <div className="max-w-[1100px] mx-auto flex flex-col gap-10 relative z-10">
+                    <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 px-2">
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-3">
+                                <div className="size-10 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/25">
+                                    <span className="material-symbols-outlined text-2xl">leaderboard</span>
+                                </div>
+                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/70">Community Rankings</span>
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight mt-1">
+                                Weekly <span className="text-primary">Leaderboard</span>
+                            </h2>
+                            <p className="text-slate-500 dark:text-slate-400 font-bold text-sm md:text-base">
+                                Real-time rankings from the community. Let's see who's on top!
+                            </p>
+                        </div>
+                    </header>
 
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
                         {leaderboardData.length > 0 ? (
                             <>
                                 {/* Podium Section */}
-                                <div className="flex justify-center items-end gap-4 mb-12">
+                                <div className="lg:col-span-12 flex justify-center items-end gap-6 md:gap-12 py-10 bg-white/30 dark:bg-slate-900/30 backdrop-blur-xl rounded-[3rem] border border-white/20 dark:border-slate-800/20 shadow-xl overflow-hidden relative">
+                                    <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+
                                     {/* 2nd Place */}
                                     {podium[1] && (
-                                        <div className="flex flex-col items-center">
-                                            <div className="w-20 h-20 rounded-full border-4 border-slate-300 dark:border-slate-600 overflow-hidden relative bg-surface-light dark:bg-surface-dark mb-3 shadow-lg">
-                                                <div className="w-full h-full flex items-center justify-center text-xl font-bold text-slate-500">
-                                                    {podium[1].name.substring(0, 2).toUpperCase()}
-                                                </div>
-                                                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center font-bold text-slate-700 dark:text-slate-300 shadow-sm border-2 border-white dark:border-slate-800">
-                                                    2
-                                                </div>
+                                        <div className="flex flex-col items-center group">
+                                            <div className="size-24 md:size-32 rounded-[2.5rem] bg-slate-200 dark:bg-slate-800 p-1 relative shadow-lg transition-transform group-hover:-translate-y-2 duration-500">
+                                                <div className="absolute -top-3 -right-3 size-10 bg-slate-400 text-white rounded-2xl flex items-center justify-center font-black text-lg shadow-lg border-4 border-white dark:border-slate-800 z-20">2</div>
+                                                <div
+                                                    className="w-full h-full rounded-[2.2rem] bg-cover bg-center border-4 border-white dark:border-slate-700"
+                                                    style={{ backgroundImage: `url('https://ui-avatars.com/api/?name=${encodeURIComponent(podium[1].name)}&background=random')` }}
+                                                />
                                             </div>
-                                            <span className="text-sm font-bold text-center max-w-[100px] truncate">{podium[1].name}</span>
-                                            <span className="text-xs text-primary font-bold">{podium[1].xp.toLocaleString()} XP</span>
+                                            <span className="mt-4 text-sm font-black text-slate-900 dark:text-white tracking-tight">{podium[1].name}</span>
+                                            <span className="text-xs font-black text-primary uppercase tracking-widest">{podium[1].xp.toLocaleString()} XP</span>
                                         </div>
                                     )}
 
                                     {/* 1st Place */}
                                     {podium[0] && (
-                                        <div className="flex flex-col items-center -mt-6 z-10">
+                                        <div className="flex flex-col items-center group -mt-10 md:-mt-16 z-10">
                                             <div className="relative">
-                                                <span className="material-symbols-outlined text-yellow-400 text-4xl absolute -top-8 left-1/2 -translate-x-1/2 drop-shadow-sm">crown</span>
-                                                <div className="w-24 h-24 rounded-full border-4 border-yellow-400 dark:border-yellow-500 overflow-hidden relative bg-surface-light dark:bg-surface-dark mb-3 shadow-xl ring-4 ring-yellow-400/20">
-                                                    <div className="w-full h-full flex items-center justify-center text-2xl font-bold text-yellow-600">
-                                                        {podium[0].name.substring(0, 2).toUpperCase()}
-                                                    </div>
-                                                    <div className="absolute -bottom-1 -right-1 w-9 h-9 bg-yellow-400 text-white rounded-full flex items-center justify-center font-bold shadow-sm border-2 border-white dark:border-slate-800">
-                                                        1
-                                                    </div>
+                                                <div className="absolute -top-12 left-1/2 -translate-x-1/2 animate-bounce">
+                                                    <span className="material-symbols-outlined text-yellow-400 text-5xl drop-shadow-[0_0_15px_rgba(250,204,21,0.5)]">crown</span>
+                                                </div>
+                                                <div className="size-32 md:size-44 rounded-[3rem] bg-yellow-400 p-1.5 relative shadow-2xl transition-transform group-hover:-translate-y-3 duration-500">
+                                                    <div className="absolute -top-3 -right-3 size-12 bg-yellow-400 text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg border-4 border-white dark:border-slate-800 z-20">1</div>
+                                                    <div
+                                                        className="w-full h-full rounded-[2.7rem] bg-cover bg-center border-8 border-white dark:border-slate-700"
+                                                        style={{ backgroundImage: `url('https://ui-avatars.com/api/?name=${encodeURIComponent(podium[0].name)}&background=random')` }}
+                                                    />
                                                 </div>
                                             </div>
-                                            <span className="text-base font-bold text-center max-w-[120px] truncate">{podium[0].name}</span>
-                                            <span className="text-sm text-primary font-bold">{podium[0].xp.toLocaleString()} XP</span>
+                                            <span className="mt-4 text-lg font-black text-slate-900 dark:text-white tracking-tighter">{podium[0].name}</span>
+                                            <span className="text-sm font-black text-primary uppercase tracking-widest">{podium[0].xp.toLocaleString()} XP</span>
                                         </div>
                                     )}
 
                                     {/* 3rd Place */}
                                     {podium[2] && (
-                                        <div className="flex flex-col items-center">
-                                            <div className="w-20 h-20 rounded-full border-4 border-amber-600 dark:border-amber-700 overflow-hidden relative bg-surface-light dark:bg-surface-dark mb-3 shadow-lg">
-                                                <div className="w-full h-full flex items-center justify-center text-xl font-bold text-amber-600">
-                                                    {podium[2].name.substring(0, 2).toUpperCase()}
-                                                </div>
-                                                <div className="absolute -bottom-1 -right-1 w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold shadow-sm border-2 border-white dark:border-slate-800">
-                                                    3
-                                                </div>
+                                        <div className="flex flex-col items-center group">
+                                            <div className="size-24 md:size-32 rounded-[2.5rem] bg-orange-700 dark:bg-orange-900/50 p-1 relative shadow-lg transition-transform group-hover:-translate-y-2 duration-500">
+                                                <div className="absolute -top-3 -right-3 size-10 bg-orange-700 text-white rounded-2xl flex items-center justify-center font-black text-lg shadow-lg border-4 border-white dark:border-slate-800 z-20">3</div>
+                                                <div
+                                                    className="w-full h-full rounded-[2.2rem] bg-cover bg-center border-4 border-white dark:border-slate-700"
+                                                    style={{ backgroundImage: `url('https://ui-avatars.com/api/?name=${encodeURIComponent(podium[2].name)}&background=random')` }}
+                                                />
                                             </div>
-                                            <span className="text-sm font-bold text-center max-w-[100px] truncate">{podium[2].name}</span>
-                                            <span className="text-xs text-primary font-bold">{podium[2].xp.toLocaleString()} XP</span>
+                                            <span className="mt-4 text-sm font-black text-slate-900 dark:text-white tracking-tight">{podium[2].name}</span>
+                                            <span className="text-xs font-black text-primary uppercase tracking-widest">{podium[2].xp.toLocaleString()} XP</span>
                                         </div>
                                     )}
                                 </div>
 
                                 {/* List Section */}
-                                <div className="bg-white dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-gray-800 overflow-hidden shadow-sm">
-                                    {list.length > 0 ? list.map((user) => (
-                                        <div
-                                            key={user.rank}
-                                            className={`flex items-center gap-4 p-4 border-b border-gray-100 dark:border-gray-800 last:border-0 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors ${user.isCurrentUser ? 'bg-blue-50/50 dark:bg-blue-900/10' : ''}`}
-                                        >
-                                            <span className={`w-8 text-center font-bold ${user.rank <= 10 ? 'text-slate-700 dark:text-slate-300' : 'text-slate-400'}`}>
-                                                {user.rank}
-                                            </span>
-
-                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold bg-primary/20 text-primary-dark`}>
-                                                {user.name.substring(0, 2).toUpperCase()}
-                                            </div>
-
-                                            <div className="flex-1">
-                                                <div className="flex items-center gap-2">
-                                                    <span className={`font-bold text-slate-900 dark:text-white ${user.isCurrentUser ? 'text-blue-600 dark:text-blue-400' : ''}`}>
-                                                        {user.name}
+                                <div className="lg:col-span-12 flex flex-col gap-4">
+                                    <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-200/50 dark:border-slate-800/50 shadow-sm overflow-hidden p-4 md:p-8">
+                                        <div className="flex flex-col gap-2">
+                                            {list.length > 0 ? list.map((user) => (
+                                                <div
+                                                    key={user.rank}
+                                                    className={`group flex items-center gap-4 md:gap-6 p-4 rounded-3xl transition-all duration-300 ${user.isCurrentUser ? 'bg-primary/10 border border-primary/20 shadow-lg shadow-primary/5' : 'hover:bg-slate-50 dark:hover:bg-slate-800/50'}`}
+                                                >
+                                                    <span className="w-8 text-center text-sm font-black text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white">
+                                                        {user.rank}
                                                     </span>
-                                                    {user.isCurrentUser && (
-                                                        <span className="px-1.5 py-0.5 bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 text-[10px] font-bold uppercase rounded">You</span>
-                                                    )}
-                                                </div>
-                                                <span className="text-xs text-slate-500 dark:text-slate-400">{user.league} League</span>
-                                            </div>
 
-                                            <div className="text-right">
-                                                <span className="block font-bold text-primary">{user.xp.toLocaleString()} XP</span>
-                                            </div>
+                                                    <div
+                                                        className="size-12 md:size-14 rounded-2xl bg-slate-200 dark:bg-slate-800 border-2 border-white dark:border-slate-700 shadow-sm bg-cover bg-center"
+                                                        style={{ backgroundImage: `url('https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=random')` }}
+                                                    />
+
+                                                    <div className="flex-1 min-w-0">
+                                                        <div className="flex items-center gap-2">
+                                                            <span className="text-base md:text-lg font-black text-slate-900 dark:text-white truncate tracking-tight">
+                                                                {user.name}
+                                                            </span>
+                                                            {user.isCurrentUser && (
+                                                                <span className="px-2 py-0.5 bg-primary/20 text-primary text-[10px] font-black uppercase rounded-lg">YOU</span>
+                                                            )}
+                                                        </div>
+                                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{user.league} League</p>
+                                                    </div>
+
+                                                    <div className="text-right">
+                                                        <span className="block text-base md:text-lg font-black text-primary tracking-tighter">{user.xp.toLocaleString()} <span className="text-[10px] md:text-xs">XP</span></span>
+                                                    </div>
+                                                </div>
+                                            )) : leaderboardData.length <= 3 && (
+                                                <p className="py-12 text-center text-sm font-bold text-slate-400 italic">No more legends in this list yet.</p>
+                                            )}
                                         </div>
-                                    )) : leaderboardData.length <= 3 && (
-                                        <p className="p-8 text-center text-sm text-gray-500 italic">No more students in the list.</p>
-                                    )}
+                                    </div>
                                 </div>
                             </>
                         ) : (
-                            <div className="p-12 text-center flex flex-col items-center gap-4">
-                                <div className="size-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-300">
-                                    <span className="material-symbols-outlined text-4xl">groups</span>
+                            <div className="lg:col-span-12 py-32 text-center flex flex-col items-center gap-6 bg-white dark:bg-slate-900 rounded-[3rem] border-2 border-dashed border-slate-200 dark:border-slate-800">
+                                <div className="size-24 rounded-[2rem] bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-300">
+                                    <span className="material-symbols-outlined text-5xl">groups</span>
                                 </div>
-                                <p className="text-gray-500">No students matching the criteria found.</p>
+                                <div>
+                                    <p className="text-xl font-black text-slate-900 dark:text-white">Empty Arena</p>
+                                    <p className="text-slate-500 font-bold mt-2">No students have joined this week's battle yet.</p>
+                                </div>
                             </div>
                         )}
-
                     </div>
                 </div>
             </main>

@@ -71,11 +71,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
     const applyAccentColor = (color: ColorOption) => {
         const root = document.documentElement;
-        root.style.setProperty('--color-primary', color.primary);
-        root.style.setProperty('--color-primary-dark', color.dark);
-
-        // Also update secondary text light which is often based on primary
-        // In globals.css it's #4c9a6b, let's keep it dynamic if possible or just stick to primary override
+        root.style.setProperty('--primary', color.primary);
+        root.style.setProperty('--primary-dark', color.dark);
     };
 
     return (

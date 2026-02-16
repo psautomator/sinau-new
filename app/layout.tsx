@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <ToastProvider>
-            <div className="flex h-screen w-full overflow-hidden">
+            <div className="flex h-screen w-full overflow-hidden min-h-0">
               {children}
             </div>
             <FeedbackButton />

@@ -13,8 +13,8 @@ export default async function QuizPage({ params }: { params: Promise<{ id: strin
         <>
             <Sidebar />
 
-            <main className="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark relative p-4 md:p-8 flex flex-col items-center">
-                <div className="w-full max-w-[1100px]">
+            <main className="flex-1 overflow-y-auto h-full p-4 md:p-8 bg-background-light dark:bg-background-dark relative">
+                <div className="max-w-[1100px] mx-auto">
                     <QuizClient quiz={quiz} />
                 </div>
             </main>
